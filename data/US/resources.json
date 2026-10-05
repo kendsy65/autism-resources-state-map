@@ -18,7 +18,10 @@
     "how_to_apply": "Start at ssa.gov/ssi.",
     "source_url": "https://www.ssa.gov/ssi",
     "date_checked": "2026-10-05",
-    "notes": "Once on SSI, wages, other income and changes in resources or living arrangements must be reported each month."
+    "notes": "Once on SSI, wages, other income and changes in resources or living arrangements must be reported each month.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "us-ss-check-eligibility",
@@ -39,7 +42,10 @@
     "how_to_apply": "Online, about 10 minutes: ssa.gov/prepare/check-eligibility-for-benefits.",
     "source_url": "https://www.ssa.gov/prepare/check-eligibility-for-benefits",
     "date_checked": "2026-10-05",
-    "notes": "It reflects the situation today and can't say whether someone will become eligible later."
+    "notes": "It reflects the situation today and can't say whether someone will become eligible later.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "us-ss-apply-for-ssi",
@@ -60,7 +66,10 @@
     "how_to_apply": "Online at ssa.gov/apply/ssi. The same page lets you return to a saved application and check application or appeal status.",
     "source_url": "https://www.ssa.gov/apply/ssi",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "us-ss-contact-social-security",
@@ -81,7 +90,10 @@
     "how_to_apply": "Call the National 800 Number or find a local office at ssa.gov/agency/contact.",
     "source_url": "https://www.ssa.gov/agency/contact/",
     "date_checked": "2026-10-05",
-    "notes": "SSA says its website is the fastest way to get help."
+    "notes": "SSA says its website is the fastest way to get help.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "us-ss-ticket-to-work-help-line",
@@ -102,6 +114,9 @@
     "how_to_apply": "1-866-968-7842 (TTY 1-866-833-2967), or the Find Help tool at choosework.ssa.gov/findhelp.",
     "source_url": "https://choosework.ssa.gov/findhelp",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   }
 ]

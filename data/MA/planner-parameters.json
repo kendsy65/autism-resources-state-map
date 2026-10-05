@@ -135,7 +135,7 @@
   },
   "employment": {
     "ma_minimum_wage": {
-      "value": 15.0,
+      "value": 15,
       "unit": "USD/hour",
       "source": "https://www.masslegalhelp.org/employment-unemployment/getting-paid/minimum-wage"
     },
@@ -279,5 +279,106 @@
       "Attleboro",
       "North Dighton"
     ]
+  },
+  "financing": {
+    "eaedc_grant_1_person": {
+      "value": 441.1,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc"
+    },
+    "eaedc_grant_2_person": {
+      "value": 573.9,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc"
+    },
+    "eaedc_earned_income_deduction": {
+      "value": 200,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc"
+    },
+    "eaedc_caregiver_recipient_income_cap": {
+      "value": 1500,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc"
+    },
+    "ma_child_family_credit_per_dependent": {
+      "value": 440,
+      "unit": "USD/year",
+      "refundable": true,
+      "source": "https://mass.gov/info-details/massachusetts-child-and-family-tax-credit"
+    },
+    "federal_credit_other_dependents": {
+      "value": 500,
+      "unit": "USD/year",
+      "refundable": false,
+      "phaseout_start": 200000,
+      "source": "https://www.irs.gov/newsroom/an-overview-of-the-credit-for-other-dependents"
+    },
+    "able_annual_contribution_limit": {
+      "value": 20000,
+      "unit": "USD/year",
+      "source": "https://www.mefa.org/ways-to-save/mefa-attainable/"
+    },
+    "able_onset_age_limit": {
+      "value": 46,
+      "unit": "years",
+      "source": "https://www.mefa.org/article/able-account-eligibility-expands-in-2026-what-you-need-to-know/"
+    },
+    "snap_standard_medical_deduction": {
+      "value": 155,
+      "unit": "USD/month",
+      "min_expense": 35,
+      "itemize_above": 190,
+      "source": "https://www.masslegalhelp.org/public-benefits-ssi/snap-food-benefits/tell-dta-about-medical-expenses-get-more-snap"
+    },
+    "heap_max_2025_26": {
+      "deliverable_fuel": 1000,
+      "utility": 850,
+      "projected_deliverable": 1400,
+      "projected_utility": 925,
+      "unit": "USD/season",
+      "source": "https://www.mass.gov/news/governor-healey-increases-home-heating-assistance-benefits-for-tens-of-thousands-of-massachusetts-households-0"
+    },
+    "lifeline_monthly_discount": {
+      "value": 9.25,
+      "unit": "USD/month",
+      "source": "https://fcc.gov/general/lifeline-program-low-income-consumers"
+    },
+    "pca_complex_care_differential": {
+      "value": 3.25,
+      "unit": "USD/hour",
+      "source": "https://www.mass.gov/info-details/pca-complex-care"
+    },
+    "national_grid_discount_rate": {
+      "min": 0.32,
+      "max": 0.71,
+      "unit": "fraction of bill",
+      "source": "https://www.nationalgridus.com/ma-home/rates/service-rates"
+    },
+    "mbta_tap_discount": {
+      "value": 0.5,
+      "unit": "approx. fraction of fare",
+      "source": "https://mycharlie.mbta.com/reduced/disability"
+    },
+    "at_mini_loan": {
+      "min": 100,
+      "max": 4000,
+      "rate": 0,
+      "unit": "USD",
+      "source": "https://www.massalternativefinance.org/"
+    },
+    "at_financial_loan_rate": {
+      "value": 0.0475,
+      "min_amount": 4000,
+      "unit": "APR",
+      "source": "https://massachusetts.easterseals.com/get-support/areas-of-support/alternative-finance-program/financial-loan-program"
+    },
+    "cicrf_threshold": {
+      "pct_first_100k": 0.1,
+      "pct_above_100k": 0.15,
+      "age_limit": 22,
+      "lookback_months": 24,
+      "source": "https://www.mass.gov/info-details/check-eligibility-for-cicrf"
+    }
   }
 }

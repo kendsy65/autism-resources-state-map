@@ -95,7 +95,7 @@
 <script type="module">
 import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./assets/js/common.js";
 import * as pl from "./assets/js/planner.js";
-import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, NEAR_MILES } from "./assets/js/profile.js";
+import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
 
 const $ = id => document.getElementById(id);
@@ -104,7 +104,7 @@ if (!STATES[code]) location.replace("index.html");
 const S = STATES[code];
 document.title = `${S.name} Resources`;
 $("eyebrow").textContent = `Autism Resources State Map · ${S.name}`;
-$("title").textContent = `Housing & Employment Resources in ${S.name}`;
+$("title").textContent = `Housing, Financing & Employment Resources in ${S.name}`;
 
 // ---------- DIRECTORY ----------
 const LV = { Federal: "Federal", State: "State", City: "City", "Private/Nonprofit": "Private / Nonprofit" };
@@ -132,7 +132,13 @@ $("summary").innerHTML = CATEGORIES.map(c => {
   return `<div class="sum"><h3>${c}</h3><div class="big">${rows.length}</div><div class="bars">${rows.length
     ? Object.keys(LV).map(l => `<span class="tag ${lvClass(l)}">${LV[l]} ${rows.filter(r => r.level === l).length}</span>`).join("")
     : `<span class="np" style="font-size:13px">Research in progress</span>`}</div></div>`;
-}).join("");
+}).join("") + (() => {
+  // Nonprofit section: one tap shows only nonprofit organizations across every category.
+  const rows = rankResources(D, { home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && r.level === "Private/Nonprofit");
+  return `<button class="sum sum-btn" id="np-card" aria-describedby="np-desc"><h3>Nonprofits</h3><div class="big">${rows.length}</div>
+    <div class="bars">${CATEGORIES.map(c => `<span class="tag lv-Private">${c} ${rows.filter(r => r.category === c).length}</span>`).join("")}</div>
+    <span class="hint" id="np-desc" style="display:block;margin:8px 0 0">Show only nonprofit organizations →</span></button>`;
+})();
 
 $("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" aria-pressed="false">${c}</button>`).join("");
 $("levels").innerHTML = Object.keys(LV).map(l => `<button class="chip ${lvClass(l)}" data-lv="${l}" aria-pressed="${st.lv.has(l)}">${LV[l]}</button>`).join("")
@@ -159,10 +165,11 @@ function render() {
   $("list").innerHTML = rows.length ? rows.map(r => {
     const u = safeUrl(r.source_url);
     const fitTag = r.fit > 0 ? `<span class="tag fit">Fits their support level</span>` : r.fit < 0 ? `<span class="tag nofit">May not fit their support level</span>` : "";
+    const checkTag = r.needs_checking ? `<span class="tag nofit" title="${esc(r.to_check)}">Not yet verified</span>` : "";
     const distTag = r.dist != null ? `<span class="tag dist">${r.dist < 1 ? "<1" : Math.round(r.dist)} mi</span>` : "";
     return `<details class="res" id="res-${esc(r.id)}"><summary>
       <span class="r-name">${esc(r.name)}</span>
-      <span class="r-tags">${fitTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}<span class="tag cat">${esc(r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
+      <span class="r-tags">${fitTag}${checkTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}<span class="tag cat">${esc(r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
       <span class="r-desc">${esc(r.description)}</span>
     </summary><div class="body"><dl>
       <dt>Run by</dt><dd>${esc(r.administrator)}</dd>
@@ -171,13 +178,26 @@ function render() {
       <dt>Ongoing cost</dt><dd>${fmt(r.ongoing_cost)}</dd>
       <dt>Maximum benefit</dt><dd>${fmt(r.max_benefit)}</dd>
       <dt>How to apply</dt><dd>${esc(r.how_to_apply)}</dd>
+      ${r.funding_route ? `<dt>Usually paid for by</dt><dd>${esc(r.funding_route)}</dd>` : ""}
       ${r.notes ? `<dt>Watch out for</dt><dd><div class="note">${esc(r.notes)}</div></dd>` : ""}
+      ${r.needs_checking ? `<dt>Still being checked</dt><dd><div class="note">${esc(r.to_check)}</div></dd>` : ""}
       <dt>Source</dt><dd>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, ""))}</a>` : `<span class="np">No source</span>`}<br><span class="checked">checked ${esc(r.date_checked)}</span></dd>
     </dl></div></details>`;
   }).join("") : `<div class="empty">${emptyMsg}</div>`;
   document.querySelectorAll("#cats button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === st.cat));
+  const npOnly = st.lv.size === 1 && st.lv.has("Private/Nonprofit");
+  $("np-card").setAttribute("aria-pressed", npOnly);
+  $("np-desc").textContent = npOnly ? "Showing only nonprofits · tap to show everyone" : "Show only nonprofit organizations →";
   try { localStorage.setItem(KEY, JSON.stringify({ cat: st.cat, lv: [...st.lv], region: st.region })); } catch {}
 }
+$("np-card").addEventListener("click", () => {
+  const only = st.lv.size === 1 && st.lv.has("Private/Nonprofit");
+  st.lv = new Set(only ? Object.keys(LV) : ["Private/Nonprofit"]);
+  st.cat = "All";
+  document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", st.lv.has(b.dataset.lv)));
+  render();
+  document.querySelector(".filters").scrollIntoView({ behavior: "smooth", block: "start" });
+});
 $("cats").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { st.cat = b.dataset.cat; render(); } });
 $("levels").addEventListener("click", e => { const b = e.target.closest("button[data-lv]"); if (!b) return; const l = b.dataset.lv; st.lv.has(l) ? st.lv.delete(l) : st.lv.add(l); b.setAttribute("aria-pressed", st.lv.has(l)); render(); });
 $("region").addEventListener("change", e => { st.region = e.target.value; render(); });
@@ -261,10 +281,18 @@ else {
     ma_minimum_wage: "Minimum wage", sga_non_blind: "Substantial Gainful Activity (SGA)", trial_work_period_month: "Trial Work Period month",
     student_earned_income_exclusion: "Student Earned Income Exclusion", section_1619b_ma_threshold: "1619(b) Medicaid threshold",
     ma_detc_employer_credit: "MA Disability Employment Tax Credit (employer)", federal_wotc: "Federal WOTC (employer)",
+    eaedc_grant_1_person: "EAEDC cash, 1 person", eaedc_grant_2_person: "EAEDC cash, 2 people", eaedc_earned_income_deduction: "EAEDC: job income not counted",
+    eaedc_caregiver_recipient_income_cap: "EAEDC caregiver route: cared-for person's income cap", ma_child_family_credit_per_dependent: "MA Child and Family Tax Credit, per dependent",
+    federal_credit_other_dependents: "Federal Credit for Other Dependents", able_annual_contribution_limit: "ABLE account: yearly contribution limit",
+    able_onset_age_limit: "ABLE account: disability must begin before age", snap_standard_medical_deduction: "SNAP standard medical deduction",
+    heap_max_2025_26: "Fuel assistance (HEAP) maximum, 2025–26", lifeline_monthly_discount: "Lifeline phone/internet discount",
+    pca_complex_care_differential: "PCA complex-care pay differential", national_grid_discount_rate: "National Grid low-income discount",
+    mbta_tap_discount: "MBTA reduced fare (TAP)", at_mini_loan: "Assistive technology Mini Loan", at_financial_loan_rate: "Assistive technology Financial Loan",
+    cicrf_threshold: "Catastrophic Illness in Children Relief Fund threshold",
   };
   const human = k => LABELS[k] || k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
   const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
-  const unitFmt = (v, unit = "") => /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : "");
+  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : "");
   function valueOf(p) {
     if ("value" in p) return unitFmt(p.value, p.unit);
     if ("min" in p) return `${unitFmt(p.min, p.unit)}–${unitFmt(p.max, p.unit)}` + ("rate" in p ? ` at ${p.rate * 100}%` : "");
@@ -272,15 +300,27 @@ else {
     if ("year1_max" in p) return `Up to ${money(p.year1_max)} yr 1; ${money(p.later_max)} after`;
     if ("max_per_hire" in p) return `Up to ${money(p.max_per_hire)} per hire`;
     if ("academic_year" in p) return `${money(p.academic_year)}–${money(p.full_year)}/yr`;
+    if ("deliverable_fuel" in p) return `Oil/propane ${money(p.deliverable_fuel)}, gas/electric ${money(p.utility)} per season`;
+    if ("pct_first_100k" in p) return `Costs over ${p.pct_first_100k * 100}% of first $100k income + ${p.pct_above_100k * 100}% above`;
     const sizes = Object.keys(p).filter(k => /^\d+$/.test(k));
     if (sizes.length) return `${money(p[sizes[0]])} (1 person) to ${money(p[sizes.at(-1)])} (${sizes.at(-1)} people)`;
     return "";
   }
+  // Side details a parameter carries beyond its main value.
+  const extras = p => [p.note, p.status,
+    "refundable" in p ? (p.refundable ? "Refundable" : "Nonrefundable") : "",
+    p.phaseout_start ? `Phases out above ${money(p.phaseout_start)} income` : "",
+    p.min_expense ? `For medical costs over ${money(p.min_expense)}/mo; itemize above ${money(p.itemize_above)}/mo` : "",
+    p.min_amount ? `Loans over ${money(p.min_amount)}` : "",
+    p.projected_deliverable ? `State plans increases to ${money(p.projected_deliverable)} and ${money(p.projected_utility)}` : "",
+    p.age_limit ? `Costs before age ${p.age_limit}; looks back ${p.lookback_months} months` : "",
+  ].filter(Boolean).join(" · ");
   const link = u => { const s = safeUrl(u); return s ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a>` : ""; };
   const section = (title, obj) => `<h2 style="margin-top:32px">${title}</h2><div class="tblwrap"><table class="ptbl"><thead><tr><th>Input</th><th>Value</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
-    + Object.entries(obj).map(([k, p]) => `<tr><td>${esc(human(k))}</td><td class="v">${esc(valueOf(p))}</td><td>${esc([p.note, p.status].filter(Boolean).join(" · "))}</td><td>${link(p.source)}</td></tr>`).join("")
+    + Object.entries(obj).map(([k, p]) => `<tr><td>${esc(human(k))}</td><td class="v">${esc(valueOf(p))}</td><td>${esc(extras(p))}</td><td>${link(p.source)}</td></tr>`).join("")
     + `</tbody></table></div>`;
-  $("param-tables").innerHTML = section("Income and benefits", params.income) + section("Housing costs and help", params.housing) + section("Work and earnings", params.employment);
+  $("param-tables").innerHTML = section("Income and benefits", params.income) + section("Housing costs and help", params.housing) + section("Work and earnings", params.employment)
+    + (params.financing ? section("Money, tax credits and discounts", params.financing) : "");
   $("t-time").innerHTML = `<thead><tr><th>Item</th><th>Timing</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
     + (params.timing || []).map(t => `<tr><td>${esc(t.item)}</td><td class="v">${esc(t.value)}</td><td>${esc(t.note)}</td><td>${link(t.source)}</td></tr>`).join("") + `</tbody>`;
 }
@@ -302,6 +342,13 @@ function renderPlan(me, params) {
   const nearHtml = near.length ? `<h3>Closest matches to ${esc(home.place)}</h3>
     <ul class="near">${near.map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a>
       <span class="d">${esc(r.city)} · ${Math.round(r.dist)} mi${r.fit > 0 ? " · fits their support level" : ""}</span></li>`).join("")}</ul>` : "";
+
+  // Money and benefits: government programs first (data order), nearby city programs only.
+  const money = financingFor(me, stateRows, params, new Date(), coordsOf, home, NEAR_MILES);
+  const moneyHtml = money.length ? `<h3>Money and benefits to look into</h3>
+    <ul class="near">${money.slice(0, 8).map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a>
+      <span class="d">${esc(LV[r.level] || r.level)}${/^(not published|not applicable|varies)/i.test(r.max_benefit) ? "" : ` · ${esc(r.max_benefit.split(/(?<=\.)\s/)[0].replace(/\.$/, ""))}`}</span></li>`).join("")}</ul>
+    ${money.length > 8 ? `<button class="linkbtn" id="money-all">See all ${money.length} money and benefits programs →</button>` : ""}` : "";
 
   // Higher support needs + housing: surface what the sources say about 24-hour care.
   const dds = stateRows.find(r => r.id.endsWith("-dds-adult-eligibility-for-autism"));
@@ -333,9 +380,15 @@ function renderPlan(me, params) {
     ${steps.length ? `<ol class="steps">${steps.map(s => `<li><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}</span></li>`).join("")}</ol>`
       : `<p class="hint">No time-sensitive steps for this age yet. Browse the directory below.</p>`}
     ${nearHtml}
+    ${moneyHtml}
     ${work}
     <p class="hint" style="margin-top:12px">The directory below shows ${esc(FOCUS[me.focus].toLowerCase())} within 50 miles${home ? ` of ${esc(home.place)}` : ""} plus statewide programs${me.support !== "unsure" ? ", with programs that fit their support level first" : ", nearest first"}. Your answers stay in this browser.</p>`;
   $("plan-clear").addEventListener("click", () => { clearProfile(); location.reload(); });
+  $("money-all")?.addEventListener("click", () => {
+    setView("dir"); st.cat = "Financing"; st.lv = new Set(Object.keys(LV)); st.within = Infinity; $("within").value = "Infinity";
+    document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
+    render(); document.querySelector(".filters").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
   $("plan").addEventListener("click", e => {
     const a = e.target.closest("a[data-open]");
     if (!a) return;

@@ -7,7 +7,7 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 | `id` | string | `<state>-<cat>-<slug>`, unique, lowercase |
 | `state` | string | `MA`, `CT`, `NY`, or `US` for federal resources in `data/US/` that apply in every state |
 | `category` | string | `Housing`, `Financing`, `Employment`, `Social Security`, `Community Enrichment` |
-| `subtype` | string | Optional. Employment: `Program`, `Employer`, `Supported employment`, `Work incentive`. Housing: `Residential program` |
+| `subtype` | string | Optional. Employment: `Program`, `Employer`, `Supported employment`, `Work incentive`. Housing: `Residential program`. Financing: `Cash assistance`, `Discount`, `Tax credit`, `Savings & trusts`, `Paid caregiving & services`, `Grant`, `Loan` |
 | `name` | string | Plain-language name |
 | `level` | string | `Federal`, `State`, `City`, `Private/Nonprofit` — who the family deals with |
 | `federally_funded` | boolean | True for federal programs and for federal money run by a state or city (e.g. MassAbility VR, housing authorities) |
@@ -23,6 +23,9 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 | `source_url` | string | Official or primary page that was actually checked |
 | `date_checked` | string | ISO date |
 | `notes` | string | Waitlists, closures, caveats |
+| `funding_route` | string | Optional. How the service is usually paid for: `Family-paid`, `MassHealth`, `DDS`, `DDS + MassHealth`, `DDS + MassAbility`, `State grant`, `Business revenue`, `Mixed`. Used to avoid counting a provider's cost and the state benefit that pays it twice |
+| `needs_checking` | boolean | True when something about the entry is still unconfirmed. The site shows a "Not yet verified" tag |
+| `to_check` | string | What still needs confirming. Required when `needs_checking` is true |
 
 ## Rules
 

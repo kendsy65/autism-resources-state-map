@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { fromParams } from "../assets/js/planner.js";
 import { lookupZip, placeIndex, miles, nearestRegion } from "../assets/js/geo.js";
 import {
-  validProfile, nextSteps, workScenarios, ageOn, dateTurning, validBirthdate, supportFit, rankResources,
+  validProfile, nextSteps, workScenarios, ageOn, dateTurning, validBirthdate, supportFit, rankResources, financingFor,
 } from "../assets/js/profile.js";
 
 const read = p => JSON.parse(readFileSync(new URL(p, import.meta.url)));
@@ -130,6 +130,35 @@ test("suggested order: good fits first, then nearest; statewide never dropped", 
   const local = nearest.filter(r => r.dist != null).map(r => r.dist);
   assert.deepEqual(local, [...local].sort((a, b) => a - b));
   assert.equal(nearest.at(-1).dist, null); // statewide after local
+});
+
+// ---------- financing ----------
+test("money and benefits: drops what the sources rule out, keeps nearby city programs only", () => {
+  const at = placeIndex(zips.MA);
+  const ids = (o, zip) => financingFor(prof(o), maRes, params, TODAY, at, zip ? lookupZip(zip, zips) : null).map(r => r.id);
+  const onSSI = ids({ ssi: "ssi" }, "01060");
+  assert.ok(!onSSI.some(i => i.includes("eaedc"))); // can't combine with SSI
+  assert.ok(ids({ ssi: "applied" }, "01060").some(i => i.includes("eaedc"))); // useful while SSI is pending
+  assert.ok(!ids({ birthdate: born(25) }, "01060").some(i => i.includes("catastrophic"))); // under 22 only
+  assert.ok(ids({ birthdate: born(19) }, "01060").some(i => i.includes("catastrophic")));
+  assert.ok(!onSSI.some(i => i.includes("boston-taxi"))); // Northampton is far from Boston
+  assert.ok(ids({}, "02139").some(i => i.includes("cambridge-taxi"))); // Cambridge
+  assert.ok(onSSI.length > 10);
+});
+
+test("resources data: unique ids, required fields, nonprofit and financing present", () => {
+  const ids = new Set(maRes.map(r => r.id));
+  assert.equal(ids.size, maRes.length);
+  for (const r of maRes) {
+    for (const k of ["id", "name", "category", "level", "description", "source_url", "date_checked"]) assert.ok(r[k], `${r.id} missing ${k}`);
+    assert.match(r.source_url, /^https?:\/\//);
+    assert.ok(["Federal", "State", "City", "Private/Nonprofit"].includes(r.level), r.id);
+    assert.equal(typeof r.needs_checking, "boolean");
+    if (r.needs_checking) assert.ok(r.to_check, `${r.id} needs a to_check note`);
+  }
+  assert.ok(maRes.filter(r => r.category === "Financing").length >= 20);
+  assert.ok(maRes.filter(r => r.level === "Private/Nonprofit").length >= 50);
+  assert.ok(!maRes.some(r => /breaking grounds caf/i.test(r.name))); // closed
 });
 
 // ---------- work ----------

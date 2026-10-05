@@ -140,6 +140,21 @@ export function rankResources(rows, { support, home } = {}, coordsOf = () => nul
   return out;
 }
 
+// Money and benefits worth a look, in data order (government first, then nonprofits).
+// Drops what the sources rule out: EAEDC can't be combined with SSI; CICRF only covers costs before age 22.
+export function financingFor(profile, rows, params, today = new Date(), coordsOf = () => null, home = null, nearMiles = 25) {
+  const age = ageOn(profile.birthdate, today);
+  const cicrfAge = params?.financing?.cicrf_threshold?.age_limit;
+  return rows.filter(r => {
+    if (r.category !== "Financing") return false;
+    if (profile.ssi === "ssi" && /-eaedc-/.test(r.id)) return false;
+    if (/-catastrophic-illness-in-children-/.test(r.id) && cicrfAge != null && age >= cicrfAge) return false;
+    if (r.city && home) { const c = coordsOf(r.city); if (c && miles(home, c) > nearMiles) return false; }
+    if (r.city && !home) return false;
+    return true;
+  });
+}
+
 // Monthly income at different work hours, to show how work and SSI interact.
 export function workScenarios(P, wage, onSSI, hoursList = [0, 10, 20, 30, 40]) {
   return hoursList.map(hours => {

@@ -192,3 +192,7 @@ a.statecard:hover,a.statecard:focus-visible{border-color:var(--accent);outline:n
 .near{margin:8px 0 0;padding-left:20px}
 .near li{margin:4px 0}
 .near .d{color:var(--muted);font-size:13.5px;margin-left:6px}
+.sum-btn{font:inherit;color:inherit;text-align:left;cursor:pointer}
+.sum-btn:hover{border-color:var(--priv)}
+.sum-btn[aria-pressed="true"]{border-color:var(--priv);background:var(--priv-bg)}
+.sum-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}

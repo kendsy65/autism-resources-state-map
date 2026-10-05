@@ -18,7 +18,10 @@
     "how_to_apply": "EOHLC list closed since Jan 13, 2025. Apply to the MassNAHRO Centralized Waiting List (affordablehousing.com/masscwl), to individual housing authorities with their own lists, or to project-based voucher properties.",
     "source_url": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
     "date_checked": "2026-10-05",
-    "notes": "Lists are often closed and waits typically run 5–12 years. The Arc of Mass advises applying at 18 and joining every list. Keep contact info current or you lose your place."
+    "notes": "Lists are often closed and waits typically run 5–12 years. The Arc of Mass advises applying at 18 and joining every list. Keep contact info current or you lose your place.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-mainstream-non-elderly-disabled-ned-vouchers",
@@ -39,7 +42,10 @@
     "how_to_apply": "Apply to the EOHLC Section 8 list through a regional agency; ask local housing authorities if they hold Mainstream vouchers. Bureau of Rental Assistance: 617-573-1150.",
     "source_url": "https://www.mass.gov/info-details/section-8-ned-designated-housing-and-one-year-mainstream-programs",
     "date_checked": "2026-10-05",
-    "notes": "Access depends on the EOHLC list, which was closed to new mobile-voucher applicants as of Jan 2025."
+    "notes": "Access depends on the EOHLC list, which was closed to new mobile-voucher applicants as of Jan 2025.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-hud-section-811-project-rental-assistance",
@@ -60,7 +66,10 @@
     "how_to_apply": "Referral only, by a case manager or provider. MFP office: 617-573-1647, MFP@mass.gov.",
     "source_url": "https://www.mass.gov/service-details/hud-811-project-rental-assistance-program-for-masshealth-members",
     "date_checked": "2026-10-05",
-    "notes": "Most autistic adults living at home are unlikely to be prioritized."
+    "notes": "Most autistic adults living at home are unlikely to be prioritized.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-federal-public-housing",
@@ -81,7 +90,10 @@
     "how_to_apply": "Apply directly to each local housing authority. Federal public housing is not on CHAMP.",
     "source_url": "https://www.hud.gov/topics/rental_assistance/phprog",
     "date_checked": "2026-10-05",
-    "notes": "Waits can be years. Boston reports 10 weeks to over 5 years depending on unit size."
+    "notes": "Waits can be years. Boston reports 10 weeks to over 5 years depending on unit size.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-fair-housing-reasonable-accommodations",
@@ -102,7 +114,10 @@
     "how_to_apply": "Ask the landlord or housing authority. If denied, file with HUD or MCAD.",
     "source_url": "https://www.hud.gov/sites/dfiles/PIH/documents/HCV_Guidebook-Chapter_Fair-Housing_April-2025.pdf",
     "date_checked": "2026-10-05",
-    "notes": "Examples: extra time to use a voucher, a home interview, an extra bedroom for equipment. MA rules: mass.gov/info-details/disability-rights-in-housing."
+    "notes": "Examples: extra time to use a voucher, a home interview, an extra bedroom for equipment. MA rules: mass.gov/info-details/disability-rights-in-housing.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-ssi-living-arrangement-rules",
@@ -123,7 +138,10 @@
     "how_to_apply": "Apply at ssa.gov or a local office.",
     "source_url": "https://www.ssa.gov/ssi/text-living-ussi.htm",
     "date_checked": "2026-10-05",
-    "notes": "Paying parents a fair share of rent can avoid the cut. Since Sept 30, 2024, food no longer counts. MA supplement source: mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026."
+    "notes": "Paying parents a fair share of rent can avoid the cut. Since Sept 30, 2024, food no longer counts. MA supplement source: mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-massachusetts-rental-voucher-program-mrvp",
@@ -144,7 +162,10 @@
     "how_to_apply": "Apply through CHAMP (mass.gov/champ) or on paper to local housing agencies. 617-573-1250.",
     "source_url": "https://www.mass.gov/info-details/massachusetts-rental-voucher-program-mrvp",
     "date_checked": "2026-10-05",
-    "notes": "Very high demand and long waits."
+    "notes": "Very high demand and long waits.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-alternative-housing-voucher-program-ahvp",
@@ -165,7 +186,10 @@
     "how_to_apply": "Apply through CHAMP or a paper application to the local housing agency. 617-573-1147.",
     "source_url": "https://www.mass.gov/info-details/alternative-housing-voucher-program-ahvp",
     "date_checked": "2026-10-05",
-    "notes": "Demand is very high."
+    "notes": "Demand is very high.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-state-public-housing-via-champ",
@@ -186,7 +210,10 @@
     "how_to_apply": "Create a CHAMP account at mass.gov/champ; one application covers many waitlists.",
     "source_url": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing",
     "date_checked": "2026-10-05",
-    "notes": "Log in at least yearly. Applications inactive for 2+ years are closed."
+    "notes": "Log in at least yearly. Applications inactive for 2+ years are closed.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-chapter-689-special-needs-housing",
@@ -207,7 +234,10 @@
     "how_to_apply": "Through the local DDS or DMH Area Office, not the housing authority.",
     "source_url": "https://worcesterha.org/special_housing/",
     "date_checked": "2026-10-05",
-    "notes": "The state's own page is out of date (still says DHCD)."
+    "notes": "The state's own page is out of date (still says DHCD).",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-community-based-housing-cbh",
@@ -228,7 +258,10 @@
     "how_to_apply": "Ask MassAbility or an Independent Living Center about available CBH units.",
     "source_url": "https://www.mass.gov/info-details/community-based-housing-cbh",
     "date_checked": "2026-10-05",
-    "notes": "DDS-eligible autistic adults are generally not eligible."
+    "notes": "DDS-eligible autistic adults are generally not eligible.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-facilities-consolidation-fund-fcf",
@@ -249,7 +282,10 @@
     "how_to_apply": "Work through your regional DDS housing coordinator.",
     "source_url": "https://www.mass.gov/info-details/facilities-consolidation-fund-fcf",
     "date_checked": "2026-10-05",
-    "notes": "Families sometimes partner with nonprofits to create FCF-funded homes."
+    "notes": "Families sometimes partner with nonprofits to create FCF-funded homes.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-home-modification-loan-program-hmlp",
@@ -270,7 +306,10 @@
     "how_to_apply": "Find your regional provider and apply. CEDAC: 1-866-500-5599.",
     "source_url": "https://cedac.org/hmlp/",
     "date_checked": "2026-10-05",
-    "notes": "ADUs under 900 sq ft are allowed by right in single-family zones since Feb 2, 2025. Loans start at $1,000."
+    "notes": "ADUs under 900 sq ft are allowed by right in single-family zones since Feb 2, 2025. Loans start at $1,000.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-raft-emergency-housing-assistance",
@@ -291,7 +330,10 @@
     "how_to_apply": "Apply online through the Housing Help Hub; the landlord must also submit within 21 days.",
     "source_url": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs",
     "date_checked": "2026-10-05",
-    "notes": "Decision usually within 30 days."
+    "notes": "Decision usually within 30 days.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-dds-adult-eligibility-for-autism",
@@ -312,7 +354,10 @@
     "how_to_apply": "Submit the DDS Adult Eligibility Application to an Area Office. Autism Division: 617-624-7778.",
     "source_url": "https://www.mass.gov/info-details/dds-eligibility-for-adults-with-autism",
     "date_checked": "2026-10-05",
-    "notes": "Autism-only services list does not include 24-hour residential."
+    "notes": "Autism-only services list does not include 24-hour residential.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-dds-residential-supports",
@@ -333,7 +378,10 @@
     "how_to_apply": "Through your DDS service coordinator.",
     "source_url": "https://www.mass.gov/doc/115-cmr-3-administration/download",
     "date_checked": "2026-10-05",
-    "notes": "Eligibility does not guarantee a placement. Residents keep at least $1,000 in liquid assets. Overview: thearcofmass.org/future/public/dds."
+    "notes": "Eligibility does not guarantee a placement. Residents keep at least $1,000 in liquid assets. Overview: thearcofmass.org/future/public/dds.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-masshealth-adult-foster-care",
@@ -354,7 +402,10 @@
     "how_to_apply": "MassHealth Customer Service: (800) 841-2900.",
     "source_url": "https://www.mass.gov/info-details/masshealth-adult-foster-care-program-fact-sheet",
     "date_checked": "2026-10-05",
-    "notes": "Separate from DDS shared living."
+    "notes": "Separate from DDS shared living.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-masshealth-group-adult-foster-care",
@@ -375,7 +426,10 @@
     "how_to_apply": "(800) 841-2900.",
     "source_url": "https://www.mass.gov/info-details/masshealth-group-adult-foster-care-program-fact-sheet",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-masshousing-3-priority-set-aside",
@@ -396,7 +450,10 @@
     "how_to_apply": "Through your DDS regional housing coordinator; MassHousing ranks by lottery.",
     "source_url": "https://www.masshousing.com/-/media/Files/Multifamily/Set-Aside-Priority/3-priority-manual.pdf",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-independent-living-centers",
@@ -417,7 +474,10 @@
     "how_to_apply": "Find a center at masilc.org/findacenter or call 617-204-3600.",
     "source_url": "https://www.mass.gov/info-details/centers-for-independent-living",
     "date_checked": "2026-10-05",
-    "notes": "Help with advocacy, not housing itself."
+    "notes": "Help with advocacy, not housing itself.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-mcad-housing-discrimination-complaints",
@@ -438,7 +498,10 @@
     "how_to_apply": "Intake in Boston, Worcester or Springfield, by mail or video. 617-994-6000.",
     "source_url": "https://www.mass.gov/how-to/how-to-file-a-complaint-of-discrimination",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-boston-housing-authority",
@@ -459,7 +522,10 @@
     "how_to_apply": "Online or paper application. 617-988-3400.",
     "source_url": "https://www.bostonhousing.org/en/FAQ.aspx",
     "date_checked": "2026-10-05",
-    "notes": "Section 8 tenant-based list closed; public housing and project-based lists open."
+    "notes": "Section 8 tenant-based list closed; public housing and project-based lists open.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-boston-disabilities-commission-housing",
@@ -480,7 +546,10 @@
     "how_to_apply": "617-635-3682, disability@boston.gov, City Hall Room 967.",
     "source_url": "https://www.boston.gov/departments/disabilities-commission/housing-resources-residents-disabilities",
     "date_checked": "2026-10-05",
-    "notes": "Referral only."
+    "notes": "Referral only.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-boston-metrolist-housing-lotteries",
@@ -501,7 +570,10 @@
     "how_to_apply": "Search boston.gov/metrolist and apply to each building's lottery.",
     "source_url": "https://www.boston.gov/income-restricted-housing-guide",
     "date_checked": "2026-10-05",
-    "notes": "Office of Housing Stability (617-635-4200) helps renters in crisis."
+    "notes": "Office of Housing Stability (617-635-4200) helps renters in crisis.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-cambridge-housing-authority",
@@ -522,7 +594,10 @@
     "how_to_apply": "Online Applicant Portal or 617-499-7041.",
     "source_url": "https://cambridge-housing.org/applicants/",
     "date_checked": "2026-10-05",
-    "notes": "All four main waitlists were open when checked."
+    "notes": "All four main waitlists were open when checked.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-worcester-housing-authority",
@@ -543,7 +618,10 @@
     "how_to_apply": "Federal housing: worcesterha.myhousing.com. State housing: CHAMP. 508-635-3000.",
     "source_url": "https://worcesterha.org/admissions_applyhousing/",
     "date_checked": "2026-10-05",
-    "notes": "Also offers DMH/DDS project-based vouchers."
+    "notes": "Also offers DMH/DDS project-based vouchers.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-springfield-housing-authority",
@@ -564,7 +642,10 @@
     "how_to_apply": "Paper application or CHAMP; vouchers via the Centralized Waiting List. (413) 785-4500.",
     "source_url": "https://shamass.org/applicants.aspx",
     "date_checked": "2026-10-05",
-    "notes": "Closed to the public Wednesdays."
+    "notes": "Closed to the public Wednesdays.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-autism-housing-pathways",
@@ -579,13 +660,16 @@
     "region": "Statewide",
     "description": "Housing counseling for families of autistic adults, a 5–10 year Roadmap to Housing, and a guide to voucher lists.",
     "eligibility": "MA families of autistic and other disabled adults.",
-    "upfront_cost": "Not published",
-    "ongoing_cost": "Not published",
+    "upfront_cost": "$0. The housing roadmap, Turning 18 checklist and many guides are free on the website.",
+    "ongoing_cost": "$50 a year for individual membership (autismhousingpathways.org/membership-account/membership-levels). One-to-one counselling may cost extra; price not published.",
     "max_benefit": "Not applicable",
-    "how_to_apply": "617-604-4362 or ahp@fcsn.org.",
+    "how_to_apply": "617-604-4362 · ahp@fcsn.org · autismhousingpathways.org",
     "source_url": "https://autismhousingpathways.org/",
     "date_checked": "2026-10-05",
-    "notes": "Voucher guide: 18section8.org."
+    "notes": "Voucher guide: 18section8.org. Now part of the Federation for Children with Special Needs.",
+    "funding_route": "Family-paid",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-specialized-housing-inc",
@@ -606,7 +690,10 @@
     "how_to_apply": "(617) 277-1805, info@specializedhousing.org.",
     "source_url": "https://autismalliance.org/resources/specialized-housing-inc",
     "date_checked": "2026-10-05",
-    "notes": "Not yet confirmed on the organization's own site, which blocks automated reading. Details from two third-party guides."
+    "notes": "Not yet confirmed on the organization's own site, which blocks automated reading. Details from two third-party guides.",
+    "funding_route": "Family-paid",
+    "needs_checking": true,
+    "to_check": "Address conflict: one guide lists Newton, the nonprofit research lists 45 Bartlett Crescent, Brookline. Also confirm nonprofit status by phone (an unrelated Specialized Housing, Inc. in Oregon shows up first in IRS records)."
   },
   {
     "id": "ma-hou-adult-autism-support-centers",
@@ -627,7 +714,10 @@
     "how_to_apply": "adultautism@ne-arc.org, (978) 924-5822; statewide list on mass.gov.",
     "source_url": "https://ne-arc.org/services/autism-and-specialty-aba-services/adult-autism-support-center/",
     "date_checked": "2026-10-05",
-    "notes": "Do not provide housing directly."
+    "notes": "Do not provide housing directly.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-the-arc-of-massachusetts-housing-guidance",
@@ -648,7 +738,10 @@
     "how_to_apply": "Use thearcofmass.org resources and webinars.",
     "source_url": "https://thearcofmass.org/future/public/housing/",
     "date_checked": "2026-10-05",
-    "notes": "Respond to housing authorities quickly; you can be dropped within 48 hours."
+    "notes": "Respond to housing authorities quickly; you can be dropped within 48 hours.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-housing-navigator-massachusetts",
@@ -669,7 +762,10 @@
     "how_to_apply": "Search housingnavigatorma.org.",
     "source_url": "https://housingnavigatorma.org/",
     "date_checked": "2026-10-05",
-    "notes": "Replaced the old MassAccess Housing Registry in 2022. For buying a home, see MyMassHome."
+    "notes": "Replaced the old MassAccess Housing Registry in 2022. For buying a home, see MyMassHome.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-lowell-housing-authority",
@@ -690,7 +786,10 @@
     "how_to_apply": "Apply online; 350 Moody St; (978) 364-5311.",
     "source_url": "https://www.lhma.org/177/Affordable-Housing-Programs",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-somerville-office-of-housing-stability",
@@ -711,7 +810,10 @@
     "how_to_apply": "Online intake form or (617) 625-6600 x2581.",
     "source_url": "https://www.somervillema.gov/departments/office-strategic-planning-and-community-development-ospcd/office-housing-stability",
     "date_checked": "2026-10-05",
-    "notes": "ADA accommodations: x2059 or ADA@somervillema.gov."
+    "notes": "ADA accommodations: x2059 or ADA@somervillema.gov.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-somerville-consolidated-rental-waitlist",
@@ -732,7 +834,10 @@
     "how_to_apply": "somervillewaitlist.org during open windows (2026 window: Feb 2–Mar 2). Call 311.",
     "source_url": "https://www.somervillema.gov/news/somervilles-consolidated-rental-waitlist-re-opens-applications-feb-2",
     "date_checked": "2026-10-05",
-    "notes": "Only open during set windows. Watch for the next one."
+    "notes": "Only open during set windows. Watch for the next one.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-quincy-housing-authority",
@@ -753,7 +858,10 @@
     "how_to_apply": "State units via CHAMP; federal units via QHA. 617-847-4350.",
     "source_url": "https://www.quincyha.com/applying-for-public-housing/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-lynn-housing-authority-lhand",
@@ -774,7 +882,10 @@
     "how_to_apply": "CHAMP for most sites; (781) 581-8600.",
     "source_url": "https://lhand.org/housing/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-brockton-housing-authority",
@@ -795,7 +906,10 @@
     "how_to_apply": "Written application; 508-588-6880. Section 8 via section8listmass.org.",
     "source_url": "https://www.brocktonhousingauthority.com/faqs/admissions-faqs/",
     "date_checked": "2026-10-05",
-    "notes": "Medical expenses can be deducted for elderly/disabled households."
+    "notes": "Medical expenses can be deducted for elderly/disabled households.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-berkshire-hills-music-academy",
@@ -816,7 +930,10 @@
     "how_to_apply": "admissions@berkshirehills.org, 413-540-9720.",
     "source_url": "https://www.berkshirehills.org/bhmafaqs",
     "date_checked": "2026-10-05",
-    "notes": "School districts or DDS may pay part or all."
+    "notes": "School districts or DDS may pay part or all.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-amego-adult-residential",
@@ -837,7 +954,10 @@
     "how_to_apply": "ppotter@amegoinc.org, 508-455-6200.",
     "source_url": "https://www.amegoinc.org/adult-services",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "DDS",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-melmark-new-england-adult-services",
@@ -858,7 +978,10 @@
     "how_to_apply": "admissions@melmarkne.org, 978-654-4300.",
     "source_url": "https://www.melmark.org/newengland/ne-admissions/ne-adult-services/",
     "date_checked": "2026-10-05",
-    "notes": "Tewksbury broke ground Feb 2025; opening date not confirmed."
+    "notes": "Tewksbury broke ground Feb 2025; opening date not confirmed.",
+    "funding_route": "DDS",
+    "needs_checking": true,
+    "to_check": "The Tewksbury adult community (cost over $15M) was due to finish in spring 2026. Check whether it has opened and how placements work."
   },
   {
     "id": "ma-hou-may-institute-adult-residential",
@@ -869,8 +992,8 @@
     "level": "Private/Nonprofit",
     "federally_funded": false,
     "administrator": "May Institute",
-    "city": "Randolph",
-    "region": "Southeast",
+    "city": "",
+    "region": "Statewide",
     "description": "Community living from 24-hour supervision to drop-in support, across Cape Cod, Southeastern MA, Greater Boston and Western MA.",
     "eligibility": "Adults with autism or developmental disabilities.",
     "upfront_cost": "Not published",
@@ -879,7 +1002,10 @@
     "how_to_apply": "800-778-7601.",
     "source_url": "https://www.mayinstitute.org/autism-developmental-disabilities-services/adult-services/residential-services.html",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "May Institute's residential page lists three service areas: Cape Cod and Southeastern MA, Greater Boston, and Western MA. Published staffing: semi-independent apartments 40–60 staff hours per resident per week; small group homes have 24-hour supervision.",
+    "funding_route": "DDS",
+    "needs_checking": true,
+    "to_check": "Confirm which towns the homes are in (team research lists Revere, Mashpee and West Springfield; the official page names only regions)."
   },
   {
     "id": "ma-hou-cardinal-cushing-centers-adult-residential",
@@ -900,7 +1026,10 @@
     "how_to_apply": "Residential: (781) 829-4642. AFC/shared living: (781) 829-4610.",
     "source_url": "https://cushingcenters.org/adult-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-evergreen-center-adult-supports",
@@ -921,7 +1050,10 @@
     "how_to_apply": "508-478-2631.",
     "source_url": "https://evergreenctr.org/adult-supports",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-hou-riverbrook-residence",
@@ -942,7 +1074,10 @@
     "how_to_apply": "Call for a brochure or visit.",
     "source_url": "https://www.riverbrook.org/",
     "date_checked": "2026-10-05",
-    "notes": "Women only."
+    "notes": "Women only.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-ticket-to-work",
@@ -963,7 +1098,10 @@
     "how_to_apply": "Help Line 1-866-968-7842 or choosework.ssa.gov.",
     "source_url": "https://choosework.ssa.gov/about/how-it-works",
     "date_checked": "2026-10-05",
-    "notes": "Using the Ticket can pause medical reviews."
+    "notes": "Using the Ticket can pause medical reviews.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-plan-to-achieve-self-support-pass",
@@ -984,7 +1122,10 @@
     "how_to_apply": "Form SSA-545-BK to a local office.",
     "source_url": "https://www.ssa.gov/disabilityresearch/wi/pass.htm",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-ssi-ssdi-work-incentives",
@@ -1005,7 +1146,10 @@
     "how_to_apply": "Report earnings to SSA. Free counseling: 877-937-9675.",
     "source_url": "https://www.ssa.gov/ssi/text-income-ussi.htm",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-section-1619-b-masshealth-continuation",
@@ -1026,7 +1170,10 @@
     "how_to_apply": "Automatic; report earnings to SSA.",
     "source_url": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-work-opportunity-tax-credit",
@@ -1047,7 +1194,10 @@
     "how_to_apply": "Employer files Form 8850 within 28 days.",
     "source_url": "https://www.mass.gov/info-details/work-opportunity-tax-credit-wotc",
     "date_checked": "2026-10-05",
-    "notes": "LAPSED Dec 31, 2025. MA still accepts requests in case Congress renews it."
+    "notes": "LAPSED Dec 31, 2025. MA still accepts requests in case Congress renews it.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-abilityone",
@@ -1068,7 +1218,10 @@
     "how_to_apply": "Find nonprofits at abilityone.gov. In MA, see WORK Inc.",
     "source_url": "https://www.abilityone.gov/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-job-accommodation-network",
@@ -1089,7 +1242,10 @@
     "how_to_apply": "(800) 526-7234 or askjan.org.",
     "source_url": "https://askjan.org/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-schedule-a-federal-hiring",
@@ -1110,7 +1266,10 @@
     "how_to_apply": "Send resume and disability letter to an agency's Selective Placement Coordinator, or apply on USAJOBS.",
     "source_url": "https://www.opm.gov/policy-data-oversight/disability-employment/getting-a-job/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-masshire-career-centers",
@@ -1131,7 +1290,10 @@
     "how_to_apply": "Visit your local MassHire Career Center.",
     "source_url": "https://www.mass.gov/info-details/creating-an-accessible-and-welcoming-workforce-with-masshire",
     "date_checked": "2026-10-05",
-    "notes": "Funded by federal WIOA."
+    "notes": "Funded by federal WIOA.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-massability-vocational-rehabilitation",
@@ -1152,7 +1314,10 @@
     "how_to_apply": "MassAbility Connect portal, local office, or 617-204-3665.",
     "source_url": "https://www.mass.gov/service-details/am-i-eligible-for-vocational-rehabilitation",
     "date_checked": "2026-10-05",
-    "notes": "Federally funded, state-run."
+    "notes": "Federally funded, state-run.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-pre-employment-transition-services",
@@ -1173,7 +1338,10 @@
     "how_to_apply": "Local MassAbility office or school Pre-ETS provider. 617-204-3600.",
     "source_url": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-nextgen-careers",
@@ -1194,7 +1362,10 @@
     "how_to_apply": "Contact MassAbility (Boston, Braintree, Lawrence, Lowell, Springfield, Worcester).",
     "source_url": "https://www.mass.gov/info-details/nextgen-careers-information",
     "date_checked": "2026-10-05",
-    "notes": "Reported at capacity as of May 2025."
+    "notes": "Reported at capacity as of May 2025.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-dds-employment-day-supports",
@@ -1215,7 +1386,10 @@
     "how_to_apply": "DDS Adult Eligibility Application at 17–18. Autism Division: 617-624-7778.",
     "source_url": "https://www.mass.gov/info-details/services-for-adults-with-autism-only",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-masshealth-commonhealth",
@@ -1236,7 +1410,10 @@
     "how_to_apply": "Apply online or (800) 841-2900.",
     "source_url": "https://www.mass.gov/info-details/masshealth-premium-schedule-for-members",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-work-without-limits",
@@ -1257,7 +1434,10 @@
     "how_to_apply": "877-937-9675.",
     "source_url": "https://www.workwithoutlimits.org/about/",
     "date_checked": "2026-10-05",
-    "notes": "Funded by SSA."
+    "notes": "Funded by SSA.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-ma-disability-employment-tax-credit",
@@ -1278,7 +1458,10 @@
     "how_to_apply": "Worker certifies at DETC@mass.gov, 781-521-6165.",
     "source_url": "https://www.mass.gov/how-to-apply-for-the-disability-employment-tax-credit-detc",
     "date_checked": "2026-10-05",
-    "notes": "Still active while federal WOTC is lapsed."
+    "notes": "Still active while federal WOTC is lapsed.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-young-adults-with-disabilities-grant",
@@ -1299,7 +1482,10 @@
     "how_to_apply": "Contact a grantee: Berkshire County Arc, Blackstone Valley Hub, Curry College, JVS, Northeast Arc, Polus Center.",
     "source_url": "https://www.mass.gov/news/healey-driscoll-administration-awards-900000-to-help-young-adults-with-disabilities-prepare-for-employment-0",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-massachusetts-autism-commission",
@@ -1320,7 +1506,10 @@
     "how_to_apply": "(617) 694-7365.",
     "source_url": "https://www.mass.gov/orgs/autism-commission",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-boston-disabilities-commission-employment",
@@ -1341,7 +1530,10 @@
     "how_to_apply": "617-635-3682, disability@boston.gov.",
     "source_url": "https://www.boston.gov/departments/disabilities-commission/employment-resources-people-disabilities",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-cambridge-commission-for-persons-with-disabilities",
@@ -1362,7 +1554,10 @@
     "how_to_apply": "617-349-4692, ccpd@cambridgema.gov.",
     "source_url": "https://www.cambridgema.gov/-/media/Files/DHSP/Disabilities/abilitiesexpo/ccpdrackcardsingle.pdf",
     "date_checked": "2026-10-05",
-    "notes": "Referral only."
+    "notes": "Referral only.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-work-inc",
@@ -1383,7 +1578,10 @@
     "how_to_apply": "617-691-1500.",
     "source_url": "https://www.workinc.org/about-us",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-the-caning-company",
@@ -1404,7 +1602,10 @@
     "how_to_apply": "(855) 696-3272.",
     "source_url": "https://ne-arc.org/services/innovative-businesses/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-heritage-shredding",
@@ -1425,7 +1626,10 @@
     "how_to_apply": "(855) 696-3272.",
     "source_url": "https://ne-arc.org/services/innovative-businesses/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-northeast-arc-employment-services",
@@ -1446,7 +1650,10 @@
     "how_to_apply": "(855) 696-3272.",
     "source_url": "https://ne-arc.org/services/community-employment/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "Breaking Grounds Café in Peabody is closed (its website now redirects to ne-arc.org); Northeast Arc's other job sites continue.",
+    "funding_route": "Mixed",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-prospect-meadow-farm",
@@ -1467,7 +1674,10 @@
     "how_to_apply": "413-247-0361.",
     "source_url": "https://www.servicenet.org/prospect-meadow-farm/",
     "date_checked": "2026-10-05",
-    "notes": "Also sites in Pittsfield."
+    "notes": "Also sites in Pittsfield.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-gateway-arts",
@@ -1488,7 +1698,10 @@
     "how_to_apply": "617-734-1577 x10.",
     "source_url": "https://vinfen.org/gateway-at-50/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-the-price-center-kindness-caf",
@@ -1509,7 +1722,10 @@
     "how_to_apply": "es@thepricecenter.org, 617-244-0065.",
     "source_url": "https://www.thepricecenter.org/employment-services/",
     "date_checked": "2026-10-05",
-    "notes": "95% still employed after a year (program's own figure)."
+    "notes": "95% still employed after a year (program's own figure).",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-post-22-ben-s-beans",
@@ -1530,7 +1746,10 @@
     "how_to_apply": "(508) 320-0948.",
     "source_url": "https://www.post-22.com/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-aspire-works-internships",
@@ -1551,7 +1770,10 @@
     "how_to_apply": "Online application.",
     "source_url": "https://www.massgeneralbrigham.org/en/services/aspire/works-internships",
     "date_checked": "2026-10-05",
-    "notes": "Partners include Fidelity and Liberty Mutual."
+    "notes": "Partners include Fidelity and Liberty Mutual.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-triangle-inc-prism",
@@ -1572,7 +1794,10 @@
     "how_to_apply": "781-322-0400.",
     "source_url": "https://triangle-inc.org/prism-program/",
     "date_checked": "2026-10-05",
-    "notes": "Sites in Malden, Salem, Randolph."
+    "notes": "Sites in Malden, Salem, Randolph.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-easterseals-ma-job-placement",
@@ -1593,7 +1818,10 @@
     "how_to_apply": "Ask your MassAbility counselor. (508) 757-2756.",
     "source_url": "https://massachusetts.easterseals.com/get-support/areas-of-support/employment-transition-services/job-development-placement-services",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-jvs-transitions-to-work",
@@ -1614,7 +1842,10 @@
     "how_to_apply": "617-399-3131.",
     "source_url": "https://www.jvs-boston.org/our-services/disability-services/transitions-to-work/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-best-buddies-jobs",
@@ -1635,7 +1866,10 @@
     "how_to_apply": "1-800-89-BUDDY.",
     "source_url": "https://www.bestbuddies.org/mari/programs/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-charles-river-center",
@@ -1656,7 +1890,10 @@
     "how_to_apply": "781-972-1078.",
     "source_url": "https://www.charlesrivercenter.org/get-involved/hire-us/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-aane-workmap-lifemap-coaching",
@@ -1677,7 +1914,10 @@
     "how_to_apply": "Book a free call at aane.org.",
     "source_url": "https://aane.org/services-programs/one-to-one-services/workmap/",
     "date_checked": "2026-10-05",
-    "notes": "AANE pages list two different fees. Confirm the current rate."
+    "notes": "AANE pages list two different fees. Confirm the current rate.",
+    "funding_route": "Family-paid",
+    "needs_checking": true,
+    "to_check": "Ask AANE for current WorkMAP and InterviewPREP prices; the programme page appears dated. Record EIN."
   },
   {
     "id": "ma-emp-minute-man-arc-employment-services",
@@ -1698,7 +1938,10 @@
     "how_to_apply": "(978) 287-7922, rgraham@minutemanarc.org.",
     "source_url": "https://minutemanarc.org/programs/employment-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "Jump Start offers paid internships for ages 16–22.",
+    "funding_route": "DDS + MassAbility",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-seven-hills-aspire",
@@ -1719,7 +1962,10 @@
     "how_to_apply": "508-796-1510.",
     "source_url": "https://www.sevenhills.org/programs/workforce-readiness-and-employment",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-south-shore-industries",
@@ -1740,7 +1986,10 @@
     "how_to_apply": "Hanover (781) 829-4625; Braintree (781) 228-6354.",
     "source_url": "https://cushingcenters.org/adult-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-open-sky-i-dd-employment-services",
@@ -1761,7 +2010,10 @@
     "how_to_apply": "508-755-0333.",
     "source_url": "https://www.openskycs.org/services/intellectual-and-developmental-disabilities-autism/i-dd-employment-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-riverside-industries",
@@ -1782,7 +2034,10 @@
     "how_to_apply": "(413) 527-2711.",
     "source_url": "https://rsi.org/career-services",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-berkshire-county-arc-employment",
@@ -1803,7 +2058,10 @@
     "how_to_apply": "413-499-4241, bcarc@bcarc.org.",
     "source_url": "https://bcarc.org/berkshire-county-arc-rebrands-employment-services-division/",
     "date_checked": "2026-10-05",
-    "notes": "Figures date from 2019."
+    "notes": "Figures date from 2019.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-cooperative-production-co-op",
@@ -1824,7 +2082,10 @@
     "how_to_apply": "508-824-1717.",
     "source_url": "https://cooperativeproduction.org/services/employment-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-project-search-neba",
@@ -1845,7 +2106,10 @@
     "how_to_apply": "413-821-9200.",
     "source_url": "https://www.nebaworks.com/project-search.html",
     "date_checked": "2026-10-05",
-    "notes": "Call to confirm the current host sites."
+    "notes": "Call to confirm the current host sites.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-futurebos-youth-jobs-formerly-successlink",
@@ -1866,7 +2130,10 @@
     "how_to_apply": "617-635-4202, futurebos@boston.gov.",
     "source_url": "https://www.boston.gov/departments/youth-employment-and-opportunity/successlink-jobs-faq",
     "date_checked": "2026-10-05",
-    "notes": "No disability-specific track listed. Ask for accommodations."
+    "notes": "No disability-specific track listed. Ask for accommodations.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-worcester-accessibility-division",
@@ -1887,7 +2154,10 @@
     "how_to_apply": "508-799-1995, accessibility@worcesterma.gov.",
     "source_url": "https://www.worcesterma.gov/disabilities",
     "date_checked": "2026-10-05",
-    "notes": "Referral and rights help only."
+    "notes": "Referral and rights help only.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-springfield-office-for-citizens-with-disabilities",
@@ -1908,7 +2178,10 @@
     "how_to_apply": "413-787-6741.",
     "source_url": "https://www.springfield-ma.gov/hhs/mayors-office-for-citizens-with-disabilities-mocd",
     "date_checked": "2026-10-05",
-    "notes": "Referral only."
+    "notes": "Referral only.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-somerville-commission-for-persons-with-disabilities",
@@ -1929,7 +2202,10 @@
     "how_to_apply": "(617) 625-6600 x2059, ada@somervillema.gov.",
     "source_url": "https://www.somervillema.gov/departments/commission-persons-disabilities",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-newton-youthworks-internships",
@@ -1950,7 +2226,10 @@
     "how_to_apply": "mhaas@newtonma.gov.",
     "source_url": "https://www.newtonma.gov/government/health-human-services/youth-services/summer-youthworks-internship-program",
     "date_checked": "2026-10-05",
-    "notes": "Not a fit for people who need high support."
+    "notes": "Not a fit for people who need high support.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   },
   {
     "id": "ma-emp-venture-autism-employment-services",
@@ -1971,6 +2250,801 @@
     "how_to_apply": "508-347-8181.",
     "source_url": "https://venturecs.org/autism-employment-services/",
     "date_checked": "2026-10-05",
-    "notes": ""
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-hou-mainstay-supportive-housing",
+    "state": "MA",
+    "category": "Housing",
+    "subtype": "Residential program",
+    "name": "Mainstay Supportive Housing & Home Care",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Mainstay Supportive Housing & Home Care",
+    "city": "Newton",
+    "region": "Greater Boston",
+    "description": "Supportive group homes in residential neighbourhoods; most residents have autism or another developmental disability.",
+    "eligibility": "Young adults and adults with developmental and intellectual disabilities. Private bedroom, shared bath.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published. Rent is typically made affordable through a federal or state rental subsidy.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "617-789-4500 · mainstayliving.org",
+    "source_url": "https://dev.disabilityinfo.org/records/collaborative-living-supports",
+    "date_checked": "2026-10-05",
+    "notes": "MassHealth Group Adult Foster Care (GAFC) for support services, plus a rental subsidy for rent. Listed as a non-profit; its affiliated housing entities are registered 501(c)(3)s.",
+    "funding_route": "MassHealth",
+    "needs_checking": true,
+    "to_check": "Directory record last updated February 2023. Confirm the program name (\"Collaborative Living Supports\") and current openings."
+  },
+  {
+    "id": "ma-hou-pathways-to-possible",
+    "state": "MA",
+    "category": "Housing",
+    "subtype": "Residential program",
+    "name": "Pathways to Possible (formerly NWW)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Pathways to Possible (formerly NWW)",
+    "city": "Newton",
+    "region": "Greater Boston",
+    "description": "Residential homes, independent living support and adult foster care around Newton and Wellesley.",
+    "eligibility": "Adults with autism, developmental or intellectual disabilities, ages 23 and up.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Directory lists fees as \"free service\" or personal funds, depending on program.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "617-964-6860",
+    "source_url": "https://disabilityinfo.org/records/pathway-to-possible",
+    "date_checked": "2026-10-05",
+    "notes": "Mixed: free (state-funded) or personal funds; Adult Foster Care / GAFC through MassHealth. Described as an agency serving adults since 1972; IRS status not yet confirmed.",
+    "funding_route": "Mixed",
+    "needs_checking": true,
+    "to_check": "Confirm non-profit status and website."
+  },
+  {
+    "id": "ma-hou-arc-of-the-south-shore-residential",
+    "state": "MA",
+    "category": "Housing",
+    "subtype": "Residential program",
+    "name": "The Arc of the South Shore",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "The Arc of the South Shore",
+    "city": "Hingham",
+    "region": "Greater Boston",
+    "description": "Group homes (including smart-technology homes), individual home supports and shared living; developing autism-specific homes for adults turning 22.",
+    "eligibility": "People with intellectual and developmental disabilities, including autism.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published. Its Autism Resource Center runs free caregiver support groups.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "arcsouthshore.org",
+    "source_url": "https://www.guidestar.org/Profile/04-2302069",
+    "date_checked": "2026-10-05",
+    "notes": "Residential homes are developed with DDS. Non-profit (EIN 04-2302069).",
+    "funding_route": "DDS",
+    "needs_checking": true,
+    "to_check": "Check whether the autism-specific Turning 22 homes announced in 2024 have opened."
+  },
+  {
+    "id": "ma-hou-northeast-arc-residential",
+    "state": "MA",
+    "category": "Housing",
+    "subtype": "Residential program",
+    "name": "Northeast Arc",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Northeast Arc",
+    "city": "Danvers",
+    "region": "Northeast",
+    "description": "Residential homes, shared living, independent living supports and adult family care across the North Shore.",
+    "eligibility": "Children and adults with intellectual and developmental disabilities, including autism.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "978-624-6464 · info@ne-arc.org · ne-arc.org",
+    "source_url": "https://disabilityinfo.org/di_ages/23-59/page/239",
+    "date_checked": "2026-10-05",
+    "notes": "Mostly DDS and MassHealth. Non-profit, founded 1954; the largest Arc in Massachusetts.",
+    "funding_route": "DDS + MassHealth",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-hou-minute-man-arc-residential",
+    "state": "MA",
+    "category": "Housing",
+    "subtype": "Residential program",
+    "name": "Minute Man Arc: residential services",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Minute Man Arc",
+    "city": "Concord",
+    "region": "Northeast",
+    "description": "Nine group homes for 49 adults, plus individual home supports and placement services, in towns west of Boston.",
+    "eligibility": "Adults with intellectual and developmental disabilities, including autism.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "978-287-7940 · minutemanarc.org",
+    "source_url": "https://www.guidestar.org/Profile/04-2269230",
+    "date_checked": "2026-10-05",
+    "notes": "DDS-licensed residential and placement services. Non-profit (EIN 04-2269230), founded 1958 by local families.",
+    "funding_route": "DDS",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-emp-asperger-works",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Program",
+    "name": "Asperger Works, Inc.",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Asperger Works, Inc.",
+    "city": "Haverhill",
+    "region": "Northeast",
+    "description": "Job-readiness training and job coaching, and training for employers on hiring autistic workers. Founded by an autistic adult.",
+    "eligibility": "Autistic adults and transitioning youth aged 16 and over, mainly without intellectual disability.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "aspergerworks.org",
+    "source_url": "https://www.idealist.org/en/nonprofit/33aded7a9ac9482691689737cc4c6ebf-asperger-works-inc-haverhill",
+    "date_checked": "2026-10-05",
+    "notes": "Listed as a charitable non-profit.",
+    "funding_route": "",
+    "needs_checking": true,
+    "to_check": "Website active (copyright 2014–2025); confirm current programs."
+  },
+  {
+    "id": "ma-emp-curry-college-neurodiversity-center",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Program",
+    "name": "Curry College Neurodiversity Center for Excellence",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Curry College Neurodiversity Center for Excellence",
+    "city": "Milton",
+    "region": "Greater Boston",
+    "description": "Employment transition programme: classroom training, job trials, paid internships and ServSafe, CPR and first aid certification.",
+    "eligibility": "22 neurodivergent young adults with disabilities (autism, ADHD, learning differences) per grant cycle.",
+    "upfront_cost": "Not published (grant-funded; confirm with the college)",
+    "ongoing_cost": "Not published. Internships are paid.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "See source.",
+    "source_url": "https://www.mass.gov/news/healey-driscoll-administration-awards-900000-to-help-young-adults-with-disabilities-prepare-for-employment-0",
+    "date_checked": "2026-10-05",
+    "notes": "$165,000 state grant (Employment Program for Young Adults with Disabilities). Run by a private non-profit college.",
+    "funding_route": "State grant",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-emp-amego-community-employment",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Supported employment",
+    "name": "Amego community employment programme",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Amego community employment programme",
+    "city": "Attleboro",
+    "region": "Southeast",
+    "description": "Community-based employment support for autistic adults alongside Amego's day programmes.",
+    "eligibility": "Adults 22 and older with autism.",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "amegoinc.org",
+    "source_url": "https://www.idealist.org/en/nonprofit/68f1bc98bbc64d11b355ac8abd29c6a3-amego-inc-attleboro",
+    "date_checked": "2026-10-05",
+    "notes": "Likely DDS-funded (to confirm). Non-profit (EIN 23-7131690).",
+    "funding_route": "DDS",
+    "needs_checking": true,
+    "to_check": "Collect programme detail; only a one-line mention found so far."
+  },
+  {
+    "id": "ma-emp-valley-educational-associates",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Supported employment",
+    "name": "Valley Educational Associates",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Valley Educational Associates",
+    "city": "Hatfield",
+    "region": "West",
+    "description": "Vocational training and community jobs built on \"real work for real pay\", in three work sites across Western Massachusetts.",
+    "eligibility": "Adults with disabilities (not autism-specific).",
+    "upfront_cost": "Not published.",
+    "ongoing_cost": "Not published.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "valleyeducational.org",
+    "source_url": "https://www.idealist.org/en/nonprofit/c5a0c50230a3464d8c7b6ace9609842a-valley-educational-associates-hatfield",
+    "date_checked": "2026-10-05",
+    "notes": "DDS-certified provider. Private non-profit since 1982.",
+    "funding_route": "DDS",
+    "needs_checking": true,
+    "to_check": "Figures in our source are from 2011; refresh."
+  },
+  {
+    "id": "ma-emp-nashoba-learning-group-adult-services",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Supported employment",
+    "name": "Nashoba Learning Group: Adult Services Program",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Nashoba Learning Group",
+    "city": "Billerica",
+    "region": "Northeast",
+    "description": "Day and employment programme for adults with profound autism: job-skills training, coached jobs (individual and group) and volunteer work, all run with ABA methods.",
+    "eligibility": "Adults 22 and older with autism, mainly those with higher support needs. About 57 adults enrolled as of 2025.",
+    "upfront_cost": "Not published to families.",
+    "ongoing_cost": "Not published to families. Jobs have included kitchen work, cleaning, retail and office administration.",
+    "max_benefit": "Not applicable.",
+    "how_to_apply": "978-528-5210 · info@nashobalearninggroup.org · nashobalearninggroup.org",
+    "source_url": "https://disabilityinfo.org/records/adult-program",
+    "date_checked": "2026-10-05",
+    "notes": "Day habilitation billed to MassHealth; job training and employment funded by DDS. 501(c)(3) (EIN 01-0672424), founded 2002 by a parent of an autistic son.",
+    "funding_route": "DDS + MassHealth",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-snap-food-benefits",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Cash assistance",
+    "name": "SNAP Food Benefits",
+    "level": "Federal",
+    "federally_funded": true,
+    "administrator": "USDA; run in MA by the Department of Transitional Assistance (DTA)",
+    "city": "",
+    "region": "Statewide",
+    "description": "Monthly money on an EBT card for groceries. Adults with disabilities can deduct out-of-pocket medical costs, which can raise the benefit.",
+    "eligibility": "Low-income households. A member counts as disabled for the medical deduction if they get SSI, Social Security disability, EAEDC, or MassHealth based on disability.",
+    "upfront_cost": "$0 to apply",
+    "ongoing_cost": "None",
+    "max_benefit": "Varies by household size and income. Medical costs over $35/month earn a standard $155/month income deduction; costs over $190/month can be deducted in full.",
+    "how_to_apply": "DTAConnect.com, or tick the SNAP box on a MassHealth application. DTA Assistance Line (877) 382-2363.",
+    "source_url": "https://www.masslegalhelp.org/public-benefits-ssi/snap-food-benefits/tell-dta-about-medical-expenses-get-more-snap",
+    "date_checked": "2026-10-05",
+    "notes": "Since Feb 10, 2026 DTA asks for proof of most medical costs. Federal 2025 law added work rules for some adults; people medically unable to work are exempt.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-home-energy-assistance-heap",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Cash assistance",
+    "name": "Home Energy Assistance (HEAP / Fuel Assistance)",
+    "level": "Federal",
+    "federally_funded": true,
+    "administrator": "HHS LIHEAP; run by EOHLC through local Community Action Agencies",
+    "city": "",
+    "region": "Statewide",
+    "description": "A grant toward winter heating bills, paid to the fuel company or utility. Renters qualify, even when heat is included in the rent.",
+    "eligibility": "Household income below 60% of state median income. No asset limit.",
+    "upfront_cost": "$0 to apply",
+    "ongoing_cost": "None (does not have to be repaid)",
+    "max_benefit": "2025–26 season: up to $1,000 for oil/propane or $850 for gas/electric, with the state planning increases to $1,400 and $925. 2026–27 amounts not yet published.",
+    "how_to_apply": "mass.gov/heatinghelp or the Heat Line 1-800-632-8175. Applications open Oct 1, 2026 for heating costs Nov 1, 2026–Apr 30, 2027.",
+    "source_url": "https://www.mass.gov/news/governor-healey-increases-home-heating-assistance-benefits-for-tens-of-thousands-of-massachusetts-households-0",
+    "date_checked": "2026-10-05",
+    "notes": "Reapply every year. Approval can also unlock a utility discount rate and shutoff protection.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-lifeline-phone-internet-discount",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Discount",
+    "name": "Lifeline Phone and Internet Discount",
+    "level": "Federal",
+    "federally_funded": true,
+    "administrator": "FCC; administered by USAC",
+    "city": "",
+    "region": "Statewide",
+    "description": "A monthly discount on one phone or internet plan per household.",
+    "eligibility": "Anyone on SNAP, Medicaid (MassHealth), SSI, federal public housing and other listed programs, or with income at or below 135% of the federal poverty level.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Up to $9.25/month off broadband or bundled service",
+    "how_to_apply": "Apply through a participating phone company or USAC's National Verifier. Lifeline Support Center (800) 234-9473.",
+    "source_url": "https://fcc.gov/general/lifeline-program-low-income-consumers",
+    "date_checked": "2026-10-05",
+    "notes": "One discount per household. Eligibility is rechecked every year.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-federal-credit-for-other-dependents",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Tax credit",
+    "name": "Federal Credit for Other Dependents",
+    "level": "Federal",
+    "federally_funded": true,
+    "administrator": "Internal Revenue Service",
+    "city": "",
+    "region": "Statewide",
+    "description": "A federal tax credit for supporting a dependent who is too old for the Child Tax Credit, such as an adult child with a disability.",
+    "eligibility": "Dependent of any age with an SSN or ITIN. An adult child who is permanently and totally disabled can be claimed at any age.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Up to $500 per dependent (nonrefundable). Phases out above $200,000 of income.",
+    "how_to_apply": "Claim on Form 1040 with Schedule 8812. Free help: VITA tax sites.",
+    "source_url": "https://www.irs.gov/newsroom/an-overview-of-the-credit-for-other-dependents",
+    "date_checked": "2026-10-05",
+    "notes": "Nonrefundable: it lowers tax owed but is not paid out as a refund.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-attainable-savings-plan-able",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Savings & trusts",
+    "name": "Attainable Savings Plan (MA ABLE Account)",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "MEFA; managed by Fidelity Investments",
+    "city": "",
+    "region": "Statewide",
+    "description": "A tax-advantaged savings account for a person with a disability. Money saved does not count against the $2,000 asset limit for SSI and MassHealth.",
+    "eligibility": "Disability began before age 46 (raised from 26 on Jan 1, 2026). Automatically eligible if on SSI or SSDI; otherwise certify with a doctor's diagnosis.",
+    "upfront_cost": "$0 to open (investment fees apply)",
+    "ongoing_cost": "Fund fees; see disclosure document",
+    "max_benefit": "Contributions up to $20,000/year from all sources; account cap $500,000. Working beneficiaries can add more under ABLE to Work.",
+    "how_to_apply": "Open online through MEFA or Fidelity, 1-844-458-2253. A parent, guardian or POA can open it for the beneficiary.",
+    "source_url": "https://www.mefa.org/article/able-account-eligibility-expands-in-2026-what-you-need-to-know/",
+    "date_checked": "2026-10-05",
+    "notes": "Earnings grow federally tax-free when spent on qualified disability expenses. Leftover funds at death may repay MassHealth.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-eaedc-cash-assistance",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Cash assistance",
+    "name": "EAEDC Cash Assistance",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Department of Transitional Assistance (DTA)",
+    "city": "",
+    "region": "Statewide",
+    "description": "Monthly state cash for adults with disabilities who are not on SSI, paid in two installments, with MassHealth included. Also covers some full-time caregivers.",
+    "eligibility": "Unable to work due to a disability lasting 60+ days, or living with and caring for a disabled person who would otherwise need an institution (that person's income must be $1,500/month or less). Income must be below the grant amount.",
+    "upfront_cost": "$0 to apply",
+    "ongoing_cost": "None",
+    "max_benefit": "$441.10/month for one person living alone with shelter costs; $573.90 for two (2026)",
+    "how_to_apply": "DTAConnect.com, by phone through a local DTA office, or (877) 382-2363. Decision within 30 days.",
+    "source_url": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc",
+    "date_checked": "2026-10-05",
+    "notes": "Cannot be received at the same time as SSI. Useful while an SSI application is pending. First $200 of job income is not counted. Benefits go back to the application date.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-masshealth-pca-program",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Paid caregiving & services",
+    "name": "MassHealth Personal Care Attendant (PCA) Program",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "MassHealth through Personal Care Management (PCM) agencies and a fiscal intermediary",
+    "city": "",
+    "region": "Statewide",
+    "description": "MassHealth pays wages for attendants the person hires to help with daily activities like bathing and dressing. Many relatives can be hired.",
+    "eligibility": "MassHealth Standard or CommonHealth member with a permanent or chronic disability who needs hands-on help with daily activities, as assessed by a PCM agency.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None to the member",
+    "max_benefit": "Approved hours set by the PCM assessment. Hourly wage not published on the state page; complex-care tasks earn a $3.25/hour pay differential from Jan 1, 2026.",
+    "how_to_apply": "Ask a PCM agency for an evaluation, or start with your primary care provider. See mass.gov/masshealth-personal-care-attendant-program.",
+    "source_url": "https://www.mass.gov/masshealth-personal-care-attendant-program",
+    "date_checked": "2026-10-05",
+    "notes": "Caregiver guides say spouses and legally responsible relatives cannot be paid as the PCA. Third-party sites cite wages around $19–$22/hour; confirm current union rate.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-dds-adult-hcbs-waivers",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Paid caregiving & services",
+    "name": "DDS Adult Waivers (Adult Supports, Community Living, Intensive Supports)",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "DDS with MassHealth",
+    "city": "",
+    "region": "Statewide",
+    "description": "Three Medicaid waivers that fund in-home and community supports, including options where the family directs the budget and hires staff.",
+    "eligibility": "DDS-eligible adults who need at least one waiver service per month; Intensive Supports is for people who need 24/7 support. A 2016 DDS guide says waivers allow income up to 300% of the SSI federal rate.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published (individual budget set by the service plan)",
+    "how_to_apply": "Through your DDS service coordinator after adult eligibility. DDS waiver line (888) 367-4435.",
+    "source_url": "https://www.mass.gov/info-details/home-and-community-based-services-hcbs-waivers-for-adults-with-intellectual-disabilities-information-for-providers",
+    "date_checked": "2026-10-05",
+    "notes": "The state describes these as waivers for adults with intellectual disabilities. Ask DDS whether an autism-only eligibility qualifies.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-dds-family-support-flexible-funding",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "DDS Family Support Flexible Funding",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "DDS through regional Family Support Centers and Autism Support Centers",
+    "city": "",
+    "region": "Statewide",
+    "description": "Money for families caring for a DDS-eligible relative at home, used for allowable costs such as respite, equipment, recreation, transportation or training.",
+    "eligibility": "Children and adults eligible for DDS who live with family. Some help is available before full eligibility.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published. Given as a one-time or yearly stipend depending on need and available funds.",
+    "how_to_apply": "Contact your local DDS Family Support Center or Autism Support Center, or your DDS Area Office.",
+    "source_url": "https://www.mass.gov/info-details/about-family-support-what-is-flexible-funding",
+    "date_checked": "2026-10-05",
+    "notes": "Funding is limited. Ask early in the year about budget limits.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-ma-child-and-family-tax-credit",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Tax credit",
+    "name": "MA Child and Family Tax Credit",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Massachusetts Department of Revenue",
+    "city": "",
+    "region": "Statewide",
+    "description": "A refundable state tax credit for each dependent with a disability, of any age, who lives with you.",
+    "eligibility": "A dependent or spouse who is physically or mentally unable to care for themselves and lives with you more than half the year. Single, head of household or joint filers.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "$440 per qualifying dependent, no cap on number, no income limit (tax year 2024 onward)",
+    "how_to_apply": "File a Massachusetts Form 1 return, even with no income. Free help at mass.gov/freetaxpreparation.",
+    "source_url": "https://mass.gov/info-details/massachusetts-child-and-family-tax-credit",
+    "date_checked": "2026-10-05",
+    "notes": "Refundable, so it is paid out even if no tax is owed. DTA says it does not affect DTA benefits.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-catastrophic-illness-in-children-relief-fund",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "Catastrophic Illness in Children Relief Fund (CICRF)",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Department of Public Health; overseen by an independent commission",
+    "city": "",
+    "region": "Statewide",
+    "description": "Reimburses families for large medical and related costs for a child or young adult that insurance and other programs do not cover.",
+    "eligibility": "Person under 22 when the expense happened. Uncovered costs must exceed 10% of the first $100,000 of family income plus 15% of income above that.",
+    "upfront_cost": "$0 to apply",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published as a cap. Reimbursement uses a sliding scale; home and vehicle costs are limited.",
+    "how_to_apply": "Apply online at mass.gov/CICRFApply. CICRF.DPH@mass.gov, 617-624-5951.",
+    "source_url": "https://www.mass.gov/info-details/check-eligibility-for-cicrf",
+    "date_checked": "2026-10-05",
+    "notes": "Covers past costs only, up to 24 months before you apply. Payer of last resort; funding not guaranteed. Relevant for the transition years up to 22.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-mbta-transportation-access-pass",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Discount",
+    "name": "MBTA Transportation Access Pass (TAP)",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "MBTA",
+    "city": "",
+    "region": "Greater Boston",
+    "description": "A reduced-fare CharlieCard for people with disabilities, about half off subway, bus, Commuter Rail and ferry fares.",
+    "eligibility": "People with a disability that makes using transit hard. DDS clients qualify with a letter from their service coordinator; Medicare cardholders qualify automatically.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "Reduced fares",
+    "max_benefit": "About 50% off one-way fares and passes",
+    "how_to_apply": "Apply online at mycharlie.mbta.com, by mail, or at the Charlie Service Center. 617-222-3200.",
+    "source_url": "https://mycharlie.mbta.com/reduced/disability",
+    "date_checked": "2026-10-05",
+    "notes": "Does not discount The RIDE paratransit. Card lasts 1 or 5 years depending on proof of disability.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-utility-low-income-discount-rate",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Discount",
+    "name": "Utility Low-Income Discount Rate",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Your gas or electric utility; discounts approved by the MA Department of Public Utilities",
+    "city": "",
+    "region": "Statewide",
+    "description": "A standing discount on monthly gas and electric bills for income-eligible households, plus protection from winter shutoffs.",
+    "eligibility": "Income at or below 60% of state median income, usually shown by being on HEAP, SNAP, MassHealth or another means-tested benefit.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "Lower monthly bill",
+    "max_benefit": "National Grid electric: 32%–71% off depending on income (tiered since Aug 29, 2025). Other utilities' rates vary.",
+    "how_to_apply": "Ask your utility for the discount rate, or get it automatically when approved for HEAP.",
+    "source_url": "https://www.nationalgridus.com/ma-home/rates/service-rates",
+    "date_checked": "2026-10-05",
+    "notes": "Eversource's discount (reported as 42% on electric) could not be confirmed on its own site.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-boston-taxi-discount-coupons",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Discount",
+    "name": "Boston Taxi Discount Coupons",
+    "level": "City",
+    "federally_funded": false,
+    "administrator": "City of Boston Disabilities Commission",
+    "city": "Boston",
+    "region": "Greater Boston",
+    "description": "Half-price taxi coupons for Boston residents with disabilities.",
+    "eligibility": "Boston residents with a disability or over 65.",
+    "upfront_cost": "$5 per coupon book",
+    "ongoing_cost": "As needed",
+    "max_benefit": "$10 coupon book for $5 (50% off)",
+    "how_to_apply": "Boston Disabilities Commission: 617-635-3682, disability@boston.gov.",
+    "source_url": "https://search.boston.gov/departments/disabilities-commission/transportation-help-people-disabilities",
+    "date_checked": "2026-10-05",
+    "notes": "",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-boston-tax-help-coalition",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Tax credit",
+    "name": "Boston Tax Help Coalition (Free Tax Filing)",
+    "level": "City",
+    "federally_funded": false,
+    "administrator": "City of Boston Worker Empowerment Cabinet",
+    "city": "Boston",
+    "region": "Greater Boston",
+    "description": "Free tax preparation at neighborhood sites, with a disability-community track. Helps families claim the credits in this list.",
+    "eligibility": "Boston-area residents earning $70,000 or less.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not applicable (free service)",
+    "how_to_apply": "Find a site at boston.gov/tax-help; disability access info at boston.gov/disability-tax-help.",
+    "source_url": "https://www.boston.gov/news/mayor-michelle-wu-announces-annual-tax-prep-services-available-residents-0",
+    "date_checked": "2026-10-05",
+    "notes": "Main season runs Feb–Apr; some sites stay open later for prior-year and amended returns.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-cambridge-taxi-discount-coupons",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Discount",
+    "name": "Cambridge Taxi Discount Coupons",
+    "level": "City",
+    "federally_funded": false,
+    "administrator": "Cambridge Commission for Persons with Disabilities (CCPD)",
+    "city": "Cambridge",
+    "region": "Greater Boston",
+    "description": "Free taxi coupons, funded by the city, for Cambridge residents with disabilities.",
+    "eligibility": "Cambridge residents with a disability (under 60, through CCPD) or 60+ (through the Council on Aging).",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published on the city page. A state disability index lists books of 10 coupons worth $2.50 each.",
+    "how_to_apply": "Register with CCPD: 617-349-4692.",
+    "source_url": "https://www.cambridgema.gov/services/cambridgetaxidiscountcouponprogram",
+    "date_checked": "2026-10-05",
+    "notes": "Valid only in Cambridge-licensed taxis.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-cambridge-somerville-heap-office",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Cash assistance",
+    "name": "Cambridge HEAP Office (Cambridge and Somerville)",
+    "level": "City",
+    "federally_funded": true,
+    "administrator": "City of Cambridge Department of Human Service Programs",
+    "city": "Cambridge",
+    "region": "Greater Boston",
+    "description": "The city-run office that handles fuel assistance for Cambridge and Somerville residents, with same-day help in no-heat emergencies.",
+    "eligibility": "Cambridge or Somerville residents under the HEAP income limit (2025–26: $51,777/year for one person).",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Same as state HEAP (see that entry)",
+    "how_to_apply": "cambridgema.gov/HeatingHelp, 617-665-6234, dhspfuel@cambridgema.gov; 51 Inman St, Cambridge.",
+    "source_url": "https://www.cambridgema.gov/DHSP/publicationsandforms/Documents/H/heapflyer",
+    "date_checked": "2026-10-05",
+    "notes": "Somerville residents apply here, not through a separate Somerville office.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-ma-alternative-finance-program",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Loan",
+    "name": "Assistive Technology Loans (MA Alternative Finance Program)",
+    "level": "Private/Nonprofit",
+    "federally_funded": true,
+    "administrator": "Easterseals Massachusetts, funded by state and federal grants to MassAbility",
+    "city": "",
+    "region": "Statewide",
+    "description": "Loans for assistive technology such as communication devices, hearing aids, vehicle changes and home modifications. A free device-lending library is also available.",
+    "eligibility": "Massachusetts residents with disabilities and their family members.",
+    "upfront_cost": "$0 to apply",
+    "ongoing_cost": "Monthly loan payments",
+    "max_benefit": "Mini Loan: $100–$4,000 at 0% interest. Financial Loan: over $4,000 at 4.75%.",
+    "how_to_apply": "massalternativefinance.org or Easterseals MA. Borrow devices free at massmatch.at4all.com.",
+    "source_url": "https://www.massalternativefinance.org/",
+    "date_checked": "2026-10-05",
+    "notes": "Mini Loans are designed for people a bank would turn down.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-plan-of-ma-ri-pooled-trust",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Savings & trusts",
+    "name": "PLAN of MA & RI Pooled Special Needs Trust",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Planned Lifetime Assistance Network of MA & RI",
+    "city": "",
+    "region": "Statewide",
+    "description": "A nonprofit-run special needs trust. Families can leave or set aside money for supplemental needs without hurting SSI or MassHealth eligibility.",
+    "eligibility": "People with disabilities in Massachusetts and Rhode Island. First-party and third-party trusts available.",
+    "upfront_cost": "No minimum to open; fees not published",
+    "ongoing_cost": "Fees not published",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "MA: 617-244-5552. Offices in Braintree and Providence, by appointment.",
+    "source_url": "https://www.planofma-ri.org/faq-2022/",
+    "date_checked": "2026-10-05",
+    "notes": "First-party trust money left at death must repay MassHealth; third-party trust money does not. Have an attorney draft the joinder.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-aane-flutie-foundation-grant",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "AANE / Flutie Foundation Grant",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Association for Autism and Neurodiversity (AANE), funded by the Doug Flutie Jr. Foundation",
+    "city": "",
+    "region": "Statewide",
+    "description": "Small grants for autistic adults, or parents of autistic children, for things that directly improve the person's life.",
+    "eligibility": "Autism diagnosis (provider letter); living in MA or another New England state. Uses include therapies, evaluations, social skills groups, respite and uncovered health costs.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published",
+    "how_to_apply": "Apply on aane.org and email documents (latest tax return, diagnosis letter) to grants@aane.org.",
+    "source_url": "https://aane.org/services-programs/grants-free-programs/doug-flutie-jr-foundation-for-autism-grant/",
+    "date_checked": "2026-10-05",
+    "notes": "Limited number of grants each year.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-autism-alliance-flutie-family-grant",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "Autism Alliance Family Grant (MetroWest)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Autism Alliance of MetroWest, funded by the Doug Flutie Jr. Foundation",
+    "city": "",
+    "region": "Greater Boston",
+    "description": "One-time grants for lower-income MetroWest families of a child with autism, for equipment, programs or respite.",
+    "eligibility": "MetroWest families with a child diagnosed with autism, in financial distress or crisis. Priority for income up to $60,000 for a family of four.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Up to $1,000 per family",
+    "how_to_apply": "Apply through autismalliance.org.",
+    "source_url": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding",
+    "date_checked": "2026-10-05",
+    "notes": "Aimed at children; the page has no date, so check whether a funding round is open.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-flutie-kodi-lee-gives-back-grant",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "Kodi Lee Gives Back Music Grant",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Doug Flutie Jr. Foundation for Autism",
+    "city": "",
+    "region": "Statewide",
+    "description": "Music scholarships for autistic teens and adults: lessons, music therapy, studio time or equipment.",
+    "eligibility": "Autistic self-advocates 15 or older living in the US. Past recipients cannot reapply.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Up to $1,000",
+    "how_to_apply": "Apply on flutiefoundation.org when open.",
+    "source_url": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/",
+    "date_checked": "2026-10-05",
+    "notes": "2026 round closed May 21, 2026; reopens April 2027. Foundation is based in Waltham.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
+  },
+  {
+    "id": "ma-fin-act-today-family-grants",
+    "state": "MA",
+    "category": "Financing",
+    "subtype": "Grant",
+    "name": "ACT Today! Family Grants",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Autism Care Today (national nonprofit)",
+    "city": "",
+    "region": "Statewide",
+    "description": "National grants for autism treatment, assessments, equipment and safety items, paid directly to approved providers or vendors.",
+    "eligibility": "Families affected by autism who cannot afford a treatment or service insurance does not cover. Household income is considered.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "None",
+    "max_benefit": "Not published on the checked page (third-party guides cite up to $5,000)",
+    "how_to_apply": "act-today.org/apply-for-grant. Grants are awarded quarterly.",
+    "source_url": "https://www.act-today.org/act-today-reaches-1-million-milestone-in-helping-families-impacted-with-autism/",
+    "date_checked": "2026-10-05",
+    "notes": "National program, not Massachusetts-specific. Mostly serves children.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": ""
   }
 ]
