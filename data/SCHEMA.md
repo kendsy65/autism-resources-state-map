@@ -5,7 +5,7 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 | Field | Type | Values / notes |
 |---|---|---|
 | `id` | string | `<state>-<cat>-<slug>`, unique, lowercase |
-| `state` | string | `MA`, `CT`, `NY` |
+| `state` | string | `MA`, `CT`, `NY`, or `US` for federal resources in `data/US/` that apply in every state |
 | `category` | string | `Housing`, `Financing`, `Employment`, `Social Security`, `Community Enrichment` |
 | `subtype` | string | Optional. Employment: `Program`, `Employer`, `Supported employment`, `Work incentive`. Housing: `Residential program` |
 | `name` | string | Plain-language name |
@@ -30,3 +30,16 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 - Use current agency names (MA: EOHLC not DHCD; MassAbility not MRC).
 - Confirm businesses are still open before adding them.
 - Numbers the planner computes with go in `planner-parameters.json` as numeric values with a `source`, not in the text fields.
+
+## Timing items (planner-parameters.json → `timing`)
+
+Each item has `item`, `value`, `note`, `source`, plus these fields that drive the caregiver's "Next steps":
+
+| Field | Values / notes |
+|---|---|
+| `focus` | `Housing`, `Employment` or `Both` — which caregivers see it |
+| `age_min` | Optional number. Shown as "Coming up" up to 4 years before, "Now" from this age |
+| `age_max` | Optional number. Hidden once the person is older |
+| `city` | Optional. For city-only items; shown only within 25 miles of the person's ZIP |
+
+Only set ages that the `value` or `note` text (and its source) actually states.

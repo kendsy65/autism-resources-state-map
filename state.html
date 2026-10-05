@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>State Resources</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <nav class="topbar"><a href="index.html">← All states</a><span class="checked" id="checked"></span></nav>
+  <header>
+    <div class="eyebrow" id="eyebrow">Autism Resources State Map</div>
+    <h1 id="title">Loading…</h1>
+    <p class="lede">Programs, agencies and employers we have found, sorted by who runs them. Tap a row to see who qualifies, what it costs and how to apply.</p>
+  </header>
+
+  <section id="plan" class="plan" hidden aria-labelledby="plan-h"></section>
+
+  <nav class="tabs" role="tablist" aria-label="View">
+    <button role="tab" data-view="dir" aria-selected="true">Directory</button>
+    <button role="tab" data-view="plan" aria-selected="false">Cost planner</button>
+  </nav>
+
+  <!-- ---------- DIRECTORY ---------- -->
+  <div id="view-dir">
+    <div class="summary" id="summary"></div>
+    <div class="filters">
+      <div class="row">
+        <div class="seg" role="group" aria-label="Category" id="cats"></div>
+        <input type="search" id="q" placeholder="Search name, city, agency, eligibility…" aria-label="Search resources">
+      </div>
+      <div class="row">
+        <div class="row" id="levels" role="group" aria-label="Who runs it"></div>
+        <select id="region" aria-label="Region" style="font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)"></select>
+      </div>
+      <div class="row" id="near-row" hidden>
+        <select id="within" aria-label="Distance from home" style="font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)">
+          <option value="Infinity">Any distance</option><option value="10">Within 10 miles</option><option value="25">Within 25 miles</option><option value="50">Within 50 miles</option>
+        </select>
+        <select id="sort" aria-label="Sort" style="font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)">
+          <option value="suggested">Suggested for you</option><option value="nearest">Nearest first</option><option value="default">Default order</option>
+        </select>
+        <span class="count">Statewide programs always show.</span>
+      </div>
+      <div class="count" id="count"></div>
+    </div>
+    <div class="list" id="list"><div class="loading">Loading resources…</div></div>
+  </div>
+
+  <!-- ---------- PLANNER ---------- -->
+  <div id="view-plan" hidden>
+    <div id="plan-missing" class="empty" hidden>The cost planner for this state is not ready yet. Its numbers still need to be researched and sourced.</div>
+    <div id="plan-body" hidden>
+      <p class="lede">Estimate one month of income and housing costs, then see the total over several years. Every number comes from a public source listed in the tables below.</p>
+      <div class="est">
+        <div class="est-in">
+          <h2>Monthly estimator</h2>
+          <label for="e-ssi">Benefits</label>
+          <select id="e-ssi"><option value="ssi" selected></option><option value="none">No SSI</option></select>
+          <label for="e-hrs">Hours worked per week</label>
+          <input id="e-hrs" type="number" min="0" max="60" step="1" value="15">
+          <label for="e-wage">Hourly wage ($)</label>
+          <input id="e-wage" type="number" min="0" step="0.25">
+          <label for="e-house">Housing</label>
+          <select id="e-house"></select>
+          <div id="rent-wrap" hidden>
+            <label for="e-rent">Monthly rent or share ($)</label>
+            <input id="e-rent" type="number" min="0" step="50" value="1800">
+          </div>
+          <label for="e-afc">Family caregiver paid through Adult Foster Care</label>
+          <select id="e-afc"></select>
+          <label for="e-yrs">Years to plan</label>
+          <input id="e-yrs" type="number" min="1" max="30" step="1" value="5">
+        </div>
+        <div class="est-out" id="est-out" aria-live="polite"></div>
+      </div>
+
+      <h2 style="margin-top:32px">Coverage by region</h2>
+      <p class="lede">How many resources in the directory serve each region. Statewide programs apply everywhere and are counted separately.</p>
+      <div class="tblwrap"><table class="heat" id="heat"></table></div>
+
+      <div id="param-tables"></div>
+
+      <h2 style="margin-top:32px">Timing and waitlists</h2>
+      <div class="tblwrap"><table class="ptbl" id="t-time"></table></div>
+    </div>
+  </div>
+
+  <p class="disclaimer">Figures are estimates drawn from the linked public sources on the date checked. They can change. "Not published" means the source did not state the figure. This is not legal or financial advice.</p>
+</div>
+
+<script type="module">
+import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./assets/js/common.js";
+import * as pl from "./assets/js/planner.js";
+import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, NEAR_MILES } from "./assets/js/profile.js";
+import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
+
+const $ = id => document.getElementById(id);
+const code = (new URLSearchParams(location.search).get("s") || "").toUpperCase();
+if (!STATES[code]) location.replace("index.html");
+const S = STATES[code];
+document.title = `${S.name} Resources`;
+$("eyebrow").textContent = `Autism Resources State Map · ${S.name}`;
+$("title").textContent = `Housing & Employment Resources in ${S.name}`;
+
+// ---------- DIRECTORY ----------
+const LV = { Federal: "Federal", State: "State", City: "City", "Private/Nonprofit": "Private / Nonprofit" };
+const lvClass = l => "lv-" + l.split("/")[0];
+const stateRows = await loadResources(code);
+// Federal resources (data/US) apply in every state.
+const federal = await loadJSON("data/US/resources.json").catch(() => []);
+const D = [...stateRows, ...federal];
+const profile = loadProfile();
+const me = profile && profile.state === code ? profile : null;
+const zips = await loadJSON(`data/${code}/zips.json`).catch(() => ({}));
+const coordsOf = placeIndex(zips);
+const home = me ? lookupZip(me.zip, { [code]: zips }) : null;
+const KEY = `filters-${code}`;
+const st = { cat: "All", lv: new Set(Object.keys(LV)), region: "All", q: "" };
+try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s) { st.cat = s.cat || "All"; if (s.lv?.length) st.lv = new Set(s.lv); st.region = s.region || "All"; } } catch {}
+
+const latest = D.map(r => r.date_checked).filter(Boolean).sort().pop();
+if (latest) $("checked").textContent = `sources checked ${latest}`;
+
+const fmt = v => /^(not published|varies|not applicable|n\/a)/i.test(v || "") ? `<span class="np">${esc(v)}</span>` : `<span class="money">${esc(v)}</span>`;
+
+$("summary").innerHTML = CATEGORIES.map(c => {
+  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && r.category === c);
+  return `<div class="sum"><h3>${c}</h3><div class="big">${rows.length}</div><div class="bars">${rows.length
+    ? Object.keys(LV).map(l => `<span class="tag ${lvClass(l)}">${LV[l]} ${rows.filter(r => r.level === l).length}</span>`).join("")
+    : `<span class="np" style="font-size:13px">Research in progress</span>`}</div></div>`;
+}).join("");
+
+$("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" aria-pressed="false">${c}</button>`).join("");
+$("levels").innerHTML = Object.keys(LV).map(l => `<button class="chip ${lvClass(l)}" data-lv="${l}" aria-pressed="${st.lv.has(l)}">${LV[l]}</button>`).join("")
+  + `<span class="tag ff" title="Federal money, run by a state or city agency">Federally funded</span>`;
+const regions = [...new Set(D.map(r => r.region).filter(r => r && r !== "Statewide"))].sort();
+$("region").innerHTML = `<option value="All">All regions</option>` + regions.map(r => `<option>${esc(r)}</option>`).join("");
+if (!regions.includes(st.region)) st.region = "All";
+if (me) st.cat = me.focus === "Both" ? "All" : me.focus;
+$("region").value = st.region;
+st.sort = home ? "suggested" : "default";
+st.within = home ? 50 : Infinity;
+if (home) { $("near-row").hidden = false; $("within").value = "50"; }
+
+function render() {
+  const q = st.q.toLowerCase();
+  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && (st.cat === "All" || r.category === st.cat) && st.lv.has(r.level)
+    && (st.region === "All" || r.region === st.region || r.region === "Statewide")
+    && (!q || Object.values(r).join(" ").toLowerCase().includes(q)));
+  $("count").textContent = `Showing ${rows.length} of ${D.length} resources` + (st.region !== "All" ? ` (${st.region} plus statewide)` : "")
+    + (home && st.within < Infinity ? ` within ${st.within} miles of ${home.place}, plus statewide` : "");
+  const emptyMsg = !stateRows.length && st.cat !== "All" ? `We haven't finished researching ${S.name} yet. Check back soon.`
+    : st.cat !== "All" && !D.some(r => r.category === st.cat) ? `No ${st.cat} resources added for ${S.name} yet.`
+    : "No resources match. Clear the search or turn a filter back on.";
+  $("list").innerHTML = rows.length ? rows.map(r => {
+    const u = safeUrl(r.source_url);
+    const fitTag = r.fit > 0 ? `<span class="tag fit">Fits their support level</span>` : r.fit < 0 ? `<span class="tag nofit">May not fit their support level</span>` : "";
+    const distTag = r.dist != null ? `<span class="tag dist">${r.dist < 1 ? "<1" : Math.round(r.dist)} mi</span>` : "";
+    return `<details class="res" id="res-${esc(r.id)}"><summary>
+      <span class="r-name">${esc(r.name)}</span>
+      <span class="r-tags">${fitTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}<span class="tag cat">${esc(r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
+      <span class="r-desc">${esc(r.description)}</span>
+    </summary><div class="body"><dl>
+      <dt>Run by</dt><dd>${esc(r.administrator)}</dd>
+      <dt>Who qualifies</dt><dd>${esc(r.eligibility)}</dd>
+      <dt>Upfront cost</dt><dd>${fmt(r.upfront_cost)}</dd>
+      <dt>Ongoing cost</dt><dd>${fmt(r.ongoing_cost)}</dd>
+      <dt>Maximum benefit</dt><dd>${fmt(r.max_benefit)}</dd>
+      <dt>How to apply</dt><dd>${esc(r.how_to_apply)}</dd>
+      ${r.notes ? `<dt>Watch out for</dt><dd><div class="note">${esc(r.notes)}</div></dd>` : ""}
+      <dt>Source</dt><dd>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, ""))}</a>` : `<span class="np">No source</span>`}<br><span class="checked">checked ${esc(r.date_checked)}</span></dd>
+    </dl></div></details>`;
+  }).join("") : `<div class="empty">${emptyMsg}</div>`;
+  document.querySelectorAll("#cats button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === st.cat));
+  try { localStorage.setItem(KEY, JSON.stringify({ cat: st.cat, lv: [...st.lv], region: st.region })); } catch {}
+}
+$("cats").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { st.cat = b.dataset.cat; render(); } });
+$("levels").addEventListener("click", e => { const b = e.target.closest("button[data-lv]"); if (!b) return; const l = b.dataset.lv; st.lv.has(l) ? st.lv.delete(l) : st.lv.add(l); b.setAttribute("aria-pressed", st.lv.has(l)); render(); });
+$("region").addEventListener("change", e => { st.region = e.target.value; render(); });
+$("within").addEventListener("change", e => { st.within = +e.target.value; render(); });
+$("sort").addEventListener("change", e => { st.sort = e.target.value; render(); });
+$("q").addEventListener("input", e => { st.q = e.target.value; render(); });
+render();
+
+// ---------- TABS ----------
+function setView(v) {
+  document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
+  $("view-dir").hidden = v !== "dir";
+  $("view-plan").hidden = v !== "plan";
+  history.replaceState(null, "", v === "plan" ? "#planner" : location.pathname + location.search);
+}
+document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest("button[data-view]"); if (b) setView(b.dataset.view); });
+if (location.hash === "#planner") setView("plan");
+
+// ---------- PLANNER ----------
+let params;
+try { params = await loadJSON(`data/${code}/planner-parameters.json`); } catch { params = null; }
+if (me) renderPlan(me, params);
+if (!params) { $("plan-missing").hidden = false; }
+else {
+  $("plan-body").hidden = false;
+  const P = pl.fromParams(params);
+  const usd = pl.usd;
+  $("e-ssi").options[0].textContent = `SSI + state supplement, living independently ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: 2 })})`;
+  $("e-wage").value = P.minWage;
+  if (me) $("e-ssi").value = ["ssi", "applied", "unsure"].includes(me.ssi) ? "ssi" : "none";
+  $("e-house").innerHTML = Object.entries(pl.HOUSING).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  $("e-afc").innerHTML = `<option value="0">No</option><option value="1">Yes, Level I ($${P.afc1}/day minimum)</option><option value="2">Yes, Level II ($${P.afc2}/day minimum)</option>`;
+
+  function est() {
+    const housing = $("e-house").value;
+    $("rent-wrap").hidden = !(housing === "market" || housing === "family");
+    const r = pl.estimate({
+      onSSI: $("e-ssi").value === "ssi", hours: +$("e-hrs").value || 0, wage: +$("e-wage").value || 0,
+      housing, rent: +$("e-rent").value || 0, afcLevel: +$("e-afc").value, years: +$("e-yrs").value || 1,
+    }, P);
+    const hrs = +$("e-hrs").value || 0, wage = +$("e-wage").value || 0;
+    $("est-out").innerHTML = `
+      <table class="ledger"><tbody>
+        <tr><td>Earnings (${hrs} hrs × ${usd(wage)}/hr)</td><td>${usd(r.earn)}</td></tr>
+        <tr><td>SSI + state supplement after earnings</td><td>${usd(r.ssi)}</td></tr>
+        <tr><td><b>Monthly income</b></td><td>${usd(r.income)}</td></tr>
+        <tr><td>${esc(r.housingLabel)}</td><td class="neg">−${usd(r.housingCost).replace("−", "")}</td></tr>
+        <tr class="tot"><td>Left each month for food, transport, personal</td><td class="${r.left < 0 ? "neg" : ""}">${usd(r.left)}</td></tr>
+        ${r.afcMonthly ? `<tr class="sub"><td>Plus Adult Foster Care pay to the family caregiver</td><td>${usd(r.afcMonthly)}</td></tr>` : ""}
+      </tbody></table>
+      <div class="multi">Over ${r.years} year${r.years > 1 ? "s" : ""}: housing costs <b>${usd(r.totals.housing)}</b>, left over <b>${usd(r.totals.left)}</b>${r.afcMonthly ? `, caregiver pay <b>${usd(r.totals.afc)}</b>` : ""}. ${params.year} figures, no inflation or yearly benefit increases.</div>
+      <div class="flags">${r.flags.map(f => `<div class="flag ${f.warn ? "w" : ""}">${esc(f.text)}</div>`).join("")}</div>
+      <p class="checked" style="margin-top:12px">Estimate only. Assumes no other income and uses gross, not adjusted, income for rent. Not financial or legal advice.</p>`;
+  }
+  if (me?.support === "3") $("e-house").value = "dds";
+  ["e-ssi", "e-hrs", "e-wage", "e-house", "e-rent", "e-afc", "e-yrs"].forEach(id => $(id).addEventListener("input", est));
+  est();
+
+  // Region grid (seed for a heat map).
+  const cols = CATEGORIES.filter(c => D.some(r => r.category === c));
+  const n = (reg, c) => D.filter(x => x.category === c && x.region === reg).length;
+  const max = Math.max(1, ...regions.flatMap(reg => cols.map(c => n(reg, c))));
+  const cell = v => `<td class="n" style="background:color-mix(in srgb, var(--accent) ${Math.round(v / max * 70)}%, var(--surface));color:${v / max > .5 ? "var(--surface)" : "var(--ink)"}">${v}</td>`;
+  $("heat").innerHTML = `<thead><tr><th>Region</th>${cols.map(c => `<th>${c}</th>`).join("")}</tr></thead><tbody>`
+    + regions.map(reg => `<tr><th scope="row">${esc(reg)}</th>${cols.map(c => cell(n(reg, c))).join("")}</tr>`).join("")
+    + `<tr><th scope="row">Statewide (all regions)</th>${cols.map(c => `<td class="n">${n("Statewide", c)}</td>`).join("")}</tr></tbody>`;
+
+  // Parameter tables, generated straight from the JSON so they stay in sync with the data.
+  const LABELS = {
+    ssi_federal_monthly: "Federal SSI", ma_ssp_full_cost_of_living_monthly: "State supplement (living independently)",
+    ma_ssp_household_of_another_monthly: "State supplement (in someone else's household)", ssi_plus_ssp_living_independently: "SSI + state supplement, living independently",
+    ssi_max_in_kind_shelter_reduction: "Max SSI cut for free or reduced-cost housing", ssi_general_income_exclusion: "SSI general income exclusion",
+    ssi_earned_income_exclusion: "SSI earned income exclusion", ssi_earned_income_countable_rate: "Share of remaining earnings that counts against SSI",
+    afc_caregiver_min_pay_level1: "Adult Foster Care caregiver pay, Level I (min)", afc_caregiver_min_pay_level2: "Adult Foster Care caregiver pay, Level II (min)",
+    section8_tenant_share: "Section 8 tenant share", ahvp_tenant_share: "AHVP tenant share", mrvp_tenant_share_min: "MRVP tenant share (minimum)",
+    state_public_housing_share: "State public housing rent", dds_residential_charge_benefits: "DDS residential charge on benefits",
+    dds_residential_charge_earnings: "DDS residential charge on earnings", dds_min_liquid_assets_kept: "DDS: assets the resident keeps",
+    hmlp_loan: "Home Modification Loan", hmlp_income_limit_by_household: "Home Modification Loan income limit",
+    raft_max_per_12_months: "RAFT emergency help", boston_30pct_ami_1_person: "Boston 30% AMI, 1 person",
+    commonhealth_premium: "MassHealth CommonHealth premium", example_private_residential_bhma_2026_27: "Private residential program (example)",
+    ma_minimum_wage: "Minimum wage", sga_non_blind: "Substantial Gainful Activity (SGA)", trial_work_period_month: "Trial Work Period month",
+    student_earned_income_exclusion: "Student Earned Income Exclusion", section_1619b_ma_threshold: "1619(b) Medicaid threshold",
+    ma_detc_employer_credit: "MA Disability Employment Tax Credit (employer)", federal_wotc: "Federal WOTC (employer)",
+  };
+  const human = k => LABELS[k] || k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
+  const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
+  const unitFmt = (v, unit = "") => /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : "");
+  function valueOf(p) {
+    if ("value" in p) return unitFmt(p.value, p.unit);
+    if ("min" in p) return `${unitFmt(p.min, p.unit)}–${unitFmt(p.max, p.unit)}` + ("rate" in p ? ` at ${p.rate * 100}%` : "");
+    if ("monthly" in p) return `${money(p.monthly)}/mo, ${money(p.annual)}/yr`;
+    if ("year1_max" in p) return `Up to ${money(p.year1_max)} yr 1; ${money(p.later_max)} after`;
+    if ("max_per_hire" in p) return `Up to ${money(p.max_per_hire)} per hire`;
+    if ("academic_year" in p) return `${money(p.academic_year)}–${money(p.full_year)}/yr`;
+    const sizes = Object.keys(p).filter(k => /^\d+$/.test(k));
+    if (sizes.length) return `${money(p[sizes[0]])} (1 person) to ${money(p[sizes.at(-1)])} (${sizes.at(-1)} people)`;
+    return "";
+  }
+  const link = u => { const s = safeUrl(u); return s ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a>` : ""; };
+  const section = (title, obj) => `<h2 style="margin-top:32px">${title}</h2><div class="tblwrap"><table class="ptbl"><thead><tr><th>Input</th><th>Value</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
+    + Object.entries(obj).map(([k, p]) => `<tr><td>${esc(human(k))}</td><td class="v">${esc(valueOf(p))}</td><td>${esc([p.note, p.status].filter(Boolean).join(" · "))}</td><td>${link(p.source)}</td></tr>`).join("")
+    + `</tbody></table></div>`;
+  $("param-tables").innerHTML = section("Income and benefits", params.income) + section("Housing costs and help", params.housing) + section("Work and earnings", params.employment);
+  $("t-time").innerHTML = `<thead><tr><th>Item</th><th>Timing</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
+    + (params.timing || []).map(t => `<tr><td>${esc(t.item)}</td><td class="v">${esc(t.value)}</td><td>${esc(t.note)}</td><td>${link(t.source)}</td></tr>`).join("") + `</tbody>`;
+}
+
+// ---------- YOUR PLAN (only when the caregiver answered the questions for this state) ----------
+function renderPlan(me, params) {
+  const isNear = city => { const c = coordsOf(city); return !home || !c || miles(home, c) <= NEAR_MILES; };
+  const steps = nextSteps(me, params?.timing || [], federal, new Date(), isNear);
+  const link = u => safeUrl(u) ? ` <a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">Source</a>` : "";
+  const age = ageOn(me.birthdate);
+  const b = parseDate(me.birthdate);
+  const region = home && params?.regions ? nearestRegion(home, params.regions, coordsOf) : null;
+  const sup = SUPPORT[me.support];
+  const inFocus = r => me.focus === "Both" || r.category === me.focus;
+
+  // Closest good matches: local programs in their focus, best fit first, then nearest.
+  const near = home ? rankResources(stateRows.filter(inFocus), { support: me.support, home }, coordsOf, "suggested")
+    .filter(r => r.dist != null && r.fit >= 0).slice(0, 5) : [];
+  const nearHtml = near.length ? `<h3>Closest matches to ${esc(home.place)}</h3>
+    <ul class="near">${near.map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a>
+      <span class="d">${esc(r.city)} · ${Math.round(r.dist)} mi${r.fit > 0 ? " · fits their support level" : ""}</span></li>`).join("")}</ul>` : "";
+
+  // Higher support needs + housing: surface what the sources say about 24-hour care.
+  const dds = stateRows.find(r => r.id.endsWith("-dds-adult-eligibility-for-autism"));
+  const watch = (me.support === "2" || me.support === "3") && me.focus !== "Employment" && dds?.notes
+    ? `<div class="note" style="margin-top:14px"><b>Worth knowing for higher support needs:</b> ${esc(dds.name)}: ${esc(dds.notes)}${link(dds.source_url)}</div>` : "";
+  let work = "";
+  if (params && me.focus !== "Housing") {
+    const P = pl.fromParams(params);
+    const onSSI = ["ssi", "applied", "unsure"].includes(me.ssi);
+    const ifSSI = me.ssi !== "ssi" ? " If they get SSI, this" : "";
+    const rows = workScenarios(P, P.minWage, onSSI);
+    work = `<h3>How work changes monthly income (at the $${P.minWage}/hr minimum wage)</h3>
+      <div class="tblwrap"><table class="ptbl"><thead><tr><th>Hours a week</th><th>Earnings</th>${onSSI ? "<th>SSI + supplement</th>" : ""}<th>Total income</th></tr></thead><tbody>
+      ${rows.map(r => `<tr><td>${r.hours}</td><td class="v">${pl.usd(r.earn)}</td>${onSSI ? `<td class="v">${pl.usd(r.ssi)}</td>` : ""}<td class="v">${pl.usd(r.income)}</td></tr>`).join("")}
+      </tbody></table></div>
+      <p class="hint" style="margin-top:8px">${onSSI ? `${ifSSI ? ifSSI.trim() + " is roughly how it works:" : ""} SSI goes down as earnings go up, but total income still rises with every extra hour.` : me.ssi === "ssdi" ? "This table leaves out SSDI, which the planner doesn't model yet. SSDI follows different earnings rules (see the SGA and Trial Work limits in the Cost planner tab)." : "This table assumes no SSI."} Estimate only, ${params.year} figures. Not financial or legal advice.</p>`;
+  }
+  $("plan").hidden = false;
+  $("plan").innerHTML = `
+    <div class="plan-head"><h2 id="plan-h" style="margin:0">Your plan</h2>
+      <span><a href="index.html" id="plan-edit">Change answers</a> · <button class="linkbtn" id="plan-clear">Clear my answers</button></span></div>
+    <div class="plan-chips">
+      <span class="tag cat">Age ${age} · born ${esc(fmtDate(new Date(b.y, b.m - 1, b.d)))}</span>
+      <span class="tag cat">${home ? `${esc(home.place)} ${esc(me.zip)}` : esc(me.zip)}${region ? ` · ${esc(region)} region` : ""}</span>
+      <span class="tag cat">Support: ${esc(sup.label)}${sup.note ? ` (${esc(sup.note.toLowerCase())})` : ""}</span>
+      <span class="tag cat">${esc(SSI_STATUS[me.ssi])}</span><span class="tag cat">${esc(FOCUS[me.focus])}</span></div>
+    ${watch}
+    <h3>Next steps for someone age ${age}</h3>
+    ${steps.length ? `<ol class="steps">${steps.map(s => `<li><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}</span></li>`).join("")}</ol>`
+      : `<p class="hint">No time-sensitive steps for this age yet. Browse the directory below.</p>`}
+    ${nearHtml}
+    ${work}
+    <p class="hint" style="margin-top:12px">The directory below shows ${esc(FOCUS[me.focus].toLowerCase())} within 50 miles${home ? ` of ${esc(home.place)}` : ""} plus statewide programs${me.support !== "unsure" ? ", with programs that fit their support level first" : ", nearest first"}. Your answers stay in this browser.</p>`;
+  $("plan-clear").addEventListener("click", () => { clearProfile(); location.reload(); });
+  $("plan").addEventListener("click", e => {
+    const a = e.target.closest("a[data-open]");
+    if (!a) return;
+    e.preventDefault();
+    setView("dir");
+    let el = document.getElementById(a.dataset.open);
+    if (!el) { st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; render(); el = document.getElementById(a.dataset.open); }
+    if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+}
+</script>
+</body>
+</html>

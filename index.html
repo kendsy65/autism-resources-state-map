@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Autism Resources State Map</title>
+<meta name="description" content="Find housing, financing and employment help for autistic adults in your state, and plan the costs over several years.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Autism Resources State Map</div>
+    <h1>Housing, money and work help for autistic adults</h1>
+    <p class="lede">Find programs, agencies and employers that can help, who runs each one, what it costs and how to apply. Then estimate monthly housing costs and income over several years.</p>
+  </header>
+
+  <div id="resume" class="resume" hidden></div>
+
+  <!-- Step 0: who is this for? -->
+  <section id="choose" aria-labelledby="choose-h">
+    <h2 id="choose-h" style="margin-top:28px">How are you using this site?</h2>
+    <div class="choices">
+      <button class="choice" data-mode="care"><strong>I'm caring for someone</strong><span>Answer 5 quick questions about your son, daughter or other dependent. We'll show the programs and next steps that fit them.</span></button>
+      <button class="choice" data-mode="research"><strong>I'm researching or exploring</strong><span>Browse every resource by state on the map, with no questions asked.</span></button>
+    </div>
+  </section>
+
+  <!-- Guided questions for caregivers -->
+  <section id="wizard" class="wizard" hidden aria-live="polite">
+    <div class="wiz-top"><span class="eyebrow" id="wiz-progress"></span><button class="linkbtn" id="wiz-cancel">Start over</button></div>
+    <form id="wiz-form" novalidate>
+      <fieldset data-step="zip">
+        <legend>What's their ZIP code?</legend>
+        <p class="hint">We use it to find programs near them and sort them by distance. We cover Connecticut, Massachusetts and New York so far.</p>
+        <input id="zip" class="big-in" type="text" inputmode="numeric" autocomplete="postal-code" maxlength="5" pattern="\d{5}" aria-label="ZIP code" placeholder="5-digit ZIP" style="width:9ch">
+        <p class="found" id="zip-found" aria-live="polite"></p>
+      </fieldset>
+      <fieldset data-step="birthdate" hidden>
+        <legend>When were they born?</legend>
+        <p class="hint">Some programs open or close at certain ages. With a birthdate we can tell you the exact date each one opens.</p>
+        <div class="dob">
+          <label>Month<select id="dob-m" class="big-in"><option value="">Month</option></select></label>
+          <label>Day<input id="dob-d" class="big-in" type="number" inputmode="numeric" min="1" max="31" placeholder="DD" style="width:6ch"></label>
+          <label>Year<input id="dob-y" class="big-in" type="number" inputmode="numeric" min="1900" placeholder="YYYY" style="width:8ch"></label>
+        </div>
+        <p class="found" id="dob-found" aria-live="polite"></p>
+      </fieldset>
+      <fieldset data-step="support" hidden>
+        <legend>What level of support do they need?</legend>
+        <p class="hint">This is the autism level written in their diagnosis report (Level 1, 2 or 3). We use it to put programs that fit their needs first, such as 24-hour residential programs and job coaching for higher support needs.</p>
+        <div class="opts" id="opt-support"></div>
+        <p class="hint" id="support-help" hidden style="margin-top:10px">That's fine. It's usually on the report from the doctor or psychologist who made the diagnosis. We'll show everything in the usual order.</p>
+      </fieldset>
+      <fieldset data-step="ssi" hidden>
+        <legend>Do they get SSI (Supplemental Security Income)?</legend>
+        <p class="hint">SSI is a monthly payment from Social Security. It changes how much they keep when they work and what they pay for housing.</p>
+        <div class="opts" id="opt-ssi"></div>
+        <div id="ssi-help" class="ssi-help" hidden></div>
+      </fieldset>
+      <fieldset data-step="focus" hidden>
+        <legend>What do you want help with?</legend>
+        <div class="opts" id="opt-focus"></div>
+      </fieldset>
+      <p class="err" id="wiz-err" role="alert"></p>
+      <div class="wiz-nav">
+        <button type="button" class="btn ghost" id="wiz-back">Back</button>
+        <button type="submit" class="btn" id="wiz-next">Next</button>
+      </div>
+    </form>
+    <p class="checked" style="margin-top:14px">Your answers stay in this browser. They are not sent or stored anywhere else.</p>
+  </section>
+
+  <!-- Map for researchers -->
+  <section id="research" hidden>
+  <div class="map-card">
+    <div class="maps">
+      <svg id="map" viewBox="0 0 975 610" role="img" aria-label="Map of the United States. Connecticut, Massachusetts and New York are highlighted."></svg>
+      <figure class="inset"><svg id="inset" role="img" aria-label="Close-up of Connecticut, Massachusetts and New York."></svg><figcaption>Close-up: states in this pilot</figcaption></figure>
+    </div>
+    <div class="legend">
+      <span><i style="background:var(--accent)"></i>Ready to browse</span>
+      <span><i style="background:var(--accent-soft);border:1px solid var(--accent)"></i>Coming soon</span>
+      <span><i style="background:var(--line)"></i>Not covered yet</span>
+    </div>
+  </div>
+
+  <h2 style="margin-top:28px">Choose a state</h2>
+  <div class="states" id="states"></div>
+  </section>
+
+  <p class="disclaimer">Figures are estimates drawn from public sources on the date checked. They can change. This is not legal or financial advice. ZIP code data from <a href="https://www.geonames.org/" target="_blank" rel="noopener">GeoNames</a> (CC BY 4.0).</p>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
+<script type="module">
+import { STATES, loadResources, loadJSON, esc } from "./assets/js/common.js";
+import { SSI_STATUS, SUPPORT, FOCUS, MONTHS, loadProfile, saveProfile, clearProfile, validProfile, ageOn, parseDate, toISO, validBirthdate } from "./assets/js/profile.js";
+import { lookupZip } from "./assets/js/geo.js";
+
+const counts = Object.fromEntries(await Promise.all(Object.keys(STATES).map(async c => [c, (await loadResources(c)).length])));
+const ready = c => counts[c] > 0;
+const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips, c]));
+
+document.getElementById("states").innerHTML = Object.entries(STATES).map(([c, s]) => ready(c)
+  ? `<a class="statecard" href="state.html?s=${c}" data-state="${c}"><strong>${esc(s.name)}</strong><span>${counts[c]} resources · open directory and planner →</span></a>`
+  : `<div class="statecard off"><strong>${esc(s.name)}</strong><span>Coming soon — research in progress</span></div>`).join("");
+
+// ---------- Who is this for? ----------
+const $ = id => document.getElementById(id);
+function show(mode) {
+  $("choose").hidden = mode !== "choose";
+  $("wizard").hidden = mode !== "care";
+  $("research").hidden = mode !== "research";
+}
+document.querySelectorAll(".choice").forEach(b => b.addEventListener("click", () => {
+  show(b.dataset.mode);
+  if (b.dataset.mode === "care") goTo(0);
+  (b.dataset.mode === "care" ? $("wizard") : $("research")).scrollIntoView({ behavior: "smooth", block: "start" });
+}));
+
+const saved = loadProfile();
+if (saved && STATES[saved.state]) {
+  $("resume").hidden = false;
+  $("resume").innerHTML = `<div><strong>Welcome back.</strong> You have a plan saved for someone age ${ageOn(saved.birthdate)} in ${esc(STATES[saved.state].name)}.</div>
+    <div class="row"><a class="btn" href="state.html?s=${saved.state}">Open my plan</a><button class="btn ghost" id="resume-clear">Clear my answers</button></div>`;
+  $("resume-clear").addEventListener("click", () => { clearProfile(); $("resume").hidden = true; });
+}
+
+// ---------- Guided questions ----------
+const STEPS = ["zip", "birthdate", "support", "ssi", "focus"];
+const answers = { zip: "", state: "", birthdate: "", support: "", ssi: "", focus: "" };
+let step = 0;
+const radios = (name, opts) => Object.entries(opts).map(([v, o]) =>
+  `<label class="opt${o.disabled ? " off" : ""}"><input type="radio" name="${name}" value="${v}"${o.disabled ? " disabled" : ""}><span><strong>${esc(o.label)}</strong>${o.note ? `<small>${esc(o.note)}</small>` : ""}</span></label>`).join("");
+$("opt-support").innerHTML = radios("support", Object.fromEntries(Object.entries(SUPPORT).map(([k, v]) => [k, { label: v.label, note: v.note }])));
+$("opt-support").addEventListener("change", e => { $("support-help").hidden = e.target.value !== "unsure"; });
+$("dob-m").innerHTML += MONTHS.map((m, i) => `<option value="${i + 1}">${m}</option>`).join("");
+$("dob-y").max = new Date().getFullYear();
+
+// ZIP data for the states in scope (only used in this browser).
+const zips = Object.fromEntries(await Promise.all(Object.keys(STATES).map(async c => [c, await loadJSON(`data/${c}/zips.json`).catch(() => ({}))])));
+function checkZip() {
+  const z = $("zip").value.trim();
+  if (!/^\d{5}$/.test(z)) return { err: "Enter a 5-digit ZIP code." };
+  const hit = lookupZip(z, zips);
+  if (!hit) return { err: "We only cover Connecticut, Massachusetts and New York so far. You can still browse by choosing \"I'm researching\" on the first screen." };
+  if (!ready(hit.state)) return { err: `${hit.place}, ${STATES[hit.state].name}: we're still researching ${STATES[hit.state].name}. Check back soon.` };
+  return { hit };
+}
+$("zip").addEventListener("input", () => {
+  $("zip").value = $("zip").value.replace(/\D/g, "").slice(0, 5);
+  const r = $("zip").value.length === 5 ? checkZip() : {};
+  $("zip-found").textContent = r.hit ? `✓ ${r.hit.place}, ${r.hit.county} County, ${r.hit.state}` : "";
+});
+function checkDob() {
+  const [m, d, y] = ["dob-m", "dob-d", "dob-y"].map(id => +$(id).value);
+  if (!m || !d || !y) return { err: "Enter the month, day and year." };
+  const iso = toISO(y, m, d);
+  if (!parseDate(iso)) return { err: "That date doesn't exist. Check the day and month." };
+  if (!validBirthdate(iso)) return { err: "Enter a birthdate that isn't in the future." };
+  return { iso };
+}
+["dob-m", "dob-d", "dob-y"].forEach(id => $(id).addEventListener("input", () => {
+  const r = String($("dob-y").value).length === 4 ? checkDob() : {};
+  $("dob-found").textContent = r.iso ? `✓ ${ageOn(r.iso)} years old` : "";
+}));
+$("opt-ssi").innerHTML = radios("ssi", Object.fromEntries(Object.entries(SSI_STATUS).map(([k, v]) => [k, { label: v }])));
+$("opt-focus").innerHTML = radios("focus", {
+  Housing: { label: "Housing", note: "Where they'll live and how to pay for it" },
+  Employment: { label: "Employment", note: "Finding and keeping a job" },
+  Both: { label: "Both", note: FOCUS.Both },
+});
+
+// Federal SSI resources for "Not sure".
+const federal = await loadJSON("data/US/resources.json").catch(() => []);
+const SSI_HELP = ["us-ss-what-is-ssi", "us-ss-check-eligibility", "us-ss-apply-for-ssi", "us-ss-contact-social-security"];
+$("ssi-help").innerHTML = `<strong>Not sure? Start with these official Social Security pages.</strong><ul>${SSI_HELP.map(id => federal.find(r => r.id === id)).filter(Boolean)
+  .map(r => `<li><a href="${esc(r.source_url)}" target="_blank" rel="noopener">${esc(r.name)}</a> — ${esc(r.description)}</li>`).join("")}</ul>
+  <p class="hint" style="margin:6px 0 0">You can keep going. We'll add "find out about SSI" to their next steps.</p>`;
+$("opt-ssi").addEventListener("change", e => { $("ssi-help").hidden = e.target.value !== "unsure"; });
+
+function goTo(i) {
+  step = i;
+  document.querySelectorAll("#wiz-form fieldset").forEach(f => { f.hidden = f.dataset.step !== STEPS[i]; });
+  $("wiz-progress").textContent = `Question ${i + 1} of ${STEPS.length}`;
+  $("wiz-back").style.visibility = i ? "visible" : "hidden";
+  $("wiz-next").textContent = i === STEPS.length - 1 ? "See their plan" : "Next";
+  $("wiz-err").textContent = "";
+  const first = document.querySelector(`fieldset[data-step="${STEPS[i]}"] :is(input, select):not([disabled])`);
+  first?.focus({ preventScroll: true });
+}
+const ERR = { support: "Pick one. \"Not sure\" is fine.", ssi: "Pick one. \"Not sure\" is fine.", focus: "Pick one to continue." };
+$("wiz-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = STEPS[step];
+  if (name === "zip") {
+    const r = checkZip();
+    if (r.err) { $("wiz-err").textContent = r.err; return; }
+    answers.zip = r.hit.zip; answers.state = r.hit.state;
+  } else if (name === "birthdate") {
+    const r = checkDob();
+    if (r.err) { $("wiz-err").textContent = r.err; return; }
+    answers.birthdate = r.iso;
+  } else {
+    const v = document.querySelector(`input[name="${name}"]:checked`)?.value;
+    if (!v) { $("wiz-err").textContent = ERR[name]; return; }
+    answers[name] = v;
+  }
+  if (step < STEPS.length - 1) return goTo(step + 1);
+  const p = validProfile(answers);
+  if (!p) { $("wiz-err").textContent = "Something's missing. Go back and check your answers."; return; }
+  saveProfile(p);
+  location.href = `state.html?s=${p.state}`;
+});
+$("wiz-back").addEventListener("click", () => goTo(Math.max(0, step - 1)));
+$("wiz-cancel").addEventListener("click", () => {
+  $("wiz-form").reset();
+  ["ssi-help", "support-help"].forEach(id => { $(id).hidden = true; });
+  ["zip-found", "dob-found"].forEach(id => { $(id).textContent = ""; });
+  show("choose");
+});
+
+// Map is a nice-to-have: if the map files can't load, the state cards above still work.
+try {
+  const us = await (await fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-albers-10m.json")).json();
+  const path = d3.geoPath();
+  const feats = topojson.feature(us, us.objects.states).features;
+  const code = d => byFips[d.id];
+  function draw(svg, labels) {
+    svg.selectAll("path").data(feats).join("path")
+      .attr("d", path)
+      .attr("class", d => "st" + (code(d) ? " scope" : "") + (code(d) && ready(code(d)) ? " ready" : ""))
+      .on("click", (e, d) => { if (code(d) && ready(code(d))) location.href = `state.html?s=${code(d)}`; })
+      .append("title").text(d => code(d) ? `${STATES[code(d)].name}${ready(code(d)) ? "" : " (coming soon)"}` : d.properties.name);
+    if (labels) svg.selectAll("text").data(feats.filter(code)).join("text")
+      .attr("x", d => path.centroid(d)[0]).attr("y", d => path.centroid(d)[1])
+      .attr("text-anchor", "middle").attr("dominant-baseline", "middle")
+      .attr("class", d => ready(code(d)) ? "on" : null)
+      .text(code);
+  }
+  const svg = d3.select("#map");
+  draw(svg, false);
+  // Inset: crop the same projected map to the in-scope states.
+  const b = feats.filter(code).map(path.bounds);
+  const [x0, y0, x1, y1] = [d3.min(b, d => d[0][0]), d3.min(b, d => d[0][1]), d3.max(b, d => d[1][0]), d3.max(b, d => d[1][1])];
+  const pad = 12;
+  d3.select("#inset").attr("viewBox", `${x0 - pad} ${y0 - pad} ${x1 - x0 + 2 * pad} ${y1 - y0 + 2 * pad}`);
+  draw(d3.select("#inset"), true);
+  // Outline the inset area on the big map.
+  svg.append("rect").attr("class", "inset-box").attr("x", x0 - pad).attr("y", y0 - pad).attr("width", x1 - x0 + 2 * pad).attr("height", y1 - y0 + 2 * pad);
+  // Hovering a card highlights its state on the map.
+  document.querySelectorAll("a.statecard").forEach(a => {
+    const f = STATES[a.dataset.state].fips;
+    const set = on => d3.selectAll("#map path, #inset path").filter(d => d.id === f).classed("hl", on);
+    a.addEventListener("mouseenter", () => set(true));
+    a.addEventListener("mouseleave", () => set(false));
+  });
+} catch (err) {
+  document.querySelector(".map-card").hidden = true;
+}
+</script>
+</body>
+</html>

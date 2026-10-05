@@ -175,51 +175,66 @@
   "timing": [
     {
       "item": "Section 8 voucher wait",
-      "value": "5\u201312 years",
+      "value": "5–12 years",
       "note": "Apply at 18 and join every list (Arc of Mass).",
-      "source": "https://thearcofmass.org/future/public/housing/"
+      "source": "https://thearcofmass.org/future/public/housing/",
+      "focus": "Housing",
+      "age_min": 18
     },
     {
       "item": "Boston public housing wait",
       "value": "10 weeks to 5+ years",
       "note": "Depends on unit size.",
-      "source": "https://www.bostonhousing.org/en/FAQ.aspx"
+      "source": "https://www.bostonhousing.org/en/FAQ.aspx",
+      "focus": "Housing",
+      "city": "Boston"
     },
     {
       "item": "EOHLC Section 8 list",
       "value": "Closed since Jan 13, 2025",
       "note": "Use the MassNAHRO Centralized Waiting List instead.",
-      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp"
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+      "focus": "Housing"
     },
     {
       "item": "DDS adult eligibility",
-      "value": "Apply at 17\u201318",
+      "value": "Apply at 17–18",
       "note": "Adult services usually start at 22.",
-      "source": "https://www.mass.gov/info-details/services-for-adults-with-autism-only"
+      "source": "https://www.mass.gov/info-details/services-for-adults-with-autism-only",
+      "focus": "Both",
+      "age_min": 17
     },
     {
       "item": "Pre-Employment Transition Services",
-      "value": "Ages 14\u201321",
+      "value": "Ages 14–21",
       "note": "Through MassAbility and schools.",
-      "source": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0"
+      "source": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0",
+      "focus": "Employment",
+      "age_min": 14,
+      "age_max": 21
     },
     {
       "item": "NextGen Careers",
-      "value": "Ages 18\u201330",
+      "value": "Ages 18–30",
       "note": "Reported at capacity as of May 2025.",
-      "source": "https://www.mass.gov/info-details/nextgen-careers-information"
+      "source": "https://www.mass.gov/info-details/nextgen-careers-information",
+      "focus": "Employment",
+      "age_min": 18,
+      "age_max": 30
     },
     {
       "item": "CHAMP application",
       "value": "Log in at least yearly",
       "note": "Inactive for 2+ years means the application closes.",
-      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing"
+      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing",
+      "focus": "Housing"
     },
     {
       "item": "RAFT decision",
       "value": "About 30 days",
       "note": "Payment about 14 business days after approval.",
-      "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs"
+      "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs",
+      "focus": "Housing"
     }
   ],
   "regions": {
