@@ -1,0 +1,268 @@
+{
+  "state": "MA",
+  "year": 2026,
+  "date_checked": "2026-10-05",
+  "income": {
+    "ssi_federal_monthly": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026/download"
+    },
+    "ma_ssp_full_cost_of_living_monthly": {
+      "value": 128.82,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026/download"
+    },
+    "ma_ssp_household_of_another_monthly": {
+      "value": 149.74,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026/download",
+      "note": "Federal part is reduced separately for in-kind support"
+    },
+    "ssi_plus_ssp_living_independently": {
+      "value": 1122.82,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026/download"
+    },
+    "ssi_max_in_kind_shelter_reduction": {
+      "value": 351.33,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm"
+    },
+    "ssi_general_income_exclusion": {
+      "value": 20,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "ssi_earned_income_exclusion": {
+      "value": 65,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "ssi_earned_income_countable_rate": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "afc_caregiver_min_pay_level1": {
+      "value": 25,
+      "unit": "USD/day",
+      "source": "https://www.mass.gov/doc/adult-foster-care-bulletin-32-specific-guidance-related-to-the-adult-foster-care-programs-caregiver-compensation-0/download"
+    },
+    "afc_caregiver_min_pay_level2": {
+      "value": 49,
+      "unit": "USD/day",
+      "source": "https://www.mass.gov/doc/adult-foster-care-bulletin-32-specific-guidance-related-to-the-adult-foster-care-programs-caregiver-compensation-0/download"
+    }
+  },
+  "housing": {
+    "section8_tenant_share": {
+      "value": 0.3,
+      "unit": "fraction of adjusted income",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp"
+    },
+    "ahvp_tenant_share": {
+      "min": 0.25,
+      "max": 0.3,
+      "unit": "fraction of income",
+      "source": "https://www.mass.gov/info-details/alternative-housing-voucher-program-ahvp"
+    },
+    "mrvp_tenant_share_min": {
+      "value": 0.3,
+      "unit": "fraction of net income",
+      "source": "https://www.mass.gov/info-details/massachusetts-rental-voucher-program-mrvp"
+    },
+    "state_public_housing_share": {
+      "value": 0.3,
+      "unit": "fraction of income",
+      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing"
+    },
+    "dds_residential_charge_benefits": {
+      "value": 0.75,
+      "unit": "fraction of SSI/SSDI etc.",
+      "source": "https://www.mass.gov/doc/115-cmr-3-administration/download"
+    },
+    "dds_residential_charge_earnings": {
+      "value": 0.5,
+      "unit": "fraction of earnings above $65/month",
+      "source": "https://www.mass.gov/doc/115-cmr-3-administration/download"
+    },
+    "dds_min_liquid_assets_kept": {
+      "value": 1000,
+      "unit": "USD",
+      "source": "https://www.mass.gov/doc/115-cmr-3-administration/download"
+    },
+    "hmlp_loan": {
+      "min": 1000,
+      "max": 50000,
+      "rate": 0,
+      "unit": "USD",
+      "source": "https://cedac.org/wp-content/uploads/2026/06/HMLP-Loan-Application-FAQs-2026.pdf"
+    },
+    "hmlp_income_limit_by_household": {
+      "1": 240000,
+      "2": 274400,
+      "3": 308600,
+      "4": 342800,
+      "5": 370400,
+      "6": 397800,
+      "7": 425200,
+      "8": 452600,
+      "source": "https://cedac.org/wp-content/uploads/2026/06/HMLP-Loan-Application-FAQs-2026.pdf"
+    },
+    "raft_max_per_12_months": {
+      "value": 7000,
+      "unit": "USD",
+      "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs"
+    },
+    "boston_30pct_ami_1_person": {
+      "value": 36000,
+      "unit": "USD/year",
+      "source": "https://www.boston.gov/income-restricted-housing-guide"
+    },
+    "commonhealth_premium": {
+      "min": 16.5,
+      "max": 996.6,
+      "unit": "USD/month",
+      "source": "https://www.mass.gov/info-details/masshealth-premium-schedule-for-members"
+    },
+    "example_private_residential_bhma_2026_27": {
+      "academic_year": 82124.33,
+      "full_year": 104457.42,
+      "unit": "USD/year",
+      "source": "https://www.berkshirehills.org/bhmafaqs"
+    }
+  },
+  "employment": {
+    "ma_minimum_wage": {
+      "value": 15.0,
+      "unit": "USD/hour",
+      "source": "https://www.masslegalhelp.org/employment-unemployment/getting-paid/minimum-wage"
+    },
+    "sga_non_blind": {
+      "value": 1690,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html"
+    },
+    "trial_work_period_month": {
+      "value": 1210,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html"
+    },
+    "student_earned_income_exclusion": {
+      "monthly": 2410,
+      "annual": 9730,
+      "unit": "USD",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "section_1619b_ma_threshold": {
+      "value": 52015,
+      "unit": "USD/year",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm"
+    },
+    "ma_detc_employer_credit": {
+      "year1_max": 5000,
+      "later_max": 2000,
+      "rate": 0.3,
+      "source": "https://www.mass.gov/how-to-apply-for-the-disability-employment-tax-credit-detc"
+    },
+    "federal_wotc": {
+      "max_per_hire": 2400,
+      "status": "lapsed 2025-12-31",
+      "source": "https://www.mass.gov/info-details/work-opportunity-tax-credit-wotc"
+    }
+  },
+  "timing": [
+    {
+      "item": "Section 8 voucher wait",
+      "value": "5\u201312 years",
+      "note": "Apply at 18 and join every list (Arc of Mass).",
+      "source": "https://thearcofmass.org/future/public/housing/"
+    },
+    {
+      "item": "Boston public housing wait",
+      "value": "10 weeks to 5+ years",
+      "note": "Depends on unit size.",
+      "source": "https://www.bostonhousing.org/en/FAQ.aspx"
+    },
+    {
+      "item": "EOHLC Section 8 list",
+      "value": "Closed since Jan 13, 2025",
+      "note": "Use the MassNAHRO Centralized Waiting List instead.",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp"
+    },
+    {
+      "item": "DDS adult eligibility",
+      "value": "Apply at 17\u201318",
+      "note": "Adult services usually start at 22.",
+      "source": "https://www.mass.gov/info-details/services-for-adults-with-autism-only"
+    },
+    {
+      "item": "Pre-Employment Transition Services",
+      "value": "Ages 14\u201321",
+      "note": "Through MassAbility and schools.",
+      "source": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0"
+    },
+    {
+      "item": "NextGen Careers",
+      "value": "Ages 18\u201330",
+      "note": "Reported at capacity as of May 2025.",
+      "source": "https://www.mass.gov/info-details/nextgen-careers-information"
+    },
+    {
+      "item": "CHAMP application",
+      "value": "Log in at least yearly",
+      "note": "Inactive for 2+ years means the application closes.",
+      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing"
+    },
+    {
+      "item": "RAFT decision",
+      "value": "About 30 days",
+      "note": "Payment about 14 business days after approval.",
+      "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs"
+    }
+  ],
+  "regions": {
+    "Greater Boston": [
+      "Boston",
+      "Cambridge",
+      "Somerville",
+      "Brookline",
+      "Newton",
+      "Watertown",
+      "Needham",
+      "Quincy",
+      "Malden"
+    ],
+    "Northeast": [
+      "Lowell",
+      "Lynn",
+      "Peabody",
+      "Danvers",
+      "Concord",
+      "Andover"
+    ],
+    "Central": [
+      "Worcester",
+      "Westborough",
+      "Sturbridge",
+      "Milford"
+    ],
+    "West": [
+      "Springfield",
+      "Hatfield",
+      "Easthampton",
+      "South Hadley",
+      "Pittsfield",
+      "Stockbridge",
+      "Northampton"
+    ],
+    "Southeast": [
+      "Brockton",
+      "Randolph",
+      "Hanover",
+      "Attleboro",
+      "North Dighton"
+    ]
+  }
+}
