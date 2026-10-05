@@ -59,17 +59,16 @@
         <div class="est-in">
           <h2>Monthly estimator</h2>
           <label for="e-ssi">Benefits</label>
-          <select id="e-ssi"><option value="ssi" selected></option><option value="none">No SSI</option></select>
+          <select id="e-ssi"><option value="ssi" selected></option><option value="eaedc"></option><option value="none">No cash benefit</option></select>
           <label for="e-hrs">Hours worked per week</label>
           <input id="e-hrs" type="number" min="0" max="60" step="1" value="15">
           <label for="e-wage">Hourly wage ($)</label>
           <input id="e-wage" type="number" min="0" step="0.25">
           <label for="e-house">Housing</label>
           <select id="e-house"></select>
-          <div id="rent-wrap" hidden>
-            <label for="e-rent">Monthly rent or share ($)</label>
-            <input id="e-rent" type="number" min="0" step="50" value="1800">
-          </div>
+          <label for="e-rent" id="rent-label">Market rent ($/month)</label>
+          <input id="e-rent" type="number" min="0" step="50" value="1800" aria-describedby="rent-hint">
+          <small class="hint" id="rent-hint" style="margin:2px 0 0">Used whenever there's no housing subsidy, so the columns can be compared.</small>
           <label for="e-afc">Family caregiver paid through Adult Foster Care</label>
           <select id="e-afc"></select>
           <label for="e-yrs">Years to plan</label>
@@ -77,6 +76,18 @@
         </div>
         <div class="est-out" id="est-out" aria-live="polite"></div>
       </div>
+
+      <section class="supports" aria-labelledby="sup-h">
+        <h2 id="sup-h">Support to count</h2>
+        <p class="hint">Ticked items are added to the estimate. Monthly, yearly and one-time amounts are all turned into a per-month figure; one-time grants are spread over the years you're planning. We tick the ones that likely apply. Change them to match your situation.</p>
+        <div class="sup-cols" id="sup-cols"></div>
+        <div class="sup-custom">
+          <strong>Other help you've been offered</strong>
+          <p class="hint">Many programs don't publish amounts. If one has offered you a specific amount, add it here.</p>
+          <div id="sup-custom"></div>
+        </div>
+        <details class="sup-missing"><summary id="sup-missing-sum"></summary><ul id="sup-missing"></ul></details>
+      </section>
 
       <h2 style="margin-top:32px">Coverage by region</h2>
       <p class="lede">How many resources in the directory serve each region. Statewide programs apply everywhere and are counted separately.</p>
@@ -97,6 +108,7 @@ import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./ass
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
+import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios } from "./assets/js/support.js";
 
 const $ = id => document.getElementById(id);
 const code = (new URLSearchParams(location.search).get("s") || "").toUpperCase();
@@ -225,35 +237,82 @@ else {
   $("plan-body").hidden = false;
   const P = pl.fromParams(params);
   const usd = pl.usd;
-  $("e-ssi").options[0].textContent = `SSI + state supplement, living independently ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: 2 })})`;
+  const fin = params.financing || {};
+  $("e-ssi").options[0].textContent = `SSI + state supplement ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: 2 })}/mo)`;
+  if (fin.eaedc_grant_1_person) $("e-ssi").options[1].textContent = `EAEDC state cash, not on SSI ($${fin.eaedc_grant_1_person.value.toFixed(2)}/mo)`;
+  else $("e-ssi").options[1].remove();
   $("e-wage").value = P.minWage;
   if (me) $("e-ssi").value = ["ssi", "applied", "unsure"].includes(me.ssi) ? "ssi" : "none";
   $("e-house").innerHTML = Object.entries(pl.HOUSING).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
   $("e-afc").innerHTML = `<option value="0">No</option><option value="1">Yes, Level I ($${P.afc1}/day minimum)</option><option value="2">Yes, Level II ($${P.afc2}/day minimum)</option>`;
+  if (me?.support === "3") $("e-house").value = "dds";
+
+  // ----- Support checklist (amounts from planner-parameters.json) -----
+  const items = SUPPORT_ITEMS.map(it => ({ ...it, amount: itemAmount(it, params) })).filter(it => it.amount != null);
+  const touched = new Set();
+  const PER = { month: "/mo", year: "/yr", once: " one time" };
+  $("sup-cols").innerHTML = SOURCES.map(src => `<fieldset class="sup-col"><legend>${src === "Government" ? "Government" : "Nonprofit"}</legend>
+    ${items.filter(it => it.source === src).map(it => `<label class="sup-item"><input type="checkbox" data-sup="${it.id}">
+      <span><strong>${esc(it.name)}</strong> <span class="money">${usd(it.amount)}${PER[it.per]}</span> <span class="d" data-norm="${it.id}"></span>
+      <small>${esc(it.note)} ${it.to === "family" ? "Paid to the family." : ""} <a href="#res-${esc(it.resource)}" data-open="res-${esc(it.resource)}">Details</a></small></span></label>`).join("")}
+  </fieldset>`).join("");
+  $("sup-custom").innerHTML = SOURCES.map(src => `<div class="row sup-row">
+    <label for="c-${src}">${src === "Government" ? "Government" : "Nonprofit"} help ($)</label>
+    <input id="c-${src}" type="number" min="0" step="50" placeholder="0" data-csrc="${src}">
+    <select id="cp-${src}" aria-label="${src} help period"><option value="month">per month</option><option value="year">per year</option><option value="once">one time</option></select>
+    <select id="ct-${src}" aria-label="${src} help paid to"><option value="person">to them</option><option value="family">to the family</option></select>
+  </div>`).join("");
+  const unpublished = stateRows.filter(r => r.category === "Financing" && r.level === "Private/Nonprofit" && !/\$\d/.test(r.max_benefit));
+  $("sup-missing-sum").textContent = `${unpublished.length} nonprofit money programs can't be counted because they don't publish amounts`;
+  $("sup-missing").innerHTML = unpublished.map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a> — ${esc(r.max_benefit)}</li>`).join("");
+  document.querySelector(".supports").addEventListener("click", e => {
+    const a = e.target.closest("a[data-open]"); if (!a) return;
+    e.preventDefault(); setView("dir"); st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; st.lv = new Set(Object.keys(LV));
+    document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
+    render(); const el = document.getElementById(a.dataset.open); if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  });
+  document.querySelectorAll("[data-sup]").forEach(cb => cb.addEventListener("change", () => { touched.add(cb.dataset.sup); est(); }));
 
   function est() {
-    const housing = $("e-house").value;
-    $("rent-wrap").hidden = !(housing === "market" || housing === "family");
-    const r = pl.estimate({
-      onSSI: $("e-ssi").value === "ssi", hours: +$("e-hrs").value || 0, wage: +$("e-wage").value || 0,
-      housing, rent: +$("e-rent").value || 0, afcLevel: +$("e-afc").value, years: +$("e-yrs").value || 1,
-    }, P);
-    const hrs = +$("e-hrs").value || 0, wage = +$("e-wage").value || 0;
+    const housing = $("e-house").value, benefit = $("e-ssi").value;
+    $("rent-label").textContent = housing === "family" ? "What they pay the family ($/month)" : "Market rent ($/month)";
+    const years = Math.max(1, Math.round(+$("e-yrs").value || 1));
+    // Default ticks follow the situation until the family changes a box themselves.
+    const ctx = { age: me ? ageOn(me.birthdate) : null, benefit, housing };
+    items.forEach(it => { const cb = document.querySelector(`[data-sup="${it.id}"]`); if (!touched.has(it.id)) cb.checked = it.when(ctx); });
+    items.forEach(it => { document.querySelector(`[data-norm="${it.id}"]`).textContent = it.per === "month" ? "" : `= ${usd(perMonth(it.amount, it.per, years))}/mo`; });
+    const supports = items.filter(it => document.querySelector(`[data-sup="${it.id}"]`).checked)
+      .map(({ source, to, per, amount }) => ({ source, to, per, amount }))
+      .concat(SOURCES.map(src => ({ source: src, amount: Math.max(0, +$(`c-${src}`).value || 0), per: $(`cp-${src}`).value, to: $(`ct-${src}`).value })).filter(c => c.amount));
+
+    const inputs = { benefit, hours: +$("e-hrs").value || 0, wage: +$("e-wage").value || 0, housing, rent: +$("e-rent").value || 0, afcLevel: +$("e-afc").value, years };
+    const S = compareScenarios(inputs, P, params, supports);
+    const flags = pl.estimate({ ...inputs, onSSI: benefit === "ssi" }, P).flags;
+    const cols = [["government", "Government only"], ["nonprofit", "Nonprofit only"], ["both", "Both"]];
+    const neg = v => `<span class="neg">−${usd(v).replace("−", "")}</span>`;
+    const row = (label, f, cls = "") => `<tr class="${cls}"><td>${label}</td>${cols.map(([k]) => `<td>${f(S[k])}</td>`).join("")}</tr>`;
+    const benefitName = benefit === "eaedc" ? "EAEDC" : benefit === "ssi" ? "SSI + state supplement" : "Cash benefit";
+    const hrs = inputs.hours;
     $("est-out").innerHTML = `
-      <table class="ledger"><tbody>
-        <tr><td>Earnings (${hrs} hrs × ${usd(wage)}/hr)</td><td>${usd(r.earn)}</td></tr>
-        <tr><td>SSI + state supplement after earnings</td><td>${usd(r.ssi)}</td></tr>
-        <tr><td><b>Monthly income</b></td><td>${usd(r.income)}</td></tr>
-        <tr><td>${esc(r.housingLabel)}</td><td class="neg">−${usd(r.housingCost).replace("−", "")}</td></tr>
-        <tr class="tot"><td>Left each month for food, transport, personal</td><td class="${r.left < 0 ? "neg" : ""}">${usd(r.left)}</td></tr>
-        ${r.afcMonthly ? `<tr class="sub"><td>Plus Adult Foster Care pay to the family caregiver</td><td>${usd(r.afcMonthly)}</td></tr>` : ""}
+      <table class="ledger cmp"><thead><tr><th></th>${cols.map(([k, l]) => `<th class="${k === "both" ? "hl" : ""}">${l}</th>`).join("")}</tr></thead><tbody>
+        ${row(`Earnings (${hrs} hrs × ${usd(inputs.wage)}/hr)`, r => usd(r.earn))}
+        ${row(benefitName, r => usd(r.benefit))}
+        ${row(housing === "dds" ? "DDS charge or rent" : housing === "voucher" ? "Rent (30% with a voucher)" : "Rent", r => neg(r.housingCost))}
+        ${row("Other support to them", r => usd(r.govPerson + r.npPerson))}
+        ${row("<b>Left each month</b>", r => `<b class="${r.left < 0 ? "neg" : ""}">${usd(r.left)}</b>`, "tot")}
+        ${row("Paid to the family", r => usd(r.familyExtra), "sub")}
+        ${row("Rent the voucher covers", r => usd(r.housingHelp), "sub")}
+        ${row("<b>Total support per month</b>", r => `<b>${usd(r.supportTotal)}</b>`, "tot")}
+        ${row(`Total support over ${years} yr${years > 1 ? "s" : ""}`, r => usd(r.overYears.support), "sub")}
       </tbody></table>
-      <div class="multi">Over ${r.years} year${r.years > 1 ? "s" : ""}: housing costs <b>${usd(r.totals.housing)}</b>, left over <b>${usd(r.totals.left)}</b>${r.afcMonthly ? `, caregiver pay <b>${usd(r.totals.afc)}</b>` : ""}. ${params.year} figures, no inflation or yearly benefit increases.</div>
-      <div class="flags">${r.flags.map(f => `<div class="flag ${f.warn ? "w" : ""}">${esc(f.text)}</div>`).join("")}</div>
-      <p class="checked" style="margin-top:12px">Estimate only. Assumes no other income and uses gross, not adjusted, income for rent. Not financial or legal advice.</p>`;
+      ${S.both.supportTotal ? `<div class="share" role="img" aria-label="Government ${Math.round(S.both.govShare * 100)} percent, nonprofit ${Math.round((1 - S.both.govShare) * 100)} percent">
+        <span class="g" style="width:${S.both.govShare * 100}%"></span><span class="n" style="width:${(1 - S.both.govShare) * 100}%"></span></div>
+        <p class="multi" style="margin-top:6px">With both, <b>${Math.round(S.both.govShare * 100)}%</b> of support (${usd(S.both.govTotal)}/mo) comes from government and <b>${Math.round((1 - S.both.govShare) * 100)}%</b> (${usd(S.both.npTotal)}/mo) from nonprofits.</p>` : ""}
+      <div class="flags">${flags.map(f => `<div class="flag ${f.warn ? "w" : ""}">${esc(f.text)}</div>`).join("")}</div>
+      <p class="checked" style="margin-top:12px">Estimate only, ${params.year} figures, no inflation. Nonprofit grants are published maximums, not typical awards. Assumes no other income and uses gross income for rent.${benefit === "eaedc" ? " EAEDC: assumes each dollar of earnings over $200 lowers the grant by a dollar (the source doesn't say exactly)." : ""} Not financial or legal advice.</p>`;
   }
-  if (me?.support === "3") $("e-house").value = "dds";
-  ["e-ssi", "e-hrs", "e-wage", "e-house", "e-rent", "e-afc", "e-yrs"].forEach(id => $(id).addEventListener("input", est));
+  ["e-ssi", "e-hrs", "e-wage", "e-house", "e-rent", "e-afc", "e-yrs", "c-Government", "cp-Government", "ct-Government", "c-Nonprofit", "cp-Nonprofit", "ct-Nonprofit"]
+    .forEach(id => $(id).addEventListener("input", est));
   est();
 
   // Region grid (seed for a heat map).
@@ -289,10 +348,11 @@ else {
     pca_complex_care_differential: "PCA complex-care pay differential", national_grid_discount_rate: "National Grid low-income discount",
     mbta_tap_discount: "MBTA reduced fare (TAP)", at_mini_loan: "Assistive technology Mini Loan", at_financial_loan_rate: "Assistive technology Financial Loan",
     cicrf_threshold: "Catastrophic Illness in Children Relief Fund threshold",
+    kodi_lee_music_grant_max: "Kodi Lee Gives Back music grant (max)", autism_alliance_family_grant_max: "Autism Alliance family grant (max)",
   };
   const human = k => LABELS[k] || k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
   const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
-  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : "");
+  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : "");
   function valueOf(p) {
     if ("value" in p) return unitFmt(p.value, p.unit);
     if ("min" in p) return `${unitFmt(p.min, p.unit)}–${unitFmt(p.max, p.unit)}` + ("rate" in p ? ` at ${p.rate * 100}%` : "");
@@ -313,6 +373,7 @@ else {
     p.min_expense ? `For medical costs over ${money(p.min_expense)}/mo; itemize above ${money(p.itemize_above)}/mo` : "",
     p.min_amount ? `Loans over ${money(p.min_amount)}` : "",
     p.projected_deliverable ? `State plans increases to ${money(p.projected_deliverable)} and ${money(p.projected_utility)}` : "",
+    p.min_age ? `Ages ${p.min_age}+` : "",
     p.age_limit ? `Costs before age ${p.age_limit}; looks back ${p.lookback_months} months` : "",
   ].filter(Boolean).join(" · ");
   const link = u => { const s = safeUrl(u); return s ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a>` : ""; };
@@ -320,7 +381,8 @@ else {
     + Object.entries(obj).map(([k, p]) => `<tr><td>${esc(human(k))}</td><td class="v">${esc(valueOf(p))}</td><td>${esc(extras(p))}</td><td>${link(p.source)}</td></tr>`).join("")
     + `</tbody></table></div>`;
   $("param-tables").innerHTML = section("Income and benefits", params.income) + section("Housing costs and help", params.housing) + section("Work and earnings", params.employment)
-    + (params.financing ? section("Money, tax credits and discounts", params.financing) : "");
+    + (params.financing ? section("Money, tax credits and discounts", params.financing) : "")
+    + (params.nonprofit ? section("Nonprofit grants with published amounts", params.nonprofit) : "");
   $("t-time").innerHTML = `<thead><tr><th>Item</th><th>Timing</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
     + (params.timing || []).map(t => `<tr><td>${esc(t.item)}</td><td class="v">${esc(t.value)}</td><td>${esc(t.note)}</td><td>${link(t.source)}</td></tr>`).join("") + `</tbody>`;
 }

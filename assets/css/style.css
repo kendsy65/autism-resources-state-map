@@ -82,7 +82,7 @@ section.log{margin-top:40px;display:grid;gap:18px}
 .tabs button{font:inherit;font-weight:600;border:0;background:none;color:var(--muted);padding:10px 14px;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px}
 .tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent)}
 #view-plan .lede{margin-top:16px}
-.est{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
+.est{display:grid;grid-template-columns:minmax(0,260px) minmax(0,1fr);gap:20px;margin-top:20px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px}
 .est-in{display:flex;flex-direction:column;gap:4px;min-width:0}
 .est-in label{font-size:13px;font-weight:600;color:var(--muted);margin-top:8px}
 .est-in input,.est-in select{font:inherit;padding:7px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink);width:100%}
@@ -196,3 +196,29 @@ a.statecard:hover,a.statecard:focus-visible{border-color:var(--accent);outline:n
 .sum-btn:hover{border-color:var(--priv)}
 .sum-btn[aria-pressed="true"]{border-color:var(--priv);background:var(--priv-bg)}
 .sum-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- Government vs nonprofit comparison ---------- */
+.ledger.cmp th{font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);text-align:right;padding:0 0 6px 10px;font-weight:600;vertical-align:bottom}
+.ledger.cmp th.hl{color:var(--accent)}
+.ledger.cmp td{text-align:right;padding-left:10px;white-space:nowrap}
+.ledger.cmp td:first-child{text-align:left;white-space:normal;padding-left:0;font-weight:400}
+.ledger.cmp td:last-child{background:var(--accent-soft)}
+.share{display:flex;height:10px;border-radius:999px;overflow:hidden;margin-top:14px;background:var(--line)}
+.share .g{background:var(--state)}
+.share .n{background:var(--priv)}
+.supports{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px}
+.sup-cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.sup-col{border:0;padding:0;margin:0;min-width:0}
+.sup-col legend{font-weight:700;font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:6px}
+.sup-item{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px;cursor:pointer}
+.sup-item input{margin-top:4px;accent-color:var(--accent)}
+.sup-item small{display:block;color:var(--muted);font-size:12.5px}
+.sup-item .d{color:var(--muted);font-size:13px}
+.sup-custom{margin-top:16px}
+.sup-row{margin-top:6px;font-size:14px}
+.sup-row label{min-width:150px;font-weight:600;color:var(--muted)}
+.sup-row input,.sup-row select{font:inherit;font-size:14px;padding:6px 8px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.sup-row input{width:9ch}
+.sup-missing{margin-top:14px;font-size:14px}
+.sup-missing summary{cursor:pointer;color:var(--accent)}
+@media (max-width:560px){.ledger.cmp{font-size:13px}.ledger.cmp td{padding-left:6px}}

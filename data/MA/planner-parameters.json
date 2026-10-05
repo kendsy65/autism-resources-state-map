@@ -380,5 +380,20 @@
       "lookback_months": 24,
       "source": "https://www.mass.gov/info-details/check-eligibility-for-cicrf"
     }
+  },
+  "nonprofit": {
+    "kodi_lee_music_grant_max": {
+      "value": 1000,
+      "unit": "USD one-time",
+      "min_age": 15,
+      "note": "Music lessons, therapy, studio time or equipment. Autistic people 15+; past recipients can't reapply.",
+      "source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/"
+    },
+    "autism_alliance_family_grant_max": {
+      "value": 1000,
+      "unit": "USD one-time",
+      "note": "MetroWest families of a child with autism; priority for income up to $60,000 (family of 4).",
+      "source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding"
+    }
   }
 }

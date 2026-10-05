@@ -27,6 +27,7 @@ assets/js/common.js          States in scope, data loading helpers
 assets/js/planner.js         Planner math (reads planner-parameters.json)
 assets/js/profile.js         Caregiver answers (kept in the browser only) → next steps, ranking, work scenarios
 assets/js/geo.js             ZIP lookup, distances, nearest region
+assets/js/support.js         Government vs nonprofit support, normalized per month, side-by-side scenarios
 tests/                       Unit tests for the planner and the next-steps logic
 data/
   SCHEMA.md                  The data template every resource follows
