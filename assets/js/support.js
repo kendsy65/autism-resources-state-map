@@ -28,6 +28,10 @@ export const SUPPORT_ITEMS = [
     param: ["nonprofit", "kodi_lee_music_grant_max"], resource: "ma-fin-flutie-kodi-lee-gives-back-grant",
     name: "Kodi Lee Gives Back music grant (maximum)", note: "Music lessons, therapy or equipment. Ages 15+, once only.",
     when: c => c.age != null && c.age >= 15 },
+  { id: "act_today", source: "Nonprofit", to: "family", per: "once",
+    param: ["nonprofit", "act_today_grant_max"], resource: "ma-fin-act-today-family-grants",
+    name: "ACT Today! family grant (maximum)", note: "Paid straight to the provider or vendor. Household income is considered.",
+    when: () => false },
   { id: "autism_alliance", source: "Nonprofit", to: "family", per: "once",
     param: ["nonprofit", "autism_alliance_family_grant_max"], resource: "ma-fin-autism-alliance-flutie-family-grant",
     name: "Autism Alliance family grant (maximum)", note: "Aimed at MetroWest families of a child; check it fits.",
@@ -105,4 +109,31 @@ export function compareScenarios(inputs, P, params, supports = []) {
     };
   }
   return { years, government: run(true, false), nonprofit: run(false, true), both: run(true, true) };
+}
+
+// ---------- Application windows ----------
+const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+// "2026-10-15" -> local date; "2027-04" -> first of that month (month precision).
+function parseDay(s) {
+  const m = /^(\d{4})-(\d{2})(?:-(\d{2}))?$/.exec(s || "");
+  return m ? { date: new Date(+m[1], +m[2] - 1, m[3] ? +m[3] : 1), exact: !!m[3] } : null;
+}
+const label = ({ date, exact }) => exact ? `${MONTHS[date.getMonth()].slice(0, 3)} ${date.getDate()}, ${date.getFullYear()}` : `${MONTHS[date.getMonth()]} ${date.getFullYear()}`;
+
+// Whether applications are open today. Returns { state: "open"|"closed"|"upcoming"|"rolling"|"", text }.
+export function applyStatus(r, today = new Date()) {
+  const t = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const opens = parseDay(r.apply_opens), closes = parseDay(r.apply_closes);
+  if (opens && closes && closes.date < opens.date) {
+    // Last round closed, next one announced.
+    return t >= opens.date ? { state: "open", text: `Open since ${label(opens)}` } : { state: "upcoming", text: `Reopens ${label(opens)}` };
+  }
+  if (opens && t < opens.date) return { state: "upcoming", text: `Opens ${label(opens)}` };
+  if (closes && t > closes.date) return { state: "closed", text: `Closed ${label(closes)}` };
+  if (closes) {
+    const days = Math.round((closes.date - t) / 864e5);
+    return { state: "open", text: `Open now · closes ${label(closes)}${days <= 14 ? ` (${days === 0 ? "today" : days === 1 ? "1 day left" : `${days} days left`})` : ""}` };
+  }
+  if (/year-round/i.test(r.apply_window || "")) return { state: "rolling", text: "Apply any time" };
+  return r.apply_window ? { state: "", text: r.apply_window } : { state: "", text: "" };
 }

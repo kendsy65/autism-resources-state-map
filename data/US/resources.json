@@ -21,7 +21,12 @@
     "notes": "Once on SSI, wages, other income and changes in resources or living arrangements must be reported each month.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "us-ss-check-eligibility",
@@ -45,7 +50,12 @@
     "notes": "It reflects the situation today and can't say whether someone will become eligible later.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "us-ss-apply-for-ssi",
@@ -69,7 +79,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "us-ss-contact-social-security",
@@ -93,7 +108,12 @@
     "notes": "SSA says its website is the fastest way to get help.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "us-ss-ticket-to-work-help-line",
@@ -117,6 +137,11 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   }
 ]

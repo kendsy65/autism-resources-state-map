@@ -21,7 +21,12 @@
     "notes": "Lists are often closed and waits typically run 5–12 years. The Arc of Mass advises applying at 18 and joining every list. Keep contact info current or you lose your place.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-mainstream-non-elderly-disabled-ned-vouchers",
@@ -45,7 +50,12 @@
     "notes": "Access depends on the EOHLC list, which was closed to new mobile-voucher applicants as of Jan 2025.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-hud-section-811-project-rental-assistance",
@@ -69,7 +79,12 @@
     "notes": "Most autistic adults living at home are unlikely to be prioritized.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-federal-public-housing",
@@ -93,7 +108,12 @@
     "notes": "Waits can be years. Boston reports 10 weeks to over 5 years depending on unit size.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-fair-housing-reasonable-accommodations",
@@ -117,7 +137,12 @@
     "notes": "Examples: extra time to use a voucher, a home interview, an extra bedroom for equipment. MA rules: mass.gov/info-details/disability-rights-in-housing.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-ssi-living-arrangement-rules",
@@ -141,7 +166,12 @@
     "notes": "Paying parents a fair share of rent can avoid the cut. Since Sept 30, 2024, food no longer counts. MA supplement source: mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-massachusetts-rental-voucher-program-mrvp",
@@ -165,7 +195,12 @@
     "notes": "Very high demand and long waits.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-alternative-housing-voucher-program-ahvp",
@@ -189,7 +224,12 @@
     "notes": "Demand is very high.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-state-public-housing-via-champ",
@@ -213,7 +253,12 @@
     "notes": "Log in at least yearly. Applications inactive for 2+ years are closed.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-chapter-689-special-needs-housing",
@@ -237,7 +282,12 @@
     "notes": "The state's own page is out of date (still says DHCD).",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-community-based-housing-cbh",
@@ -261,7 +311,12 @@
     "notes": "DDS-eligible autistic adults are generally not eligible.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-facilities-consolidation-fund-fcf",
@@ -285,7 +340,12 @@
     "notes": "Families sometimes partner with nonprofits to create FCF-funded homes.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-home-modification-loan-program-hmlp",
@@ -309,7 +369,12 @@
     "notes": "ADUs under 900 sq ft are allowed by right in single-family zones since Feb 2, 2025. Loans start at $1,000.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-raft-emergency-housing-assistance",
@@ -333,7 +398,12 @@
     "notes": "Decision usually within 30 days.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-dds-adult-eligibility-for-autism",
@@ -357,7 +427,12 @@
     "notes": "Autism-only services list does not include 24-hour residential.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-dds-residential-supports",
@@ -381,7 +456,12 @@
     "notes": "Eligibility does not guarantee a placement. Residents keep at least $1,000 in liquid assets. Overview: thearcofmass.org/future/public/dds.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-masshealth-adult-foster-care",
@@ -405,7 +485,12 @@
     "notes": "Separate from DDS shared living.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-masshealth-group-adult-foster-care",
@@ -429,7 +514,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-masshousing-3-priority-set-aside",
@@ -453,7 +543,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-independent-living-centers",
@@ -477,7 +572,12 @@
     "notes": "Help with advocacy, not housing itself.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-mcad-housing-discrimination-complaints",
@@ -501,7 +601,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-boston-housing-authority",
@@ -525,7 +630,12 @@
     "notes": "Section 8 tenant-based list closed; public housing and project-based lists open.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-boston-disabilities-commission-housing",
@@ -549,7 +659,12 @@
     "notes": "Referral only.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-boston-metrolist-housing-lotteries",
@@ -573,7 +688,12 @@
     "notes": "Office of Housing Stability (617-635-4200) helps renters in crisis.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-cambridge-housing-authority",
@@ -597,7 +717,12 @@
     "notes": "All four main waitlists were open when checked.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-worcester-housing-authority",
@@ -621,7 +746,12 @@
     "notes": "Also offers DMH/DDS project-based vouchers.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-springfield-housing-authority",
@@ -645,7 +775,12 @@
     "notes": "Closed to the public Wednesdays.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-autism-housing-pathways",
@@ -669,7 +804,12 @@
     "notes": "Voucher guide: 18section8.org. Now part of the Federation for Children with Special Needs.",
     "funding_route": "Family-paid",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-specialized-housing-inc",
@@ -693,7 +833,12 @@
     "notes": "Not yet confirmed on the organization's own site, which blocks automated reading. Details from two third-party guides.",
     "funding_route": "Family-paid",
     "needs_checking": true,
-    "to_check": "Address conflict: one guide lists Newton, the nonprofit research lists 45 Bartlett Crescent, Brookline. Also confirm nonprofit status by phone (an unrelated Specialized Housing, Inc. in Oregon shows up first in IRS records)."
+    "to_check": "Address conflict: one guide lists Newton, the nonprofit research lists 45 Bartlett Crescent, Brookline. Also confirm nonprofit status by phone (an unrelated Specialized Housing, Inc. in Oregon shows up first in IRS records).",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-adult-autism-support-centers",
@@ -717,7 +862,12 @@
     "notes": "Do not provide housing directly.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-the-arc-of-massachusetts-housing-guidance",
@@ -741,7 +891,12 @@
     "notes": "Respond to housing authorities quickly; you can be dropped within 48 hours.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-housing-navigator-massachusetts",
@@ -765,7 +920,12 @@
     "notes": "Replaced the old MassAccess Housing Registry in 2022. For buying a home, see MyMassHome.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-lowell-housing-authority",
@@ -789,7 +949,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-somerville-office-of-housing-stability",
@@ -813,7 +978,12 @@
     "notes": "ADA accommodations: x2059 or ADA@somervillema.gov.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-somerville-consolidated-rental-waitlist",
@@ -837,7 +1007,12 @@
     "notes": "Only open during set windows. Watch for the next one.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-quincy-housing-authority",
@@ -861,7 +1036,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-lynn-housing-authority-lhand",
@@ -885,7 +1065,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-brockton-housing-authority",
@@ -909,7 +1094,12 @@
     "notes": "Medical expenses can be deducted for elderly/disabled households.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-berkshire-hills-music-academy",
@@ -933,7 +1123,12 @@
     "notes": "School districts or DDS may pay part or all.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-amego-adult-residential",
@@ -957,7 +1152,12 @@
     "notes": "",
     "funding_route": "DDS",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-melmark-new-england-adult-services",
@@ -981,7 +1181,12 @@
     "notes": "Tewksbury broke ground Feb 2025; opening date not confirmed.",
     "funding_route": "DDS",
     "needs_checking": true,
-    "to_check": "The Tewksbury adult community (cost over $15M) was due to finish in spring 2026. Check whether it has opened and how placements work."
+    "to_check": "The Tewksbury adult community (cost over $15M) was due to finish in spring 2026. Check whether it has opened and how placements work.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-may-institute-adult-residential",
@@ -1005,7 +1210,12 @@
     "notes": "May Institute's residential page lists three service areas: Cape Cod and Southeastern MA, Greater Boston, and Western MA. Published staffing: semi-independent apartments 40–60 staff hours per resident per week; small group homes have 24-hour supervision.",
     "funding_route": "DDS",
     "needs_checking": true,
-    "to_check": "Confirm which towns the homes are in (team research lists Revere, Mashpee and West Springfield; the official page names only regions)."
+    "to_check": "Confirm which towns the homes are in (team research lists Revere, Mashpee and West Springfield; the official page names only regions).",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-cardinal-cushing-centers-adult-residential",
@@ -1029,7 +1239,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-evergreen-center-adult-supports",
@@ -1053,7 +1268,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-riverbrook-residence",
@@ -1077,7 +1297,12 @@
     "notes": "Women only.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-ticket-to-work",
@@ -1101,7 +1326,12 @@
     "notes": "Using the Ticket can pause medical reviews.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-plan-to-achieve-self-support-pass",
@@ -1125,7 +1355,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-ssi-ssdi-work-incentives",
@@ -1149,7 +1384,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-section-1619-b-masshealth-continuation",
@@ -1173,7 +1413,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-work-opportunity-tax-credit",
@@ -1197,7 +1442,12 @@
     "notes": "LAPSED Dec 31, 2025. MA still accepts requests in case Congress renews it.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-abilityone",
@@ -1221,7 +1471,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-job-accommodation-network",
@@ -1245,7 +1500,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-schedule-a-federal-hiring",
@@ -1269,7 +1529,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-masshire-career-centers",
@@ -1293,7 +1558,12 @@
     "notes": "Funded by federal WIOA.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-massability-vocational-rehabilitation",
@@ -1317,7 +1587,12 @@
     "notes": "Federally funded, state-run.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-pre-employment-transition-services",
@@ -1341,7 +1616,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-nextgen-careers",
@@ -1365,7 +1645,12 @@
     "notes": "Reported at capacity as of May 2025.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-dds-employment-day-supports",
@@ -1389,7 +1674,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-masshealth-commonhealth",
@@ -1413,7 +1703,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-work-without-limits",
@@ -1437,7 +1732,12 @@
     "notes": "Funded by SSA.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-ma-disability-employment-tax-credit",
@@ -1461,7 +1761,12 @@
     "notes": "Still active while federal WOTC is lapsed.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-young-adults-with-disabilities-grant",
@@ -1485,7 +1790,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-massachusetts-autism-commission",
@@ -1509,7 +1819,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-boston-disabilities-commission-employment",
@@ -1533,7 +1848,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-cambridge-commission-for-persons-with-disabilities",
@@ -1557,7 +1877,12 @@
     "notes": "Referral only.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-work-inc",
@@ -1581,7 +1906,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-the-caning-company",
@@ -1605,7 +1935,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-heritage-shredding",
@@ -1629,7 +1964,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-northeast-arc-employment-services",
@@ -1653,7 +1993,12 @@
     "notes": "Breaking Grounds Café in Peabody is closed (its website now redirects to ne-arc.org); Northeast Arc's other job sites continue.",
     "funding_route": "Mixed",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-prospect-meadow-farm",
@@ -1677,7 +2022,12 @@
     "notes": "Also sites in Pittsfield.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-gateway-arts",
@@ -1701,7 +2051,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-the-price-center-kindness-caf",
@@ -1725,7 +2080,12 @@
     "notes": "95% still employed after a year (program's own figure).",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-post-22-ben-s-beans",
@@ -1749,7 +2109,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-aspire-works-internships",
@@ -1773,7 +2138,12 @@
     "notes": "Partners include Fidelity and Liberty Mutual.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-triangle-inc-prism",
@@ -1797,7 +2167,12 @@
     "notes": "Sites in Malden, Salem, Randolph.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-easterseals-ma-job-placement",
@@ -1821,7 +2196,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-jvs-transitions-to-work",
@@ -1845,7 +2225,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-best-buddies-jobs",
@@ -1869,7 +2254,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-charles-river-center",
@@ -1893,7 +2283,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-aane-workmap-lifemap-coaching",
@@ -1917,7 +2312,12 @@
     "notes": "AANE pages list two different fees. Confirm the current rate.",
     "funding_route": "Family-paid",
     "needs_checking": true,
-    "to_check": "Ask AANE for current WorkMAP and InterviewPREP prices; the programme page appears dated. Record EIN."
+    "to_check": "Ask AANE for current WorkMAP and InterviewPREP prices; the programme page appears dated. Record EIN.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-minute-man-arc-employment-services",
@@ -1941,7 +2341,12 @@
     "notes": "Jump Start offers paid internships for ages 16–22.",
     "funding_route": "DDS + MassAbility",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-seven-hills-aspire",
@@ -1965,7 +2370,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-south-shore-industries",
@@ -1989,7 +2399,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-open-sky-i-dd-employment-services",
@@ -2013,7 +2428,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-riverside-industries",
@@ -2037,7 +2457,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-berkshire-county-arc-employment",
@@ -2061,7 +2486,12 @@
     "notes": "Figures date from 2019.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-cooperative-production-co-op",
@@ -2085,7 +2515,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-project-search-neba",
@@ -2109,7 +2544,12 @@
     "notes": "Call to confirm the current host sites.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-futurebos-youth-jobs-formerly-successlink",
@@ -2133,7 +2573,12 @@
     "notes": "No disability-specific track listed. Ask for accommodations.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-worcester-accessibility-division",
@@ -2157,7 +2602,12 @@
     "notes": "Referral and rights help only.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-springfield-office-for-citizens-with-disabilities",
@@ -2181,7 +2631,12 @@
     "notes": "Referral only.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-somerville-commission-for-persons-with-disabilities",
@@ -2205,7 +2660,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-newton-youthworks-internships",
@@ -2229,7 +2689,12 @@
     "notes": "Not a fit for people who need high support.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-venture-autism-employment-services",
@@ -2253,7 +2718,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-mainstay-supportive-housing",
@@ -2277,7 +2747,12 @@
     "notes": "MassHealth Group Adult Foster Care (GAFC) for support services, plus a rental subsidy for rent. Listed as a non-profit; its affiliated housing entities are registered 501(c)(3)s.",
     "funding_route": "MassHealth",
     "needs_checking": true,
-    "to_check": "Directory record last updated February 2023. Confirm the program name (\"Collaborative Living Supports\") and current openings."
+    "to_check": "Directory record last updated February 2023. Confirm the program name (\"Collaborative Living Supports\") and current openings.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-pathways-to-possible",
@@ -2301,7 +2776,12 @@
     "notes": "Mixed: free (state-funded) or personal funds; Adult Foster Care / GAFC through MassHealth. Described as an agency serving adults since 1972; IRS status not yet confirmed.",
     "funding_route": "Mixed",
     "needs_checking": true,
-    "to_check": "Confirm non-profit status and website."
+    "to_check": "Confirm non-profit status and website.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-arc-of-the-south-shore-residential",
@@ -2325,7 +2805,12 @@
     "notes": "Residential homes are developed with DDS. Non-profit (EIN 04-2302069).",
     "funding_route": "DDS",
     "needs_checking": true,
-    "to_check": "Check whether the autism-specific Turning 22 homes announced in 2024 have opened."
+    "to_check": "Check whether the autism-specific Turning 22 homes announced in 2024 have opened.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-northeast-arc-residential",
@@ -2349,7 +2834,12 @@
     "notes": "Mostly DDS and MassHealth. Non-profit, founded 1954; the largest Arc in Massachusetts.",
     "funding_route": "DDS + MassHealth",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-hou-minute-man-arc-residential",
@@ -2373,7 +2863,12 @@
     "notes": "DDS-licensed residential and placement services. Non-profit (EIN 04-2269230), founded 1958 by local families.",
     "funding_route": "DDS",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-asperger-works",
@@ -2397,7 +2892,12 @@
     "notes": "Listed as a charitable non-profit.",
     "funding_route": "",
     "needs_checking": true,
-    "to_check": "Website active (copyright 2014–2025); confirm current programs."
+    "to_check": "Website active (copyright 2014–2025); confirm current programs.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-curry-college-neurodiversity-center",
@@ -2421,7 +2921,12 @@
     "notes": "$165,000 state grant (Employment Program for Young Adults with Disabilities). Run by a private non-profit college.",
     "funding_route": "State grant",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-amego-community-employment",
@@ -2445,7 +2950,12 @@
     "notes": "Likely DDS-funded (to confirm). Non-profit (EIN 23-7131690).",
     "funding_route": "DDS",
     "needs_checking": true,
-    "to_check": "Collect programme detail; only a one-line mention found so far."
+    "to_check": "Collect programme detail; only a one-line mention found so far.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-valley-educational-associates",
@@ -2469,7 +2979,12 @@
     "notes": "DDS-certified provider. Private non-profit since 1982.",
     "funding_route": "DDS",
     "needs_checking": true,
-    "to_check": "Figures in our source are from 2011; refresh."
+    "to_check": "Figures in our source are from 2011; refresh.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-emp-nashoba-learning-group-adult-services",
@@ -2493,7 +3008,12 @@
     "notes": "Day habilitation billed to MassHealth; job training and employment funded by DDS. 501(c)(3) (EIN 01-0672424), founded 2002 by a parent of an autistic son.",
     "funding_route": "DDS + MassHealth",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-snap-food-benefits",
@@ -2517,7 +3037,12 @@
     "notes": "Since Feb 10, 2026 DTA asks for proof of most medical costs. Federal 2025 law added work rules for some adults; people medically unable to work are exempt.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-home-energy-assistance-heap",
@@ -2541,7 +3066,12 @@
     "notes": "Reapply every year. Approval can also unlock a utility discount rate and shutoff protection.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-lifeline-phone-internet-discount",
@@ -2565,7 +3095,12 @@
     "notes": "One discount per household. Eligibility is rechecked every year.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-federal-credit-for-other-dependents",
@@ -2589,7 +3124,12 @@
     "notes": "Nonrefundable: it lowers tax owed but is not paid out as a refund.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-attainable-savings-plan-able",
@@ -2613,7 +3153,12 @@
     "notes": "Earnings grow federally tax-free when spent on qualified disability expenses. Leftover funds at death may repay MassHealth.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-eaedc-cash-assistance",
@@ -2637,7 +3182,12 @@
     "notes": "Cannot be received at the same time as SSI. Useful while an SSI application is pending. First $200 of job income is not counted. Benefits go back to the application date.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-masshealth-pca-program",
@@ -2661,7 +3211,12 @@
     "notes": "Caregiver guides say spouses and legally responsible relatives cannot be paid as the PCA. Third-party sites cite wages around $19–$22/hour; confirm current union rate.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-dds-adult-hcbs-waivers",
@@ -2685,7 +3240,12 @@
     "notes": "The state describes these as waivers for adults with intellectual disabilities. Ask DDS whether an autism-only eligibility qualifies.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-dds-family-support-flexible-funding",
@@ -2709,7 +3269,12 @@
     "notes": "Funding is limited. Ask early in the year about budget limits.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-ma-child-and-family-tax-credit",
@@ -2733,7 +3298,12 @@
     "notes": "Refundable, so it is paid out even if no tax is owed. DTA says it does not affect DTA benefits.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-catastrophic-illness-in-children-relief-fund",
@@ -2757,7 +3327,12 @@
     "notes": "Covers past costs only, up to 24 months before you apply. Payer of last resort; funding not guaranteed. Relevant for the transition years up to 22.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-mbta-transportation-access-pass",
@@ -2781,7 +3356,12 @@
     "notes": "Does not discount The RIDE paratransit. Card lasts 1 or 5 years depending on proof of disability.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-utility-low-income-discount-rate",
@@ -2805,7 +3385,12 @@
     "notes": "Eversource's discount (reported as 42% on electric) could not be confirmed on its own site.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-boston-taxi-discount-coupons",
@@ -2829,7 +3414,12 @@
     "notes": "",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-boston-tax-help-coalition",
@@ -2853,7 +3443,12 @@
     "notes": "Main season runs Feb–Apr; some sites stay open later for prior-year and amended returns.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-cambridge-taxi-discount-coupons",
@@ -2877,7 +3472,12 @@
     "notes": "Valid only in Cambridge-licensed taxis.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-cambridge-somerville-heap-office",
@@ -2901,7 +3501,12 @@
     "notes": "Somerville residents apply here, not through a separate Somerville office.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": ""
   },
   {
     "id": "ma-fin-ma-alternative-finance-program",
@@ -2919,13 +3524,24 @@
     "upfront_cost": "$0 to apply",
     "ongoing_cost": "Monthly loan payments",
     "max_benefit": "Mini Loan: $100–$4,000 at 0% interest. Financial Loan: over $4,000 at 4.75%.",
-    "how_to_apply": "massalternativefinance.org or Easterseals MA. Borrow devices free at massmatch.at4all.com.",
+    "how_to_apply": "Apply online or download the form from Easterseals Massachusetts. Questions: 508-751-6428, afp@eastersealsma.org. Borrow devices free at massmatch.at4all.com.",
     "source_url": "https://www.massalternativefinance.org/",
     "date_checked": "2026-10-05",
     "notes": "Mini Loans are designed for people a bank would turn down.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [
+      "Pick the device or service: for example communication devices, hearing aids, vehicle changes or home modifications. You can borrow many devices free first from the MassMATCH lending library (massmatch.at4all.com).",
+      "Choose the loan: a Mini Loan for $100–$4,000 at 0% interest (most are repaid over 36 months, with no penalty for paying early), or a Financial Loan for more than $4,000 at 4.75% (36–96 months depending on the device).",
+      "Apply online or download the application from Easterseals Massachusetts. You need to show you can repay the loan and send documents proving eligibility.",
+      "No credit history or a low credit score won't necessarily disqualify you for a Mini Loan.",
+      "Questions: 508-751-6428 or afp@eastersealsma.org."
+    ],
+    "apply_window": "Year-round",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "https://massachusetts.easterseals.com/get-support/areas-of-support/alternative-finance-program/mini-loan-program"
   },
   {
     "id": "ma-fin-plan-of-ma-ri-pooled-trust",
@@ -2943,13 +3559,23 @@
     "upfront_cost": "No minimum to open; fees not published",
     "ongoing_cost": "Fees not published",
     "max_benefit": "Not applicable",
-    "how_to_apply": "MA: 617-244-5552. Offices in Braintree and Providence, by appointment.",
+    "how_to_apply": "MA: 617-244-5552, or book a free consultation through planofma-ri.org. Offices in Braintree and Providence, by appointment.",
     "source_url": "https://www.planofma-ri.org/faq-2022/",
     "date_checked": "2026-10-05",
     "notes": "First-party trust money left at death must repay MassHealth; third-party trust money does not. Have an attorney draft the joinder.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [
+      "Book a free consultation through planofma-ri.org, or call 617-244-5552.",
+      "Decide which kind of trust: first-party (the person's own money; anything left at death repays MassHealth) or third-party (family money; it doesn't).",
+      "Have an attorney prepare the Joinder Agreement that adds the person to the pooled trust.",
+      "There's no minimum deposit to start. Fees aren't published, so ask at the consultation."
+    ],
+    "apply_window": "Year-round",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "https://www.planofma-ri.org/faq-2022/"
   },
   {
     "id": "ma-fin-aane-flutie-foundation-grant",
@@ -2972,8 +3598,18 @@
     "date_checked": "2026-10-05",
     "notes": "Limited number of grants each year.",
     "funding_route": "",
-    "needs_checking": false,
-    "to_check": ""
+    "needs_checking": true,
+    "to_check": "AANE's site blocks automated checks; application steps are from the team's Oct 5 research and were not re-checked.",
+    "apply_steps": [
+      "Get a letter from a provider confirming the autism diagnosis.",
+      "Have your latest tax return ready.",
+      "Apply on aane.org, then email the documents to grants@aane.org.",
+      "Apply early in the year: AANE gives a limited number of grants. They can pay for therapies, evaluations, social skills groups, respite and health costs insurance doesn't cover."
+    ],
+    "apply_window": "Not published. Limited number of grants each year",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "https://aane.org/services-programs/grants-free-programs/doug-flutie-jr-foundation-for-autism-grant/"
   },
   {
     "id": "ma-fin-autism-alliance-flutie-family-grant",
@@ -2991,13 +3627,23 @@
     "upfront_cost": "$0",
     "ongoing_cost": "None",
     "max_benefit": "Up to $1,000 per family",
-    "how_to_apply": "Apply through autismalliance.org.",
+    "how_to_apply": "Contact Autism Alliance: 508-652-9900 or AutismAlliance@Advocates.org.",
     "source_url": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding",
     "date_checked": "2026-10-05",
     "notes": "Aimed at children; the page has no date, so check whether a funding round is open.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [
+      "Check fit: you live in the MetroWest area, your child has an autism diagnosis, and you can show a distressing need or special circumstances. Priority goes to families earning $60,000 or less for a family of four.",
+      "Decide what it would pay for: anything that directly improves your child's life, such as equipment, social skills or sensory programs, recreation, or respite.",
+      "Call 508-652-9900 or email AutismAlliance@Advocates.org to ask whether a round is open and how to apply.",
+      "Grants are up to $1,000 per family."
+    ],
+    "apply_window": "Not published. Ask whether a round is open",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding"
   },
   {
     "id": "ma-fin-flutie-kodi-lee-gives-back-grant",
@@ -3021,7 +3667,17 @@
     "notes": "2026 round closed May 21, 2026; reopens April 2027. Foundation is based in Waltham.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [
+      "Check eligibility: an autistic self-advocate aged 15 or older, living in the US, who hasn't received this grant before. Organizations can't apply.",
+      "Decide what to ask for: voice or instrument lessons, workshops, studio recording, music therapy, music business development, marketing or social media help, or performance opportunities.",
+      "Put April 2027 on your calendar. The 2026 round closed May 21, 2026.",
+      "Apply on the Flutie Foundation's Kodi Lee Gives Back page when it reopens. Awards are up to $1,000."
+    ],
+    "apply_window": "Closed May 21, 2026. Reopens April 2027",
+    "apply_opens": "2027-04",
+    "apply_closes": "2026-05-21",
+    "apply_source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/"
   },
   {
     "id": "ma-fin-act-today-family-grants",
@@ -3038,13 +3694,24 @@
     "eligibility": "Families affected by autism who cannot afford a treatment or service insurance does not cover. Household income is considered.",
     "upfront_cost": "$0",
     "ongoing_cost": "None",
-    "max_benefit": "Not published on the checked page (third-party guides cite up to $5,000)",
-    "how_to_apply": "act-today.org/apply-for-grant. Grants are awarded quarterly.",
-    "source_url": "https://www.act-today.org/act-today-reaches-1-million-milestone-in-helping-families-impacted-with-autism/",
+    "max_benefit": "Up to $5,000, paid directly to pre-approved treatment providers, assessors or materials vendors",
+    "how_to_apply": "Apply online through the portal linked at act-today.org/apply-for-grant. Current cycle Sept 15 – Oct 15, 2026; grants are reviewed quarterly.",
+    "source_url": "https://www.act-today.org/apply-for-grant/",
     "date_checked": "2026-10-05",
-    "notes": "National program, not Massachusetts-specific. Mostly serves children.",
+    "notes": "National program, not Massachusetts-specific. Does not cover transportation, hyperbaric oxygen therapy, or personal needs like rent, utilities or vacations. Decisions can take up to 12 weeks; an SOS Fund handles urgent safety needs faster.",
     "funding_route": "",
     "needs_checking": false,
-    "to_check": ""
+    "to_check": "",
+    "apply_steps": [
+      "Check it covers what you need: safety equipment (helmets, GPS trackers, sensory equipment, fencing), communication devices, ABA therapy, social skills programs, special-needs summer school or medical help. It does not cover transportation, hyperbaric oxygen therapy, rent, utilities or vacations.",
+      "Choose the provider or vendor. ACT Today pays them directly, not the family.",
+      "Download the Grant Application Checklist from the apply page and gather what it lists.",
+      "Apply through the online portal linked on act-today.org/apply-for-grant before the cycle closes.",
+      "Allow up to 12 weeks for a decision. If someone's physical safety is at risk, ask about the faster SOS Fund."
+    ],
+    "apply_window": "Quarterly. Current cycle: Sept 15 – Oct 15, 2026",
+    "apply_opens": "2026-09-15",
+    "apply_closes": "2026-10-15",
+    "apply_source": "https://www.act-today.org/apply-for-grant/"
   }
 ]

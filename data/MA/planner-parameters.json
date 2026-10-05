@@ -394,6 +394,12 @@
       "unit": "USD one-time",
       "note": "MetroWest families of a child with autism; priority for income up to $60,000 (family of 4).",
       "source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding"
+    },
+    "act_today_grant_max": {
+      "value": 5000,
+      "unit": "USD one-time",
+      "note": "Paid directly to approved providers or vendors. Quarterly cycles; household income considered.",
+      "source": "https://www.act-today.org/apply-for-grant/"
     }
   }
 }

@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { fromParams } from "../assets/js/planner.js";
-import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios } from "../assets/js/support.js";
+import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios, applyStatus } from "../assets/js/support.js";
 
 const params = JSON.parse(readFileSync(new URL("../data/MA/planner-parameters.json", import.meta.url)));
 const resources = JSON.parse(readFileSync(new URL("../data/MA/resources.json", import.meta.url)));
@@ -70,4 +70,26 @@ test("Adult Foster Care pay and DDS housing are government-only", () => {
   close(s.government.housingCost, 0.75 * 1122.82);
   assert.equal(s.nonprofit.caregiverPay, 0);
   assert.equal(s.nonprofit.housingCost, 1800);
+});
+
+test("application windows: open, closing soon, reopening, year-round", () => {
+  const OCT5 = new Date(2026, 9, 5);
+  const act = resources.find(r => r.id === "ma-fin-act-today-family-grants");
+  assert.deepEqual(applyStatus(act, OCT5), { state: "open", text: "Open now · closes Oct 15, 2026 (10 days left)" });
+  assert.equal(applyStatus(act, new Date(2026, 9, 16)).state, "closed");
+  assert.equal(applyStatus(act, new Date(2026, 8, 1)).state, "upcoming");
+  const kodi = resources.find(r => r.id === "ma-fin-flutie-kodi-lee-gives-back-grant");
+  assert.deepEqual(applyStatus(kodi, OCT5), { state: "upcoming", text: "Reopens April 2027" });
+  assert.equal(applyStatus(kodi, new Date(2027, 3, 2)).state, "open");
+  const loans = resources.find(r => r.id === "ma-fin-ma-alternative-finance-program");
+  assert.equal(applyStatus(loans, OCT5).state, "rolling");
+});
+
+test("every nonprofit money program has application steps from a source", () => {
+  const np = resources.filter(r => r.category === "Financing" && r.level === "Private/Nonprofit");
+  assert.ok(np.length >= 6);
+  for (const r of np) {
+    assert.ok(r.apply_steps.length >= 3, r.id);
+    assert.match(r.apply_source, /^https:\/\//, r.id);
+  }
 });

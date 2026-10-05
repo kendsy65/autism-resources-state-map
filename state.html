@@ -60,19 +60,21 @@
           <h2>Monthly estimator</h2>
           <label for="e-ssi">Benefits</label>
           <select id="e-ssi"><option value="ssi" selected></option><option value="eaedc"></option><option value="none">No cash benefit</option></select>
-          <label for="e-hrs">Hours worked per week</label>
-          <input id="e-hrs" type="number" min="0" max="60" step="1" value="15">
-          <label for="e-wage">Hourly wage ($)</label>
-          <input id="e-wage" type="number" min="0" step="0.25">
+          <label for="e-hrs" class="sl-label">Hours worked per week <output id="o-hrs" for="e-hrs"></output></label>
+          <input id="e-hrs" class="slider" type="range" min="0" max="60" step="1" value="15">
+          <label for="e-wage" class="sl-label">Hourly wage <output id="o-wage" for="e-wage"></output></label>
+          <input id="e-wage" class="slider" type="range" min="0" max="40" step="0.25" list="wage-marks">
+          <datalist id="wage-marks"></datalist>
+          <small class="hint sl-hint" id="wage-hint"></small>
           <label for="e-house">Housing</label>
           <select id="e-house"></select>
-          <label for="e-rent" id="rent-label">Market rent ($/month)</label>
-          <input id="e-rent" type="number" min="0" step="50" value="1800" aria-describedby="rent-hint">
+          <label for="e-rent" class="sl-label"><span id="rent-label">Market rent</span> <output id="o-rent" for="e-rent"></output></label>
+          <input id="e-rent" class="slider" type="range" min="0" max="4000" step="25" value="1800" aria-describedby="rent-hint">
           <small class="hint" id="rent-hint" style="margin:2px 0 0">Used whenever there's no housing subsidy, so the columns can be compared.</small>
           <label for="e-afc">Family caregiver paid through Adult Foster Care</label>
           <select id="e-afc"></select>
-          <label for="e-yrs">Years to plan</label>
-          <input id="e-yrs" type="number" min="1" max="30" step="1" value="5">
+          <label for="e-yrs" class="sl-label">Years to plan <output id="o-yrs" for="e-yrs"></output></label>
+          <input id="e-yrs" class="slider" type="range" min="1" max="30" step="1" value="5">
         </div>
         <div class="est-out" id="est-out" aria-live="polite"></div>
       </div>
@@ -86,7 +88,12 @@
           <p class="hint">Many programs don't publish amounts. If one has offered you a specific amount, add it here.</p>
           <div id="sup-custom"></div>
         </div>
-        <details class="sup-missing"><summary id="sup-missing-sum"></summary><ul id="sup-missing"></ul></details>
+      </section>
+
+      <section class="supports" aria-labelledby="apply-h">
+        <h2 id="apply-h">Nonprofit financial help: how to apply</h2>
+        <p class="hint">Every nonprofit in the directory that offers money, a loan or a trust, with the steps from each organization's own page. Open one to see its steps.</p>
+        <div id="apply-list"></div>
       </section>
 
       <h2 style="margin-top:32px">Coverage by region</h2>
@@ -108,7 +115,7 @@ import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./ass
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
-import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios } from "./assets/js/support.js";
+import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios, applyStatus } from "./assets/js/support.js";
 
 const $ = id => document.getElementById(id);
 const code = (new URLSearchParams(location.search).get("s") || "").toUpperCase();
@@ -190,6 +197,7 @@ function render() {
       <dt>Ongoing cost</dt><dd>${fmt(r.ongoing_cost)}</dd>
       <dt>Maximum benefit</dt><dd>${fmt(r.max_benefit)}</dd>
       <dt>How to apply</dt><dd>${esc(r.how_to_apply)}</dd>
+      ${r.apply_steps?.length ? `<dt>Steps to apply</dt><dd>${(() => { const stt = applyStatus(r); return stt.text ? `<span class="tag win-${stt.state || "na"}">${esc(stt.text)}</span>` : ""; })()}<ol class="apply-steps">${r.apply_steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></dd>` : ""}
       ${r.funding_route ? `<dt>Usually paid for by</dt><dd>${esc(r.funding_route)}</dd>` : ""}
       ${r.notes ? `<dt>Watch out for</dt><dd><div class="note">${esc(r.notes)}</div></dd>` : ""}
       ${r.needs_checking ? `<dt>Still being checked</dt><dd><div class="note">${esc(r.to_check)}</div></dd>` : ""}
@@ -242,6 +250,19 @@ else {
   if (fin.eaedc_grant_1_person) $("e-ssi").options[1].textContent = `EAEDC state cash, not on SSI ($${fin.eaedc_grant_1_person.value.toFixed(2)}/mo)`;
   else $("e-ssi").options[1].remove();
   $("e-wage").value = P.minWage;
+  $("wage-marks").innerHTML = `<option value="${P.minWage}" label="minimum wage"></option>`;
+  $("wage-hint").textContent = `${S.name} minimum wage: $${P.minWage.toFixed(2)}/hr`;
+  // Sliders show their value next to the label and announce it to screen readers.
+  const SLIDERS = {
+    "e-hrs": [v => `${v} hrs`], "e-wage": [v => `$${(+v).toFixed(2)}/hr`], "e-rent": [v => `$${(+v).toLocaleString("en-US")}/mo`],
+    "e-yrs": [v => `${v} yr${+v === 1 ? "" : "s"}`], "c-Government": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")], "c-Nonprofit": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")],
+  };
+  const syncSliders = () => Object.entries(SLIDERS).forEach(([id, [f]]) => {
+    const el = $(id); if (!el) return;
+    const out = document.getElementById(`o-${id.replace(/^e-/, "")}`) || document.getElementById(`o-${id}`);
+    const txt = f(el.value); if (out) out.textContent = txt; el.setAttribute("aria-valuetext", txt);
+    el.style.setProperty("--fill", `${(el.value - el.min) / (el.max - el.min) * 100}%`);
+  });
   if (me) $("e-ssi").value = ["ssi", "applied", "unsure"].includes(me.ssi) ? "ssi" : "none";
   $("e-house").innerHTML = Object.entries(pl.HOUSING).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
   $("e-afc").innerHTML = `<option value="0">No</option><option value="1">Yes, Level I ($${P.afc1}/day minimum)</option><option value="2">Yes, Level II ($${P.afc2}/day minimum)</option>`;
@@ -254,28 +275,47 @@ else {
   $("sup-cols").innerHTML = SOURCES.map(src => `<fieldset class="sup-col"><legend>${src === "Government" ? "Government" : "Nonprofit"}</legend>
     ${items.filter(it => it.source === src).map(it => `<label class="sup-item"><input type="checkbox" data-sup="${it.id}">
       <span><strong>${esc(it.name)}</strong> <span class="money">${usd(it.amount)}${PER[it.per]}</span> <span class="d" data-norm="${it.id}"></span>
-      <small>${esc(it.note)} ${it.to === "family" ? "Paid to the family." : ""} <a href="#res-${esc(it.resource)}" data-open="res-${esc(it.resource)}">Details</a></small></span></label>`).join("")}
+      <small>${(() => { const r = stateRows.find(x => x.id === it.resource); const stt = r ? applyStatus(r) : null; return stt?.text && stt.state !== "rolling" ? `<span class="tag win-${stt.state || "na"}">${esc(stt.text)}</span> ` : ""; })()}${esc(it.note)} ${it.to === "family" ? "Paid to the family." : ""} <a href="#res-${esc(it.resource)}" data-open="res-${esc(it.resource)}">Details</a></small></span></label>`).join("")}
   </fieldset>`).join("");
   $("sup-custom").innerHTML = SOURCES.map(src => `<div class="row sup-row">
-    <label for="c-${src}">${src === "Government" ? "Government" : "Nonprofit"} help ($)</label>
-    <input id="c-${src}" type="number" min="0" step="50" placeholder="0" data-csrc="${src}">
+    <label for="c-${src}" class="sl-label">${src === "Government" ? "Government" : "Nonprofit"} help <output id="o-c-${src}" for="c-${src}"></output></label>
+    <input id="c-${src}" class="slider" type="range" min="0" max="10000" step="50" value="0" data-csrc="${src}">
     <select id="cp-${src}" aria-label="${src} help period"><option value="month">per month</option><option value="year">per year</option><option value="once">one time</option></select>
     <select id="ct-${src}" aria-label="${src} help paid to"><option value="person">to them</option><option value="family">to the family</option></select>
   </div>`).join("");
-  const unpublished = stateRows.filter(r => r.category === "Financing" && r.level === "Private/Nonprofit" && !/\$\d/.test(r.max_benefit));
-  $("sup-missing-sum").textContent = `${unpublished.length} nonprofit money programs can't be counted because they don't publish amounts`;
-  $("sup-missing").innerHTML = unpublished.map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a> — ${esc(r.max_benefit)}</li>`).join("");
-  document.querySelector(".supports").addEventListener("click", e => {
+  const counted = new Set(items.map(it => it.resource));
+  // Most urgent first: open now, then opening soon, then any time, then the rest.
+  const URGENCY = { open: 0, upcoming: 1, rolling: 2 };
+  const npMoney = stateRows.filter(r => r.category === "Financing" && r.level === "Private/Nonprofit")
+    .sort((a, b) => (URGENCY[applyStatus(a).state] ?? 3) - (URGENCY[applyStatus(b).state] ?? 3));
+  $("apply-list").innerHTML = npMoney.map(r => {
+    const stt = applyStatus(r);
+    const why = counted.has(r.id) ? "Can be counted in the estimate above (published maximum)."
+      : r.subtype === "Loan" ? "Not counted above: loans are paid back."
+      : r.subtype === "Savings & trusts" ? "Not counted above: a trust holds the family's own money."
+      : "Not counted above: amount not published.";
+    return `<details class="apply"><summary><span class="r-name">${esc(r.name)}</span>
+        ${stt.text ? `<span class="tag win-${stt.state || "na"}">${esc(stt.text)}</span>` : ""}
+        <span class="d">${esc(r.max_benefit)}</span></summary>
+      <div class="apply-body">
+        <p class="hint" style="margin:0 0 6px"><b>Who qualifies:</b> ${esc(r.eligibility)}</p>
+        <ol class="apply-steps">${(r.apply_steps || []).map(x => `<li>${esc(x)}</li>`).join("")}</ol>
+        <p class="checked">${esc(why)} Steps from <a href="${esc(safeUrl(r.apply_source || r.source_url))}" target="_blank" rel="noopener">${esc((r.apply_source || r.source_url).replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a>, checked ${esc(r.date_checked)}.${r.needs_checking ? ` ${esc(r.to_check)}` : ""}
+          <a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">Open in directory</a></p>
+      </div></details>`;
+  }).join("");
+  document.querySelectorAll(".supports").forEach(sec => sec.addEventListener("click", e => {
     const a = e.target.closest("a[data-open]"); if (!a) return;
     e.preventDefault(); setView("dir"); st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; st.lv = new Set(Object.keys(LV));
     document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
     render(); const el = document.getElementById(a.dataset.open); if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
-  });
+  }));
   document.querySelectorAll("[data-sup]").forEach(cb => cb.addEventListener("change", () => { touched.add(cb.dataset.sup); est(); }));
 
   function est() {
     const housing = $("e-house").value, benefit = $("e-ssi").value;
-    $("rent-label").textContent = housing === "family" ? "What they pay the family ($/month)" : "Market rent ($/month)";
+    $("rent-label").textContent = housing === "family" ? "What they pay the family" : "Market rent";
+    syncSliders();
     const years = Math.max(1, Math.round(+$("e-yrs").value || 1));
     // Default ticks follow the situation until the family changes a box themselves.
     const ctx = { age: me ? ageOn(me.birthdate) : null, benefit, housing };
@@ -409,6 +449,7 @@ function renderPlan(me, params) {
   const money = financingFor(me, stateRows, params, new Date(), coordsOf, home, NEAR_MILES);
   const moneyHtml = money.length ? `<h3>Money and benefits to look into</h3>
     <ul class="near">${money.slice(0, 8).map(r => `<li><a href="#res-${esc(r.id)}" data-open="res-${esc(r.id)}">${esc(r.name)}</a>
+      ${(() => { const stt = applyStatus(r); return stt.text && stt.state !== "rolling" && r.apply_steps?.length ? `<span class="tag win-${stt.state || "na"}">${esc(stt.text)}</span>` : ""; })()}
       <span class="d">${esc(LV[r.level] || r.level)}${/^(not published|not applicable|varies)/i.test(r.max_benefit) ? "" : ` · ${esc(r.max_benefit.split(/(?<=\.)\s/)[0].replace(/\.$/, ""))}`}</span></li>`).join("")}</ul>
     ${money.length > 8 ? `<button class="linkbtn" id="money-all">See all ${money.length} money and benefits programs →</button>` : ""}` : "";
 

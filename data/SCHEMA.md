@@ -26,6 +26,11 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 | `funding_route` | string | Optional. How the service is usually paid for: `Family-paid`, `MassHealth`, `DDS`, `DDS + MassHealth`, `DDS + MassAbility`, `State grant`, `Business revenue`, `Mixed`. Used to avoid counting a provider's cost and the state benefit that pays it twice |
 | `needs_checking` | boolean | True when something about the entry is still unconfirmed. The site shows a "Not yet verified" tag |
 | `to_check` | string | What still needs confirming. Required when `needs_checking` is true |
+| `apply_steps` | string[] | Optional. Plain-language steps to apply, taken from the program's own page (CSV: joined with ` \| `). Required for nonprofit Financing entries |
+| `apply_source` | string | Page the steps were checked against |
+| `apply_window` | string | When to apply, in words ("Year-round", "Quarterly. Current cycle: …") |
+| `apply_opens` | string | Optional. `YYYY-MM-DD`, or `YYYY-MM` when only the month is published |
+| `apply_closes` | string | Optional. `YYYY-MM-DD`. The site shows "Open now · closes …", "Reopens …" or "Closed" from these dates |
 
 ## Rules
 
