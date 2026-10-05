@@ -75,6 +75,14 @@
           <select id="e-afc"></select>
           <label for="e-yrs" class="sl-label">Years to plan <output id="o-yrs" for="e-yrs"></output></label>
           <input id="e-yrs" class="slider" type="range" min="1" max="30" step="1" value="5">
+          <label for="e-infl">Inflation</label>
+          <select id="e-infl"></select>
+          <div id="infl-custom-wrap" hidden>
+            <label for="e-infl-c" class="sl-label">Custom rate <output id="o-infl-c" for="e-infl-c"></output></label>
+            <input id="e-infl-c" class="slider" type="range" min="0" max="8" step="0.1" value="4">
+          </div>
+          <small class="hint sl-hint" id="infl-hint"></small>
+          <label class="chk"><input type="checkbox" id="e-cola" checked> Benefits rise with inflation (Social Security's yearly COLA)</label>
         </div>
         <div class="est-out" id="est-out" aria-live="polite"></div>
       </div>
@@ -115,7 +123,8 @@ import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./ass
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
-import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios, applyStatus } from "./assets/js/support.js";
+import { mountChat, linkTerms } from "./assets/js/chat.js";
+import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios, applyStatus, INFLATION_CHOICES, inflationPath } from "./assets/js/support.js";
 
 const $ = id => document.getElementById(id);
 const code = (new URLSearchParams(location.search).get("s") || "").toUpperCase();
@@ -132,6 +141,7 @@ const stateRows = await loadResources(code);
 // Federal resources (data/US) apply in every state.
 const federal = await loadJSON("data/US/resources.json").catch(() => []);
 const D = [...stateRows, ...federal];
+const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms;
 const profile = loadProfile();
 const me = profile && profile.state === code ? profile : null;
 const zips = await loadJSON(`data/${code}/zips.json`).catch(() => ({}));
@@ -237,15 +247,51 @@ document.querySelector(".tabs").addEventListener("click", e => { const b = e.tar
 if (location.hash === "#planner") setView("plan");
 
 // ---------- PLANNER ----------
+const econEarly = await loadJSON("data/US/economic-parameters.json").catch(() => null);
 let params;
 try { params = await loadJSON(`data/${code}/planner-parameters.json`); } catch { params = null; }
-if (me) renderPlan(me, params);
+if (me) { renderPlan(me, params); linkTerms($("plan"), glossary); }
+
+// ---------- ASK ABOUT A TERM ----------
+// Opens a resource in the directory with filters cleared so it's always visible.
+function openResource(id) {
+  setView("dir");
+  st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; st.q = ""; $("q").value = ""; st.region = "All"; $("region").value = "All";
+  st.lv = new Set(Object.keys(LV));
+  document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
+  render();
+  const el = document.getElementById(`res-${id}`);
+  if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+}
+mountChat({ terms: glossary, params, resources: D, openResource });
+// Underline terms inside an entry when it's opened (entries re-render, so do it lazily).
+document.addEventListener("toggle", e => {
+  if (e.target.open && e.target.matches("details.res, details.apply")) linkTerms(e.target.querySelector(".body, .apply-body"), glossary);
+}, true);
 if (!params) { $("plan-missing").hidden = false; }
 else {
   $("plan-body").hidden = false;
   const P = pl.fromParams(params);
   const usd = pl.usd;
   const fin = params.financing || {};
+  // ----- Inflation (national figures, data/US/economic-parameters.json) -----
+  const econ = econEarly;
+  const inf = econ?.inflation || {};
+  const pct = v => `${+(v * 100).toFixed(1)}%`;
+  const shortDate = iso => { const [y, m, d] = iso.split("-").map(Number); return new Date(y, m - 1, d).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }); };
+  const inflChoices = Object.entries(INFLATION_CHOICES).filter(([k]) => (k !== "fed" || inf.fed_sep_pce_median) && (k !== "cpi" || inf.cpi_u_12_month));
+  $("e-infl").innerHTML = inflChoices.map(([k, v]) => `<option value="${k}">${esc(v)}${k === "cpi" ? ` (${pct(inf.cpi_u_12_month.value)})` : ""}</option>`).join("");
+  $("e-infl").value = inf.fed_sep_pce_median ? "fed" : "four";
+  function inflHint(choice) {
+    if (choice === "fed") {
+      const f = inf.fed_sep_pce_median, yrs = Object.keys(f.by_year).filter(y => +y > params.year);
+      return `Fed projections from ${shortDate(f.released)}: ${yrs.map(y => `${pct(f.by_year[y])} in ${y}`).join(", ")}, then ${pct(f.longer_run)} a year (the Fed's long-run goal).`;
+    }
+    if (choice === "cpi") return `${pct(inf.cpi_u_12_month.value)} a year: consumer prices over the ${inf.cpi_u_12_month.period} (BLS). Housing costs rose ${pct(inf.cpi_shelter_12_month.value)}.`;
+    if (choice === "four") return "A cautious what-if, above current official figures.";
+    if (choice === "none") return "Shows every year at today's prices.";
+    return "Pick a yearly rate.";
+  }
   $("e-ssi").options[0].textContent = `SSI + state supplement ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: 2 })}/mo)`;
   if (fin.eaedc_grant_1_person) $("e-ssi").options[1].textContent = `EAEDC state cash, not on SSI ($${fin.eaedc_grant_1_person.value.toFixed(2)}/mo)`;
   else $("e-ssi").options[1].remove();
@@ -255,7 +301,7 @@ else {
   // Sliders show their value next to the label and announce it to screen readers.
   const SLIDERS = {
     "e-hrs": [v => `${v} hrs`], "e-wage": [v => `$${(+v).toFixed(2)}/hr`], "e-rent": [v => `$${(+v).toLocaleString("en-US")}/mo`],
-    "e-yrs": [v => `${v} yr${+v === 1 ? "" : "s"}`], "c-Government": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")], "c-Nonprofit": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")],
+    "e-yrs": [v => `${v} yr${+v === 1 ? "" : "s"}`], "e-infl-c": [v => `${(+v).toFixed(1)}% a year`], "c-Government": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")], "c-Nonprofit": [v => (+v ? `$${(+v).toLocaleString("en-US")}` : "none")],
   };
   const syncSliders = () => Object.entries(SLIDERS).forEach(([id, [f]]) => {
     const el = $(id); if (!el) return;
@@ -326,7 +372,12 @@ else {
       .concat(SOURCES.map(src => ({ source: src, amount: Math.max(0, +$(`c-${src}`).value || 0), per: $(`cp-${src}`).value, to: $(`ct-${src}`).value })).filter(c => c.amount));
 
     const inputs = { benefit, hours: +$("e-hrs").value || 0, wage: +$("e-wage").value || 0, housing, rent: +$("e-rent").value || 0, afcLevel: +$("e-afc").value, years };
-    const S = compareScenarios(inputs, P, params, supports);
+    const inflChoice = $("e-infl").value;
+    $("infl-custom-wrap").hidden = inflChoice !== "custom";
+    $("infl-hint").textContent = inflHint(inflChoice);
+    const rates = inflationPath(inflChoice, econ, params.year, years, (+$("e-infl-c").value || 0) / 100);
+    const inflating = rates.some(r => r > 0);
+    const S = compareScenarios(inputs, P, params, supports, { rates, benefitsRise: $("e-cola").checked });
     const flags = pl.estimate({ ...inputs, onSSI: benefit === "ssi" }, P).flags;
     const cols = [["government", "Government only"], ["nonprofit", "Nonprofit only"], ["both", "Both"]];
     const neg = v => `<span class="neg">−${usd(v).replace("−", "")}</span>`;
@@ -343,15 +394,22 @@ else {
         ${row("Paid to the family", r => usd(r.familyExtra), "sub")}
         ${row("Rent the voucher covers", r => usd(r.housingHelp), "sub")}
         ${row("<b>Total support per month</b>", r => `<b>${usd(r.supportTotal)}</b>`, "tot")}
-        ${row(`Total support over ${years} yr${years > 1 ? "s" : ""}`, r => usd(r.overYears.support), "sub")}
+        ${row(`Total support over ${years} yr${years > 1 ? "s" : ""}${inflating ? ", with inflation" : ""}`, r => usd(r.overYears.support), "sub")}
+        ${row(`Rent over ${years} yr${years > 1 ? "s" : ""}${inflating ? ", with inflation" : ""}`, r => usd(r.overYears.housing), "sub")}
+        ${row(`Left over ${years} yr${years > 1 ? "s" : ""}`, r => `<span class="${r.overYears.left < 0 ? "neg" : ""}">${usd(r.overYears.left)}</span>`, "sub")}
       </tbody></table>
       ${S.both.supportTotal ? `<div class="share" role="img" aria-label="Government ${Math.round(S.both.govShare * 100)} percent, nonprofit ${Math.round((1 - S.both.govShare) * 100)} percent">
         <span class="g" style="width:${S.both.govShare * 100}%"></span><span class="n" style="width:${(1 - S.both.govShare) * 100}%"></span></div>
         <p class="multi" style="margin-top:6px">With both, <b>${Math.round(S.both.govShare * 100)}%</b> of support (${usd(S.both.govTotal)}/mo) comes from government and <b>${Math.round((1 - S.both.govShare) * 100)}%</b> (${usd(S.both.npTotal)}/mo) from nonprofits.</p>` : ""}
-      <div class="flags">${flags.map(f => `<div class="flag ${f.warn ? "w" : ""}">${esc(f.text)}</div>`).join("")}</div>
-      <p class="checked" style="margin-top:12px">Estimate only, ${params.year} figures, no inflation. Nonprofit grants are published maximums, not typical awards. Assumes no other income and uses gross income for rent.${benefit === "eaedc" ? " EAEDC: assumes each dollar of earnings over $200 lowers the grant by a dollar (the source doesn't say exactly)." : ""} Not financial or legal advice.</p>`;
+      ${years > 1 ? `<details class="yby"${inflating ? " open" : ""}><summary>Year by year${inflating ? ` (prices rise ${pct(S.factors.at(-1) - 1)} by ${params.year + years - 1})` : ""}</summary>
+        <div class="tblwrap"><table class="ptbl yby-t"><thead><tr><th rowspan="2">Year</th><th rowspan="2">Market rent</th><th colspan="3" style="text-align:center">Left each month</th></tr><tr><th>Government only</th><th>Nonprofit only</th><th>Both</th></tr></thead><tbody>
+        ${S.both.yearly.map((y, i) => `<tr><td>${y.year}</td><td class="v">${usd(inputs.rent * S.factors[i])}/mo</td>${["government", "nonprofit", "both"].map(k => { const v = S[k].yearly[i].left; return `<td class="v ${v < 0 ? "neg" : ""}">${usd(v)}</td>`; }).join("")}</tr>`).join("")}
+        </tbody></table></div></details>` : ""}
+      <div class="flags" id="est-flags">${flags.map(f => `<div class="flag ${f.warn ? "w" : ""}">${esc(f.text)}</div>`).join("")}</div>
+      <p class="checked" style="margin-top:12px">Estimate only. The table shows ${params.year}; ${inflating ? `later years add inflation to rent${$("e-cola").checked ? " and SSI/EAEDC" : ""}, while earnings, tax credits, grants and Adult Foster Care pay stay at today's amounts` : "no inflation"}. Nonprofit grants are published maximums, not typical awards. Assumes no other income and uses gross income for rent.${benefit === "eaedc" ? " EAEDC: assumes each dollar of earnings over $200 lowers the grant by a dollar (the source doesn't say exactly)." : ""} Not financial or legal advice.</p>`;
+    linkTerms($("est-flags"), glossary);
   }
-  ["e-ssi", "e-hrs", "e-wage", "e-house", "e-rent", "e-afc", "e-yrs", "c-Government", "cp-Government", "ct-Government", "c-Nonprofit", "cp-Nonprofit", "ct-Nonprofit"]
+  ["e-ssi", "e-hrs", "e-wage", "e-house", "e-rent", "e-afc", "e-yrs", "e-infl", "e-infl-c", "e-cola", "c-Government", "cp-Government", "ct-Government", "c-Nonprofit", "cp-Nonprofit", "ct-Nonprofit"]
     .forEach(id => $(id).addEventListener("input", est));
   est();
 
@@ -388,11 +446,13 @@ else {
     pca_complex_care_differential: "PCA complex-care pay differential", national_grid_discount_rate: "National Grid low-income discount",
     mbta_tap_discount: "MBTA reduced fare (TAP)", at_mini_loan: "Assistive technology Mini Loan", at_financial_loan_rate: "Assistive technology Financial Loan",
     cicrf_threshold: "Catastrophic Illness in Children Relief Fund threshold",
+    fed_sep_pce_median: "Fed projections: PCE inflation (median)", fed_longer_run_target: "Fed long-run inflation goal",
+    cpi_u_12_month: "Consumer prices (CPI-U), last 12 months", cpi_shelter_12_month: "Housing costs (CPI shelter), last 12 months", ssa_cola_2026: "Social Security / SSI COLA, 2026",
     kodi_lee_music_grant_max: "Kodi Lee Gives Back music grant (max)", autism_alliance_family_grant_max: "Autism Alliance family grant (max)",
   };
   const human = k => LABELS[k] || k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
   const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
-  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${Math.round(v * 100)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : "");
+  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${+(v * 100).toFixed(1)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : "");
   function valueOf(p) {
     if ("value" in p) return unitFmt(p.value, p.unit);
     if ("min" in p) return `${unitFmt(p.min, p.unit)}–${unitFmt(p.max, p.unit)}` + ("rate" in p ? ` at ${p.rate * 100}%` : "");
@@ -401,6 +461,7 @@ else {
     if ("max_per_hire" in p) return `Up to ${money(p.max_per_hire)} per hire`;
     if ("academic_year" in p) return `${money(p.academic_year)}–${money(p.full_year)}/yr`;
     if ("deliverable_fuel" in p) return `Oil/propane ${money(p.deliverable_fuel)}, gas/electric ${money(p.utility)} per season`;
+    if ("by_year" in p) return Object.entries(p.by_year).map(([y, v]) => `${y}: ${+(v * 100).toFixed(1)}%`).join(", ") + `; long run ${+(p.longer_run * 100).toFixed(1)}%`;
     if ("pct_first_100k" in p) return `Costs over ${p.pct_first_100k * 100}% of first $100k income + ${p.pct_above_100k * 100}% above`;
     const sizes = Object.keys(p).filter(k => /^\d+$/.test(k));
     if (sizes.length) return `${money(p[sizes[0]])} (1 person) to ${money(p[sizes.at(-1)])} (${sizes.at(-1)} people)`;
@@ -414,6 +475,7 @@ else {
     p.min_amount ? `Loans over ${money(p.min_amount)}` : "",
     p.projected_deliverable ? `State plans increases to ${money(p.projected_deliverable)} and ${money(p.projected_utility)}` : "",
     p.min_age ? `Ages ${p.min_age}+` : "",
+    p.period ? `${p.period}` : "",
     p.age_limit ? `Costs before age ${p.age_limit}; looks back ${p.lookback_months} months` : "",
   ].filter(Boolean).join(" · ");
   const link = u => { const s = safeUrl(u); return s ? `<a href="${esc(s)}" target="_blank" rel="noopener">${esc(s.replace(/^https?:\/\/(www\.)?/, "").split("/")[0])}</a>` : ""; };
@@ -422,7 +484,8 @@ else {
     + `</tbody></table></div>`;
   $("param-tables").innerHTML = section("Income and benefits", params.income) + section("Housing costs and help", params.housing) + section("Work and earnings", params.employment)
     + (params.financing ? section("Money, tax credits and discounts", params.financing) : "")
-    + (params.nonprofit ? section("Nonprofit grants with published amounts", params.nonprofit) : "");
+    + (params.nonprofit ? section("Nonprofit grants with published amounts", params.nonprofit) : "")
+    + (econEarly?.inflation ? section("Inflation (national)", econEarly.inflation) : "");
   $("t-time").innerHTML = `<thead><tr><th>Item</th><th>Timing</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
     + (params.timing || []).map(t => `<tr><td>${esc(t.item)}</td><td class="v">${esc(t.value)}</td><td>${esc(t.note)}</td><td>${link(t.source)}</td></tr>`).join("") + `</tbody>`;
 }

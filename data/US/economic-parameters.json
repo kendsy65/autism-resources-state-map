@@ -1,0 +1,39 @@
+{
+  "date_checked": "2026-10-05",
+  "inflation": {
+    "fed_sep_pce_median": {
+      "by_year": { "2026": 0.037, "2027": 0.023, "2028": 0.021, "2029": 0.02 },
+      "longer_run": 0.02,
+      "unit": "fraction per year",
+      "released": "2026-09-16",
+      "note": "FOMC Summary of Economic Projections, median PCE inflation. Updated after the March, June, September and December meetings.",
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm"
+    },
+    "fed_longer_run_target": {
+      "value": 0.02,
+      "unit": "fraction per year",
+      "note": "Measured by the PCE price index.",
+      "source": "https://www.federalreserve.gov/faqs/economy_14400.htm"
+    },
+    "cpi_u_12_month": {
+      "value": 0.034,
+      "unit": "fraction per year",
+      "period": "12 months ending August 2026",
+      "released": "2026-09-11",
+      "source": "https://www.bls.gov/news.release/cpi.nr0.htm"
+    },
+    "cpi_shelter_12_month": {
+      "value": 0.03,
+      "unit": "fraction per year",
+      "period": "12 months ending August 2026",
+      "released": "2026-09-11",
+      "source": "https://www.bls.gov/news.release/cpi.nr0.htm"
+    },
+    "ssa_cola_2026": {
+      "value": 0.028,
+      "unit": "fraction",
+      "note": "Social Security and SSI increase for 2026. The 2027 COLA is announced in October.",
+      "source": "https://www.ssa.gov/cola/"
+    }
+  }
+}

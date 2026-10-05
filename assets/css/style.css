@@ -254,3 +254,42 @@ details.apply .d{color:var(--muted);font-size:13.5px;flex-basis:100%;padding-lef
 .tag.win-upcoming{background:var(--city-bg);color:var(--city)}
 .tag.win-closed,.tag.win-na{background:var(--bg);color:var(--muted);border:1px solid var(--line)}
 .tag.win-rolling{background:var(--accent-soft);color:var(--accent)}
+
+/* ---------- Ask about a term ---------- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+button.term{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:help;text-decoration:underline dotted var(--accent);text-decoration-thickness:2px;text-underline-offset:3px}
+button.term:hover{color:var(--accent)}
+button.term:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.chat-fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;font:inherit;font-weight:600;font-size:14px;display:flex;gap:8px;align-items:center;
+  background:var(--accent);color:var(--surface);border:0;border-radius:999px;padding:10px 16px;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+.chat-fab span{display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--surface);color:var(--accent);font-weight:700;font-size:13px}
+.chat-fab:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.chat-panel{position:fixed;right:16px;bottom:calc(68px + env(safe-area-inset-bottom,0px));z-index:30;width:min(400px,calc(100vw - 32px));max-height:min(620px,calc(100vh - 100px));
+  display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.3);overflow:hidden}
+.chat-head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line)}
+.chat-head h2{font-size:1.1rem;margin:0}
+.chat-x{font:inherit;font-size:22px;line-height:1;background:none;border:0;color:var(--muted);cursor:pointer;padding:2px 6px}
+.chat-note{font-size:12.5px;color:var(--muted);margin:0;padding:8px 16px;background:var(--bg)}
+.chat-log{flex:1;overflow-y:auto;padding:12px 16px;display:flex;flex-direction:column;gap:10px;min-height:80px}
+.msg{font-size:14px;max-width:92%}
+.msg p{margin:4px 0}
+.msg.me{align-self:flex-end;background:var(--accent);color:var(--surface);padding:7px 12px;border-radius:14px 14px 4px 14px}
+.msg.bot{align-self:flex-start;display:flex;flex-direction:column;gap:8px}
+.msg .card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.msg .fig{font-variant-numeric:tabular-nums;font-weight:600}
+.msg .src,.msg .rel{font-size:12.5px;color:var(--muted)}
+.chat-chips{display:flex;flex-wrap:wrap;gap:6px;padding:8px 16px 0}
+.chip-q{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:999px;padding:4px 10px;cursor:pointer}
+.chip-q:hover{border-color:var(--accent)}
+.chat-form{display:flex;gap:8px;padding:10px 16px 14px}
+.chat-form input{flex:1;min-width:0;font:inherit;padding:8px 10px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--ink)}
+.wrap{padding-bottom:96px}
+
+/* ---------- Inflation ---------- */
+.chk{display:flex;gap:8px;align-items:flex-start;font-weight:400 !important;color:var(--ink) !important;font-size:13.5px !important;margin-top:10px !important}
+.chk input{width:auto !important;margin-top:3px;accent-color:var(--accent)}
+details.yby{margin-top:14px}
+details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size:14px}
+.yby-t th,.yby-t td{padding:6px 10px;font-size:13px}
+.yby-t td.v{text-align:right}
+.tblwrap:has(.yby-t){max-height:320px;overflow-y:auto}

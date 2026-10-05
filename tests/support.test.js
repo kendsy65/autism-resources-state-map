@@ -2,8 +2,9 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { fromParams } from "../assets/js/planner.js";
-import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios, applyStatus } from "../assets/js/support.js";
+import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios, applyStatus, inflationPath, priceFactors } from "../assets/js/support.js";
 
+const econ = JSON.parse(readFileSync(new URL("../data/US/economic-parameters.json", import.meta.url)));
 const params = JSON.parse(readFileSync(new URL("../data/MA/planner-parameters.json", import.meta.url)));
 const resources = JSON.parse(readFileSync(new URL("../data/MA/resources.json", import.meta.url)));
 const P = fromParams(params);
@@ -92,4 +93,32 @@ test("every nonprofit money program has application steps from a source", () => 
     assert.ok(r.apply_steps.length >= 3, r.id);
     assert.match(r.apply_source, /^https:\/\//, r.id);
   }
+});
+
+test("inflation paths: Fed projections by year, then the long-run rate", () => {
+  assert.deepEqual(inflationPath("fed", econ, 2026, 6), [0, 0.023, 0.021, 0.02, 0.02, 0.02]);
+  assert.deepEqual(inflationPath("cpi", econ, 2026, 3), [0, 0.034, 0.034]);
+  assert.deepEqual(inflationPath("four", econ, 2026, 3), [0, 0.04, 0.04]);
+  assert.deepEqual(inflationPath("none", econ, 2026, 3), [0, 0, 0]);
+  assert.deepEqual(inflationPath("custom", econ, 2026, 2, 0.05), [0, 0.05]);
+  const f = priceFactors([0, 0.04, 0.04]);
+  close(f[2], 1.0816);
+});
+
+test("no inflation gives the same answer as before; totals add up year by year", () => {
+  const flat = compareScenarios(base, P, params, []);
+  close(flat.both.overYears.support, flat.both.supportTotal * 60);
+  close(flat.nonprofit.overYears.housing, 1800 * 60);
+});
+
+test("with inflation: rent rises; SSI rises only if benefits keep up", () => {
+  const rates = inflationPath("four", econ, 2026, 3);
+  const up = compareScenarios({ ...base, years: 3 }, P, params, [], { rates });
+  close(up.nonprofit.yearly[2].housingCost, 1800 * 1.0816);
+  close(up.government.yearly[2].benefit, 1122.82 * 1.0816);
+  close(up.nonprofit.overYears.housing, 1800 * 12 * (1 + 1.04 + 1.0816));
+  const flatBen = compareScenarios({ ...base, years: 3 }, P, params, [], { rates, benefitsRise: false });
+  close(flatBen.government.yearly[2].benefit, 1122.82);
+  assert.ok(flatBen.government.yearly[2].housingHelp > up.government.yearly[0].housingHelp); // voucher covers more as rent rises
+  assert.equal(up.both.yearly[2].year, 2028);
 });

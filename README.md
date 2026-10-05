@@ -27,11 +27,15 @@ assets/js/common.js          States in scope, data loading helpers
 assets/js/planner.js         Planner math (reads planner-parameters.json)
 assets/js/profile.js         Caregiver answers (kept in the browser only) → next steps, ranking, work scenarios
 assets/js/geo.js             ZIP lookup, distances, nearest region
-assets/js/support.js         Government vs nonprofit support, normalized per month, side-by-side scenarios
+assets/js/support.js         Government vs nonprofit support, normalized per month, inflation, side-by-side scenarios
+assets/js/glossary.js        Glossary matching for the "Ask about a term" assistant (data/glossary.json)
+assets/js/chat.js            The assistant panel and tappable terms on the page
 tests/                       Unit tests for the planner and the next-steps logic
 data/
   SCHEMA.md                  The data template every resource follows
   US/resources.json          Federal SSI / Social Security resources shown in every state
+  US/economic-parameters.json Inflation inputs: Fed projections, CPI, SSA COLA (refresh after each FOMC meeting: Mar, Jun, Sep, Dec)
+  glossary.json              ~57 plain-language terms with sources, used by the assistant
   <STATE>/zips.json          ZIP -> town, county, lat/lon (GeoNames, CC BY 4.0; rebuild with scripts/build-zips.py)
   MA/resources.json          127 Massachusetts housing, financing + employment resources (52 nonprofit)
   MA/resources.csv           Same data, for spreadsheets

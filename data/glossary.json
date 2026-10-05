@@ -1,0 +1,983 @@
+{
+  "version": 1,
+  "terms": [
+    {
+      "id": "ssi",
+      "term": "SSI (Supplemental Security Income)",
+      "aliases": [
+        "ssi",
+        "supplemental security income"
+      ],
+      "short": "A monthly payment from Social Security for people with disabilities and older adults who have little or no income or resources. For many autistic adults it is the main income, and it's often used for rent.",
+      "more": "Wages, other income and changes in where they live must be reported to Social Security each month.",
+      "figure": "In Massachusetts in {{year}}, SSI plus the state supplement is {{income.ssi_plus_ssp_living_independently}} for someone living independently.",
+      "source": "https://www.ssa.gov/ssi",
+      "kind": "program",
+      "see_also": [
+        "ssdi",
+        "ssp",
+        "earned_income_rule",
+        "ism"
+      ],
+      "search": "SSI"
+    },
+    {
+      "id": "ssdi",
+      "term": "SSDI (Social Security Disability Insurance)",
+      "aliases": [
+        "ssdi",
+        "social security disability",
+        "disability insurance",
+        "disability benefits"
+      ],
+      "short": "A Social Security benefit for people with a medical condition expected to last at least a year that makes work hard or impossible, who worked and paid Social Security taxes long enough. SSI is based on need; SSDI is based on work history.",
+      "source": "https://www.ssa.gov/apply/ssi",
+      "kind": "program",
+      "see_also": [
+        "ssi",
+        "sga",
+        "twp"
+      ],
+      "search": "SSDI"
+    },
+    {
+      "id": "ssp",
+      "term": "State supplement (SSP)",
+      "aliases": [
+        "ssp",
+        "state supplement",
+        "state supplementary payment",
+        "ma supplement"
+      ],
+      "short": "Extra money Massachusetts adds on top of federal SSI. The estimator includes it automatically.",
+      "figure": "In {{year}}: {{income.ma_ssp_full_cost_of_living_monthly}} for someone living independently, on top of federal SSI of {{income.ssi_federal_monthly}}.",
+      "source": "https://www.mass.gov/doc/federal-and-state-payment-levels-for-calendar-year-cy-2026/download",
+      "kind": "program",
+      "see_also": [
+        "ssi"
+      ],
+      "state": "MA"
+    },
+    {
+      "id": "earned_income_rule",
+      "term": "SSI earned income rule",
+      "aliases": [
+        "earned income",
+        "earned income exclusion",
+        "countable income",
+        "countable earnings",
+        "$85",
+        "general income exclusion"
+      ],
+      "short": "How work affects SSI: the first $85 a month of earnings is ignored, then SSI goes down $1 for every $2 earned. That's why total income still rises when someone works.",
+      "figure": "The $85 is the {{income.ssi_general_income_exclusion}} general exclusion plus the {{income.ssi_earned_income_exclusion}} earned income exclusion.",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "kind": "rule",
+      "see_also": [
+        "ssi",
+        "seie",
+        "breakeven"
+      ],
+      "search": "work incentives"
+    },
+    {
+      "id": "breakeven",
+      "term": "SSI breakeven point",
+      "aliases": [
+        "breakeven",
+        "break even",
+        "break-even"
+      ],
+      "short": "The earnings level where SSI reaches $0 under the earned income rule. Above it, SSI cash stops, but Medicaid can continue under 1619(b).",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "kind": "rule",
+      "see_also": [
+        "earned_income_rule",
+        "s1619b"
+      ]
+    },
+    {
+      "id": "seie",
+      "term": "Student Earned Income Exclusion",
+      "aliases": [
+        "seie",
+        "student earned income exclusion",
+        "student exclusion"
+      ],
+      "short": "Lets SSI recipients who are students under 22 earn a set amount before the earned income rule starts lowering SSI.",
+      "figure": "{{employment.student_earned_income_exclusion}}.",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "kind": "rule",
+      "see_also": [
+        "earned_income_rule"
+      ]
+    },
+    {
+      "id": "ism",
+      "term": "In-kind support (free or reduced-cost housing)",
+      "aliases": [
+        "in-kind",
+        "in kind",
+        "ism",
+        "in-kind support",
+        "living arrangement",
+        "free housing",
+        "fair share"
+      ],
+      "short": "If someone else provides free or reduced-cost housing, SSI can be cut. Paying a fair share of household costs avoids the cut.",
+      "figure": "The cut can be up to {{income.ssi_max_in_kind_shelter_reduction}}.",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm",
+      "kind": "rule",
+      "see_also": [
+        "ssi"
+      ],
+      "search": "living-arrangement"
+    },
+    {
+      "id": "sga",
+      "term": "SGA (Substantial Gainful Activity)",
+      "aliases": [
+        "sga",
+        "substantial gainful activity"
+      ],
+      "short": "An earnings level for SSDI. Earning above it can stop SSDI after the Trial Work Period. It doesn't apply to SSI in the same way.",
+      "figure": "In {{year}}: {{employment.sga_non_blind}}.",
+      "source": "https://www.ssa.gov/oact/cola/sga.html",
+      "kind": "rule",
+      "see_also": [
+        "ssdi",
+        "twp"
+      ]
+    },
+    {
+      "id": "twp",
+      "term": "Trial Work Period",
+      "aliases": [
+        "trial work",
+        "twp",
+        "trial work period",
+        "trial work month"
+      ],
+      "short": "For SSDI: any month with earnings over a set amount counts as one of 9 trial months, during which SSDI continues in full.",
+      "figure": "In {{year}}, a trial month is earning over {{employment.trial_work_period_month}}.",
+      "source": "https://www.ssa.gov/oact/cola/sga.html",
+      "kind": "rule",
+      "see_also": [
+        "sga",
+        "ssdi"
+      ]
+    },
+    {
+      "id": "s1619b",
+      "term": "1619(b)",
+      "aliases": [
+        "1619b",
+        "1619(b)",
+        "1619 b",
+        "section 1619"
+      ],
+      "short": "A rule that keeps Medicaid (MassHealth) going after earnings end the SSI cash payment, up to an earnings limit.",
+      "figure": "Massachusetts threshold: {{employment.section_1619b_ma_threshold}}.",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm",
+      "kind": "rule",
+      "see_also": [
+        "breakeven",
+        "masshealth",
+        "commonhealth"
+      ],
+      "search": "1619"
+    },
+    {
+      "id": "ticket",
+      "term": "Ticket to Work",
+      "aliases": [
+        "ticket to work",
+        "ticket"
+      ],
+      "short": "A free Social Security program that connects people on SSI or SSDI, ages 18 to 64, with job services and benefits counseling.",
+      "source": "https://choosework.ssa.gov/findhelp",
+      "kind": "program",
+      "see_also": [
+        "wipa"
+      ],
+      "search": "Ticket to Work"
+    },
+    {
+      "id": "wipa",
+      "term": "WIPA benefits counseling",
+      "aliases": [
+        "wipa",
+        "benefits counseling",
+        "benefits counselor",
+        "work incentives planning"
+      ],
+      "short": "Free counseling that helps people on SSI or SSDI understand how work will affect their benefits before they take a job. Reached through the Ticket to Work Help Line.",
+      "source": "https://choosework.ssa.gov/findhelp",
+      "kind": "program",
+      "see_also": [
+        "ticket",
+        "earned_income_rule"
+      ],
+      "search": "Ticket to Work"
+    },
+    {
+      "id": "pass",
+      "term": "PASS (Plan to Achieve Self-Support)",
+      "aliases": [
+        "pass",
+        "plan to achieve self-support",
+        "self-support"
+      ],
+      "short": "Lets an SSI recipient set aside money for a work goal without lowering SSI.",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/pass.htm",
+      "kind": "program",
+      "see_also": [
+        "ssi"
+      ],
+      "search": "PASS"
+    },
+    {
+      "id": "dds",
+      "term": "DDS (Department of Developmental Services)",
+      "aliases": [
+        "dds",
+        "department of developmental services",
+        "developmental services"
+      ],
+      "short": "The Massachusetts agency for adults with developmental disabilities. Autistic adults without intellectual disability can qualify, but DDS's published service list for them doesn't include 24-hour residential care.",
+      "more": "Apply at 17–18; adult services usually start at 22.",
+      "source": "https://www.mass.gov/info-details/dds-eligibility-for-adults-with-autism",
+      "kind": "program",
+      "see_also": [
+        "dds_charge",
+        "waiver",
+        "flex_funding",
+        "turning22"
+      ],
+      "search": "DDS",
+      "state": "MA"
+    },
+    {
+      "id": "dds_charge",
+      "term": "DDS residential charge",
+      "aliases": [
+        "dds charge",
+        "residential charge",
+        "dds residential charge"
+      ],
+      "short": "What someone in DDS 24-hour residential care pays toward it: a share of their benefits plus a share of their earnings. They keep at least $1,000 in savings.",
+      "figure": "{{housing.dds_residential_charge_benefits}} of benefits plus {{housing.dds_residential_charge_earnings}} of earnings over $65.",
+      "source": "https://www.mass.gov/doc/115-cmr-3-administration/download",
+      "kind": "rule",
+      "see_also": [
+        "dds"
+      ],
+      "state": "MA"
+    },
+    {
+      "id": "massability",
+      "term": "MassAbility",
+      "aliases": [
+        "massability",
+        "mrc",
+        "massachusetts rehabilitation commission",
+        "vocational rehabilitation",
+        "vr"
+      ],
+      "short": "The Massachusetts state job agency for people with disabilities (formerly the Massachusetts Rehabilitation Commission, MRC): job counseling, training, placement and on-the-job support.",
+      "source": "https://www.mass.gov/service-details/am-i-eligible-for-vocational-rehabilitation",
+      "kind": "program",
+      "see_also": [
+        "pre_ets"
+      ],
+      "search": "MassAbility",
+      "state": "MA"
+    },
+    {
+      "id": "pre_ets",
+      "term": "Pre-ETS (Pre-Employment Transition Services)",
+      "aliases": [
+        "pre-ets",
+        "pre ets",
+        "pre-employment transition services",
+        "transition services"
+      ],
+      "short": "Job exploration, work-readiness training and work-based learning for students ages 14–21, through MassAbility and schools.",
+      "source": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0",
+      "kind": "program",
+      "see_also": [
+        "massability",
+        "turning22"
+      ],
+      "search": "Pre-Employment",
+      "state": "MA"
+    },
+    {
+      "id": "masshealth",
+      "term": "MassHealth",
+      "aliases": [
+        "masshealth",
+        "medicaid"
+      ],
+      "short": "Massachusetts's Medicaid program. Besides health coverage, it pays for supports like Adult Foster Care and Personal Care Attendants.",
+      "source": "https://www.mass.gov/info-details/masshealth-premium-schedule-for-members",
+      "kind": "program",
+      "see_also": [
+        "commonhealth",
+        "afc",
+        "pca",
+        "s1619b"
+      ],
+      "search": "MassHealth",
+      "state": "MA"
+    },
+    {
+      "id": "commonhealth",
+      "term": "CommonHealth",
+      "aliases": [
+        "commonhealth",
+        "common health"
+      ],
+      "short": "Full MassHealth coverage for adults with disabilities with no income limit, paid for with a sliding-scale premium. It keeps working adults covered.",
+      "figure": "Premiums run {{housing.commonhealth_premium}}.",
+      "source": "https://www.mass.gov/info-details/masshealth-premium-schedule-for-members",
+      "kind": "program",
+      "see_also": [
+        "masshealth",
+        "s1619b"
+      ],
+      "search": "CommonHealth",
+      "state": "MA"
+    },
+    {
+      "id": "afc",
+      "term": "Adult Foster Care (AFC)",
+      "aliases": [
+        "afc",
+        "adult foster care",
+        "foster care"
+      ],
+      "short": "A MassHealth program that pays a live-in caregiver, sometimes a family member, to help with daily activities at home.",
+      "figure": "Minimum caregiver pay: {{income.afc_caregiver_min_pay_level1}} (Level I) or {{income.afc_caregiver_min_pay_level2}} (Level II).",
+      "source": "https://www.mass.gov/info-details/masshealth-adult-foster-care-program-fact-sheet",
+      "kind": "program",
+      "see_also": [
+        "pca",
+        "masshealth"
+      ],
+      "search": "Adult Foster Care",
+      "state": "MA"
+    },
+    {
+      "id": "pca",
+      "term": "PCA (Personal Care Attendant)",
+      "aliases": [
+        "pca",
+        "personal care attendant"
+      ],
+      "short": "A MassHealth program that pays wages for attendants the person hires to help with daily activities like bathing and dressing. Many relatives can be hired; spouses and legally responsible relatives generally can't.",
+      "source": "https://www.mass.gov/masshealth-personal-care-attendant-program",
+      "kind": "program",
+      "see_also": [
+        "afc",
+        "masshealth"
+      ],
+      "search": "Personal Care Attendant",
+      "state": "MA"
+    },
+    {
+      "id": "waiver",
+      "term": "HCBS waiver",
+      "aliases": [
+        "waiver",
+        "waivers",
+        "hcbs",
+        "home and community based",
+        "home and community-based"
+      ],
+      "short": "Medicaid waivers that fund in-home and community supports instead of an institution. In Massachusetts, DDS runs three adult waivers, including options where the family directs the budget.",
+      "source": "https://www.mass.gov/info-details/home-and-community-based-services-hcbs-waivers-for-adults-with-intellectual-disabilities-information-for-providers",
+      "kind": "program",
+      "see_also": [
+        "dds",
+        "masshealth"
+      ],
+      "search": "Waivers",
+      "state": "MA"
+    },
+    {
+      "id": "flex_funding",
+      "term": "DDS Family Support flexible funding",
+      "aliases": [
+        "flexible funding",
+        "family support",
+        "flex funding",
+        "stipend"
+      ],
+      "short": "Money from DDS for families caring for a DDS-eligible relative at home, for things like respite, equipment, recreation or transportation. Amounts aren't published, and funding is limited.",
+      "source": "https://www.mass.gov/info-details/about-family-support-what-is-flexible-funding",
+      "kind": "program",
+      "see_also": [
+        "dds"
+      ],
+      "search": "Flexible Funding",
+      "state": "MA"
+    },
+    {
+      "id": "eaedc",
+      "term": "EAEDC",
+      "aliases": [
+        "eaedc",
+        "emergency aid to the elderly disabled and children",
+        "state cash assistance"
+      ],
+      "short": "Monthly state cash for adults with disabilities who aren't on SSI, with MassHealth included. It can't be received at the same time as SSI, so it's useful while an SSI application is pending.",
+      "figure": "{{financing.eaedc_grant_1_person}} for one person living alone; the first {{financing.eaedc_earned_income_deduction}} of job income isn't counted.",
+      "source": "https://www.mass.gov/info-details/emergency-aid-to-the-elderly-disabled-and-children-eaedc",
+      "kind": "program",
+      "see_also": [
+        "ssi"
+      ],
+      "search": "EAEDC",
+      "state": "MA"
+    },
+    {
+      "id": "turning22",
+      "term": "Turning 22",
+      "aliases": [
+        "turning 22",
+        "age 22",
+        "transition age",
+        "aging out"
+      ],
+      "short": "Special-education services end when a student turns 22, and DDS adult services usually start then. Families are advised to plan and apply years ahead.",
+      "source": "https://www.mass.gov/info-details/services-for-adults-with-autism-only",
+      "kind": "rule",
+      "see_also": [
+        "dds",
+        "pre_ets"
+      ],
+      "state": "MA"
+    },
+    {
+      "id": "section8",
+      "term": "Section 8 (Housing Choice Voucher)",
+      "aliases": [
+        "section 8",
+        "housing choice voucher",
+        "hcv",
+        "hcvp",
+        "voucher"
+      ],
+      "short": "A federal rent subsidy for a private apartment. The tenant pays a share of income and the program pays the landlord the rest, up to a local limit. Waits are often 5–12 years, so apply at 18 and join every list.",
+      "figure": "Tenant share: about {{housing.section8_tenant_share}} of income.",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+      "kind": "program",
+      "see_also": [
+        "ami",
+        "ahvp",
+        "mrvp",
+        "cwl",
+        "tenant_share"
+      ],
+      "search": "Section 8"
+    },
+    {
+      "id": "tenant_share",
+      "term": "Tenant share (30% of income)",
+      "aliases": [
+        "30%",
+        "30 percent",
+        "tenant share",
+        "rent share",
+        "30% of income"
+      ],
+      "short": "With a voucher or public housing, the tenant usually pays about 30% of income toward rent. Real programs use adjusted income; the estimator uses gross income, which slightly overstates rent.",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+      "kind": "rule",
+      "see_also": [
+        "section8",
+        "public_housing"
+      ]
+    },
+    {
+      "id": "cwl",
+      "term": "Centralized Waiting List",
+      "aliases": [
+        "centralized waiting list",
+        "cwl",
+        "massnahro",
+        "waiting list",
+        "waitlist"
+      ],
+      "short": "One application that puts you on the Section 8 waitlists of many Massachusetts housing authorities. The state's own Section 8 list has been closed since Jan 13, 2025, so this is the main way in.",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+      "kind": "program",
+      "see_also": [
+        "section8"
+      ],
+      "state": "MA"
+    },
+    {
+      "id": "ahvp",
+      "term": "AHVP (Alternative Housing Voucher Program)",
+      "aliases": [
+        "ahvp",
+        "alternative housing voucher"
+      ],
+      "short": "A Massachusetts rent voucher only for people with disabilities under 60. A good fit for autistic adults.",
+      "figure": "Tenant pays {{housing.ahvp_tenant_share}} of income.",
+      "source": "https://www.mass.gov/info-details/alternative-housing-voucher-program-ahvp",
+      "kind": "program",
+      "see_also": [
+        "section8",
+        "mrvp"
+      ],
+      "search": "AHVP",
+      "state": "MA"
+    },
+    {
+      "id": "mrvp",
+      "term": "MRVP (Massachusetts Rental Voucher Program)",
+      "aliases": [
+        "mrvp",
+        "massachusetts rental voucher"
+      ],
+      "short": "A state-funded rent voucher similar to Section 8, either mobile (you choose the apartment) or tied to a unit.",
+      "source": "https://www.mass.gov/info-details/massachusetts-rental-voucher-program-mrvp",
+      "kind": "program",
+      "see_also": [
+        "section8",
+        "ahvp"
+      ],
+      "search": "MRVP",
+      "state": "MA"
+    },
+    {
+      "id": "public_housing",
+      "term": "Public housing",
+      "aliases": [
+        "public housing",
+        "housing authority"
+      ],
+      "short": "Apartments owned by housing authorities with rent based on income. In Massachusetts, state public housing is applied for through one online form (CHAMP).",
+      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing",
+      "kind": "program",
+      "see_also": [
+        "champ",
+        "tenant_share"
+      ],
+      "search": "Public Housing"
+    },
+    {
+      "id": "champ",
+      "term": "CHAMP",
+      "aliases": [
+        "champ",
+        "common housing application"
+      ],
+      "short": "The single online application for Massachusetts state public housing. Log in at least once a year: applications inactive for 2+ years close.",
+      "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing",
+      "kind": "program",
+      "see_also": [
+        "public_housing"
+      ],
+      "search": "CHAMP",
+      "state": "MA"
+    },
+    {
+      "id": "eohlc",
+      "term": "EOHLC",
+      "aliases": [
+        "eohlc",
+        "dhcd",
+        "executive office of housing and livable communities"
+      ],
+      "short": "The Massachusetts state housing agency, formerly called DHCD. Some state web pages still use the old name.",
+      "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+      "kind": "program",
+      "see_also": [
+        "section8",
+        "mrvp"
+      ],
+      "state": "MA"
+    },
+    {
+      "id": "ami",
+      "term": "AMI (Area Median Income)",
+      "aliases": [
+        "ami",
+        "area median income",
+        "median income"
+      ],
+      "short": "The middle income for an area, used to set housing eligibility. Programs are often limited to 30%, 50% or 80% of AMI. Section 8 is about 50% AMI; MRVP, AHVP and state public housing go up to 80%.",
+      "figure": "Boston 30% AMI for one person: {{housing.boston_30pct_ami_1_person}}.",
+      "source": "https://www.boston.gov/income-restricted-housing-guide",
+      "kind": "rule",
+      "see_also": [
+        "section8"
+      ]
+    },
+    {
+      "id": "raft",
+      "term": "RAFT",
+      "aliases": [
+        "raft",
+        "residential assistance for families in transition",
+        "emergency housing"
+      ],
+      "short": "One-time Massachusetts money to keep housing or move: back rent, utilities, moving costs.",
+      "figure": "Up to {{housing.raft_max_per_12_months}} per 12 months.",
+      "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs",
+      "kind": "program",
+      "search": "RAFT",
+      "state": "MA"
+    },
+    {
+      "id": "hmlp",
+      "term": "Home Modification Loan (HMLP)",
+      "aliases": [
+        "hmlp",
+        "home modification",
+        "accessory apartment",
+        "adu"
+      ],
+      "short": "Zero-interest loans for accessibility changes, or for building an accessory apartment for a family member with a disability. Repayment is deferred until the home is sold.",
+      "figure": "{{housing.hmlp_loan}}.",
+      "source": "https://cedac.org/hmlp/",
+      "kind": "program",
+      "search": "Home Modification",
+      "state": "MA"
+    },
+    {
+      "id": "residential",
+      "term": "Residential program",
+      "aliases": [
+        "residential program",
+        "group home",
+        "24-hour residential",
+        "24 hour",
+        "shared living"
+      ],
+      "short": "A home with paid staff support, from 24/7 group homes to shared living with a paid caregiver. In this directory, 'Residential program' marks providers that run homes.",
+      "source": "https://www.mass.gov/doc/115-cmr-3-administration/download",
+      "kind": "site",
+      "see_also": [
+        "dds",
+        "dds_charge"
+      ],
+      "search": "Residential"
+    },
+    {
+      "id": "able",
+      "term": "ABLE account",
+      "aliases": [
+        "able",
+        "able account",
+        "attainable",
+        "achieving a better life"
+      ],
+      "short": "A tax-advantaged savings account for a person with a disability. Money in it doesn't count against the asset limit for SSI and MassHealth. In Massachusetts it's called Attainable.",
+      "figure": "Disability must begin before age {{financing.able_onset_age_limit}}; contributions up to {{financing.able_annual_contribution_limit}}.",
+      "source": "https://www.mefa.org/article/able-account-eligibility-expands-in-2026-what-you-need-to-know/",
+      "kind": "program",
+      "see_also": [
+        "snt"
+      ],
+      "search": "ABLE"
+    },
+    {
+      "id": "snt",
+      "term": "Special needs trust",
+      "aliases": [
+        "special needs trust",
+        "snt",
+        "supplemental needs trust",
+        "trust",
+        "first-party",
+        "third-party",
+        "first party",
+        "third party"
+      ],
+      "short": "A trust that holds money for a person with a disability without hurting SSI or MassHealth. First-party trusts hold the person's own money (what's left at death repays MassHealth); third-party trusts hold family money (they don't).",
+      "source": "https://www.planofma-ri.org/faq-2022/",
+      "kind": "program",
+      "see_also": [
+        "pooled_trust",
+        "able"
+      ],
+      "search": "Trust"
+    },
+    {
+      "id": "pooled_trust",
+      "term": "Pooled trust",
+      "aliases": [
+        "pooled trust",
+        "pooled special needs trust"
+      ],
+      "short": "A special needs trust run by a nonprofit that pools many families' accounts. Families join with a Joinder Agreement instead of setting up their own trust.",
+      "source": "https://www.planofma-ri.org/faq-2022/",
+      "kind": "program",
+      "see_also": [
+        "snt",
+        "joinder"
+      ],
+      "search": "Pooled"
+    },
+    {
+      "id": "joinder",
+      "term": "Joinder Agreement",
+      "aliases": [
+        "joinder",
+        "joinder agreement"
+      ],
+      "short": "The document that adds a person to a pooled trust. Have an attorney prepare it.",
+      "source": "https://www.planofma-ri.org/faq-2022/",
+      "kind": "program",
+      "see_also": [
+        "pooled_trust"
+      ]
+    },
+    {
+      "id": "refundable",
+      "term": "Refundable vs nonrefundable tax credit",
+      "aliases": [
+        "refundable",
+        "nonrefundable",
+        "non-refundable",
+        "tax credit"
+      ],
+      "short": "A refundable credit is paid out even if you owe no tax (like the MA Child and Family Tax Credit). A nonrefundable credit only lowers tax you already owe (like the federal Credit for Other Dependents).",
+      "figure": "MA credit: {{financing.ma_child_family_credit_per_dependent}} per dependent. Federal credit: {{financing.federal_credit_other_dependents}}.",
+      "source": "https://www.irs.gov/newsroom/an-overview-of-the-credit-for-other-dependents",
+      "kind": "rule",
+      "search": "Tax Credit"
+    },
+    {
+      "id": "snap",
+      "term": "SNAP",
+      "aliases": [
+        "snap",
+        "food stamps",
+        "ebt"
+      ],
+      "short": "Monthly money on an EBT card for groceries. Adults with disabilities can deduct out-of-pocket medical costs, which can raise the benefit.",
+      "figure": "Standard medical deduction: {{financing.snap_standard_medical_deduction}}.",
+      "source": "https://www.masslegalhelp.org/public-benefits-ssi/snap-food-benefits/tell-dta-about-medical-expenses-get-more-snap",
+      "kind": "program",
+      "search": "SNAP"
+    },
+    {
+      "id": "heap",
+      "term": "HEAP (fuel assistance)",
+      "aliases": [
+        "heap",
+        "liheap",
+        "fuel assistance",
+        "heating assistance"
+      ],
+      "short": "A grant toward winter heating bills, paid to the fuel company or utility. Renters qualify even when heat is included in rent. Approval can also unlock a utility discount.",
+      "source": "https://www.mass.gov/news/governor-healey-increases-home-heating-assistance-benefits-for-tens-of-thousands-of-massachusetts-households-0",
+      "kind": "program",
+      "search": "HEAP",
+      "state": "MA"
+    },
+    {
+      "id": "cicrf",
+      "term": "CICRF",
+      "aliases": [
+        "cicrf",
+        "catastrophic illness",
+        "catastrophic illness in children relief fund"
+      ],
+      "short": "A Massachusetts fund that reimburses families for large medical and related costs for someone under 22 that insurance and other programs don't cover.",
+      "source": "https://www.mass.gov/info-details/check-eligibility-for-cicrf",
+      "kind": "program",
+      "search": "Catastrophic",
+      "state": "MA"
+    },
+    {
+      "id": "support_level",
+      "term": "Support level (Level 1, 2, 3)",
+      "aliases": [
+        "support level",
+        "level 1",
+        "level 2",
+        "level 3",
+        "severity",
+        "severity level"
+      ],
+      "short": "The autism level written in a diagnosis report: Level 1 (requiring support), Level 2 (requiring substantial support) or Level 3 (requiring very substantial support). This site uses it only to put programs that fit first; it never hides anything.",
+      "kind": "site",
+      "see_also": [
+        "residential"
+      ]
+    },
+    {
+      "id": "federally_funded",
+      "term": "Federally funded",
+      "aliases": [
+        "federally funded",
+        "federal money",
+        "federal funding"
+      ],
+      "short": "The program uses federal money, even if a state, city or nonprofit runs it (for example, housing authorities). Tagged with a dashed outline in the directory.",
+      "kind": "site"
+    },
+    {
+      "id": "not_published",
+      "term": "\"Not published\"",
+      "aliases": [
+        "not published",
+        "unpublished",
+        "price not published"
+      ],
+      "short": "The organization's own page doesn't state the figure, so we don't guess. Ask the program directly. It never means $0.",
+      "kind": "site"
+    },
+    {
+      "id": "not_verified",
+      "term": "\"Not yet verified\"",
+      "aliases": [
+        "not yet verified",
+        "needs checking",
+        "unverified",
+        "verified"
+      ],
+      "short": "Something about this entry (an address, whether it's still running, its nonprofit status) hasn't been confirmed yet. Open the entry to see what's being checked.",
+      "kind": "site"
+    },
+    {
+      "id": "normalized",
+      "term": "Per-month (normalized) amounts",
+      "aliases": [
+        "normalized",
+        "normalize",
+        "per month",
+        "one-time",
+        "spread"
+      ],
+      "short": "The estimator turns every kind of support into a monthly amount so they can be compared: yearly amounts are divided by 12, and one-time grants are spread over the years you're planning.",
+      "kind": "site",
+      "see_also": [
+        "gov_vs_np"
+      ]
+    },
+    {
+      "id": "gov_vs_np",
+      "term": "Government vs nonprofit",
+      "aliases": [
+        "government",
+        "nonprofit",
+        "both",
+        "government only",
+        "nonprofit only"
+      ],
+      "short": "In the estimator, 'Government' means programs run by federal, state or city agencies (SSI, vouchers, DDS, tax credits). 'Nonprofit' means nonprofit organizations. 'Both' adds them together. Most nonprofits don't publish amounts, so their share often looks small.",
+      "kind": "site",
+      "see_also": [
+        "normalized",
+        "not_published"
+      ]
+    },
+    {
+      "id": "market_rent",
+      "term": "Market rent",
+      "aliases": [
+        "market rent",
+        "rent"
+      ],
+      "short": "What an apartment would cost with no subsidy. The estimator uses it for the 'nonprofit only' column and to show how much a voucher covers.",
+      "kind": "site",
+      "see_also": [
+        "tenant_share",
+        "section8"
+      ]
+    },
+    {
+      "id": "supported_employment",
+      "term": "Supported employment",
+      "aliases": [
+        "supported employment",
+        "job coach",
+        "job coaching"
+      ],
+      "short": "Jobs in the community with ongoing help from a job coach, usually paid for by DDS or MassAbility. In this directory it marks providers that offer job coaching.",
+      "kind": "site",
+      "see_also": [
+        "massability",
+        "dds"
+      ],
+      "search": "Supported employment"
+    },
+    {
+      "id": "inflation",
+      "term": "Inflation",
+      "aliases": [
+        "inflation",
+        "rising prices",
+        "price increases"
+      ],
+      "short": "How fast prices rise each year. The estimator can add it to future years: rent goes up, and SSI can go up with Social Security's yearly COLA. Earnings, tax credits and grants stay at today's amounts.",
+      "more": "Choose the Federal Reserve's projections, recent consumer price inflation (CPI), a cautious 4%, none, or your own rate.",
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "kind": "rule",
+      "see_also": [
+        "cola",
+        "cpi",
+        "pce"
+      ]
+    },
+    {
+      "id": "cola",
+      "term": "COLA (cost-of-living adjustment)",
+      "aliases": [
+        "cola",
+        "cost of living adjustment",
+        "cost-of-living adjustment",
+        "cost of living"
+      ],
+      "short": "The yearly increase to Social Security and SSI payments so they keep up with prices. It was 2.8% for 2026; the next one is announced each October.",
+      "source": "https://www.ssa.gov/cola/",
+      "kind": "rule",
+      "see_also": [
+        "ssi",
+        "inflation"
+      ]
+    },
+    {
+      "id": "cpi",
+      "term": "CPI (Consumer Price Index)",
+      "aliases": [
+        "cpi",
+        "consumer price index",
+        "cpi-u"
+      ],
+      "short": "The government's main measure of how much prices for everyday goods and services have changed, published monthly by the Bureau of Labor Statistics. Consumer prices rose 3.4% in the 12 months to August 2026, and housing costs (shelter) rose 3.0%.",
+      "source": "https://www.bls.gov/news.release/cpi.nr0.htm",
+      "kind": "rule",
+      "see_also": [
+        "inflation",
+        "pce"
+      ]
+    },
+    {
+      "id": "pce",
+      "term": "PCE inflation (Federal Reserve projections)",
+      "aliases": [
+        "pce",
+        "personal consumption expenditures",
+        "fed projections",
+        "federal reserve projections",
+        "central bank"
+      ],
+      "short": "The price measure the Federal Reserve targets. Its goal is 2% a year over the long run. In September 2026 the Fed projected 3.7% for 2026, falling to 2.3% in 2027, 2.1% in 2028 and 2.0% after.",
+      "source": "https://www.federalreserve.gov/monetarypolicy/fomcprojtabl20260916.htm",
+      "kind": "rule",
+      "see_also": [
+        "inflation",
+        "cpi"
+      ]
+    }
+  ]
+}

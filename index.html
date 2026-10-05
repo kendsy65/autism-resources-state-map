@@ -100,6 +100,7 @@
 import { STATES, loadResources, loadJSON, esc } from "./assets/js/common.js";
 import { SSI_STATUS, SUPPORT, FOCUS, MONTHS, loadProfile, saveProfile, clearProfile, validProfile, ageOn, parseDate, toISO, validBirthdate } from "./assets/js/profile.js";
 import { lookupZip } from "./assets/js/geo.js";
+import { mountChat, linkTerms } from "./assets/js/chat.js";
 
 const counts = Object.fromEntries(await Promise.all(Object.keys(STATES).map(async c => [c, (await loadResources(c)).length])));
 const ready = c => counts[c] > 0;
@@ -223,6 +224,15 @@ $("wiz-cancel").addEventListener("click", () => {
   ["zip-found", "dob-found"].forEach(id => { $(id).textContent = ""; });
   show("choose");
 });
+
+// ---------- Ask about a term ----------
+// Figures come from the saved person's state, or the first state with planner numbers.
+const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms;
+const chatState = saved?.state || Object.keys(STATES).find(ready) || "MA";
+const chatParams = await loadJSON(`data/${chatState}/planner-parameters.json`).catch(() => null);
+const chatRes = [...(await loadResources(chatState)), ...federal];
+mountChat({ terms: glossary, params: chatParams, resources: chatRes });
+linkTerms($("wizard"), glossary);
 
 // Map is a nice-to-have: if the map files can't load, the state cards above still work.
 try {

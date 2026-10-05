@@ -61,30 +61,61 @@ export function eaedcAfterEarnings(earn, grant, deduction) {
   return Math.max(0, grant - Math.max(0, earn - deduction));
 }
 
+// ---------- Inflation ----------
+export const INFLATION_CHOICES = {
+  fed: "Federal Reserve projections",
+  cpi: "Recent inflation (CPI)",
+  four: "Cautious: 4% a year",
+  none: "No inflation (today's prices)",
+  custom: "Custom rate",
+};
+
+// Yearly inflation rates for a plan of `years` years starting in `startYear`.
+// rates[0] is 0 because year 1 uses this year's figures; rates[t] is the rise from year t-1 to year t.
+export function inflationPath(choice, econ, startYear, years, custom = 0) {
+  const inf = econ?.inflation || {};
+  const rateFor = y => {
+    if (choice === "fed") { const f = inf.fed_sep_pce_median; return f ? (f.by_year?.[y] ?? f.longer_run) : 0; }
+    if (choice === "cpi") return inf.cpi_u_12_month?.value ?? 0;
+    if (choice === "four") return 0.04;
+    if (choice === "custom") return Math.max(0, custom);
+    return 0;
+  };
+  return Array.from({ length: Math.max(1, years) }, (_, t) => (t === 0 ? 0 : rateFor(startYear + t)));
+}
+// Price level for each plan year relative to year 1.
+export const priceFactors = rates => rates.reduce((acc, r, i) => [...acc, i === 0 ? 1 : acc[i - 1] * (1 + r)], []);
+
 /**
- * Compare government only / nonprofit only / both.
+ * Compare government only / nonprofit only / both, year by year.
  * inputs: { benefit: "ssi"|"eaedc"|"none", hours, wage, housing, rent, afcLevel, years }
  *   rent = market rent (or the family share), used whenever there is no housing subsidy.
  * supports: [{ source, to, per, amount }]  (ticked items plus anything the family typed in)
+ * opts.rates: yearly inflation from inflationPath(); rent rises with it every year.
+ * opts.benefitsRise: SSI/EAEDC rise with inflation too (Social Security's yearly COLA). Earnings,
+ *   tax credits, grants and Adult Foster Care rates stay at today's amounts.
+ * Top-level numbers are year 1; overYears adds up every year; yearly lists each year.
  */
-export function compareScenarios(inputs, P, params, supports = []) {
+export function compareScenarios(inputs, P, params, supports = [], { rates = null, benefitsRise = true, startYear = params.year } = {}) {
   const years = Math.max(1, Math.round(inputs.years || 1));
+  const F = priceFactors(rates && rates.length >= years ? rates.slice(0, years) : Array(years).fill(0));
   const earn = monthlyEarnings(inputs.hours, inputs.wage);
   const rent = Math.max(0, inputs.rent || 0);
   const fin = params.financing || {};
 
-  function run(useGov, useNonprofit) {
+  function run(useGov, useNonprofit, costF, benF) {
     let benefit = 0;
-    if (useGov && inputs.benefit === "ssi") benefit = ssiAfterEarnings(earn, P);
+    if (useGov && inputs.benefit === "ssi") benefit = ssiAfterEarnings(earn, { ...P, ssiFull: P.ssiFull * benF });
     if (useGov && inputs.benefit === "eaedc" && fin.eaedc_grant_1_person)
-      benefit = eaedcAfterEarnings(earn, fin.eaedc_grant_1_person.value, fin.eaedc_earned_income_deduction?.value ?? 0);
+      benefit = eaedcAfterEarnings(earn, fin.eaedc_grant_1_person.value * benF, fin.eaedc_earned_income_deduction?.value ?? 0);
     const income = earn + benefit;
 
     // Housing: subsidies only exist with government help; otherwise the family pays the market rent.
-    let housingCost = rent, housingHelp = 0;
+    const marketRent = rent * costF;
+    let housingCost = marketRent, housingHelp = 0;
     if (useGov && inputs.housing === "voucher") {
       housingCost = P.rentShare * income;
-      housingHelp = rent ? Math.max(0, rent - housingCost) : 0;
+      housingHelp = marketRent ? Math.max(0, marketRent - housingCost) : 0;
     } else if (useGov && inputs.housing === "dds") {
       housingCost = ddsCharge(benefit, earn, P);
     }
@@ -105,10 +136,14 @@ export function compareScenarios(inputs, P, params, supports = []) {
       govPerson, npPerson, govFamily, npFamily, left, familyExtra: govFamily + npFamily,
       supportTotal: govTotal + npTotal, govTotal, npTotal,
       govShare: govTotal + npTotal ? govTotal / (govTotal + npTotal) : 0,
-      overYears: { left: left * 12 * years, support: (govTotal + npTotal) * 12 * years },
     };
   }
-  return { years, government: run(true, false), nonprofit: run(false, true), both: run(true, true) };
+  function scenario(useGov, useNonprofit) {
+    const yearly = F.map((f, t) => ({ year: startYear + t, ...run(useGov, useNonprofit, f, benefitsRise ? f : 1) }));
+    const add = k => yearly.reduce((a, y) => a + y[k] * 12, 0);
+    return { ...yearly[0], yearly, overYears: { left: add("left"), support: add("supportTotal"), housing: add("housingCost") } };
+  }
+  return { years, factors: F, government: scenario(true, false), nonprofit: scenario(false, true), both: scenario(true, true) };
 }
 
 // ---------- Application windows ----------
