@@ -51,5 +51,7 @@ Each item has `item`, `value`, `note`, `source`, plus these fields that drive th
 | `age_min` | Optional number. Shown as "Coming up" up to 4 years before, "Now" from this age |
 | `age_max` | Optional number. Hidden once the person is older |
 | `city` | Optional. For city-only items; shown only within 25 miles of the person's ZIP |
+| `id` | Short slug used by the Timing & waitlists tab (e.g. `section-8`) |
+| `process` | `{ steps: [{title, detail, time?}], sources: [url], checked }`. The steps in order, each taken from the source pages; `time` only when a source states it. Shown as a numbered process map |
 
 Only set ages that the `value` or `note` text (and its source) actually states.

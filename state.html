@@ -23,6 +23,7 @@
   <nav class="tabs" role="tablist" aria-label="View">
     <button role="tab" data-view="dir" aria-selected="true">Directory</button>
     <button role="tab" data-view="plan" aria-selected="false">Cost planner</button>
+    <button role="tab" data-view="time" aria-selected="false">Timing &amp; waitlists</button>
   </nav>
 
   <!-- ---------- DIRECTORY ---------- -->
@@ -52,6 +53,16 @@
   </div>
 
   <!-- ---------- PLANNER ---------- -->
+  <!-- ---------- TIMING & WAITLISTS ---------- -->
+  <div id="view-time" hidden>
+    <p class="lede">How long each program takes, and what happens at each step, from the program's official page. Pick one to see its process.</p>
+    <div id="time-missing" class="empty" hidden>Timing and process information for this state is not ready yet.</div>
+    <div class="tw" id="tw">
+      <div class="tw-list" id="tw-list" role="tablist" aria-label="Programs" aria-orientation="vertical"></div>
+      <div class="tw-map" id="tw-map" role="tabpanel" tabindex="0"></div>
+    </div>
+  </div>
+
   <div id="view-plan" hidden>
     <div id="plan-missing" class="empty" hidden>The cost planner for this state is not ready yet. Its numbers still need to be researched and sourced.</div>
     <div id="plan-body" hidden>
@@ -111,8 +122,6 @@
 
       <div id="param-tables"></div>
 
-      <h2 style="margin-top:32px">Timing and waitlists</h2>
-      <div class="tblwrap"><table class="ptbl" id="t-time"></table></div>
     </div>
   </div>
 
@@ -262,10 +271,12 @@ function setView(v) {
   document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
   $("view-dir").hidden = v !== "dir";
   $("view-plan").hidden = v !== "plan";
-  history.replaceState(null, "", v === "plan" ? "#planner" : location.pathname + location.search);
+  $("view-time").hidden = v !== "time";
+  history.replaceState(null, "", v === "plan" ? "#planner" : v === "time" ? "#timing" : location.pathname + location.search);
 }
 document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest("button[data-view]"); if (b) setView(b.dataset.view); });
 if (location.hash === "#planner") setView("plan");
+if (location.hash === "#timing") setView("time");
 
 // ---------- PLANNER ----------
 const econEarly = await loadJSON("data/US/economic-parameters.json").catch(() => null);
@@ -507,12 +518,65 @@ else {
     + (params.financing ? section("Money, tax credits and discounts", params.financing) : "")
     + (params.nonprofit ? section("Nonprofit grants with published amounts", params.nonprofit) : "")
     + (econEarly?.inflation ? section("Inflation (national)", econEarly.inflation) : "");
-  $("t-time").innerHTML = `<thead><tr><th>Item</th><th>Timing</th><th>Notes</th><th>Source</th></tr></thead><tbody>`
-    + (params.timing || []).map(t => `<tr><td>${esc(t.item)}</td><td class="v">${esc(t.value)}</td><td>${esc(t.note)}</td><td>${link(t.source)}</td></tr>`).join("") + `</tbody>`;
 }
+
+// ---------- TIMING & WAITLISTS: each program's process as a line of stops ----------
+const timingItems = (params?.timing || []).filter(t => t.process?.steps?.length);
+const ROUTE_FOR_FOCUS = { Housing: ["H", "cat-Housing"], Employment: ["S", "cat-Employment"], Both: ["•", ""] };
+let twSel = timingItems[0]?.id;
+function renderTimingList() {
+  $("tw-list").innerHTML = timingItems.map(t => {
+    const [letter, cls] = ROUTE_FOR_FOCUS[t.focus] || ROUTE_FOR_FOCUS.Both;
+    const on = t.id === twSel;
+    return `<button role="tab" type="button" id="tw-tab-${esc(t.id)}" class="tw-item ${cls}" data-tw="${esc(t.id)}" aria-selected="${on}" aria-controls="tw-map" tabindex="${on ? 0 : -1}">
+      <span class="route" aria-hidden="true">${letter}</span><span class="tw-text"><strong>${esc(t.item)}</strong><small>${esc(t.value)}</small></span></button>`;
+  }).join("");
+}
+function renderProcess() {
+  const t = timingItems.find(x => x.id === twSel);
+  if (!t) return;
+  const [, cls] = ROUTE_FOR_FOCUS[t.focus] || ROUTE_FOR_FOCUS.Both;
+  // Where this family is, if they answered the questions.
+  let mine = "";
+  if (me) {
+    const isNear = city => { const c = coordsOf(city); return !home || !c || miles(home, c) <= NEAR_MILES; };
+    const s = nextSteps(me, [t], [], new Date(), isNear)[0];
+    if (s) mine = `<p class="tw-you"><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span> For someone age ${ageOn(me.birthdate)}${s.date ? `: opens when they turn ${t.age_min} on ${esc(fmtDate(s.date))}` : ": this applies now"}.</p>`;
+  }
+  const host = u => esc(u.replace(/^https?:\/\/(www\.)?/, "").split("/")[0]);
+  $("tw-map").className = `tw-map ${cls}`;
+  $("tw-map").setAttribute("aria-labelledby", `tw-tab-${t.id}`);
+  $("tw-map").innerHTML = `
+    <div class="tw-head"><h2>${esc(t.item)}</h2><span class="tw-value">${esc(t.value)}</span></div>
+    ${t.note ? `<p class="lede" style="margin-top:4px">${esc(t.note)}</p>` : ""}
+    ${mine}
+    <ol class="pmap">${t.process.steps.map((st, i) => `<li><span class="pm-n" aria-hidden="true">${i + 1}</span>
+      <span class="pm-title">${esc(st.title)}</span>${st.time ? `<span class="pm-time">${esc(st.time)}</span>` : ""}
+      <p class="pm-detail">${esc(st.detail)}</p></li>`).join("")}</ol>
+    <p class="checked">From ${t.process.sources.map((u, i, all) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${host(u)}${all.filter(x => host(x) === host(u)).length > 1 ? ` (page ${all.filter((x, j) => j <= i && host(x) === host(u)).length})` : ""}</a>`).join(" and ")}, checked ${esc(t.process.checked)}. Steps and timing can change; confirm with the program.</p>`;
+  linkTerms($("tw-map"), glossary);
+}
+function selectTiming(id, focus = false) {
+  if (!timingItems.some(t => t.id === id)) return;
+  twSel = id; renderTimingList(); renderProcess();
+  if (focus) document.getElementById(`tw-tab-${id}`)?.focus();
+}
+if (timingItems.length) {
+  renderTimingList(); renderProcess();
+  $("tw-list").addEventListener("click", e => { const b = e.target.closest("[data-tw]"); if (b) selectTiming(b.dataset.tw); });
+  // Arrow keys move between programs, like other tab lists.
+  $("tw-list").addEventListener("keydown", e => {
+    const i = timingItems.findIndex(t => t.id === twSel);
+    const next = { ArrowDown: i + 1, ArrowRight: i + 1, ArrowUp: i - 1, ArrowLeft: i - 1, Home: 0, End: timingItems.length - 1 }[e.key];
+    if (next == null) return;
+    e.preventDefault();
+    selectTiming(timingItems[(next + timingItems.length) % timingItems.length].id, true);
+  });
+} else { $("time-missing").hidden = false; $("tw").hidden = true; }
 
 // ---------- YOUR PLAN (only when the caregiver answered the questions for this state) ----------
 function renderPlan(me, params) {
+  const timingIdByItem = Object.fromEntries((params?.timing || []).filter(t => t.process).map(t => [t.item, t.id]));
   const isNear = city => { const c = coordsOf(city); return !home || !c || miles(home, c) <= NEAR_MILES; };
   const steps = nextSteps(me, params?.timing || [], federal, new Date(), isNear);
   const link = u => safeUrl(u) ? ` <a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">Source</a>` : "";
@@ -564,7 +628,7 @@ function renderPlan(me, params) {
       <span class="tag cat">${esc(SSI_STATUS[me.ssi])}</span><span class="tag cat">${esc(FOCUS[me.focus])}</span></div>
     ${watch}
     <h3>Next steps for someone age ${age}</h3>
-    ${steps.length ? `<ol class="steps">${steps.map(s => `<li class="${s.when}"><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}</span></li>`).join("")}</ol>`
+    ${steps.length ? `<ol class="steps">${steps.map(s => `<li class="${s.when}"><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}${timingIdByItem[s.title] ? ` · <button type="button" class="linkbtn" data-tw-open="${esc(timingIdByItem[s.title])}">See the steps</button>` : ""}</span></li>`).join("")}</ol>`
       : `<p class="hint">No time-sensitive steps for this age yet. Browse the directory below.</p>`}
     ${nearHtml}
     ${moneyHtml}
@@ -577,6 +641,8 @@ function renderPlan(me, params) {
     render(); document.querySelector(".filters").scrollIntoView({ behavior: "smooth", block: "start" });
   });
   $("plan").addEventListener("click", e => {
+    const tw = e.target.closest("[data-tw-open]");
+    if (tw) { setView("time"); selectTiming(tw.dataset.twOpen); $("view-time").scrollIntoView({ behavior: "smooth", block: "start" }); return; }
     const a = e.target.closest("a[data-open]");
     if (!a) return;
     e.preventDefault();

@@ -151,6 +151,16 @@ test("employers have their own category; companies are flagged", () => {
   assert.ok(!maRes.some(r => /citizens bank|melrose\)/i.test(r.name))); // held back / closed
 });
 
+test("every timing item has a sourced, ordered process map", () => {
+  const ids = new Set();
+  for (const t of params.timing) {
+    assert.ok(t.id && !ids.has(t.id), `id for ${t.item}`); ids.add(t.id);
+    assert.ok(t.process.steps.length >= 3, t.item);
+    assert.ok(t.process.sources.length && t.process.sources.every(u => /^https:\/\//.test(u)), t.item);
+    for (const st of t.process.steps) assert.ok(st.title && st.detail, `${t.item}: ${st.title}`);
+  }
+});
+
 // ---------- financing ----------
 test("money and benefits: drops what the sources rule out, keeps nearby city programs only", () => {
   const at = placeIndex(zips.MA);

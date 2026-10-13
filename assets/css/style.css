@@ -331,3 +331,42 @@ details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size
 .summary .sum{padding:12px 13px;min-width:0}
 .summary .bars{gap:4px}
 @media (max-width:860px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.summary .sum-btn{grid-column:1/-1}}
+
+/* ---------- Timing & waitlists: program list + process map ---------- */
+.tw{display:grid;grid-template-columns:minmax(220px,290px) minmax(0,1fr);gap:20px;margin-top:18px;align-items:start}
+.tw-list{display:flex;flex-direction:column;gap:6px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 12px)}
+.tw-item{font:inherit;text-align:left;display:flex;gap:10px;align-items:center;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:8px;padding:9px 11px;cursor:pointer}
+.tw-item .route{width:28px;height:28px;font-size:12px}
+.tw-item .tw-text{min-width:0;display:flex;flex-direction:column}
+.tw-item strong{font-size:14px;line-height:1.25}
+.tw-item small{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.tw-item:hover{border-color:var(--ink)}
+.tw-item[aria-selected="true"]{border:2px solid var(--cat,var(--ink));padding:8px 10px;background:var(--accent-soft)}
+.tw-item:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.tw-map{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px 22px;min-width:0}
+.tw-map:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.tw-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.tw-head h2{margin:0}
+.tw-value{font-family:var(--mono);font-weight:600;font-size:14px;padding:3px 10px;border-radius:999px;background:var(--cat,var(--ink));color:var(--on-route)}
+.tw-map:not([class*="cat-"]) .tw-value{background:var(--ink);color:var(--surface)}
+.tw-you{display:flex;gap:8px;align-items:baseline;flex-wrap:wrap;margin:10px 0 0;font-size:14px;font-weight:600}
+.tw-you .when{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:2px 8px;border-radius:999px;background:var(--state-bg);color:var(--state)}
+.tw-you .when.soon{background:var(--warn-bg);color:var(--warn)}
+/* Numbered stops: these steps really happen in this order */
+.pmap{list-style:none;margin:20px 0 14px;padding:0}
+.pmap li{position:relative;padding:0 0 22px 56px;min-height:44px}
+.pmap li::after{content:"";position:absolute;left:18px;top:40px;bottom:2px;width:6px;border-radius:3px;background:var(--cat,var(--ink))}
+.pmap li:last-child{padding-bottom:4px}
+.pmap li:last-child::after{display:none}
+.pm-n{position:absolute;left:0;top:0;width:42px;height:42px;border-radius:50%;box-sizing:border-box;border:5px solid var(--cat,var(--ink));background:var(--surface);color:var(--ink);display:grid;place-items:center;font-family:var(--mono);font-weight:600;font-size:15px}
+.pmap li:first-child .pm-n{background:var(--cat,var(--ink));color:var(--on-route)}
+.tw-map:not([class*="cat-"]) .pmap li:first-child .pm-n{color:var(--surface)}
+.pm-title{font-weight:800;font-size:16px;line-height:1.3;margin-right:8px}
+.pm-time{display:inline-block;font-family:var(--mono);font-size:12px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--accent-soft);color:var(--ink);vertical-align:2px}
+.pm-detail{color:var(--muted);font-size:14.5px;margin:4px 0 0;max-width:68ch}
+@media (max-width:760px){
+  .tw{grid-template-columns:1fr}
+  .tw-list{position:static;flex-direction:row;overflow-x:auto;padding-bottom:4px;scroll-snap-type:x mandatory}
+  .tw-item{flex:0 0 210px;scroll-snap-align:start}
+  .tw-map{padding:16px}
+}

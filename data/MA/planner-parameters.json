@@ -179,7 +179,40 @@
       "note": "Apply at 18 and join every list (Arc of Mass).",
       "source": "https://thearcofmass.org/future/public/housing/",
       "focus": "Housing",
-      "age_min": 18
+      "age_min": 18,
+      "id": "section-8",
+      "process": {
+        "steps": [
+          {
+            "title": "Apply to every open list",
+            "detail": "The state (EOHLC) list is closed. Apply to local housing authorities' Section 8 lists, MassNAHRO's centralized waiting list, and project-based voucher properties. The state advises applying to both kinds to improve your chances.",
+            "time": "Apply at 18"
+          },
+          {
+            "title": "Wait, and keep your contact info current",
+            "detail": "If the agency can't reach you when your name comes up, you can lose your place.",
+            "time": "Often 5–12 years"
+          },
+          {
+            "title": "Get a voucher",
+            "detail": "When your name comes up and you qualify (for the state program, generally income at or below 50% of Area Median Income), you receive a voucher."
+          },
+          {
+            "title": "Find a home before the voucher expires",
+            "detail": "You have a limited time to find a rental anywhere in the country. You can also stay in your current home if it meets the program's health and safety standards.",
+            "time": "Limited time"
+          },
+          {
+            "title": "Move in and pay your share",
+            "detail": "You generally pay 30% of income toward rent. The program pays the rest to the landlord, up to a payment standard set by ZIP code."
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
+          "https://thearcofmass.org/future/public/housing/"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Boston public housing wait",
@@ -187,14 +220,74 @@
       "note": "Depends on unit size.",
       "source": "https://www.bostonhousing.org/en/FAQ.aspx",
       "focus": "Housing",
-      "city": "Boston"
+      "city": "Boston",
+      "id": "boston-public-housing",
+      "process": {
+        "steps": [
+          {
+            "title": "Apply to the developments you want",
+            "detail": "You can apply to one or all Boston Housing Authority lists you qualify for. Each development has its own list, ranked by bedroom size, priority and preference points, then application date."
+          },
+          {
+            "title": "Wait, and check your status",
+            "detail": "Call the Status Information Line at (617) 988-3400 or visit the Housing Service Center, 56 Chauncy Street (Mon–Wed, 9am–5pm). You can add or remove developments until BHA schedules your interview.",
+            "time": "10 weeks to 5+ years"
+          },
+          {
+            "title": "Screening and interview",
+            "detail": "Near the top of a list, BHA calls to schedule an interview. Bring the Final Application Form, IDs, Social Security cards, citizenship documents, proof of income and assets, and landlord contacts for the last 3 years."
+          },
+          {
+            "title": "Get an offer",
+            "detail": "Vacancies go to the screened, approved applicant with the oldest application date and highest rank. The bedroom size matches the household."
+          },
+          {
+            "title": "Accept, or decline carefully",
+            "detail": "Missing final screening or not accepting an offer can withdraw you from all BHA lists. Priority applicants who decline also lose their priority for a year."
+          }
+        ],
+        "sources": [
+          "https://www.bostonhousing.org/en/FAQ.aspx"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "EOHLC Section 8 list",
       "value": "Closed since Jan 13, 2025",
       "note": "Use the MassNAHRO Centralized Waiting List instead.",
       "source": "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp",
-      "focus": "Housing"
+      "focus": "Housing",
+      "id": "eohlc-section-8",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the state list is closed",
+            "detail": "EOHLC stopped taking Section 8 mobile voucher applications on Jan 13, 2025, until further notice.",
+            "time": "Closed since Jan 13, 2025"
+          },
+          {
+            "title": "Apply for project-based vouchers",
+            "detail": "Ask your Regional Administering Agency which properties have project-based vouchers, then apply to each property's own waitlist."
+          },
+          {
+            "title": "Apply to local housing authorities",
+            "detail": "Contact local housing authorities, and apply online to MassNAHRO's centralized Section 8 waiting list."
+          },
+          {
+            "title": "Keep contact info current everywhere",
+            "detail": "Every list needs to be able to reach you, or you can lose your place."
+          },
+          {
+            "title": "Get emergency help if you need it",
+            "detail": "RAFT covers short-term housing emergencies. Boston residents at risk of homelessness can ask the City's Continuum of Care about Stability Vouchers."
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-the-section-8-housing-choice-voucher-program-hcvp"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "DDS adult eligibility",
@@ -202,7 +295,40 @@
       "note": "Adult services usually start at 22.",
       "source": "https://www.mass.gov/info-details/services-for-adults-with-autism-only",
       "focus": "Both",
-      "age_min": 17
+      "age_min": 17,
+      "id": "dds-eligibility",
+      "process": {
+        "steps": [
+          {
+            "title": "Apply from age 17",
+            "detail": "Adults with autism can qualify for DDS even without an intellectual disability. DDS encourages applying from age 17, even while still in school.",
+            "time": "From age 17"
+          },
+          {
+            "title": "Fill out the Adult Eligibility Application",
+            "detail": "Applications are by age and in several languages. The Eligibility Fact Sheet for Adult Autism Spectrum Disorders lists the documents needed. Questions: DDS Autism Division, (617) 624-7778, autismdivision@mass.gov."
+          },
+          {
+            "title": "Eligibility decision",
+            "detail": "DDS reviews the application against its criteria. The Guide to the DDS Eligibility Process explains the criteria and lists regional offices.",
+            "time": "Time not published"
+          },
+          {
+            "title": "Meet your Autism Service Coordinator",
+            "detail": "Once approved, you're matched with a coordinator at your local DDS office, who meets you and your family to learn your needs and goals and explain what DDS offers."
+          },
+          {
+            "title": "Service plan and services",
+            "detail": "If you use services, the coordinator helps write a Service Plan and checks that it's working. For adults 18+ who have finished high school, services can include job and day supports, help at home, coaching and college navigation, depending on needs and available funding.",
+            "time": "After high school"
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/info-details/dds-eligibility-for-adults-with-autism",
+          "https://www.mass.gov/info-details/services-for-adults-with-autism-only"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Pre-Employment Transition Services",
@@ -211,7 +337,34 @@
       "source": "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0",
       "focus": "Employment",
       "age_min": 14,
-      "age_max": 21
+      "age_max": 21,
+      "id": "pre-ets",
+      "process": {
+        "steps": [
+          {
+            "title": "Contact the school or MassAbility",
+            "detail": "Students with disabilities ages 14–21 apply through their local MassAbility office or the Pre-ETS provider assigned to their school. Every school has one; the guidance office can say who.",
+            "time": "Ages 14–21"
+          },
+          {
+            "title": "Build awareness",
+            "detail": "First summer jobs, what positions are out there, and help with work permits."
+          },
+          {
+            "title": "Explore careers",
+            "detail": "Interests, the education and skills a career needs, and possible internships. Services include job exploration, workplace readiness training, work-based learning, counseling on college or training, and self-advocacy and peer mentoring."
+          },
+          {
+            "title": "Hand off to a career counselor",
+            "detail": "Two years before graduating or turning 22, connect with the provider to start career services. A MassAbility career counselor takes over from the Pre-ETS provider.",
+            "time": "2 years before leaving school"
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/info-details/pre-employment-transition-services-pre-ets-0"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "NextGen Careers",
@@ -220,21 +373,110 @@
       "source": "https://www.mass.gov/info-details/nextgen-careers-information",
       "focus": "Employment",
       "age_min": 18,
-      "age_max": 30
+      "age_max": 30,
+      "id": "nextgen",
+      "process": {
+        "steps": [
+          {
+            "title": "Check fit",
+            "detail": "Young adults with disabilities, ages 18–30, who want to start or change a career path.",
+            "time": "Ages 18–30"
+          },
+          {
+            "title": "Contact a participating MassAbility office",
+            "detail": "South: Boston, Roxbury, Braintree. North: Lawrence, Lowell. West: Springfield, Worcester. The page doesn't describe how to apply, so ask one of these offices."
+          },
+          {
+            "title": "Get a team",
+            "detail": "Mentors, counselors, benefits advisors and employment specialists work with each person."
+          },
+          {
+            "title": "Choose a path",
+            "detail": "A certificate program, on-the-job training, an apprenticeship, or a STEM internship."
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/info-details/nextgen-careers-information"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "CHAMP application",
       "value": "Log in at least yearly",
       "note": "Inactive for 2+ years means the application closes.",
       "source": "https://www.mass.gov/how-to/apply-for-state-funded-public-housing",
-      "focus": "Housing"
+      "focus": "Housing",
+      "id": "champ",
+      "process": {
+        "steps": [
+          {
+            "title": "Create a CHAMP account",
+            "detail": "You need an email address, or you can apply on paper in person. No documents are needed to start."
+          },
+          {
+            "title": "Apply and pick housing authorities",
+            "detail": "Enter contact, housing, household and income details, then choose housing authorities and the type of housing that fits; some units are for people with disabilities. State rental vouchers can be applied for in CHAMP too."
+          },
+          {
+            "title": "Wait on each authority's list",
+            "detail": "Each housing authority keeps its own waitlist. Veterans and people who live or work in that community have a better chance.",
+            "time": "Can be years"
+          },
+          {
+            "title": "Log in every year",
+            "detail": "Log in to CHAMP or contact a housing agency each year. Applications inactive for 2 years may be closed.",
+            "time": "Yearly"
+          },
+          {
+            "title": "Send documents when asked",
+            "detail": "Near the top of a list, the housing authority asks for documents (such as a birth certificate, pay stubs, bank statements, ID) and a Supplemental Application. Respond even if you don't have everything yet. Some documents expire after 90 days."
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-state-funded-public-housing"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "RAFT decision",
       "value": "About 30 days",
       "note": "Payment about 14 business days after approval.",
       "source": "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs",
-      "focus": "Housing"
+      "focus": "Housing",
+      "id": "raft",
+      "process": {
+        "steps": [
+          {
+            "title": "Check eligibility",
+            "detail": "You're at risk of losing your housing (for example a Notice to Quit, eviction notice or shutoff notice) and income is under 50% of Area Median Income, or under 60% if at risk of domestic violence. Up to $7,000 per 12 months."
+          },
+          {
+            "title": "Gather documents",
+            "detail": "ID, proof of current housing such as a lease, proof of the crisis, and income (often verified automatically)."
+          },
+          {
+            "title": "Apply, and tell your landlord",
+            "detail": "Apply online through the Housing Help Hub, or ask your Regional Administering Agency for help. Your landlord must submit their own application within 21 days or yours times out.",
+            "time": "20–30 minutes"
+          },
+          {
+            "title": "Review",
+            "detail": "An agency reviews it and emails you if anything is missing.",
+            "time": "Usually under 30 days"
+          },
+          {
+            "title": "Payment",
+            "detail": "After approval, payment goes to the landlord.",
+            "time": "About 14 business days"
+          }
+        ],
+        "sources": [
+          "https://www.mass.gov/how-to/apply-for-raft-emergency-help-for-housing-costs"
+        ],
+        "checked": "2026-10-13"
+      }
     }
   ],
   "regions": {
