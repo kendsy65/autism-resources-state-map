@@ -2,7 +2,12 @@
   "date_checked": "2026-10-05",
   "inflation": {
     "fed_sep_pce_median": {
-      "by_year": { "2026": 0.037, "2027": 0.023, "2028": 0.021, "2029": 0.02 },
+      "by_year": {
+        "2026": 0.037,
+        "2027": 0.023,
+        "2028": 0.021,
+        "2029": 0.02
+      },
       "longer_run": 0.02,
       "unit": "fraction per year",
       "released": "2026-09-16",
@@ -34,6 +39,38 @@
       "unit": "fraction",
       "note": "Social Security and SSI increase for 2026. The 2027 COLA is announced in October.",
       "source": "https://www.ssa.gov/cola/"
+    }
+  },
+  "ssa": {
+    "ssi_federal_monthly": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm"
+    },
+    "ssi_general_income_exclusion": {
+      "value": 20,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "ssi_earned_income_exclusion": {
+      "value": 65,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "ssi_earned_income_countable_rate": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm"
+    },
+    "sga_non_blind": {
+      "value": 1690,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html"
+    },
+    "trial_work_period_month": {
+      "value": 1210,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html"
     }
   }
 }

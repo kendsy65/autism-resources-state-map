@@ -135,7 +135,7 @@ initThemeToggle(document.getElementById("theme-btn"));
 const ROUTE = { Housing: "H", Financing: "F", Employment: "S", Employers: "E" };
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
-import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
+import { lookupZip, placeIndex, regionForHome, miles } from "./assets/js/geo.js";
 import { mountChat, linkTerms } from "./assets/js/chat.js";
 import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios, applyStatus, INFLATION_CHOICES, inflationPath } from "./assets/js/support.js";
 
@@ -154,11 +154,12 @@ const stateRows = await loadResources(code);
 // Federal resources (data/US) apply in every state.
 const federal = await loadJSON("data/US/resources.json").catch(() => []);
 const D = [...stateRows, ...federal];
-const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms;
+// Terms marked for one state (e.g. MassHealth) only show on that state's page.
+const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms.filter(t => !t.state || t.state === code);
 const profile = loadProfile();
 const me = profile && profile.state === code ? profile : null;
 const zips = await loadJSON(`data/${code}/zips.json`).catch(() => ({}));
-const coordsOf = placeIndex(zips);
+const coordsOf = placeIndex(zips, await loadJSON(`data/${code}/place-aliases.json`).catch(() => ({})));
 const home = me ? lookupZip(me.zip, { [code]: zips }) : null;
 const KEY = `filters-${code}`;
 const st = { cats: new Set(), lv: new Set(Object.keys(LV)), region: "All", q: "" };
@@ -276,7 +277,7 @@ function setView(v) {
 }
 document.querySelector(".tabs").addEventListener("click", e => { const b = e.target.closest("button[data-view]"); if (b) setView(b.dataset.view); });
 if (location.hash === "#planner") setView("plan");
-if (location.hash === "#timing") setView("time");
+if (location.hash.startsWith("#timing")) setView("time");
 
 // ---------- PLANNER ----------
 const econEarly = await loadJSON("data/US/economic-parameters.json").catch(() => null);
@@ -309,7 +310,7 @@ document.addEventListener("toggle", e => {
 if (!params) { $("plan-missing").hidden = false; }
 else {
   $("plan-body").hidden = false;
-  const P = pl.fromParams(params);
+  const P = pl.fromParams(params, econEarly, home);
   const usd = pl.usd;
   const fin = params.financing || {};
   // ----- Inflation (national figures, data/US/economic-parameters.json) -----
@@ -330,12 +331,13 @@ else {
     if (choice === "none") return "Shows every year at today's prices.";
     return "Pick a yearly rate.";
   }
-  $("e-ssi").options[0].textContent = `SSI + state supplement ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: 2 })}/mo)`;
+  $("e-ssi").options[0].textContent = `${P.ssiLabel} ($${P.ssiFull.toLocaleString("en-US", { minimumFractionDigits: P.ssiFull % 1 ? 2 : 0 })}/mo)`;
+  if (P.ssiNote) $("e-ssi").insertAdjacentHTML("afterend", `<small class="hint sl-hint">${esc(P.ssiNote)}</small>`);
   if (fin.eaedc_grant_1_person) $("e-ssi").options[1].textContent = `EAEDC state cash, not on SSI ($${fin.eaedc_grant_1_person.value.toFixed(2)}/mo)`;
   else $("e-ssi").options[1].remove();
   $("e-wage").value = P.minWage;
   $("wage-marks").innerHTML = `<option value="${P.minWage}" label="minimum wage"></option>`;
-  $("wage-hint").textContent = `${S.name} minimum wage: $${P.minWage.toFixed(2)}/hr`;
+  $("wage-hint").textContent = `${S.name} minimum wage: $${P.minWage.toFixed(2)}/hr${P.minWageNote ? ` (${P.minWageNote})` : ""}`;
   // Sliders show their value next to the label and announce it to screen readers.
   const SLIDERS = {
     "e-hrs": [v => `${v} hrs`], "e-wage": [v => `$${(+v).toFixed(2)}/hr`], "e-rent": [v => `$${(+v).toLocaleString("en-US")}/mo`],
@@ -348,9 +350,11 @@ else {
     el.style.setProperty("--fill", `${(el.value - el.min) / (el.max - el.min) * 100}%`);
   });
   if (me) $("e-ssi").value = ["ssi", "applied", "unsure"].includes(me.ssi) ? "ssi" : "none";
-  $("e-house").innerHTML = Object.entries(pl.HOUSING).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
-  $("e-afc").innerHTML = `<option value="0">No</option><option value="1">Yes, Level I ($${P.afc1}/day minimum)</option><option value="2">Yes, Level II ($${P.afc2}/day minimum)</option>`;
-  if (me?.support === "3") $("e-house").value = "dds";
+  // Residential charges and Adult Foster Care pay only appear where the state publishes them.
+  $("e-house").innerHTML = Object.entries(pl.HOUSING).filter(([k]) => k !== "dds" || P.ddsBen !== undefined).map(([k, v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+  if (P.afc1 !== undefined) $("e-afc").innerHTML = `<option value="0">No</option><option value="1">Yes, Level I ($${P.afc1}/day minimum)</option><option value="2">Yes, Level II ($${P.afc2}/day minimum)</option>`;
+  else { $("e-afc").innerHTML = `<option value="0">No</option>`; $("e-afc").hidden = true; document.querySelector('label[for="e-afc"]').hidden = true; }
+  if (me?.support === "3" && P.ddsBen !== undefined) $("e-house").value = "dds";
 
   // ----- Support checklist (amounts from planner-parameters.json) -----
   const items = SUPPORT_ITEMS.map(it => ({ ...it, amount: itemAmount(it, params) })).filter(it => it.amount != null);
@@ -420,7 +424,7 @@ else {
     const cols = [["government", "Government only"], ["nonprofit", "Nonprofit only"], ["both", "Both"]];
     const neg = v => `<span class="neg">−${usd(v).replace("−", "")}</span>`;
     const row = (label, f, cls = "") => `<tr class="${cls}"><td>${label}</td>${cols.map(([k]) => `<td>${f(S[k])}</td>`).join("")}</tr>`;
-    const benefitName = benefit === "eaedc" ? "EAEDC" : benefit === "ssi" ? "SSI + state supplement" : "Cash benefit";
+    const benefitName = benefit === "eaedc" ? "EAEDC" : benefit === "ssi" ? P.ssiLabel : "Cash benefit";
     const hrs = inputs.hours;
     $("est-out").innerHTML = `
       <table class="ledger cmp"><thead><tr><th></th>${cols.map(([k, l]) => `<th class="${k === "both" ? "hl" : ""}">${l}</th>`).join("")}</tr></thead><tbody>
@@ -492,7 +496,8 @@ else {
   const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
   const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${+(v * 100).toFixed(1)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : "");
   function valueOf(p) {
-    if ("value" in p) return unitFmt(p.value, p.unit);
+    if (p == null || typeof p !== "object") return String(p ?? "");
+    if ("value" in p) return p.value === null ? (p.unit || "Not published") : typeof p.value === "string" ? p.value : unitFmt(p.value, p.unit);
     if ("min" in p) return `${unitFmt(p.min, p.unit)}–${unitFmt(p.max, p.unit)}` + ("rate" in p ? ` at ${p.rate * 100}%` : "");
     if ("monthly" in p) return `${money(p.monthly)}/mo, ${money(p.annual)}/yr`;
     if ("year1_max" in p) return `Up to ${money(p.year1_max)} yr 1; ${money(p.later_max)} after`;
@@ -503,6 +508,11 @@ else {
     if ("pct_first_100k" in p) return `Costs over ${p.pct_first_100k * 100}% of first $100k income + ${p.pct_above_100k * 100}% above`;
     const sizes = Object.keys(p).filter(k => /^\d+$/.test(k));
     if (sizes.length) return `${money(p[sizes[0]])} (1 person) to ${money(p[sizes.at(-1)])} (${sizes.at(-1)} people)`;
+    // A small table of options (e.g. NY residential settings): one line per option, numbers only.
+    const rows = Object.entries(p).filter(([, v]) => v && typeof v === "object" && !Array.isArray(v));
+    if (rows.length) return rows.map(([k, v]) => `${human(k)}: ${Object.entries(v).filter(([, n]) => typeof n === "number").map(([kk, n]) => `${kk.replace(/_/g, " ")} ${money(n)}`).join(", ")}`).join(" · ");
+    const nums = Object.entries(p).filter(([k, n]) => typeof n === "number" && !/^(rate)$/.test(k));
+    if (nums.length) return nums.map(([k, n]) => `${k.replace(/_/g, " ")} ${unitFmt(n, p.unit)}`).join(", ");
     return "";
   }
   // Side details a parameter carries beyond its main value.
@@ -527,7 +537,7 @@ else {
 }
 
 // ---------- TIMING & WAITLISTS: each program's process as a line of stops ----------
-const timingItems = (params?.timing || []).filter(t => t.process?.steps?.length);
+const timingItems = (params?.timing || []).filter(t => t.id);
 const ROUTE_FOR_FOCUS = { Housing: ["H", "cat-Housing"], Employment: ["S", "cat-Employment"], Both: ["•", ""] };
 let twSel = timingItems[0]?.id;
 function renderTimingList() {
@@ -556,10 +566,11 @@ function renderProcess() {
     <div class="tw-head"><h2>${esc(t.item)}</h2><span class="tw-value">${esc(t.value)}</span></div>
     ${t.note ? `<p class="lede" style="margin-top:4px">${esc(t.note)}</p>` : ""}
     ${mine}
-    <ol class="pmap">${t.process.steps.map((st, i) => `<li><span class="pm-n" aria-hidden="true">${i + 1}</span>
+    ${t.process?.steps?.length ? `<ol class="pmap">${t.process.steps.map((st, i) => `<li><span class="pm-n" aria-hidden="true">${i + 1}</span>
       <span class="pm-title">${esc(st.title)}</span>${st.time ? `<span class="pm-time">${esc(st.time)}</span>` : ""}
       <p class="pm-detail">${esc(st.detail)}</p></li>`).join("")}</ol>
-    <p class="checked">From ${t.process.sources.map((u, i, all) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${host(u)}${all.filter(x => host(x) === host(u)).length > 1 ? ` (page ${all.filter((x, j) => j <= i && host(x) === host(u)).length})` : ""}</a>`).join(" and ")}, checked ${esc(t.process.checked)}. Steps and timing can change; confirm with the program.</p>`;
+    <p class="checked">From ${t.process.sources.map((u, i, all) => `<a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">${host(u)}${all.filter(x => host(x) === host(u)).length > 1 ? ` (page ${all.filter((x, j) => j <= i && host(x) === host(u)).length})` : ""}</a>`).join(" and ")}, checked ${esc(t.process.checked)}. Steps and timing can change; confirm with the program.</p>`
+    : `<p class="empty" style="margin-top:16px">A step-by-step map for this one hasn't been added yet.${safeUrl(t.source) ? ` See the <a href="${esc(safeUrl(t.source))}" target="_blank" rel="noopener">official page</a>.` : ""}</p>`}`;
   linkTerms($("tw-map"), glossary);
 }
 function selectTiming(id, focus = false) {
@@ -568,6 +579,9 @@ function selectTiming(id, focus = false) {
   if (focus) document.getElementById(`tw-tab-${id}`)?.focus();
 }
 if (timingItems.length) {
+  // state.html?s=NY#timing-<id> opens that program's map (used by the home page's deadlines).
+  const want = location.hash.startsWith("#timing-") ? decodeURIComponent(location.hash.slice(8)) : "";
+  if (timingItems.some(t => t.id === want)) twSel = want;
   renderTimingList(); renderProcess();
   $("tw-list").addEventListener("click", e => { const b = e.target.closest("[data-tw]"); if (b) selectTiming(b.dataset.tw); });
   // Arrow keys move between programs, like other tab lists.
@@ -588,7 +602,7 @@ function renderPlan(me, params) {
   const link = u => safeUrl(u) ? ` <a href="${esc(safeUrl(u))}" target="_blank" rel="noopener">Source</a>` : "";
   const age = ageOn(me.birthdate);
   const b = parseDate(me.birthdate);
-  const region = home && params?.regions ? nearestRegion(home, params.regions, coordsOf) : null;
+  const region = home && params?.regions ? regionForHome(home, params.regions, stateRows, coordsOf) : null;
   const sup = SUPPORT[me.support];
   const inFocus = r => FOCUS_CATEGORIES[me.focus].includes(r.category);
 
@@ -613,12 +627,12 @@ function renderPlan(me, params) {
     ? `<div class="note" style="margin-top:14px"><b>Worth knowing for higher support needs:</b> ${esc(dds.name)}: ${esc(dds.notes)}${link(dds.source_url)}</div>` : "";
   let work = "";
   if (params && me.focus !== "Housing") {
-    const P = pl.fromParams(params);
+    const P = pl.fromParams(params, econEarly, home);
     const onSSI = ["ssi", "applied", "unsure"].includes(me.ssi);
     const ifSSI = me.ssi !== "ssi" ? " If they get SSI, this" : "";
     const rows = workScenarios(P, P.minWage, onSSI);
     work = `<h3>How work changes monthly income (at the $${P.minWage}/hr minimum wage)</h3>
-      <div class="tblwrap"><table class="ptbl"><thead><tr><th>Hours a week</th><th>Earnings</th>${onSSI ? "<th>SSI + supplement</th>" : ""}<th>Total income</th></tr></thead><tbody>
+      <div class="tblwrap"><table class="ptbl"><thead><tr><th>Hours a week</th><th>Earnings</th>${onSSI ? `<th>${esc(P.ssiLabel)}</th>` : ""}<th>Total income</th></tr></thead><tbody>
       ${rows.map(r => `<tr><td>${r.hours}</td><td class="v">${pl.usd(r.earn)}</td>${onSSI ? `<td class="v">${pl.usd(r.ssi)}</td>` : ""}<td class="v">${pl.usd(r.income)}</td></tr>`).join("")}
       </tbody></table></div>
       <p class="hint" style="margin-top:8px">${onSSI ? `${ifSSI ? ifSSI.trim() + " is roughly how it works:" : ""} SSI goes down as earnings go up, but total income still rises with every extra hour.` : me.ssi === "ssdi" ? "This table leaves out SSDI, which the planner doesn't model yet. SSDI follows different earnings rules (see the SGA and Trial Work limits in the Cost planner tab)." : "This table assumes no SSI."} Estimate only, ${params.year} figures. Not financial or legal advice.</p>`;

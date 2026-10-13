@@ -9,8 +9,9 @@ export function lookupZip(zip, zipsByState) {
   return null;
 }
 
-// Center of a town: the average of its ZIP codes' points.
-export function placeIndex(zips) {
+// Center of a town: the average of its ZIP codes' points. `aliases` maps a name used in the
+// research to the ZIP file's spelling (data/<STATE>/place-aliases.json).
+export function placeIndex(zips, aliases = {}) {
   const acc = {};
   for (const [place, , lat, lon] of Object.values(zips || {})) {
     const a = (acc[place.toLowerCase()] ||= { lat: 0, lon: 0, n: 0 });
@@ -18,7 +19,8 @@ export function placeIndex(zips) {
   }
   const out = {};
   for (const [k, a] of Object.entries(acc)) out[k] = { lat: a.lat / a.n, lon: a.lon / a.n };
-  return city => (city ? out[city.toLowerCase()] || null : null);
+  const alias = Object.fromEntries(Object.entries(aliases || {}).map(([k, v]) => [k.toLowerCase(), v.toLowerCase()]));
+  return city => (city ? out[city.toLowerCase()] || out[alias[city.toLowerCase()]] || null : null);
 }
 
 // Straight-line distance in miles.
@@ -39,6 +41,26 @@ export function nearestRegion(point, regions, coordsOf) {
       const d = miles(point, c);
       if (d < bestD) { bestD = d; best = region; }
     }
+  }
+  return best;
+}
+
+// Region for a home ZIP. States list regions by town (MA) or by county (CT, NY):
+// 1. a region that lists the home's county or town; 2. otherwise the region of the nearest listed
+// town or of the nearest program that has a city and a region.
+export function regionForHome(home, regions, rows = [], coordsOf = () => null) {
+  if (!home || !regions) return null;
+  for (const [region, names] of Object.entries(regions)) {
+    if (names.includes(home.county) || names.includes(home.place)) return region;
+  }
+  let best = nearestRegion(home, regions, coordsOf), bestD = Infinity;
+  if (best) return best;
+  for (const r of rows) {
+    if (!r.city || !r.region || r.region === "Statewide") continue;
+    const c = coordsOf(r.city);
+    if (!c) continue;
+    const d = miles(home, c);
+    if (d < bestD) { bestD = d; best = r.region; }
   }
   return best;
 }

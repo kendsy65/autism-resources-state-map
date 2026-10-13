@@ -13,7 +13,7 @@ Every state has `data/<STATE>/resources.json`: an array of objects with these fi
 | `federally_funded` | boolean | True for federal programs and for federal money run by a state or city (e.g. MassAbility VR, housing authorities) |
 | `administrator` | string | Agency or organization that runs it |
 | `city` | string | City for city programs or single-location orgs; empty if statewide |
-| `region` | string | Heat-map region (MA: Greater Boston, Northeast, Central, West, Southeast) or `Statewide` |
+| `region` | string | Heat-map region (regions per state are listed in `planner-parameters.json`: towns for MA, counties for CT and NY) or `Statewide` |
 | `description` | string | 1–2 plain sentences |
 | `eligibility` | string | Who qualifies |
 | `upfront_cost` | string | What the family pays to get in |

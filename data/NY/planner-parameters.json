@@ -1,0 +1,598 @@
+{
+  "state": "NY",
+  "year": 2026,
+  "date_checked": "2026-10-13",
+  "income": {
+    "ssi_federal_monthly": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ny_ssp_living_alone": {
+      "value": 87,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ny_ssp_living_with_others": {
+      "value": 23,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ny_ssp_household_of_another": {
+      "value": 23,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf",
+      "note": "Federal part reduced to $662.67 (one-third reduction)"
+    },
+    "ny_ssp_congregate_level1_family_care_downstate": {
+      "value": 266.48,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf",
+      "note": "NYC, Nassau, Rockland, Suffolk, Westchester"
+    },
+    "ny_ssp_congregate_level1_family_care_rest_of_state": {
+      "value": 228.48,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ny_ssp_congregate_level2_residential_care_downstate": {
+      "value": 435,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf",
+      "note": "NYC, Nassau, Rockland, Suffolk, Westchester"
+    },
+    "ny_ssp_congregate_level2_residential_care_rest_of_state": {
+      "value": 405,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ny_ssp_congregate_level3_enhanced_residential_care": {
+      "value": 694,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_living_alone": {
+      "value": 1081,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_living_with_others": {
+      "value": 1017,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_household_of_another": {
+      "value": 685.67,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_congregate_level1_downstate": {
+      "value": 1260.48,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_congregate_level1_rest_of_state": {
+      "value": 1222.48,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_congregate_level2_downstate": {
+      "value": 1429,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_congregate_level2_rest_of_state": {
+      "value": 1399,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_plus_ssp_congregate_level3": {
+      "value": 1688,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "congregate_personal_needs_allowance": {
+      "level1": 191,
+      "level2": 219,
+      "level3": 262,
+      "unit": "USD/month",
+      "source": "https://www.otda.ny.gov/programs/ssp/2026-Maximum-Monthly-Benefit-Amounts.pdf"
+    },
+    "ssi_max_in_kind_shelter_reduction": {
+      "value": 351.33,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm"
+    },
+    "ssi_resource_limit": {
+      "value": 2000,
+      "unit": "USD",
+      "source": "https://pl.opwdd.ny.gov/system/files/documents/2026/02/revised-2026-ssi-benefit-and-personal-allowance-amount-chart.pdf"
+    },
+    "medicaid_resource_limit_ssi_related": {
+      "value": 33038,
+      "unit": "USD",
+      "source": "https://pl.opwdd.ny.gov/system/files/documents/2026/02/revised-2026-ssi-benefit-and-personal-allowance-amount-chart.pdf",
+      "note": "From OPWDD 2026 chart"
+    },
+    "medicaid_income_level_ssi_related_1_person": {
+      "value": 1800,
+      "unit": "USD/month",
+      "source": "https://healthweb-back.health.ny.gov/health_care/medicaid/publications/docs/gis/26ma03_att1.pdf"
+    }
+  },
+  "housing": {
+    "opwdd_residential_ssi_and_personal_allowance": {
+      "family_care_downstate": {
+        "ssi": 1260.48,
+        "personal_allowance": 191,
+        "to_provider": 1069.48
+      },
+      "family_care_rest_of_state": {
+        "ssi": 1222.48,
+        "personal_allowance": 191,
+        "to_provider": 1031.48
+      },
+      "state_operated_community_residence_ira": {
+        "ssi": 994,
+        "personal_allowance": 219,
+        "to_provider": 775
+      },
+      "voluntary_operated_community_residence_ira_downstate": {
+        "ssi": 1429,
+        "personal_allowance": 219,
+        "to_provider": 1210
+      },
+      "voluntary_operated_community_residence_ira_rest_of_state": {
+        "ssi": 1399,
+        "personal_allowance": 219,
+        "to_provider": 1180
+      },
+      "level3_certified_schools": {
+        "ssi": 1688,
+        "personal_allowance": 262,
+        "to_provider": 1426
+      },
+      "icf_and_developmental_center_personal_allowance": 35,
+      "unit": "USD/month",
+      "source": "https://pl.opwdd.ny.gov/system/files/documents/2026/02/revised-2026-ssi-benefit-and-personal-allowance-amount-chart.pdf",
+      "note": "Downstate = NYC, Nassau, Rockland, Suffolk, Westchester. Personal allowance is the minimum the resident keeps; people with earnings can keep more under 14 NYCRR 633.15. Chart updated 02/17/2026."
+    },
+    "opwdd_housing_subsidy_tenant_share": {
+      "value": 0.3,
+      "unit": "fraction of net income",
+      "source": "https://opwdd.ny.gov/system/files/documents/2022/03/adm-housing-subsidy-final-3.10.22.pdf",
+      "note": "Net income is after a $200/month personal allowance and other deductions; utilities and insurance are then offset (Attachment D)"
+    },
+    "opwdd_housing_subsidy_personal_allowance_deduction": {
+      "value": 200,
+      "unit": "USD/month",
+      "source": "https://opwdd.ny.gov/regulations-guidance/attachment-d-housing-subsidy-budget-instructions"
+    },
+    "opwdd_housing_subsidy_transition_stipend_max": {
+      "value": 3000,
+      "unit": "USD one-time",
+      "source": "https://opwdd.ny.gov/system/files/documents/2022/03/adm-housing-subsidy-final-3.10.22.pdf",
+      "note": "Plus a security deposit equal to the lower of the tenant's first-month share or the county maximum"
+    },
+    "opwdd_housing_subsidy_admin_fee": {
+      "downstate": 175,
+      "rest_of_state": 125,
+      "unit": "USD/month",
+      "source": "https://opwdd.ny.gov/regulations-guidance/attachment-d-housing-subsidy-budget-instructions",
+      "note": "Downstate = NYC, Long Island, Orange, Rockland, Sullivan, Westchester"
+    },
+    "opwdd_housing_subsidy_max_payment_standard": {
+      "value": "Not published",
+      "unit": "USD/month by county and bedrooms",
+      "source": "https://opwdd.ny.gov/system/files/documents/2022/03/adm-housing-subsidy-final-3.10.22.pdf",
+      "note": "Set by county and bedroom count (up to 4). The 2026 table was not found on public pages. Recipients with Section 8 are capped at $50."
+    },
+    "opwdd_ish_subsidized_rent_basis": {
+      "value": "50% AMI rent",
+      "unit": "rent level",
+      "source": "https://opwdd.ny.gov/system/files/documents/2026/07/ish_rfa_2026_ua.pdf",
+      "note": "Capped at OPWDD allowable maximum rent per county"
+    },
+    "section8_tenant_share": {
+      "value": 0.3,
+      "max": 0.4,
+      "unit": "fraction of adjusted monthly income",
+      "source": "https://www.hud.gov/helping-americans/housing-choice-vouchers-tenants"
+    },
+    "nycha_income_limit_1_person": {
+      "public_housing": 95000,
+      "section8": 56700,
+      "unit": "USD/year",
+      "source": "https://www.nyc.gov/site/nycha/eligibility/eligibility.page"
+    },
+    "nyc_ami_2026_1_person": {
+      "pct30": 35640,
+      "pct50": 59400,
+      "pct80": 95040,
+      "pct100": 118800,
+      "unit": "USD/year",
+      "source": "https://www.nyc.gov/site/hpd/services-and-information/area-median-income.page"
+    },
+    "rochester_msa_income_limits_2026_1_person": {
+      "pct30": 22500,
+      "pct50": 37450,
+      "pct80": 59950,
+      "unit": "USD/year",
+      "source": "https://www.rochesterhousing.org/uploads/pages/pdf/HCV and PSH Program Standards 1.1.2026 Final with 2026 Income Limits.pdf",
+      "note": "Effective 4/1/2026"
+    },
+    "cityfheps_max_rent_1_person_2026": {
+      "sro": 1953,
+      "studio": 2604,
+      "one_bedroom": 2734,
+      "unit": "USD/month, utilities included",
+      "source": "https://www.nyc.gov/assets/hra/downloads/pdf/cityfheps-documents/dss-7r-e.pdf"
+    },
+    "drie_household_income_limit": {
+      "value": 50000,
+      "unit": "USD/year",
+      "source": "https://www.nyc.gov/site/rentfreeze/qualifications/qualifications.page"
+    },
+    "access_to_home_max_per_unit": {
+      "value": 25000,
+      "unit": "USD",
+      "source": "https://hcr.ny.gov/system/files/documents/2025/08/2025-state-rehab-application-workshop.pdf",
+      "note": "Includes project delivery; income at or below 80% AMI"
+    },
+    "access_to_home_avg_cost_per_home": {
+      "value": 15354,
+      "unit": "USD",
+      "source": "https://hcr.ny.gov/system/files/documents/2025/12/2024-25-access-to-home-annual-report-12.29.25.pdf",
+      "note": "SFY 2024-25, 203 homes"
+    },
+    "restore_max_per_project": {
+      "value": 20000,
+      "unit": "USD",
+      "source": "https://hcr.ny.gov/restore-program",
+      "note": "Homeowners 60+, income at or below 100% AMI"
+    },
+    "camphill_copake_trial_visit_fee": {
+      "value": 7500,
+      "unit": "USD one-time",
+      "source": "https://camphillvillage.org/admissions/"
+    }
+  },
+  "employment": {
+    "ny_minimum_wage_nyc_li_westchester": {
+      "value": 17.0,
+      "unit": "USD/hour",
+      "source": "https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-reminds-new-yorkers-minimum-wage-increase-january-1"
+    },
+    "ny_minimum_wage_rest_of_state": {
+      "value": 16.0,
+      "unit": "USD/hour",
+      "source": "https://www.governor.ny.gov/news/money-your-pockets-governor-hochul-reminds-new-yorkers-minimum-wage-increase-january-1"
+    },
+    "ny_minimum_wage_2027_note": {
+      "value": "No change Jan 1, 2027",
+      "unit": "status",
+      "source": "https://www.ny.gov/minimumwage",
+      "note": "ny.gov says an 'off-ramp' was triggered. The Governor has proposed inflation indexing from March 1, 2027, if the Legislature approves."
+    },
+    "section_1619b_ny_threshold": {
+      "value": 68654,
+      "unit": "USD/year",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm"
+    },
+    "medicaid_buy_in_wpd_income_limit": {
+      "value": 39125,
+      "monthly": 3261,
+      "unit": "USD/year net countable (250% FPL)",
+      "source": "https://healthweb-back.health.ny.gov/health_care/medicaid/publications/docs/gis/26ma03_att1.pdf",
+      "note": "The DOH program page gives a gross-income example of up to $75,385 (individual) after disregards; year not stated. Premiums are currently under a moratorium."
+    },
+    "medicaid_buy_in_wpd_resource_limit": {
+      "value": 32396,
+      "unit": "USD",
+      "source": "https://healthweb-back.health.ny.gov/health_care/medicaid/publications/docs/gis/26ma03_att1.pdf",
+      "note": "Retirement accounts disregarded (DOH page)"
+    },
+    "medicaid_buy_in_wpd_age_range": {
+      "min": 16,
+      "max": 65,
+      "note": "DOH page: at least 16, coverage up to age 65",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/"
+    },
+    "ssi_general_income_exclusion": {
+      "value": 20,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "note": "Federal; same as MA file"
+    },
+    "ssi_earned_income_exclusion": {
+      "value": 65,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "note": "Federal; same as MA file"
+    },
+    "ssi_earned_income_countable_rate": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "note": "Federal; same as MA file"
+    }
+  },
+  "timing": [
+    {
+      "item": "OPWDD eligibility",
+      "value": "Disability must begin before age 22",
+      "note": "Apply through the Front Door (866-946-9733). Three-step review; no processing times published.",
+      "source": "https://opwdd.ny.gov/eligibility-guidelines",
+      "focus": "Both",
+      "id": "opwdd-eligibility"
+    },
+    {
+      "item": "OPWDD certified residential (IRA/Family Care)",
+      "value": "Not published",
+      "note": "Placement goes by priority (care needs, natural supports, risk of harm) under ADM 2024-03, not first-come.",
+      "source": "https://opwdd.ny.gov/news/certified-residential-opportunities-cro",
+      "focus": "Housing",
+      "id": "opwdd-certified-residential-ira-family-care"
+    },
+    {
+      "item": "OPWDD Housing Subsidy transition stipend window",
+      "value": "90 days before to 90 days after move",
+      "note": "Costs must fall in this window.",
+      "source": "https://opwdd.ny.gov/system/files/documents/2022/03/adm-housing-subsidy-final-3.10.22.pdf",
+      "focus": "Housing",
+      "id": "opwdd-housing-subsidy-transition-stipend-window"
+    },
+    {
+      "item": "NYCHA Section 8 waitlist",
+      "value": "Closed since June 9, 2024; issuance paused Aug 1, 2025",
+      "note": "Only VASH and Stability Voucher referrals are processed.",
+      "source": "https://www.nyc.gov/site/nycha/section-8/applicants.page",
+      "focus": "Housing",
+      "city": "New York",
+      "id": "nycha-section-8-waitlist"
+    },
+    {
+      "item": "NYCHA public housing application",
+      "value": "Renew every 24 months",
+      "note": "Confirmation letter within 30 days; renewing keeps the original filing date.",
+      "source": "https://www.nyc.gov/site/nycha/eligibility/apply.page",
+      "focus": "Housing",
+      "city": "New York",
+      "id": "nycha-public-housing-application"
+    },
+    {
+      "item": "Syracuse Housing Authority waits",
+      "value": "Public housing 6 months-2 years; Section 8 2-5 years",
+      "note": "From SHA FAQ.",
+      "source": "https://www.syracusehousing.org/",
+      "focus": "Housing",
+      "city": "Syracuse",
+      "id": "syracuse-housing-authority-waits"
+    },
+    {
+      "item": "Albany Housing Authority",
+      "value": "Section 8 closed; public housing open since Aug 31, 2026",
+      "note": "Albany residents/workers get preference.",
+      "source": "https://www.albanyhousing.org/apply-for-housing",
+      "focus": "Housing",
+      "city": "Albany",
+      "id": "albany-housing-authority"
+    },
+    {
+      "item": "Rochester Housing Authority public housing",
+      "value": "1BR list closes Oct 26, 2026 (noon); studio list opens",
+      "note": "",
+      "source": "https://www.rochesterhousing.org/",
+      "focus": "Housing",
+      "city": "Rochester",
+      "apply_closes": "2026-10-26",
+      "id": "rochester-housing-authority-public-housing"
+    },
+    {
+      "item": "Yonkers (MHACY) Section 8",
+      "value": "Closed",
+      "note": "Not expected to reopen 'for some time'.",
+      "source": "https://mhacy.org/about/frequently-asked-questions",
+      "focus": "Housing",
+      "city": "Yonkers",
+      "id": "yonkers-mhacy-section-8"
+    },
+    {
+      "item": "HCR Section 8 Project-Based Voucher lottery",
+      "value": "Closed July 24",
+      "note": "Check section8.hcr.ny.gov for open county lists.",
+      "source": "https://hcr.ny.gov/hcv",
+      "focus": "Housing",
+      "id": "hcr-section-8-project-based-voucher-lottery"
+    },
+    {
+      "item": "Mainstream voucher screening (NYC)",
+      "value": "CIDNY contacts within 15 business days",
+      "note": "Supply limited.",
+      "source": "https://www.nyc.gov/assets/hpd/downloads/pdfs/services/mainstream-vouchers-faq-english.pdf",
+      "focus": "Housing",
+      "city": "New York",
+      "id": "mainstream-voucher-screening-nyc"
+    },
+    {
+      "item": "CityFHEPS shopping letter",
+      "value": "Valid 120 days",
+      "note": "",
+      "source": "https://www.nyc.gov/assets/hra/downloads/pdf/cityfheps-documents/dss-7r-e.pdf",
+      "focus": "Housing",
+      "city": "New York",
+      "id": "cityfheps-shopping-letter"
+    },
+    {
+      "item": "Access to Home funding cycle",
+      "value": "Annual RFA in July-Aug; awards about December; 24-month grant term",
+      "note": "Families apply to the local administrator once funded, so expect months to over a year.",
+      "source": "https://hcr.ny.gov/system/files/documents/2025/12/2024-25-access-to-home-annual-report-12.29.25.pdf",
+      "focus": "Housing",
+      "id": "access-to-home-funding-cycle"
+    },
+    {
+      "item": "Camphill Village Copake admission",
+      "value": "Age 23+; 4-week trial visit",
+      "note": "Substantial waiting list (2023).",
+      "source": "https://camphillvillage.org/admissions/",
+      "focus": "Housing",
+      "age_min": 23,
+      "id": "camphill-village-copake-admission",
+      "city": "Copake"
+    }
+  ],
+  "employment_detail": {
+    "ny_min_wage_2026_nyc": {
+      "value": 17.0,
+      "unit": "USD/hour",
+      "source": "https://dol.ny.gov/minimum-wage-0",
+      "note": "NYC; DOL page says rate stays the same on 1/1/2027."
+    },
+    "ny_min_wage_2026_long_island_westchester": {
+      "value": 17.0,
+      "unit": "USD/hour",
+      "source": "https://dol.ny.gov/minimum-wage-0",
+      "note": "Nassau, Suffolk, Westchester."
+    },
+    "ny_min_wage_2026_rest_of_state": {
+      "value": 16.0,
+      "unit": "USD/hour",
+      "source": "https://dol.ny.gov/minimum-wage-0",
+      "note": "Remainder of New York State."
+    },
+    "ssi_1619b_threshold_ny_2026": {
+      "value": 68654,
+      "unit": "USD/year gross earnings",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm",
+      "note": "2025 NY threshold was $64,017."
+    },
+    "medicaid_buy_in_earnings_limit_2026": {
+      "value": 80820,
+      "unit": "USD/year",
+      "source": "https://nyess.ny.gov/continuing-medicaid-coverage-while-working",
+      "note": "Individual; health.ny.gov shows older undated $75,385 (couple $102,285)."
+    },
+    "medicaid_buy_in_resource_limit_2026": {
+      "value": 33038,
+      "unit": "USD",
+      "source": "https://nyess.ny.gov/continuing-medicaid-coverage-while-working",
+      "note": "Individual; retirement accounts disregarded. health.ny.gov shows older $31,175 (couple $42,312)."
+    },
+    "medicaid_buy_in_premium": {
+      "value": 0,
+      "unit": "USD/month",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/",
+      "note": "Premiums under moratorium."
+    },
+    "medicaid_buy_in_age_min": {
+      "value": 16,
+      "unit": "years",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/",
+      "note": "Ages 16-64."
+    },
+    "medicaid_buy_in_age_max": {
+      "value": 64,
+      "unit": "years",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/",
+      "note": "Page says 16 to 65 (i.e., under 65)."
+    },
+    "wetc_rate": {
+      "value": 0.35,
+      "unit": "fraction of qualified wages",
+      "source": "https://dol.ny.gov/workers-disabilities-employment-tax-credit",
+      "note": "Second-year wages."
+    },
+    "wetc_wage_base": {
+      "value": 6000,
+      "unit": "USD per employee",
+      "source": "https://dol.ny.gov/workers-disabilities-employment-tax-credit",
+      "note": "First $6,000 of second-year wages."
+    },
+    "wetc_max_credit": {
+      "value": 2100,
+      "unit": "USD per employee",
+      "source": "https://dol.ny.gov/workers-disabilities-employment-tax-credit",
+      "note": "Requires WOTC VR-referral certification; WOTC lapsed 12/31/2025."
+    },
+    "wotc_plus_wetc_max": {
+      "value": 4500,
+      "unit": "USD per employee",
+      "source": "https://dol.ny.gov/workers-disabilities-employment-tax-credit",
+      "note": "Only if WOTC is reauthorized."
+    },
+    "sga_nonblind_2026": {
+      "value": 1690,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": ""
+    },
+    "sga_blind_2026": {
+      "value": 2830,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": ""
+    },
+    "twp_month_2026": {
+      "value": 1210,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": "Earnings above this count as a trial work month."
+    },
+    "seie_monthly_2026": {
+      "value": 2410,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": "SSI students under 22."
+    },
+    "seie_annual_2026": {
+      "value": 9730,
+      "unit": "USD/year",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": ""
+    },
+    "ssi_fbr_individual_2026": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": "Federal; NY state supplement not included."
+    }
+  },
+  "regions": {
+    "New York City": [
+      "New York",
+      "Kings",
+      "Queens",
+      "Bronx",
+      "Richmond"
+    ],
+    "Long Island": [
+      "Nassau",
+      "Suffolk"
+    ],
+    "Hudson Valley": [
+      "Westchester",
+      "Rockland",
+      "Orange",
+      "Putnam",
+      "Dutchess",
+      "Ulster",
+      "Sullivan",
+      "Columbia"
+    ],
+    "Capital Region": [
+      "Albany",
+      "Rensselaer",
+      "Schenectady",
+      "Saratoga"
+    ],
+    "Central NY": [
+      "Onondaga"
+    ],
+    "Western NY & Finger Lakes": [
+      "Erie",
+      "Monroe",
+      "Niagara"
+    ]
+  }
+}

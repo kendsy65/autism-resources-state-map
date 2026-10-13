@@ -119,7 +119,12 @@ const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips
 // ---------- Upcoming deadlines (from each program's application dates; recomputed every visit) ----------
 {
   const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-  const items = Object.entries(rowsByState).flatMap(([c, rows]) => upcomingDeadlines(rows).map(x => ({ ...x, state: c })))
+  // Programs with application windows, plus dated waitlist deadlines from each state's timing list.
+  const timingByState = Object.fromEntries(await Promise.all(Object.keys(STATES).filter(ready).map(async c =>
+    [c, ((await loadJSON(`data/${c}/planner-parameters.json`).catch(() => null))?.timing || [])
+      .filter(t => t.apply_closes || t.apply_opens)
+      .map(t => ({ id: t.id, name: t.item, max_benefit: t.note || t.value, apply_closes: t.apply_closes || "", apply_opens: t.apply_opens || "", timing: true }))])));
+  const items = Object.entries(rowsByState).flatMap(([c, rows]) => upcomingDeadlines([...rows, ...(timingByState[c] || [])]).map(x => ({ ...x, state: c })))
     .sort((a, b) => a.days - b.days);
   if (items.length) {
     const left = d => d === 0 ? "today" : d === 1 ? "1 day left" : `${d} days left`;
@@ -128,7 +133,7 @@ const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips
       <span class="dl-what"><span class="dl-kind">${x.kind === "closes" ? "Closes" : "Opens"} ${x.exact ? `${MON[x.date.getMonth()]} ${x.date.getDate()}, ${x.date.getFullYear()}` : `${MON[x.date.getMonth()]} ${x.date.getFullYear()}`}${x.kind === "closes" ? ` · ${left(x.days)}` : ` · in ${x.days} days`}</span>
         <strong>${esc(x.r.name)}</strong>
         <span class="dl-note">${esc(STATES[x.state]?.name || x.state)} · ${esc(x.r.max_benefit.split(/(?<=\.)\s|,\s(?=paid)/)[0])}</span></span>
-      <a class="dl-go" href="state.html?s=${x.state}#res-${encodeURIComponent(x.r.id)}">How to apply<span class="sr"> for ${esc(x.r.name)}</span> →</a></li>`).join("");
+      <a class="dl-go" href="state.html?s=${x.state}#${x.r.timing ? "timing-" : "res-"}${encodeURIComponent(x.r.id)}">${x.r.timing ? "Details" : "How to apply"}<span class="sr"> for ${esc(x.r.name)}</span> →</a></li>`).join("");
     document.getElementById("deadlines").hidden = false;
   }
 }
@@ -258,8 +263,9 @@ $("wiz-cancel").addEventListener("click", () => {
 
 // ---------- Ask about a term ----------
 // Figures come from the saved person's state, or the first state with planner numbers.
-const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms;
-const chatState = saved?.state || Object.keys(STATES).find(ready) || "MA";
+const chatState = saved?.state || "MA";
+// Terms marked for one state only show when that's the state in play.
+const glossary = (await loadJSON("data/glossary.json").catch(() => ({ terms: [] }))).terms.filter(t => !t.state || t.state === chatState);
 const chatParams = await loadJSON(`data/${chatState}/planner-parameters.json`).catch(() => null);
 const chatRes = [...(await loadResources(chatState)), ...federal];
 mountChat({ terms: glossary, params: chatParams, resources: chatRes });

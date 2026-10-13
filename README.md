@@ -46,7 +46,8 @@ data/
   US/economic-parameters.json Inflation inputs: Fed projections, CPI, SSA COLA (refresh after each FOMC meeting: Mar, Jun, Sep, Dec)
   glossary.json              ~57 plain-language terms with sources, used by the assistant
   <STATE>/zips.json          ZIP -> town, county, lat/lon (GeoNames, CC BY 4.0; rebuild with scripts/build-zips.py)
-  MA/resources.json          132 Massachusetts resources: housing, financing, employment support, employers
+  <STATE>/resources.json     Resources: CT 78, MA 132, NY 87 (housing, financing, employment support, employers)
+  <STATE>/place-aliases.json Town names in the research that the ZIP file spells differently
   MA/resources.csv           Same data, for spreadsheets
   MA/planner-parameters.json Numbers the cost planner uses (SSI, rent shares, DDS charges, earnings limits, financing)
   CT/resources.json          Empty, to fill in Week 1
@@ -60,11 +61,11 @@ Product brief and 3-week build plan live in the claude.ai project "Autism Resour
 
 ## Status (Oct 5, 2026)
 
-| State | Housing | Financing | Employment support | Employers | Nonprofits (all categories) | Planner numbers |
-|---|---|---|---|---|---|---|
-| MA | 50 | 23 | 49 | 11 | 54 | Done, incl. financing and inflation |
-| CT | Not started | Not started | Not started | Not started | Not started | Not started |
-| NY | Not started | Not started | Not started | Not started | Not started | Not started |
+| State | Housing | Financing | Employment support | Employers | Planner numbers |
+|---|---|---|---|---|---|
+| CT | 43 | Not started | 32 | 3 | Done (state supplement is needs-based; DDS residential charges not published) |
+| MA | 50 | 23 | 49 | 11 | Done, incl. financing and inflation |
+| NY | 46 | Not started | 33 | 8 | Done (OPWDD county max rents not published) |
 
 Plus 5 federal Social Security resources (`data/US/`) shown in every state.
 

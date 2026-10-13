@@ -1,0 +1,453 @@
+{
+  "state": "CT",
+  "year": 2026,
+  "date_checked": "2026-10-13",
+  "income": {
+    "ssi_federal_monthly": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm"
+    },
+    "ssi_one_third_reduction": {
+      "value": 331.33,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm",
+      "note": "Applies when you live in another person's household and get food and shelter from them"
+    },
+    "ssi_max_in_kind_shelter_reduction": {
+      "value": 351.33,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm",
+      "note": "Presumed maximum value = 1/3 of the federal rate + $20"
+    },
+    "ssi_institution_cap": {
+      "value": 30,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-living-ussi.htm",
+      "note": "Full month in a Medicaid facility, plus any state payment"
+    },
+    "ct_state_supplement_how_it_works": {
+      "value": null,
+      "unit": "needs-based budget",
+      "source": "https://portal.ct.gov/dss/knowledge-base/articles/fact-sheets-and-brochures-articles/fact-sheets-articles/state-supplement-to-the-aged-blind-or-disabled-fact-sheet",
+      "note": "No flat CT supplement amount. DSS builds a budget of allowable expenses (rent etc.) for your living arrangement and pays the gap above your income (SSI plus other income). Income must be under 3x the SSI maximum."
+    },
+    "ct_state_supplement_asset_limit": {
+      "single": 1600,
+      "married": 2400,
+      "unit": "USD",
+      "source": "https://portal.ct.gov/dss/knowledge-base/articles/fact-sheets-and-brochures-articles/fact-sheets-articles/state-supplement-to-the-aged-blind-or-disabled-fact-sheet"
+    },
+    "ct_state_supplement_income_cap": {
+      "value": 2982,
+      "unit": "USD/month",
+      "source": "https://portal.ct.gov/dss/knowledge-base/articles/fact-sheets-and-brochures-articles/fact-sheets-articles/state-supplement-to-the-aged-blind-or-disabled-fact-sheet",
+      "note": "Calculated as 3 x $994. DSS states the rule (3x SSI maximum), not the dollar figure. Higher for boarding or residential care homes."
+    },
+    "ct_state_supplement_shelter_allowance_cap": {
+      "living_alone": 400,
+      "living_with_others": 200,
+      "unit": "USD/month",
+      "source": "https://www.medicaid.gov/medicaid/spa/downloads/CT-26-0004.pdf",
+      "note": "Level 1 / Level 2 shelter caps listed in the 2026 SPA (same caps as SSA's 2011 CT summary)"
+    },
+    "ct_state_supplement_2026_standards_spa": {
+      "independent_level1_individual": 597.35,
+      "independent_level2_individual": 398.55,
+      "personal_needs_allowance_level1": 197.35,
+      "unit": "USD/month",
+      "source": "https://www.medicaid.gov/medicaid/spa/downloads/CT-26-0004.pdf",
+      "note": "From SPA CT-26-0004 (effective Jan 1, 2026; approved Jun 5, 2026). The PDF text extracted poorly, so check these figures against the original pages before using them. The 2026 Social Security COLA (2.8%) is fully disregarded."
+    },
+    "ssi_general_income_exclusion": {
+      "value": 20,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "note": "Federal rule; carried from MA file, same nationally"
+    },
+    "ssi_earned_income_exclusion": {
+      "value": 65,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/ssi/text-income-ussi.htm",
+      "note": "Then 1/2 of the rest is counted"
+    }
+  },
+  "housing": {
+    "section8_tenant_share": {
+      "value": 0.3,
+      "unit": "fraction of monthly adjusted income",
+      "source": "https://portal.ct.gov/doh/knowledge-base/articles/section-8/section-8-housing-choice-voucher-rent-calculation"
+    },
+    "rap_tenant_share_disabled": {
+      "value": 0.3,
+      "unit": "fraction of income",
+      "source": "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program",
+      "note": "Elderly or disabled households"
+    },
+    "rap_tenant_share_family": {
+      "value": 0.4,
+      "unit": "fraction of income",
+      "source": "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program"
+    },
+    "rap_income_limit": {
+      "value": 0.5,
+      "unit": "fraction of area median income",
+      "source": "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program"
+    },
+    "ct811_income_limit": {
+      "value": 0.3,
+      "unit": "fraction of area median income",
+      "source": "https://portal.ct.gov/doh/doh/programs/section-811-projectbased-rental-assistance-program-ct811",
+      "note": "Ages 18-62 with a disability"
+    },
+    "dds_supportive_housing_tenant_share_max": {
+      "value": 0.3,
+      "unit": "fraction of adjusted income (SSI counts)",
+      "source": "https://portal.ct.gov/dds/-/media/dds/rfps/npb_sh_rolling_noo_01-05-2024.pdf",
+      "note": "DDS non-project-based supportive housing using RAP certificates; 2024 notice"
+    },
+    "dds_housing_subsidy_tenant_share": {
+      "value": 0.45,
+      "unit": "fraction of adjusted monthly income",
+      "source": "https://portal.ct.gov/-/media/DDS/DDS_Manual/IC_Housing/ICPR002HousingSubsidy.pdf",
+      "note": "DDS Community-Based Housing Subsidy; 20% wage disregard; procedure revised 2009"
+    },
+    "dds_housing_subsidy_income_left_after_rent": {
+      "min": 400,
+      "max": 600,
+      "unit": "USD/month",
+      "source": "https://portal.ct.gov/-/media/DDS/DDS_Manual/IC_Housing/ICPR002HousingSubsidy.pdf"
+    },
+    "dds_cla_cch_resident_room_and_board_share": {
+      "value": null,
+      "unit": "Not published",
+      "source": "https://portal.ct.gov/dds/-/media/dds/dds_manual/ic2/ic2pr015_-sd-cost-guidelines_6125.pdf",
+      "note": "No public DDS rule found giving the share of SSI that CLA/CCH residents pay. Waiver funding excludes recurring room and board. CCH hosts get a DDS-set tax-free room and board rate plus a stipend."
+    },
+    "dds_waiver_home_modifications_max": {
+      "value": 35000,
+      "unit": "USD per waiver period",
+      "source": "https://portal.ct.gov/dds/-/media/dds/dds_manual/ic2/ic2pr015_-sd-cost-guidelines_6125.pdf"
+    },
+    "dds_apartment_setup_moving_max": {
+      "value": 2000,
+      "unit": "USD per occasion",
+      "source": "https://portal.ct.gov/dds/-/media/dds/dds_manual/ic2/ic2pr015_-sd-cost-guidelines_6125.pdf"
+    },
+    "dds_security_deposit_max": {
+      "value": 1,
+      "unit": "months of rent",
+      "source": "https://portal.ct.gov/dds/-/media/dds/dds_manual/ic2/ic2pr015_-sd-cost-guidelines_6125.pdf"
+    },
+    "autism_waiver_annual_cap": {
+      "value": 50000,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/DSS/Health-And-Home-Care/Autism-Spectrum-Disorder---ASD/Autism-Spectrum-Disorder---ASD"
+    },
+    "cil_accessibility_grant": {
+      "min": 5000,
+      "max": 70000,
+      "unit": "USD",
+      "source": "https://www.cil.org/accessibility-improvements",
+      "note": "Income at or below 100% AMI; lien on home; funds extremely limited"
+    },
+    "chip_home_improvement_loan_max": {
+      "value": 35000,
+      "unit": "USD",
+      "source": "https://portal.ct.gov/doh/knowledge-base/articles/homeowners/specialized-homebuyer-assistance"
+    },
+    "chfa_time_to_own_max": {
+      "value": 25000,
+      "unit": "USD forgivable",
+      "source": "https://portal.ct.gov/doh/knowledge-base/articles/homeowners/specialized-homebuyer-assistance"
+    },
+    "chfa_disabled_rate_discount": {
+      "value": 0.125,
+      "unit": "percentage points off CHFA rate",
+      "source": "https://www.chfa.org/homebuyers/disabled-programs/"
+    },
+    "hartford_ami_1_person_fy2026": {
+      "pct30": 27150,
+      "pct50": 45250,
+      "pct60": 54300,
+      "pct80": 72400,
+      "unit": "USD/year",
+      "source": "https://www.chfa.org/assets/1/19/Final_-_CHFA_-_CT_-_2026_Income_and_Rent_Limit_Charts.pdf",
+      "note": "CHFA 2026 MTSP (LIHTC) limits for the Hartford area, effective May 1, 2026"
+    },
+    "new_haven_ami_1_person_fy2026": {
+      "pct30": 26160,
+      "pct50": 43600,
+      "pct60": 52320,
+      "pct80": 69760,
+      "unit": "USD/year",
+      "source": "https://www.chfa.org/assets/1/19/Final_-_CHFA_-_CT_-_2026_Income_and_Rent_Limit_Charts.pdf"
+    },
+    "bridgeport_stamford_ami_1_person_fy2026": {
+      "pct30": 32940,
+      "pct50": 54900,
+      "pct60": 65880,
+      "pct80": 87840,
+      "unit": "USD/year",
+      "source": "https://www.chfa.org/assets/1/19/Final_-_CHFA_-_CT_-_2026_Income_and_Rent_Limit_Charts.pdf",
+      "note": "Western CT planning region (Bridgeport-Stamford-Danbury)"
+    },
+    "doh_state_program_capitol_region_1_person": {
+      "pct30": 26586,
+      "pct50": 44310,
+      "pct80": 70896,
+      "median": 88620,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/-/media/doh/state-program-income-limits.pdf",
+      "note": "DOH development program limits as of 10/1/2025"
+    }
+  },
+  "employment": {
+    "ct_minimum_wage": {
+      "value": 16.94,
+      "unit": "USD/hour",
+      "source": "https://portal.ct.gov/governor/news/press-releases/2025/09-2025/governor-lamont-announces-minimum-wage-will-increase",
+      "note": "Effective Jan 1, 2026 (up from $16.35)"
+    },
+    "sga_non_blind": {
+      "value": 1690,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html"
+    },
+    "section_1619b_ct_threshold": {
+      "value": 55480,
+      "unit": "USD/year",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm"
+    },
+    "med_connect_income_limit": {
+      "value": 85000,
+      "unit": "USD/year (applicant's income)",
+      "source": "https://portal.ct.gov/dss/health-and-home-care/disability-services/med-connect-medicaid-for-employees-with-disabilities/med-connect-medicaid-for-employees-with-disabilities/eligibility",
+      "note": "Some income must be from work"
+    },
+    "med_connect_asset_limit": {
+      "single": 20000,
+      "couple": 30000,
+      "unit": "USD",
+      "source": "https://portal.ct.gov/dss/health-and-home-care/disability-services/med-connect-medicaid-for-employees-with-disabilities/med-connect-medicaid-for-employees-with-disabilities/eligibility"
+    },
+    "med_connect_premium": {
+      "rate": 0.1,
+      "threshold": "200% FPL",
+      "cap": "7.5% of net family income for 250-450% FPL",
+      "unit": "fraction of income above 200% FPL",
+      "source": "https://portal.ct.gov/dss/health-and-home-care/disability-services/med-connect-medicaid-for-employees-with-disabilities/med-connect-medicaid-for-employees-with-disabilities/eligibility",
+      "note": "No premium below 200% FPL"
+    }
+  },
+  "timing": [
+    {
+      "item": "DOH Section 8 HCV waitlist",
+      "value": "Closed",
+      "note": "All DOH HCV lists closed (page dated Aug 20, 2026). Register at cthcvp.org/notifications.",
+      "source": "https://portal.ct.gov/doh/knowledge-base/articles/section-8/section-8-housing-choice-voucher-waiting-list",
+      "focus": "Housing",
+      "id": "doh-section-8-hcv-waitlist"
+    },
+    {
+      "item": "RAP waitlist",
+      "value": "Closed",
+      "note": "Register at cthcvp.org to be told when it reopens.",
+      "source": "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program",
+      "focus": "Housing",
+      "id": "rap-waitlist"
+    },
+    {
+      "item": "New Haven (Elm City Communities) Section 8 list",
+      "value": "Closed May 1, 2026",
+      "note": "",
+      "source": "https://www.elmcitycommunities.org/",
+      "focus": "Housing",
+      "city": "New Haven",
+      "id": "new-haven-elm-city-communities-section-8-list"
+    },
+    {
+      "item": "Hartford public housing list",
+      "value": "Closed Sep 4, 2026; reopening notice Sep 9, 2026",
+      "note": "Check hartfordhousing.org for current status.",
+      "source": "https://www.hartfordhousing.org/",
+      "focus": "Housing",
+      "city": "Hartford",
+      "id": "hartford-public-housing-list"
+    },
+    {
+      "item": "DDS residential waiting list",
+      "value": "1,552 people (Dec 2025)",
+      "note": "567 with no services (48 emergency, 519 urgent), 310 underserved, 675 future needs. 8,638 people get DDS residential supports.",
+      "source": "https://prdext3.cga.ct.gov/ph/BHPOC/related/20260101_2026/20260211/DDS  Presentation.pdf",
+      "focus": "Housing",
+      "id": "dds-residential-waiting-list"
+    },
+    {
+      "item": "DSS Autism waiver waitlist",
+      "value": "2,652 people (Apr 2026); some wait 10+ years",
+      "note": "From CT Public reporting; DSS confirms there is a waiting list.",
+      "source": "https://www.ctpublic.org/news/investigative/2026-04-07/ct-autism-waiver-program-waitlist-new-hires",
+      "focus": "Both",
+      "id": "dss-autism-waiver-waitlist"
+    },
+    {
+      "item": "DDS eligibility testing",
+      "value": "Before age 18 (ID); autism test before 21",
+      "note": "Psych and educational testing through age 17. Apply in the teen years.",
+      "source": "https://portal.ct.gov/dds/knowledge-base/articles/eligibility-for-an-individual-with-autism-and-no-intellectual-disability",
+      "focus": "Both",
+      "age_max": 20,
+      "id": "dds-eligibility-testing"
+    },
+    {
+      "item": "Special education ends",
+      "value": "End of school year (June 30) in which student turns 22",
+      "note": "Or earlier with a regular diploma. This is when adult DDS/DSS services usually take over.",
+      "source": "https://portal.ct.gov/-/media/sde/special-education/csde-memo---updated-guidance-re-pa-23-137-_11-15-2023.pdf",
+      "focus": "Both",
+      "age_max": 21,
+      "id": "special-education-ends"
+    },
+    {
+      "item": "CHESS Medicaid supportive housing benefit",
+      "value": "Ended Aug 15, 2026",
+      "note": "SPA CT-26-0023 ended the 1915(i) CHESS benefit.",
+      "source": "https://www.medicaid.gov/medicaid/spa/downloads/CT-26-0023.pdf",
+      "focus": "Housing",
+      "id": "chess-medicaid-supportive-housing-benefit"
+    },
+    {
+      "item": "CHRO housing complaint deadline",
+      "value": "300 days",
+      "note": "",
+      "source": "https://portal.ct.gov/CHRO/Complaint-Process/Fair-Housing/If-you-feel-you-have-been-treated-unfairly",
+      "focus": "Housing",
+      "id": "chro-housing-complaint-deadline"
+    }
+  ],
+  "employment_detail": {
+    "ct_minimum_wage_2026": {
+      "value": 16.94,
+      "unit": "USD/hour",
+      "source": "https://portal.ct.gov/core-ct/human-capital-management-notifications/minimum-wage-increase",
+      "note": "Effective Jan 1, 2026 (up from $16.35)."
+    },
+    "ssi_1619b_threshold_ct_2026": {
+      "value": 55480,
+      "unit": "USD/year gross earnings",
+      "source": "https://www.ssa.gov/disabilityresearch/wi/1619b.htm",
+      "note": "Disabled SSI beneficiaries; individualized threshold possible."
+    },
+    "med_connect_income_cap": {
+      "value": 85000,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/dss/health-and-home-care/disability-services/med-connect-medicaid-for-employees-with-disabilities/med-connect-medicaid-for-employees-with-disabilities/eligibility",
+      "note": "Some income must be from employment; applicant income only."
+    },
+    "med_connect_asset_limit_individual": {
+      "value": 20000,
+      "unit": "USD",
+      "source": "same as med_connect_income_cap",
+      "note": ""
+    },
+    "med_connect_asset_limit_couple": {
+      "value": 30000,
+      "unit": "USD",
+      "source": "same as med_connect_income_cap",
+      "note": ""
+    },
+    "med_connect_premium_free_threshold": {
+      "value": 200,
+      "unit": "% FPL",
+      "source": "same as med_connect_income_cap",
+      "note": "No premium below 200% FPL countable income."
+    },
+    "med_connect_premium_rate_above_limit": {
+      "value": 10,
+      "unit": "% of income above limit",
+      "source": "same as med_connect_income_cap",
+      "note": "Applies above 200% FPL."
+    },
+    "med_connect_premium_max_250_450_fpl": {
+      "value": 7.5,
+      "unit": "% of net family income",
+      "source": "same as med_connect_income_cap",
+      "note": "Cap for net family income 250-450% FPL."
+    },
+    "jobsct_rebate_rate_standard": {
+      "value": 25,
+      "unit": "% of withholding on net new jobs",
+      "source": "https://portal.ct.gov/decd/content/business-development/jobsct/jobsct-tax-rebate-program",
+      "note": "General JobsCT; IDD-hire enhancement amount not published."
+    },
+    "jobsct_rebate_rate_distressed": {
+      "value": 50,
+      "unit": "% of withholding",
+      "source": "https://portal.ct.gov/decd/content/business-development/jobsct/jobsct-tax-rebate-program",
+      "note": "Distressed municipality or Opportunity Zone."
+    },
+    "jobsct_idd_bonus": {
+      "value": "Not published",
+      "unit": "",
+      "source": "https://portal.ct.gov/decd/content/business-development/jobsct/jobsct-tax-rebate-program",
+      "note": "CGS 32-7t, eff. 1/1/2024: fewer jobs required and higher rebate for IDD hires."
+    },
+    "wotc_status_2026": {
+      "value": 0,
+      "unit": "USD (lapsed)",
+      "source": "https://portal.ct.gov/dol/work-opportunity-tax-credit-wotc",
+      "note": "No credit for hires starting 1/1/2026+ unless retroactively reauthorized; was $2,400-$9,600."
+    },
+    "autism_waiver_annual_cap": {
+      "value": 50000,
+      "unit": "USD/participant/year",
+      "source": "https://portal.ct.gov/dss/health-and-home-care/autism-spectrum-disorder---asd/autism-spectrum-disorder---asd",
+      "note": "All waiver services incl. job coaching."
+    },
+    "sga_2026_nonblind": {
+      "value": 1690,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/oact/cola/sga.html",
+      "note": ""
+    },
+    "twp_2026": {
+      "value": 1210,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": ""
+    },
+    "seie_2026_monthly": {
+      "value": 2410,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": "Annual max $9,730."
+    },
+    "ssi_fbr_2026_individual": {
+      "value": 994,
+      "unit": "USD/month",
+      "source": "https://www.ssa.gov/redbook/newfor2026.htm",
+      "note": ""
+    }
+  },
+  "regions": {
+    "Hartford area": [
+      "Hartford",
+      "Tolland"
+    ],
+    "New Haven & shoreline": [
+      "New Haven",
+      "Middlesex"
+    ],
+    "Fairfield County": [
+      "Fairfield"
+    ],
+    "Eastern CT": [
+      "New London",
+      "Windham"
+    ],
+    "Northwest CT": [
+      "Litchfield"
+    ]
+  }
+}
