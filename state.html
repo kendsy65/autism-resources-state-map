@@ -44,6 +44,12 @@
       </div>
       <div class="row">
         <div class="row" id="levels" role="group" aria-label="Who runs it"></div>
+        <span class="fit-filter">
+          <button type="button" class="chip fit-chip" id="fit-chip" aria-pressed="false">Fits support level</button>
+          <span class="fit-chip-levels" id="fit-chip-levels" role="group" aria-label="Their support level" hidden>
+            <button type="button" data-fit="1">Level 1</button><button type="button" data-fit="2">Level 2</button><button type="button" data-fit="3">Level 3</button>
+          </span>
+        </span>
         <select id="region" aria-label="Region" style="font:inherit;font-size:14px;padding:6px 10px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink)"></select>
       </div>
       <div class="row" id="near-row" hidden>
@@ -280,6 +286,10 @@ $("q").addEventListener("input", e => { st.q = e.target.value; render(); });
 if (me && SUPPORT[me.support] && me.support !== "unsure") st.fitLevel = me.support;
 render();
 function syncFit() {
+  // The filter-bar toggle mirrors the button at the top of the page.
+  $("fit-chip").setAttribute("aria-pressed", String(st.fitOnly));
+  $("fit-chip").textContent = st.fitOnly ? `Fits Level ${st.fitLevel}` : "Fits support level";
+  document.querySelectorAll("#fit-chip-levels [data-fit]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.fit === st.fitLevel)));
   $("fit-btn").setAttribute("aria-pressed", String(st.fitOnly));
   $("fit-btn").textContent = st.fitOnly ? "Showing programs that fit their needs · show all" : "Show only programs that fit their needs";
   document.querySelectorAll("#fit-levels [data-fit]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.fit === st.fitLevel)));
@@ -291,6 +301,15 @@ $("fit-btn").addEventListener("click", () => {
   if (!st.fitLevel) { $("fit-levels").hidden = false; $("fit-note").textContent = "Pick their support level to filter."; document.querySelector("#fit-levels [data-fit]").focus(); return; }
   st.fitOnly = !st.fitOnly;
   setView("dir"); render(); syncFit();
+});
+$("fit-chip").addEventListener("click", () => {
+  if (!st.fitLevel) { $("fit-chip-levels").hidden = false; $("fit-chip-levels").querySelector("button").focus(); return; }
+  st.fitOnly = !st.fitOnly; render(); syncFit();
+});
+$("fit-chip-levels").addEventListener("click", e => {
+  const b = e.target.closest("[data-fit]"); if (!b) return;
+  st.fitLevel = b.dataset.fit; st.fitOnly = true; $("fit-levels").hidden = false;
+  render(); syncFit();
 });
 $("fit-levels").addEventListener("click", e => {
   const b = e.target.closest("[data-fit]"); if (!b) return;

@@ -473,3 +473,14 @@ input[type=search],.filters select,#region,#within,#sort{border-radius:999px !im
 .tag{border-radius:999px}
 
 @media (prefers-reduced-motion: reduce){.choice,details.res{transition:none}.choice:hover{transform:none}}
+
+/* "Fits support level" toggle in the filter bar */
+.fit-filter{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px}
+.fit-chip{display:inline-flex;align-items:center;gap:6px;background:var(--surface);color:var(--state);border:1.5px solid var(--state)}
+.fit-chip::before{content:"✓";font-size:11px}
+.fit-chip[aria-pressed="true"]{background:var(--state);color:var(--surface);opacity:1}
+.fit-chip[aria-pressed="false"]{opacity:1}
+.fit-chip:focus-visible,.fit-chip-levels button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.fit-chip-levels{display:inline-flex;gap:4px}
+.fit-chip-levels button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--tint-line);background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
+.fit-chip-levels button[aria-pressed="true"]{border-color:var(--state);background:var(--state-bg);color:var(--state)}
