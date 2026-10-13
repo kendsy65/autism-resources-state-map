@@ -132,6 +132,25 @@ test("suggested order: good fits first, then nearest; statewide never dropped", 
   assert.equal(nearest.at(-1).dist, null); // statewide after local
 });
 
+test("support level uses the team's support-needs reading when present", () => {
+  const byId = id => maRes.find(r => r.id === id);
+  const ey = byId("ma-emp-ey-neuro-diverse-center"), bitty = byId("ma-emp-bitty-and-beaus-cambridge");
+  assert.equal(supportFit(ey, "1"), 1);
+  assert.equal(supportFit(ey, "3"), -1);
+  assert.equal(supportFit(bitty, "3"), 1);
+  assert.equal(supportFit(bitty, "1"), 0);
+  assert.equal(supportFit(ey, "unsure"), 0);
+});
+
+test("employers have their own category; companies are flagged", () => {
+  const emp = maRes.filter(r => r.category === "Employers");
+  assert.ok(emp.length >= 10);
+  assert.ok(emp.every(r => ["Employer", "Paid training site", "Hiring program"].includes(r.subtype)));
+  assert.ok(!maRes.some(r => r.category === "Employment" && r.subtype === "Employer"));
+  assert.ok(maRes.filter(r => r.for_profit).every(r => r.category === "Employers"));
+  assert.ok(!maRes.some(r => /citizens bank|melrose\)/i.test(r.name))); // held back / closed
+});
+
 // ---------- financing ----------
 test("money and benefits: drops what the sources rule out, keeps nearby city programs only", () => {
   const at = placeIndex(zips.MA);

@@ -117,8 +117,16 @@ const MORE_INDEPENDENT = /^(Program|Employer|Work incentive)$/;
 const DDS = /\bDDS\b|Developmental Services/;
 const NOT_FOR_HIGH = /not a fit for people who need high support/i;
 
-// 1 = suggested for their support level, 0 = neutral, -1 = the source says it's not a fit.
+// 1 = suggested for their support level, 0 = neutral, -1 = not a likely fit.
+// Uses the team's support_needs reading when an entry has one; otherwise the program type.
 export function supportFit(r, support) {
+  const sn = r.support_needs || "";
+  if (sn && support !== "unsure" && SUPPORT[support]) {
+    if (sn === "Wide range") return 1;
+    const high = support === "2" || support === "3";
+    if (sn === "Moderate to high support needs") return high ? 1 : 0;
+    if (sn === "Low support needs") return support === "1" ? 1 : support === "3" ? -1 : 0;
+  }
   if (support === "2" || support === "3") {
     if (NOT_FOR_HIGH.test(r.notes || "")) return -1;
     if (HIGHER_SUPPORT.test(r.subtype || "") || DDS.test(r.administrator || "")) return 1;

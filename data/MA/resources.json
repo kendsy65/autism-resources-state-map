@@ -26,7 +26,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-mainstream-non-elderly-disabled-ned-vouchers",
@@ -55,7 +57,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-hud-section-811-project-rental-assistance",
@@ -84,7 +88,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-federal-public-housing",
@@ -113,7 +119,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-fair-housing-reasonable-accommodations",
@@ -142,7 +150,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-ssi-living-arrangement-rules",
@@ -171,7 +181,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-massachusetts-rental-voucher-program-mrvp",
@@ -200,7 +212,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-alternative-housing-voucher-program-ahvp",
@@ -229,7 +243,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-state-public-housing-via-champ",
@@ -258,7 +274,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-chapter-689-special-needs-housing",
@@ -287,7 +305,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-community-based-housing-cbh",
@@ -316,7 +336,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-facilities-consolidation-fund-fcf",
@@ -345,7 +367,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-home-modification-loan-program-hmlp",
@@ -374,7 +398,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-raft-emergency-housing-assistance",
@@ -403,7 +429,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-dds-adult-eligibility-for-autism",
@@ -432,7 +460,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-dds-residential-supports",
@@ -461,7 +491,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-masshealth-adult-foster-care",
@@ -490,7 +522,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-masshealth-group-adult-foster-care",
@@ -519,7 +553,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-masshousing-3-priority-set-aside",
@@ -548,7 +584,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-independent-living-centers",
@@ -577,7 +615,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-mcad-housing-discrimination-complaints",
@@ -606,7 +646,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-boston-housing-authority",
@@ -635,7 +677,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-boston-disabilities-commission-housing",
@@ -664,7 +708,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-boston-metrolist-housing-lotteries",
@@ -693,7 +739,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-cambridge-housing-authority",
@@ -722,7 +770,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-worcester-housing-authority",
@@ -751,7 +801,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-springfield-housing-authority",
@@ -780,7 +832,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-autism-housing-pathways",
@@ -809,7 +863,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-specialized-housing-inc",
@@ -838,7 +894,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-adult-autism-support-centers",
@@ -867,7 +925,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-the-arc-of-massachusetts-housing-guidance",
@@ -896,7 +956,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-housing-navigator-massachusetts",
@@ -925,7 +987,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-lowell-housing-authority",
@@ -954,7 +1018,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-somerville-office-of-housing-stability",
@@ -983,7 +1049,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-somerville-consolidated-rental-waitlist",
@@ -1012,7 +1080,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-quincy-housing-authority",
@@ -1041,7 +1111,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-lynn-housing-authority-lhand",
@@ -1070,7 +1142,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-brockton-housing-authority",
@@ -1099,7 +1173,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-berkshire-hills-music-academy",
@@ -1128,7 +1204,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-amego-adult-residential",
@@ -1157,7 +1235,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-melmark-new-england-adult-services",
@@ -1186,7 +1266,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-may-institute-adult-residential",
@@ -1215,7 +1297,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-cardinal-cushing-centers-adult-residential",
@@ -1244,7 +1328,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-evergreen-center-adult-supports",
@@ -1273,7 +1359,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-riverbrook-residence",
@@ -1302,7 +1390,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-ticket-to-work",
@@ -1331,7 +1421,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-plan-to-achieve-self-support-pass",
@@ -1360,7 +1452,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-ssi-ssdi-work-incentives",
@@ -1389,7 +1483,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-section-1619-b-masshealth-continuation",
@@ -1418,7 +1514,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-work-opportunity-tax-credit",
@@ -1447,7 +1545,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-abilityone",
@@ -1476,7 +1576,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-job-accommodation-network",
@@ -1505,7 +1607,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-schedule-a-federal-hiring",
@@ -1534,7 +1638,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-masshire-career-centers",
@@ -1563,7 +1669,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-massability-vocational-rehabilitation",
@@ -1592,7 +1700,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-pre-employment-transition-services",
@@ -1621,7 +1731,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-nextgen-careers",
@@ -1650,7 +1762,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-dds-employment-day-supports",
@@ -1679,7 +1793,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-masshealth-commonhealth",
@@ -1708,7 +1824,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-work-without-limits",
@@ -1737,7 +1855,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-ma-disability-employment-tax-credit",
@@ -1766,7 +1886,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-young-adults-with-disabilities-grant",
@@ -1795,7 +1917,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-massachusetts-autism-commission",
@@ -1824,7 +1948,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-boston-disabilities-commission-employment",
@@ -1853,7 +1979,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-cambridge-commission-for-persons-with-disabilities",
@@ -1882,12 +2010,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-work-inc",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "WORK Inc.",
     "level": "Private/Nonprofit",
@@ -1911,12 +2041,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-the-caning-company",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "The Caning Company",
     "level": "Private/Nonprofit",
@@ -1940,12 +2072,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-heritage-shredding",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "Heritage Shredding",
     "level": "Private/Nonprofit",
@@ -1969,7 +2103,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-northeast-arc-employment-services",
@@ -1998,12 +2134,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Moderate to high support needs"
   },
   {
     "id": "ma-emp-prospect-meadow-farm",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "Prospect Meadow Farm",
     "level": "Private/Nonprofit",
@@ -2027,12 +2165,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-gateway-arts",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "Gateway Arts",
     "level": "Private/Nonprofit",
@@ -2056,14 +2196,16 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-the-price-center-kindness-caf",
     "state": "MA",
     "category": "Employment",
     "subtype": "Supported employment",
-    "name": "The Price Center & Kindness Café",
+    "name": "The Price Center Employment Services",
     "level": "Private/Nonprofit",
     "federally_funded": false,
     "administrator": "The Price Center",
@@ -2077,7 +2219,7 @@
     "how_to_apply": "es@thepricecenter.org, 617-244-0065.",
     "source_url": "https://www.thepricecenter.org/employment-services/",
     "date_checked": "2026-10-05",
-    "notes": "95% still employed after a year (program's own figure).",
+    "notes": "95% still employed after a year (program's own figure). Runs The Kindness Café paid barista training (see Employers).",
     "funding_route": "",
     "needs_checking": false,
     "to_check": "",
@@ -2085,12 +2227,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-post-22-ben-s-beans",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "Post-22 & Ben's Beans",
     "level": "Private/Nonprofit",
@@ -2114,7 +2258,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-aspire-works-internships",
@@ -2143,7 +2289,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-triangle-inc-prism",
@@ -2172,7 +2320,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-easterseals-ma-job-placement",
@@ -2201,7 +2351,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-jvs-transitions-to-work",
@@ -2230,7 +2382,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-best-buddies-jobs",
@@ -2259,7 +2413,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-charles-river-center",
@@ -2288,7 +2444,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-aane-workmap-lifemap-coaching",
@@ -2317,7 +2475,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Low support needs"
   },
   {
     "id": "ma-emp-minute-man-arc-employment-services",
@@ -2346,7 +2506,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Moderate to high support needs"
   },
   {
     "id": "ma-emp-seven-hills-aspire",
@@ -2375,7 +2537,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-south-shore-industries",
@@ -2404,7 +2568,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-open-sky-i-dd-employment-services",
@@ -2433,12 +2599,14 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-riverside-industries",
     "state": "MA",
-    "category": "Employment",
+    "category": "Employers",
     "subtype": "Employer",
     "name": "Riverside Industries",
     "level": "Private/Nonprofit",
@@ -2462,7 +2630,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-berkshire-county-arc-employment",
@@ -2491,7 +2661,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-cooperative-production-co-op",
@@ -2520,7 +2692,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-project-search-neba",
@@ -2549,7 +2723,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-futurebos-youth-jobs-formerly-successlink",
@@ -2578,7 +2754,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-worcester-accessibility-division",
@@ -2607,7 +2785,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-springfield-office-for-citizens-with-disabilities",
@@ -2636,7 +2816,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-somerville-commission-for-persons-with-disabilities",
@@ -2665,7 +2847,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-newton-youthworks-internships",
@@ -2694,7 +2878,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-venture-autism-employment-services",
@@ -2723,7 +2909,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-mainstay-supportive-housing",
@@ -2752,7 +2940,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-pathways-to-possible",
@@ -2781,7 +2971,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-arc-of-the-south-shore-residential",
@@ -2810,7 +3002,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-northeast-arc-residential",
@@ -2839,7 +3033,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-hou-minute-man-arc-residential",
@@ -2868,7 +3064,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-emp-asperger-works",
@@ -2897,7 +3095,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Low support needs"
   },
   {
     "id": "ma-emp-curry-college-neurodiversity-center",
@@ -2926,7 +3126,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Low support needs"
   },
   {
     "id": "ma-emp-amego-community-employment",
@@ -2955,7 +3157,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Moderate to high support needs"
   },
   {
     "id": "ma-emp-valley-educational-associates",
@@ -2984,7 +3188,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Moderate to high support needs"
   },
   {
     "id": "ma-emp-nashoba-learning-group-adult-services",
@@ -3013,7 +3219,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "Moderate to high support needs"
   },
   {
     "id": "ma-fin-snap-food-benefits",
@@ -3042,7 +3250,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-home-energy-assistance-heap",
@@ -3071,7 +3281,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-lifeline-phone-internet-discount",
@@ -3100,7 +3312,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-federal-credit-for-other-dependents",
@@ -3129,7 +3343,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-attainable-savings-plan-able",
@@ -3158,7 +3374,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-eaedc-cash-assistance",
@@ -3187,7 +3405,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-masshealth-pca-program",
@@ -3216,7 +3436,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-dds-adult-hcbs-waivers",
@@ -3245,7 +3467,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-dds-family-support-flexible-funding",
@@ -3274,7 +3498,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-ma-child-and-family-tax-credit",
@@ -3303,7 +3529,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-catastrophic-illness-in-children-relief-fund",
@@ -3332,7 +3560,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-mbta-transportation-access-pass",
@@ -3361,7 +3591,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-utility-low-income-discount-rate",
@@ -3390,7 +3622,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-boston-taxi-discount-coupons",
@@ -3419,7 +3653,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-boston-tax-help-coalition",
@@ -3448,7 +3684,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-cambridge-taxi-discount-coupons",
@@ -3477,7 +3715,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-cambridge-somerville-heap-office",
@@ -3506,7 +3746,9 @@
     "apply_window": "",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": ""
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-ma-alternative-finance-program",
@@ -3541,7 +3783,9 @@
     "apply_window": "Year-round",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": "https://massachusetts.easterseals.com/get-support/areas-of-support/alternative-finance-program/mini-loan-program"
+    "apply_source": "https://massachusetts.easterseals.com/get-support/areas-of-support/alternative-finance-program/mini-loan-program",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-plan-of-ma-ri-pooled-trust",
@@ -3575,7 +3819,9 @@
     "apply_window": "Year-round",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": "https://www.planofma-ri.org/faq-2022/"
+    "apply_source": "https://www.planofma-ri.org/faq-2022/",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-aane-flutie-foundation-grant",
@@ -3609,7 +3855,9 @@
     "apply_window": "Not published. Limited number of grants each year",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": "https://aane.org/services-programs/grants-free-programs/doug-flutie-jr-foundation-for-autism-grant/"
+    "apply_source": "https://aane.org/services-programs/grants-free-programs/doug-flutie-jr-foundation-for-autism-grant/",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-autism-alliance-flutie-family-grant",
@@ -3643,7 +3891,9 @@
     "apply_window": "Not published. Ask whether a round is open",
     "apply_opens": "",
     "apply_closes": "",
-    "apply_source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding"
+    "apply_source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-flutie-kodi-lee-gives-back-grant",
@@ -3677,7 +3927,9 @@
     "apply_window": "Closed May 21, 2026. Reopens April 2027",
     "apply_opens": "2027-04",
     "apply_closes": "2026-05-21",
-    "apply_source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/"
+    "apply_source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/",
+    "for_profit": false,
+    "support_needs": ""
   },
   {
     "id": "ma-fin-act-today-family-grants",
@@ -3712,6 +3964,163 @@
     "apply_window": "Quarterly. Current cycle: Sept 15 – Oct 15, 2026",
     "apply_opens": "2026-09-15",
     "apply_closes": "2026-10-15",
-    "apply_source": "https://www.act-today.org/apply-for-grant/"
+    "apply_source": "https://www.act-today.org/apply-for-grant/",
+    "for_profit": false,
+    "support_needs": ""
+  },
+  {
+    "id": "ma-emp-chitarra-pastaria",
+    "state": "MA",
+    "category": "Employers",
+    "subtype": "Employer",
+    "name": "Chitarra Pastaria",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Chitarra Pastaria (company co-founded by Ausome Ventures and chef Ken Oringer)",
+    "city": "Cambridge",
+    "region": "Greater Boston",
+    "description": "A handmade pasta company in Cambridge whose production team is autistic. Pasta sales pay the employees' wages.",
+    "eligibility": "Autistic adults. Small team (five employees as of October 2025).",
+    "upfront_cost": "$0 (employer)",
+    "ongoing_cost": "$0. Employees are paid.",
+    "max_benefit": "Wages not published",
+    "how_to_apply": "Through the company or at its stands at the Kendall, Central and Davis Square farmers' markets. Operates out of Little Donkey restaurant, Central Square.",
+    "source_url": "https://binj.news/2026/07/08/in-cambridge-pasta-and-the-possibilities-of-autism-employment/",
+    "date_checked": "2026-10-05",
+    "notes": "A company, not a nonprofit.",
+    "funding_route": "Business revenue",
+    "needs_checking": true,
+    "to_check": "Confirm whether it is hiring and the wage level.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": true,
+    "support_needs": ""
+  },
+  {
+    "id": "ma-emp-bitty-and-beaus-cambridge",
+    "state": "MA",
+    "category": "Employers",
+    "subtype": "Employer",
+    "name": "Bitty & Beau's Coffee (Cambridge)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Bitty & Beau's Coffee (family-owned company with franchise locations)",
+    "city": "Cambridge",
+    "region": "Greater Boston",
+    "description": "A coffee shop staffed by people with intellectual and developmental disabilities, including autism and Down syndrome.",
+    "eligibility": "Adults with intellectual and developmental disabilities.",
+    "upfront_cost": "$0 (employer)",
+    "ongoing_cost": "$0. Employees are paid.",
+    "max_benefit": "Wages not published",
+    "how_to_apply": "Apply online at bittyandbeauscoffee.com.",
+    "source_url": "https://www.bittyandbeauscoffee.com/locations",
+    "date_checked": "2026-10-05",
+    "notes": "A company, not a nonprofit. The Melrose shop is no longer listed on the company's locations page.",
+    "funding_route": "Business revenue",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": true,
+    "support_needs": "Moderate to high support needs"
+  },
+  {
+    "id": "ma-emp-kindness-cafe-price-center",
+    "state": "MA",
+    "category": "Employers",
+    "subtype": "Paid training site",
+    "name": "The Kindness Café (The Price Center)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "The Price Center (nonprofit, founded 1977)",
+    "city": "Newton",
+    "region": "Greater Boston",
+    "description": "Paid barista training in a café run by The Price Center. Opened February 2026.",
+    "eligibility": "Adults with intellectual and developmental disabilities, including autism, who attend Price Center programs.",
+    "upfront_cost": "$0",
+    "ongoing_cost": "$0. Trainees are paid.",
+    "max_benefit": "Wages not published",
+    "how_to_apply": "Through The Price Center: es@thepricecenter.org, 617-244-0065. Café at 25–27 Christina Street, Newton; open Mon, Wed, Fri 8:30am–12pm, by invitation.",
+    "source_url": "https://www.figcitynews.com/?p=54566",
+    "date_checked": "2026-10-05",
+    "notes": "The Price Center also offers day programs, employment supports and residential services.",
+    "funding_route": "Donations + grant",
+    "needs_checking": true,
+    "to_check": "Ask how trainees move into outside jobs.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": "",
+    "support_needs": "Moderate to high support needs"
+  },
+  {
+    "id": "ma-emp-ey-neuro-diverse-center",
+    "state": "MA",
+    "category": "Employers",
+    "subtype": "Hiring program",
+    "name": "EY Neuro-Diverse Center of Excellence (Boston)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "EY (Ernst & Young)",
+    "city": "Boston",
+    "region": "Greater Boston",
+    "description": "The accounting firm's hiring track for neurodivergent people, with an adapted interview, training and onboarding. Roles in automation, data analytics and cybersecurity.",
+    "eligibility": "Neurodivergent adults (autism, ADHD, dyslexia) suited to technical office roles.",
+    "upfront_cost": "$0 (employer)",
+    "ongoing_cost": "$0. Salaried roles.",
+    "max_benefit": "Salaries not published",
+    "how_to_apply": "Through EY careers (ey.com).",
+    "source_url": "https://www.bostonglobe.com/2021/04/12/business/ernst-young-opens-program-boston-attract-autistic-workers-other-neuro-diverse-recruits",
+    "date_checked": "2026-10-05",
+    "notes": "A company, not a nonprofit. EY still lists leaders for its Neuro-Diverse Centers of Excellence.",
+    "funding_route": "Business revenue",
+    "needs_checking": true,
+    "to_check": "The Boston center launched in 2021 and our sources are from then. Confirm it is still hiring in Boston.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": true,
+    "support_needs": "Low support needs"
+  },
+  {
+    "id": "ma-emp-larche-boston-north-culinary",
+    "state": "MA",
+    "category": "Employment",
+    "subtype": "Program",
+    "name": "L'Arche Boston North Culinary Training",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "L'Arche Boston North (nonprofit, part of the international L'Arche network)",
+    "city": "Haverhill",
+    "region": "Northeast",
+    "description": "Commercial-kitchen training with job coaching and mentoring. Meals are sold for pickup and at the Haverhill farmers' market; a public café is planned for spring 2027.",
+    "eligibility": "Adults with intellectual disabilities, including autism and Down syndrome.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "Contact L'Arche Boston North. Kitchen at All Saints Church, Haverhill.",
+    "source_url": "https://wgbh.org/news/local/2026-07-27/haverhill-culinary-program-cooks-up-opportunities-for-adults-with-intellectual-disabilities",
+    "date_checked": "2026-10-05",
+    "notes": "Funded by private donors. L'Arche also runs shared homes.",
+    "funding_route": "Donations + grant",
+    "needs_checking": true,
+    "to_check": "Confirm whether participants are paid.",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": "",
+    "support_needs": "Moderate to high support needs"
   }
 ]

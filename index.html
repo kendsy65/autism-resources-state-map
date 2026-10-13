@@ -6,13 +6,15 @@
 <title>Autism Resources State Map</title>
 <meta name="description" content="Find housing, financing and employment help for autistic adults in your state, and plan the costs over several years.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800&family=Overpass+Mono:wght@400;600&display=swap">
+<script>/* Apply a saved dark-mode choice before paint; light is the default. */try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="wrap">
   <header>
-    <div class="eyebrow">Autism Resources State Map</div>
+    <div class="page-head"><div class="eyebrow">Autism Resources State Map</div><button class="theme-btn" id="theme-btn" type="button">Dark mode</button></div>
+    <nav class="stops" id="stops" aria-label="States in the pilot"></nav>
     <h1>Housing, money and work help for autistic adults</h1>
     <p class="lede">Find programs, agencies and employers that can help, who runs each one, what it costs and how to apply. Then estimate monthly housing costs and income over several years.</p>
   </header>
@@ -97,7 +99,8 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script type="module">
-import { STATES, loadResources, loadJSON, esc } from "./assets/js/common.js";
+import { STATES, loadResources, loadJSON, esc, initThemeToggle } from "./assets/js/common.js";
+initThemeToggle(document.getElementById("theme-btn"));
 import { SSI_STATUS, SUPPORT, FOCUS, MONTHS, loadProfile, saveProfile, clearProfile, validProfile, ageOn, parseDate, toISO, validBirthdate } from "./assets/js/profile.js";
 import { lookupZip } from "./assets/js/geo.js";
 import { mountChat, linkTerms } from "./assets/js/chat.js";
@@ -106,6 +109,10 @@ const counts = Object.fromEntries(await Promise.all(Object.keys(STATES).map(asyn
 const ready = c => counts[c] > 0;
 const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips, c]));
 
+// The pilot states as stops on a line; ready states link to their page.
+document.getElementById("stops").innerHTML = Object.keys(STATES).map(c => ready(c)
+  ? `<a class="stop on" href="state.html?s=${c}" title="${esc(STATES[c].name)}: open">${c}</a>`
+  : `<span class="stop off" title="${esc(STATES[c].name)}: coming soon">${c}</span>`).join("<i></i>");
 document.getElementById("states").innerHTML = Object.entries(STATES).map(([c, s]) => ready(c)
   ? `<a class="statecard" href="state.html?s=${c}" data-state="${c}"><strong>${esc(s.name)}</strong><span>${counts[c]} resources · open directory and planner →</span></a>`
   : `<div class="statecard off"><strong>${esc(s.name)}</strong><span>Coming soon — research in progress</span></div>`).join("");
@@ -172,7 +179,7 @@ function checkDob() {
 $("opt-ssi").innerHTML = radios("ssi", Object.fromEntries(Object.entries(SSI_STATUS).map(([k, v]) => [k, { label: v }])));
 $("opt-focus").innerHTML = radios("focus", {
   Housing: { label: "Housing", note: "Where they'll live and how to pay for it" },
-  Employment: { label: "Employment", note: "Finding and keeping a job" },
+  Employment: { label: "Employment", note: "Job support and employers that hire autistic adults" },
   Both: { label: "Both", note: FOCUS.Both },
 });
 

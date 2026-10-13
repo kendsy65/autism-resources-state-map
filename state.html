@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>State Resources</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;600;800&family=Overpass+Mono:wght@400;600&display=swap">
+<script>/* Apply a saved dark-mode choice before paint; light is the default. */try{if(localStorage.getItem("theme")==="dark")document.documentElement.dataset.theme="dark"}catch(e){}</script>
 <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 <div class="wrap">
-  <nav class="topbar"><a href="index.html">← All states</a><span class="checked" id="checked"></span></nav>
+  <nav class="topbar"><a href="index.html">← All states</a><span class="row"><span class="checked" id="checked"></span><button class="theme-btn" id="theme-btn" type="button">Dark mode</button></span></nav>
   <header>
     <div class="eyebrow" id="eyebrow">Autism Resources State Map</div>
     <h1 id="title">Loading…</h1>
@@ -119,7 +120,10 @@
 </div>
 
 <script type="module">
-import { STATES, CATEGORIES, esc, safeUrl, loadJSON, loadResources } from "./assets/js/common.js";
+import { STATES, CATEGORIES, CATEGORY_LABEL, FOCUS_CATEGORIES, esc, safeUrl, loadJSON, loadResources, initThemeToggle } from "./assets/js/common.js";
+initThemeToggle(document.getElementById("theme-btn"));
+// Route letter for each category's badge.
+const ROUTE = { Housing: "H", Financing: "F", Employment: "S", Employers: "E" };
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, nearestRegion, miles } from "./assets/js/geo.js";
@@ -148,48 +152,56 @@ const zips = await loadJSON(`data/${code}/zips.json`).catch(() => ({}));
 const coordsOf = placeIndex(zips);
 const home = me ? lookupZip(me.zip, { [code]: zips }) : null;
 const KEY = `filters-${code}`;
-const st = { cat: "All", lv: new Set(Object.keys(LV)), region: "All", q: "" };
-try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s) { st.cat = s.cat || "All"; if (s.lv?.length) st.lv = new Set(s.lv); st.region = s.region || "All"; } } catch {}
+const st = { cats: new Set(), lv: new Set(Object.keys(LV)), region: "All", q: "" };
+try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s) { st.cats = new Set((s.cats || []).filter(c => CATEGORIES.includes(c))); if (s.lv?.length) st.lv = new Set(s.lv); st.region = s.region || "All"; } } catch {}
 
 const latest = D.map(r => r.date_checked).filter(Boolean).sort().pop();
 if (latest) $("checked").textContent = `sources checked ${latest}`;
 
 const fmt = v => /^(not published|varies|not applicable|n\/a)/i.test(v || "") ? `<span class="np">${esc(v)}</span>` : `<span class="money">${esc(v)}</span>`;
 
+// Summary tiles follow the distance filter, so they're redrawn on every render.
+function renderSummary() {
 $("summary").innerHTML = CATEGORIES.map(c => {
   const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && r.category === c);
-  return `<div class="sum"><h3>${c}</h3><div class="big">${rows.length}</div><div class="bars">${rows.length
+  return `<div class="sum cat-${c}"><div class="sum-top"><span class="route" aria-hidden="true">${ROUTE[c]}</span><h3>${CATEGORY_LABEL[c]}</h3></div><div class="big">${rows.length}</div><div class="bars">${rows.length
     ? Object.keys(LV).map(l => `<span class="tag ${lvClass(l)}">${LV[l]} ${rows.filter(r => r.level === l).length}</span>`).join("")
     : `<span class="np" style="font-size:13px">Research in progress</span>`}</div></div>`;
 }).join("") + (() => {
   // Nonprofit section: one tap shows only nonprofit organizations across every category.
-  const rows = rankResources(D, { home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && r.level === "Private/Nonprofit");
-  return `<button class="sum sum-btn" id="np-card" aria-describedby="np-desc"><h3>Nonprofits</h3><div class="big">${rows.length}</div>
-    <div class="bars">${CATEGORIES.map(c => `<span class="tag lv-Private">${c} ${rows.filter(r => r.category === c).length}</span>`).join("")}</div>
+  const rows = rankResources(D, { home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && r.level === "Private/Nonprofit" && !r.for_profit);
+  return `<button class="sum sum-btn" id="np-card" aria-describedby="np-desc"><div class="sum-top"><span class="route" aria-hidden="true">N</span><h3>Nonprofits</h3></div><div class="big">${rows.length}</div>
+    <div class="bars">${CATEGORIES.map(c => `<span class="tag cat cat-${c}">${CATEGORY_LABEL[c]} ${rows.filter(r => r.category === c).length}</span>`).join("")}</div>
     <span class="hint" id="np-desc" style="display:block;margin:8px 0 0">Show only nonprofit organizations →</span></button>`;
 })();
+}
 
-$("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" aria-pressed="false">${c}</button>`).join("");
+$("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" class="cat-${c}" aria-pressed="false">${c === "All" ? "All" : CATEGORY_LABEL[c]}</button>`).join("");
 $("levels").innerHTML = Object.keys(LV).map(l => `<button class="chip ${lvClass(l)}" data-lv="${l}" aria-pressed="${st.lv.has(l)}">${LV[l]}</button>`).join("")
   + `<span class="tag ff" title="Federal money, run by a state or city agency">Federally funded</span>`;
 const regions = [...new Set(D.map(r => r.region).filter(r => r && r !== "Statewide"))].sort();
 $("region").innerHTML = `<option value="All">All regions</option>` + regions.map(r => `<option>${esc(r)}</option>`).join("");
 if (!regions.includes(st.region)) st.region = "All";
-if (me) st.cat = me.focus === "Both" ? "All" : me.focus;
+if (me) st.cats = me.focus === "Both" ? new Set() : new Set(FOCUS_CATEGORIES[me.focus]);
+const catOn = c => st.cats.size === 0 || st.cats.has(c);
+// The Nonprofits card shows only the Private/Nonprofit level, minus companies.
+const npOnlyMode = () => st.lv.size === 1 && st.lv.has("Private/Nonprofit");
 $("region").value = st.region;
 st.sort = home ? "suggested" : "default";
-st.within = home ? 50 : Infinity;
+st.within = home ? 50 : Infinity; // set before the first render so tiles and list agree
 if (home) { $("near-row").hidden = false; $("within").value = "50"; }
 
 function render() {
+  renderSummary();
   const q = st.q.toLowerCase();
-  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && (st.cat === "All" || r.category === st.cat) && st.lv.has(r.level)
+  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && catOn(r.category) && !(npOnlyMode() && r.for_profit) && st.lv.has(r.level)
     && (st.region === "All" || r.region === st.region || r.region === "Statewide")
     && (!q || Object.values(r).join(" ").toLowerCase().includes(q)));
   $("count").textContent = `Showing ${rows.length} of ${D.length} resources` + (st.region !== "All" ? ` (${st.region} plus statewide)` : "")
     + (home && st.within < Infinity ? ` within ${st.within} miles of ${home.place}, plus statewide` : "");
-  const emptyMsg = !stateRows.length && st.cat !== "All" ? `We haven't finished researching ${S.name} yet. Check back soon.`
-    : st.cat !== "All" && !D.some(r => r.category === st.cat) ? `No ${st.cat} resources added for ${S.name} yet.`
+  const emptyCats = [...st.cats].filter(c => !D.some(r => r.category === c));
+  const emptyMsg = !stateRows.length && st.cats.size ? `We haven't finished researching ${S.name} yet. Check back soon.`
+    : st.cats.size && emptyCats.length === st.cats.size ? `No ${emptyCats.map(c => CATEGORY_LABEL[c].toLowerCase()).join(" or ")} resources added for ${S.name} yet.`
     : "No resources match. Clear the search or turn a filter back on.";
   $("list").innerHTML = rows.length ? rows.map(r => {
     const u = safeUrl(r.source_url);
@@ -198,7 +210,7 @@ function render() {
     const distTag = r.dist != null ? `<span class="tag dist">${r.dist < 1 ? "<1" : Math.round(r.dist)} mi</span>` : "";
     return `<details class="res" id="res-${esc(r.id)}"><summary>
       <span class="r-name">${esc(r.name)}</span>
-      <span class="r-tags">${fitTag}${checkTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}<span class="tag cat">${esc(r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
+      <span class="r-tags">${fitTag}${checkTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}${r.for_profit ? `<span class="tag lv-Private" title="A business, not a nonprofit">Company</span>` : ""}<span class="tag cat cat-${esc(r.category)}">${esc(CATEGORY_LABEL[r.category] || r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
       <span class="r-desc">${esc(r.description)}</span>
     </summary><div class="body"><dl>
       <dt>Run by</dt><dd>${esc(r.administrator)}</dd>
@@ -208,27 +220,36 @@ function render() {
       <dt>Maximum benefit</dt><dd>${fmt(r.max_benefit)}</dd>
       <dt>How to apply</dt><dd>${esc(r.how_to_apply)}</dd>
       ${r.apply_steps?.length ? `<dt>Steps to apply</dt><dd>${(() => { const stt = applyStatus(r); return stt.text ? `<span class="tag win-${stt.state || "na"}">${esc(stt.text)}</span>` : ""; })()}<ol class="apply-steps">${r.apply_steps.map(x => `<li>${esc(x)}</li>`).join("")}</ol></dd>` : ""}
+      ${r.support_needs ? `<dt>Best suited to</dt><dd>${esc(r.support_needs)} <span class="checked">(our team's reading)</span></dd>` : ""}
       ${r.funding_route ? `<dt>Usually paid for by</dt><dd>${esc(r.funding_route)}</dd>` : ""}
       ${r.notes ? `<dt>Watch out for</dt><dd><div class="note">${esc(r.notes)}</div></dd>` : ""}
       ${r.needs_checking ? `<dt>Still being checked</dt><dd><div class="note">${esc(r.to_check)}</div></dd>` : ""}
       <dt>Source</dt><dd>${u ? `<a href="${esc(u)}" target="_blank" rel="noopener">${esc(u.replace(/^https?:\/\//, ""))}</a>` : `<span class="np">No source</span>`}<br><span class="checked">checked ${esc(r.date_checked)}</span></dd>
     </dl></div></details>`;
   }).join("") : `<div class="empty">${emptyMsg}</div>`;
-  document.querySelectorAll("#cats button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === st.cat));
-  const npOnly = st.lv.size === 1 && st.lv.has("Private/Nonprofit");
+  document.querySelectorAll("#cats button").forEach(b => b.setAttribute("aria-pressed", b.dataset.cat === "All" ? st.cats.size === 0 : st.cats.has(b.dataset.cat)));
+  const npOnly = npOnlyMode();
   $("np-card").setAttribute("aria-pressed", npOnly);
   $("np-desc").textContent = npOnly ? "Showing only nonprofits · tap to show everyone" : "Show only nonprofit organizations →";
-  try { localStorage.setItem(KEY, JSON.stringify({ cat: st.cat, lv: [...st.lv], region: st.region })); } catch {}
+  try { localStorage.setItem(KEY, JSON.stringify({ cats: [...st.cats], lv: [...st.lv], region: st.region })); } catch {}
 }
-$("np-card").addEventListener("click", () => {
+$("summary").addEventListener("click", e => {
+  if (!e.target.closest("#np-card")) return;
   const only = st.lv.size === 1 && st.lv.has("Private/Nonprofit");
   st.lv = new Set(only ? Object.keys(LV) : ["Private/Nonprofit"]);
-  st.cat = "All";
+  st.cats.clear();
   document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", st.lv.has(b.dataset.lv)));
   render();
   document.querySelector(".filters").scrollIntoView({ behavior: "smooth", block: "start" });
 });
-$("cats").addEventListener("click", e => { const b = e.target.closest("button"); if (b) { st.cat = b.dataset.cat; render(); } });
+// Categories combine: tap several to see them together; "All" clears.
+$("cats").addEventListener("click", e => {
+  const b = e.target.closest("button"); if (!b) return;
+  const c = b.dataset.cat;
+  if (c === "All") st.cats.clear(); else st.cats.has(c) ? st.cats.delete(c) : st.cats.add(c);
+  if (st.cats.size === CATEGORIES.length) st.cats.clear();
+  render();
+});
 $("levels").addEventListener("click", e => { const b = e.target.closest("button[data-lv]"); if (!b) return; const l = b.dataset.lv; st.lv.has(l) ? st.lv.delete(l) : st.lv.add(l); b.setAttribute("aria-pressed", st.lv.has(l)); render(); });
 $("region").addEventListener("change", e => { st.region = e.target.value; render(); });
 $("within").addEventListener("change", e => { st.within = +e.target.value; render(); });
@@ -256,7 +277,7 @@ if (me) { renderPlan(me, params); linkTerms($("plan"), glossary); }
 // Opens a resource in the directory with filters cleared so it's always visible.
 function openResource(id) {
   setView("dir");
-  st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; st.q = ""; $("q").value = ""; st.region = "All"; $("region").value = "All";
+  st.within = Infinity; $("within").value = "Infinity"; st.cats.clear(); st.q = ""; $("q").value = ""; st.region = "All"; $("region").value = "All";
   st.lv = new Set(Object.keys(LV));
   document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
   render();
@@ -352,7 +373,7 @@ else {
   }).join("");
   document.querySelectorAll(".supports").forEach(sec => sec.addEventListener("click", e => {
     const a = e.target.closest("a[data-open]"); if (!a) return;
-    e.preventDefault(); setView("dir"); st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; st.lv = new Set(Object.keys(LV));
+    e.preventDefault(); setView("dir"); st.within = Infinity; $("within").value = "Infinity"; st.cats.clear(); st.lv = new Set(Object.keys(LV));
     document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
     render(); const el = document.getElementById(a.dataset.open); if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
   }));
@@ -418,7 +439,7 @@ else {
   const n = (reg, c) => D.filter(x => x.category === c && x.region === reg).length;
   const max = Math.max(1, ...regions.flatMap(reg => cols.map(c => n(reg, c))));
   const cell = v => `<td class="n" style="background:color-mix(in srgb, var(--accent) ${Math.round(v / max * 70)}%, var(--surface));color:${v / max > .5 ? "var(--surface)" : "var(--ink)"}">${v}</td>`;
-  $("heat").innerHTML = `<thead><tr><th>Region</th>${cols.map(c => `<th>${c}</th>`).join("")}</tr></thead><tbody>`
+  $("heat").innerHTML = `<thead><tr><th>Region</th>${cols.map(c => `<th>${CATEGORY_LABEL[c]}</th>`).join("")}</tr></thead><tbody>`
     + regions.map(reg => `<tr><th scope="row">${esc(reg)}</th>${cols.map(c => cell(n(reg, c))).join("")}</tr>`).join("")
     + `<tr><th scope="row">Statewide (all regions)</th>${cols.map(c => `<td class="n">${n("Statewide", c)}</td>`).join("")}</tr></tbody>`;
 
@@ -499,7 +520,7 @@ function renderPlan(me, params) {
   const b = parseDate(me.birthdate);
   const region = home && params?.regions ? nearestRegion(home, params.regions, coordsOf) : null;
   const sup = SUPPORT[me.support];
-  const inFocus = r => me.focus === "Both" || r.category === me.focus;
+  const inFocus = r => FOCUS_CATEGORIES[me.focus].includes(r.category);
 
   // Closest good matches: local programs in their focus, best fit first, then nearest.
   const near = home ? rankResources(stateRows.filter(inFocus), { support: me.support, home }, coordsOf, "suggested")
@@ -543,7 +564,7 @@ function renderPlan(me, params) {
       <span class="tag cat">${esc(SSI_STATUS[me.ssi])}</span><span class="tag cat">${esc(FOCUS[me.focus])}</span></div>
     ${watch}
     <h3>Next steps for someone age ${age}</h3>
-    ${steps.length ? `<ol class="steps">${steps.map(s => `<li><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}</span></li>`).join("")}</ol>`
+    ${steps.length ? `<ol class="steps">${steps.map(s => `<li class="${s.when}"><span class="when ${s.when}">${s.when === "now" ? "Now" : "Coming up"}</span><strong>${esc(s.title)}</strong><span class="d">${esc(s.detail.replace(/\.$/, ""))}.${link(s.source)}</span></li>`).join("")}</ol>`
       : `<p class="hint">No time-sensitive steps for this age yet. Browse the directory below.</p>`}
     ${nearHtml}
     ${moneyHtml}
@@ -551,7 +572,7 @@ function renderPlan(me, params) {
     <p class="hint" style="margin-top:12px">The directory below shows ${esc(FOCUS[me.focus].toLowerCase())} within 50 miles${home ? ` of ${esc(home.place)}` : ""} plus statewide programs${me.support !== "unsure" ? ", with programs that fit their support level first" : ", nearest first"}. Your answers stay in this browser.</p>`;
   $("plan-clear").addEventListener("click", () => { clearProfile(); location.reload(); });
   $("money-all")?.addEventListener("click", () => {
-    setView("dir"); st.cat = "Financing"; st.lv = new Set(Object.keys(LV)); st.within = Infinity; $("within").value = "Infinity";
+    setView("dir"); st.cats = new Set(["Financing"]); st.lv = new Set(Object.keys(LV)); st.within = Infinity; $("within").value = "Infinity";
     document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
     render(); document.querySelector(".filters").scrollIntoView({ behavior: "smooth", block: "start" });
   });
@@ -561,7 +582,7 @@ function renderPlan(me, params) {
     e.preventDefault();
     setView("dir");
     let el = document.getElementById(a.dataset.open);
-    if (!el) { st.within = Infinity; $("within").value = "Infinity"; st.cat = "All"; render(); el = document.getElementById(a.dataset.open); }
+    if (!el) { st.within = Infinity; $("within").value = "Infinity"; st.cats.clear(); render(); el = document.getElementById(a.dataset.open); }
     if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
   });
 }

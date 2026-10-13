@@ -1,33 +1,34 @@
 /* Shared styles. Tokens and components carried over from prototype/ma-directory.html. */
+/* Wayfinding: the site as a transit map. Light by default for everyone; dark only when the visitor turns it on.
+   Each category is a route with its own color; the pilot states are stops on a line; next steps run down a line in date order. */
 :root{
-  --bg:#f4f6f5; --surface:#ffffff; --ink:#17232b; --muted:#56656d; --line:#d9e0de;
-  --accent:#1f5f7a; --accent-soft:#e1edf2;
-  --fed:#3b4aa0; --fed-bg:#e6e8f6;
-  --state:#1d6b57; --state-bg:#dff0ea;
-  --city:#8a5a00; --city-bg:#f8ecd2;
-  --priv:#7a3d6e; --priv-bg:#f3e4ef;
-  --warn:#9a3412; --warn-bg:#fcebe3;
-  --display:"Source Serif 4", Georgia, serif;
-  --body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#12203a; --muted:#4b5872; --line:#d5dae4;
+  --accent:#12203a; --accent-soft:#e9edf4; --link:#2156a8;
+  --fed:#2b3f86; --fed-bg:#e7eaf6;
+  --state:#0b6a47; --state-bg:#dcf0e6;
+  --city:#865100; --city-bg:#f8ecd5;
+  --priv:#74378a; --priv-bg:#f2e6f5;
+  --warn:#a3440b; --warn-bg:#fbe7d8;
+  /* Route colors, one per category (white text on each passes WCAG AA) */
+  --c-housing:#2560b8; --c-financing:#0d7a52; --c-support:#a85a0c; --c-employers:#8a3aa6; --on-route:#ffffff;
+  --display:"Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --body:"Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"Overpass Mono", ui-monospace, Menlo, monospace;
+  color-scheme:light;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#11181c; --surface:#182227; --ink:#e4ebe9; --muted:#9aa9ae; --line:#2b383e;
-  --accent:#7cc0dc; --accent-soft:#1d3440;
-  --fed:#aab4f2; --fed-bg:#252c55; --state:#86d4b9; --state-bg:#173a30;
-  --city:#efc56e; --city-bg:#3d2f12; --priv:#e2a7d5; --priv-bg:#3d2237;
-  --warn:#f5a07a; --warn-bg:#3e2216; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#11181c; --surface:#182227; --ink:#e4ebe9; --muted:#9aa9ae; --line:#2b383e;
-  --accent:#7cc0dc; --accent-soft:#1d3440;
-  --fed:#aab4f2; --fed-bg:#252c55; --state:#86d4b9; --state-bg:#173a30;
-  --city:#efc56e; --city-bg:#3d2f12; --priv:#e2a7d5; --priv-bg:#3d2237;
-  --warn:#f5a07a; --warn-bg:#3e2216; color-scheme:dark}
+  --bg:#0f1729; --surface:#172238; --ink:#e7ecf5; --muted:#a6b1c6; --line:#2a3854;
+  --accent:#e7ecf5; --accent-soft:#1f2c46; --link:#8fb9f3;
+  --fed:#b3bdf3; --fed-bg:#252f57; --state:#6fd6a8; --state-bg:#123527;
+  --city:#efc56e; --city-bg:#3a2b10; --priv:#dcaaf0; --priv-bg:#3a2346;
+  --warn:#f5a46a; --warn-bg:#3b2414;
+  --c-housing:#3f78cf; --c-financing:#13875d; --c-support:#b5650f; --c-employers:#9a4bb6;
+  color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55}
 .wrap{max-width:980px;margin:0 auto;padding-inline:16px;padding-block:28px 64px}
-h1,h2{font-family:var(--display);text-wrap:balance;margin:0;letter-spacing:-.01em}
+h1,h2{font-family:var(--display);font-weight:800;text-wrap:balance;margin:0;letter-spacing:-.02em}
 h1{font-size:clamp(1.7rem,4vw,2.3rem);line-height:1.15}
 h2{font-size:1.35rem;margin-bottom:10px}
 .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
@@ -67,7 +68,7 @@ details.res>summary::-webkit-details-marker{display:none}
 dl{display:grid;grid-template-columns:minmax(120px,170px) 1fr;gap:8px 16px;margin:14px 0 0}
 dt{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;padding-top:2px}
 dd{margin:0;min-width:0;overflow-wrap:anywhere}
-dd a{color:var(--accent)}
+dd a{color:var(--link)}
 .money{font-variant-numeric:tabular-nums}
 .np{color:var(--muted);font-style:italic}
 .note{background:var(--warn-bg);color:var(--ink);border-radius:6px;padding:8px 10px;font-size:14px}
@@ -103,7 +104,7 @@ section.log{margin-top:40px;display:grid;gap:18px}
 .ptbl th,.ptbl td,.heat th,.heat td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
 .ptbl th,.heat th{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:var(--bg)}
 .ptbl td.v{font-variant-numeric:tabular-nums;font-weight:600;white-space:nowrap}
-.ptbl td a{color:var(--accent)}
+.ptbl td a{color:var(--link)}
 .heat td.n{text-align:center;font-variant-numeric:tabular-nums;font-weight:600;min-width:72px}
 @media (max-width:700px){.est{grid-template-columns:1fr}}
 @media (max-width:560px){
@@ -114,7 +115,7 @@ section.log{margin-top:40px;display:grid;gap:18px}
 }
 
 /* ---------- Site chrome ---------- */
-a{color:var(--accent)}
+a{color:var(--link)}
 .topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:22px;font-size:14px}
 .topbar a{text-decoration:none;font-weight:600}
 .status.ok{background:var(--state-bg);color:var(--state)}
@@ -293,3 +294,40 @@ details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size
 .yby-t th,.yby-t td{padding:6px 10px;font-size:13px}
 .yby-t td.v{text-align:right}
 .tblwrap:has(.yby-t){max-height:320px;overflow-y:auto}
+
+/* ---------- Wayfinding ---------- */
+.cat-Housing{--cat:var(--c-housing)} .cat-Financing{--cat:var(--c-financing)} .cat-Employment{--cat:var(--c-support)} .cat-Employers{--cat:var(--c-employers)}
+.route{display:inline-grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:var(--cat,var(--ink));color:var(--on-route);font-weight:800;font-size:14px;line-height:1}
+.sum-btn .route{background:var(--ink);color:var(--surface)}
+.sum-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.sum-top h3{margin:0}
+.sum .big{font-family:var(--mono);font-weight:600}
+.tag.cat[class*="cat-"]::before,.seg button[data-cat]:not([data-cat="All"])::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cat,var(--muted));margin-right:6px;vertical-align:1px}
+.seg button[aria-pressed="true"][data-cat]::before{box-shadow:0 0 0 2px var(--surface)}
+/* Pilot states as stops on a line */
+.stops{display:flex;align-items:center;max-width:340px;margin:14px 0 6px;font-family:var(--mono);font-weight:600;font-size:12px}
+.stops i{flex:1;height:4px;background:var(--ink);min-width:24px}
+.stops .stop{display:inline-grid;place-items:center;width:40px;height:40px;border-radius:50%;border:4px solid var(--ink);background:var(--surface);color:var(--ink);text-decoration:none;flex:none}
+.stops a.stop.on{background:var(--ink);color:var(--surface)}
+.stops a.stop:hover{background:var(--c-housing);border-color:var(--c-housing);color:var(--on-route)}
+.stops .stop.off{opacity:.55}
+/* Next steps run down a line: filled stops are open now, hollow stops are coming up */
+.steps{gap:0}
+.steps li{display:block;position:relative;background:none;border-radius:0;padding:0 0 16px 36px}
+.steps li::before{content:"";position:absolute;left:3px;top:2px;width:20px;height:20px;border-radius:50%;border:4px solid var(--ink);background:var(--ink);box-sizing:border-box}
+.steps li.soon::before{background:var(--surface)}
+.steps li::after{content:"";position:absolute;left:11px;top:22px;bottom:-2px;width:4px;background:var(--ink)}
+.steps li:last-child::after{display:none}
+.steps .when{display:block;grid-row:auto;background:none;padding:0;border-radius:0;color:var(--state);font-size:11px;margin-bottom:1px}
+.steps .when.soon{color:var(--warn)}
+.steps strong,.steps .d{display:block}
+/* Dark mode switch */
+.theme-btn{font:inherit;font-size:13px;font-weight:600;display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.theme-btn::before{content:"";width:12px;height:12px;border-radius:50%;background:linear-gradient(90deg,var(--ink) 50%,var(--surface) 50%);border:1px solid var(--ink)}
+.theme-btn:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.page-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+/* Five summary tiles: one row on wide screens, two across on phones with Nonprofits spanning the row */
+.summary{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.summary .sum{padding:12px 13px;min-width:0}
+.summary .bars{gap:4px}
+@media (max-width:860px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.summary .sum-btn{grid-column:1/-1}}

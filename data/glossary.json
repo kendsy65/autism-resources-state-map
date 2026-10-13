@@ -978,6 +978,27 @@
         "inflation",
         "cpi"
       ]
+    },
+    {
+      "id": "employers_vs_support",
+      "term": "Employers vs employment support",
+      "aliases": [
+        "employers",
+        "employer",
+        "employment support",
+        "paid training site",
+        "hiring program",
+        "job support"
+      ],
+      "short": "Employment support means services that help someone find and keep a job: coaching, training and placement. Employers are businesses and programs that hire and pay autistic adults directly. 'Paid training site' means trainees are paid while they learn (like a café), and 'Hiring program' means a company's dedicated hiring track.",
+      "more": "Entries marked 'Company' are businesses, not nonprofits. Pay isn't published for most employers, so ask each one.",
+      "source": "",
+      "kind": "site",
+      "see_also": [
+        "supported_employment",
+        "massability"
+      ],
+      "search": "Supported employment"
     }
   ]
 }

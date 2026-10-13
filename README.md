@@ -37,7 +37,7 @@ data/
   US/economic-parameters.json Inflation inputs: Fed projections, CPI, SSA COLA (refresh after each FOMC meeting: Mar, Jun, Sep, Dec)
   glossary.json              ~57 plain-language terms with sources, used by the assistant
   <STATE>/zips.json          ZIP -> town, county, lat/lon (GeoNames, CC BY 4.0; rebuild with scripts/build-zips.py)
-  MA/resources.json          127 Massachusetts housing, financing + employment resources (52 nonprofit)
+  MA/resources.json          132 Massachusetts resources: housing, financing, employment support, employers
   MA/resources.csv           Same data, for spreadsheets
   MA/planner-parameters.json Numbers the cost planner uses (SSI, rent shares, DDS charges, earnings limits, financing)
   CT/resources.json          Empty, to fill in Week 1
@@ -51,15 +51,15 @@ Product brief and 3-week build plan live in the claude.ai project "Autism Resour
 
 ## Status (Oct 5, 2026)
 
-| State | Housing | Financing | Employment | Nonprofits (all categories) | Planner numbers |
-|---|---|---|---|---|---|
-| MA | 50 resources | 23 resources | 54 resources | 52 | Done, incl. financing |
-| CT | Not started | Not started | Not started | Not started | Not started |
-| NY | Not started | Not started | Not started | Not started | Not started |
+| State | Housing | Financing | Employment support | Employers | Nonprofits (all categories) | Planner numbers |
+|---|---|---|---|---|---|---|
+| MA | 50 | 23 | 49 | 11 | 54 | Done, incl. financing and inflation |
+| CT | Not started | Not started | Not started | Not started | Not started | Not started |
+| NY | Not started | Not started | Not started | Not started | Not started | Not started |
 
 Plus 5 federal Social Security resources (`data/US/`) shown in every state.
 
-**MA open items:** 10 entries are marked `needs_checking` (see `to_check`). Held back until confirmed: Breaking Grounds Café (closed; its site redirects to Northeast Arc), Flutie Spectrum Enterprises (no longer mentioned by the Flutie Foundation), Autism Works Inc. of Lawrence (the website in our notes belongs to an unrelated company in Washington State).
+**MA open items:** 10 entries are marked `needs_checking` (see `to_check`). Held back until confirmed: Breaking Grounds Café (closed; its site redirects to Northeast Arc), Flutie Spectrum Enterprises (no longer mentioned by the Flutie Foundation), Autism Works Inc. of Lawrence (the website in our notes belongs to an unrelated company in Washington State), Citizens Bank Autism at Work (program page removed from its careers site), Bitty & Beau's Melrose (no longer on the company's locations page).
 
 Site skeleton is built. A state lights up on the map automatically once its `resources.json` has entries; its planner tab turns on once `planner-parameters.json` exists.
 
