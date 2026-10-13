@@ -431,6 +431,10 @@
           {
             "title": "Send documents when asked",
             "detail": "Near the top of a list, the housing authority asks for documents (such as a birth certificate, pay stubs, bank statements, ID) and a Supplemental Application. Respond even if you don't have everything yet. Some documents expire after 90 days."
+          },
+          {
+            "title": "Accept an offer, or decline carefully",
+            "detail": "If you turn down 3 offers, you're removed from public housing waitlists at every housing authority."
           }
         ],
         "sources": [
@@ -458,7 +462,7 @@
           },
           {
             "title": "Apply, and tell your landlord",
-            "detail": "Apply online through the Housing Help Hub, or ask your Regional Administering Agency for help. Your landlord must submit their own application within 21 days or yours times out.",
+            "detail": "Apply online through the Housing Help Hub, or ask your Regional Administering Agency for help. Your landlord must submit their own application within 21 days or yours times out. Some applicants are asked afterward to verify their identity through ID.me; watch for an email with instructions.",
             "time": "20–30 minutes"
           },
           {

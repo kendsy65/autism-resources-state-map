@@ -140,6 +140,8 @@ import { mountChat, linkTerms } from "./assets/js/chat.js";
 import { SUPPORT_ITEMS, SOURCES, itemAmount, perMonth, compareScenarios, applyStatus, INFLATION_CHOICES, inflationPath } from "./assets/js/support.js";
 
 const $ = id => document.getElementById(id);
+// Read the link's #section once, before tab switching rewrites the address.
+const initialHash = location.hash;
 const code = (new URLSearchParams(location.search).get("s") || "").toUpperCase();
 if (!STATES[code]) location.replace("index.html");
 const S = STATES[code];
@@ -580,7 +582,7 @@ function selectTiming(id, focus = false) {
 }
 if (timingItems.length) {
   // state.html?s=NY#timing-<id> opens that program's map (used by the home page's deadlines).
-  const want = location.hash.startsWith("#timing-") ? decodeURIComponent(location.hash.slice(8)) : "";
+  const want = initialHash.startsWith("#timing-") ? decodeURIComponent(initialHash.slice(8)) : "";
   if (timingItems.some(t => t.id === want)) twSel = want;
   renderTimingList(); renderProcess();
   $("tw-list").addEventListener("click", e => { const b = e.target.closest("[data-tw]"); if (b) selectTiming(b.dataset.tw); });
