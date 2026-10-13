@@ -6,34 +6,35 @@ import { monthlyEarnings, ssiAfterEarnings, ddsCharge } from "./planner.js";
 export const SOURCES = ["Government", "Nonprofit"];
 
 // to: "person" (adds to what the person has each month) or "family" (paid to the caregiver household).
+// resource: the matching directory entry without its state prefix (e.g. "ct-" + "fin-...").
 // when(ctx): whether to tick it by default. ctx = { age, benefit, housing }.
 export const SUPPORT_ITEMS = [
   { id: "ma_child_family_credit", source: "Government", to: "family", per: "year",
-    param: ["financing", "ma_child_family_credit_per_dependent"], resource: "ma-fin-ma-child-and-family-tax-credit",
+    param: ["financing", "ma_child_family_credit_per_dependent"], resource: "fin-ma-child-and-family-tax-credit",
     name: "MA Child and Family Tax Credit", note: "Refundable. They must live with you more than half the year.",
     when: c => c.housing === "family" },
   { id: "federal_odc", source: "Government", to: "family", per: "year",
-    param: ["financing", "federal_credit_other_dependents"], resource: "ma-fin-federal-credit-for-other-dependents",
+    param: ["financing", "federal_credit_other_dependents"], resource: "fin-federal-credit-for-other-dependents",
     name: "Federal Credit for Other Dependents", note: "Nonrefundable: only lowers tax you already owe.",
     when: c => c.housing === "family" },
   { id: "lifeline", source: "Government", to: "person", per: "month",
-    param: ["financing", "lifeline_monthly_discount"], resource: "ma-fin-lifeline-phone-internet-discount",
+    param: ["financing", "lifeline_monthly_discount"], resource: "fin-lifeline-phone-internet-discount",
     name: "Lifeline phone/internet discount", note: "Anyone on SSI or SNAP qualifies.",
     when: c => c.benefit === "ssi" },
   { id: "heap", source: "Government", to: "person", per: "year",
-    param: ["financing", "heap_max_2025_26"], field: "utility", resource: "ma-fin-home-energy-assistance-heap",
+    param: ["financing", "heap_max_2025_26"], field: "utility", resource: "fin-home-energy-assistance-heap",
     name: "Fuel assistance (HEAP), gas/electric maximum", note: "A maximum, not a typical amount. Depends on income and fuel type.",
     when: () => false },
   { id: "kodi_lee", source: "Nonprofit", to: "person", per: "once",
-    param: ["nonprofit", "kodi_lee_music_grant_max"], resource: "ma-fin-flutie-kodi-lee-gives-back-grant",
+    param: ["nonprofit", "kodi_lee_music_grant_max"], resource: "fin-flutie-kodi-lee-gives-back-grant",
     name: "Kodi Lee Gives Back music grant (maximum)", note: "Music lessons, therapy or equipment. Ages 15+, once only.",
     when: c => c.age != null && c.age >= 15 },
   { id: "act_today", source: "Nonprofit", to: "family", per: "once",
-    param: ["nonprofit", "act_today_grant_max"], resource: "ma-fin-act-today-family-grants",
+    param: ["nonprofit", "act_today_grant_max"], resource: "fin-act-today-family-grants",
     name: "ACT Today! family grant (maximum)", note: "Paid straight to the provider or vendor. Household income is considered.",
     when: () => false },
   { id: "autism_alliance", source: "Nonprofit", to: "family", per: "once",
-    param: ["nonprofit", "autism_alliance_family_grant_max"], resource: "ma-fin-autism-alliance-flutie-family-grant",
+    param: ["nonprofit", "autism_alliance_family_grant_max"], resource: "fin-autism-alliance-flutie-family-grant",
     name: "Autism Alliance family grant (maximum)", note: "Aimed at MetroWest families of a child; check it fits.",
     when: () => false },
 ];

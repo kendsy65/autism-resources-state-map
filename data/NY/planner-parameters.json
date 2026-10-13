@@ -936,5 +936,178 @@
       "Monroe",
       "Niagara"
     ]
+  },
+  "financing": {
+    "snap_max_1_person": {
+      "value": 306,
+      "unit": "USD/month",
+      "source": "https://otda.ny.gov/programs/snap/",
+      "note": "Standards effective October 1, 2026"
+    },
+    "snap_gross_income_limit_1_person_disabled_household": {
+      "value": 2660,
+      "unit": "USD/month",
+      "source": "https://otda.ny.gov/programs/snap/",
+      "note": "Households with a member 60+ or disabled"
+    },
+    "heap_regular_base_electric_gas": {
+      "value": 400,
+      "unit": "USD/year",
+      "source": "https://otda.ny.gov/programs/heap/",
+      "note": "2026-2027 base, plus add-ons; one regular benefit per program year"
+    },
+    "heap_regular_base_oil_kerosene_propane": {
+      "value": 990,
+      "unit": "USD/year",
+      "source": "https://otda.ny.gov/programs/heap/",
+      "note": "2026-2027 base, plus add-ons"
+    },
+    "heap_vulnerable_member_addon": {
+      "value": 35,
+      "unit": "USD/year",
+      "source": "https://otda.ny.gov/programs/heap/",
+      "note": "Member who is permanently disabled, under 6, or 60+"
+    },
+    "heap_tier1_income_addon": {
+      "value": 61,
+      "unit": "USD/year",
+      "source": "https://otda.ny.gov/programs/heap/"
+    },
+    "heap_income_limit_1_person": {
+      "value": 3563,
+      "unit": "USD/month",
+      "source": "https://otda.ny.gov/programs/heap/",
+      "note": "2026-2027 gross monthly income"
+    },
+    "heap_equipment_repair_max": {
+      "value": 4000,
+      "unit": "USD one-time",
+      "source": "https://otda.ny.gov/programs/heap/"
+    },
+    "heap_equipment_replacement_max": {
+      "value": 8000,
+      "unit": "USD one-time",
+      "source": "https://otda.ny.gov/programs/heap/"
+    },
+    "able_annual_contribution_limit": {
+      "value": 20000,
+      "unit": "USD/year",
+      "source": "https://www.mynyable.org/home/what-is-ny-able/faqs.html",
+      "note": "As stated by NY ABLE; working owners may contribute more"
+    },
+    "able_max_account_balance": {
+      "value": 520000,
+      "unit": "USD",
+      "source": "https://www.mynyable.org/home/what-is-ny-able/faqs.html"
+    },
+    "able_ssi_balance_threshold": {
+      "value": 100000,
+      "unit": "USD",
+      "source": "https://www.mynyable.org/home/what-is-ny-able/faqs.html"
+    },
+    "able_minimum_to_open": {
+      "value": 25,
+      "unit": "USD one-time",
+      "source": "https://www.mynyable.org/home/what-is-ny-able/faqs.html"
+    },
+    "able_maintenance_fee_electronic": {
+      "value": 10,
+      "unit": "USD/quarter",
+      "source": "https://www.mynyable.org/home/investments/fees.html"
+    },
+    "able_disability_onset_age_limit": {
+      "value": 46,
+      "unit": "years",
+      "source": "https://www.mynyable.org/home/eligibility/requirements.html"
+    },
+    "nysarc_pooled_trust_min_deposit": {
+      "value": 300,
+      "unit": "USD one-time",
+      "source": "https://www.nysarctrustservices.org/nysarc-trusts/pooled-trusts/enroll-pooled-trust/"
+    },
+    "mta_reduced_fare_subway_bus": {
+      "value": 1.5,
+      "unit": "USD/ride",
+      "source": "https://www.mta.info/fares/reduced-fare"
+    },
+    "mta_reduced_fare_express_bus": {
+      "value": 3.6,
+      "unit": "USD/ride",
+      "source": "https://www.mta.info/fares/reduced-fare"
+    },
+    "fair_fares_discount": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://www.nyc.gov/site/fairfares/index.page"
+    },
+    "fair_fares_income_limit_1_person": {
+      "value": 23940,
+      "unit": "USD/year",
+      "source": "https://www.nyc.gov/site/fairfares/index.page",
+      "note": "2026 guidelines"
+    },
+    "ny_real_property_tax_credit_max_under_65": {
+      "value": 75,
+      "unit": "USD/year",
+      "source": "https://www.tax.ny.gov/pit/credits/real_property_tax_credit.htm"
+    },
+    "ny_real_property_tax_credit_agi_limit": {
+      "value": 18000,
+      "unit": "USD/year",
+      "source": "https://www.tax.ny.gov/pit/credits/real_property_tax_credit.htm"
+    },
+    "mbi_wpd_resource_limit_1_person": {
+      "value": 33038,
+      "unit": "USD",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/"
+    },
+    "medicaid_1619b_threshold_2026": {
+      "value": 68654,
+      "unit": "USD/year",
+      "source": "https://www.health.ny.gov/health_care/medicaid/program/buy_in/",
+      "note": "Income before losing Medicaid under 1619(b) in NY, 2026"
+    },
+    "empower_low_income_cap_upstate": {
+      "value": 12000,
+      "unit": "USD one-time",
+      "source": "https://www.nyserda.ny.gov/All-Programs/EmPower-New-York-Program"
+    },
+    "empower_low_income_cap_downstate": {
+      "value": 14000,
+      "unit": "USD one-time",
+      "source": "https://www.nyserda.ny.gov/All-Programs/EmPower-New-York-Program"
+    },
+    "aaneny_individual_grant_max": {
+      "value": 500,
+      "unit": "USD one-time",
+      "source": "https://www.aaneny.org/scholarships-grant-applications"
+    },
+    "federal_credit_other_dependents": {
+      "value": 500,
+      "unit": "USD/year",
+      "refundable": false,
+      "phaseout_start": 200000,
+      "source": "https://www.irs.gov/newsroom/an-overview-of-the-credit-for-other-dependents"
+    },
+    "lifeline_monthly_discount": {
+      "value": 9.25,
+      "unit": "USD/month",
+      "source": "https://fcc.gov/general/lifeline-program-low-income-consumers"
+    }
+  },
+  "nonprofit": {
+    "act_today_grant_max": {
+      "value": 5000,
+      "unit": "USD one-time",
+      "note": "Paid directly to approved providers or vendors. Quarterly cycles; household income considered.",
+      "source": "https://www.act-today.org/apply-for-grant/"
+    },
+    "kodi_lee_music_grant_max": {
+      "value": 1000,
+      "unit": "USD one-time",
+      "min_age": 15,
+      "note": "Music lessons, therapy, studio time or equipment. Autistic people 15+; past recipients can't reapply.",
+      "source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/"
+    }
   }
 }

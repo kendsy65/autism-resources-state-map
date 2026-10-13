@@ -411,3 +411,65 @@ details.res{scroll-margin-top:190px}
 .fit-levels button[aria-pressed="true"]{border-color:var(--state);background:var(--state-bg);color:var(--state)}
 .fit-note{flex-basis:100%;margin:0;font-size:13px;color:var(--muted);max-width:75ch}
 .fit-note:empty{display:none}
+
+/* ======================================================================
+   Friendly pass: crisp white page, a soft hero panel with route lines,
+   rounded cards with gentle shadows, tinted category tiles, pill tabs.
+   Overrides earlier rules; Wayfinding colors and type stay the same.
+   ====================================================================== */
+:root{
+  --bg:#ffffff; --tint:#eef4fc; --tint-line:#d9e5f6;
+  --shadow:0 1px 2px rgba(18,32,58,.05),0 8px 24px rgba(18,32,58,.07);
+  --shadow-up:0 2px 4px rgba(18,32,58,.06),0 14px 34px rgba(18,32,58,.11);
+  --radius:16px;
+}
+:root[data-theme="dark"]{
+  --bg:#0f1729; --tint:#172540; --tint-line:#24365a;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 8px 24px rgba(0,0,0,.25);
+  --shadow-up:0 2px 4px rgba(0,0,0,.35),0 14px 34px rgba(0,0,0,.35);
+}
+body{font-size:16px;line-height:1.6}
+.wrap{max-width:1060px;padding-block:20px 104px}
+.lede{font-size:1.04rem}
+
+/* Hero panel: the page header sits on a soft blue card with route lines in the corner */
+.wrap>header{position:relative;overflow:hidden;background:var(--tint);border-radius:24px;padding:26px clamp(20px,4vw,40px) 30px;isolation:isolate}
+.wrap>header::after{content:"";position:absolute;z-index:-1;right:-30px;top:-20px;width:min(360px,60%);height:240px;opacity:.9;pointer-events:none;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 240' fill='none' stroke-linecap='round'%3E%3Cpath d='M20 60 H170 Q200 60 200 90 V230' stroke='%232560b8' stroke-width='10'/%3E%3Cpath d='M90 20 V120 Q90 150 120 150 H350' stroke='%230d7a52' stroke-width='10'/%3E%3Cpath d='M260 10 V200' stroke='%23a85a0c' stroke-width='10'/%3E%3Cpath d='M150 205 H340' stroke='%238a3aa6' stroke-width='10'/%3E%3Cg fill='%23fff' stroke='%2312203a' stroke-width='6'%3E%3Ccircle cx='200' cy='150' r='11'/%3E%3Ccircle cx='260' cy='60' r='11'/%3E%3Ccircle cx='260' cy='205' r='11'/%3E%3Ccircle cx='90' cy='60' r='11'/%3E%3C/g%3E%3C/svg%3E") no-repeat right top/contain}
+.wrap>header h1{font-size:clamp(2rem,5vw,3.05rem);line-height:1.08;max-width:22ch;margin-top:6px}
+.wrap>header .lede{max-width:56ch;color:var(--ink);opacity:.82}
+.wrap>header .eyebrow{color:var(--ink);opacity:.7}
+@media (max-width:640px){.wrap>header::after{opacity:.35;width:70%}}
+
+/* Cards */
+.sum,.choice,.map-card,.wizard,.supports,.tw-map,.est,.plan,.statecard,.resume,.mini,.tblwrap,.chat-panel{border-radius:var(--radius);border-color:var(--tint-line);box-shadow:var(--shadow)}
+details.res{border-radius:14px;border-color:var(--tint-line);box-shadow:0 1px 2px rgba(18,32,58,.04);transition:box-shadow .15s,transform .15s}
+details.res:hover,details.res[open]{box-shadow:var(--shadow)}
+.choice{padding:22px 24px;transition:transform .15s,box-shadow .15s}
+.choice:hover{transform:translateY(-2px);box-shadow:var(--shadow-up)}
+.choice strong{font-size:1.32rem}
+.plan{border:0;background:var(--surface);box-shadow:var(--shadow-up)}
+.deadlines{border-radius:20px}
+.dl-item{border-radius:12px}
+
+/* Category tiles take a light tint of their route color */
+.summary .sum[class*="cat-"]{background:color-mix(in srgb,var(--cat) 7%,var(--surface));border-color:color-mix(in srgb,var(--cat) 22%,var(--surface))}
+.mini[class*="cat-"]{background:color-mix(in srgb,var(--cat) 7%,var(--surface));border-color:color-mix(in srgb,var(--cat) 22%,var(--surface))}
+.sum-btn{background:var(--surface)}
+
+/* Pill tabs */
+.tabs{display:inline-flex;flex-wrap:wrap;gap:4px;border-bottom:0;background:var(--tint);padding:5px;border-radius:999px;margin-top:22px}
+.tabs button{border-bottom:0;margin-bottom:0;border-radius:999px;padding:8px 18px;color:var(--ink);opacity:.75}
+.tabs button[aria-selected="true"]{background:var(--surface);opacity:1;box-shadow:var(--shadow)}
+.tabs button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+
+/* Buttons and controls */
+.btn{border-radius:999px;padding:10px 20px}
+.seg{border-radius:999px;border-color:var(--tint-line)}
+.seg button{padding:7px 16px}
+input[type=search],.filters select,#region,#within,#sort{border-radius:999px !important;border-color:var(--tint-line) !important}
+.filters{background:color-mix(in srgb,var(--bg) 94%,transparent);backdrop-filter:blur(6px)}
+.opt{border-radius:12px}
+.tag{border-radius:999px}
+
+@media (prefers-reduced-motion: reduce){.choice,details.res{transition:none}.choice:hover{transform:none}}

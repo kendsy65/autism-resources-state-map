@@ -14,7 +14,7 @@ const base = { benefit: "ssi", hours: 0, wage: 15, housing: "voucher", rent: 180
 test("every support item has an amount in the data and a matching resource", () => {
   for (const it of SUPPORT_ITEMS) {
     assert.ok(typeof itemAmount(it, params) === "number", `${it.id} amount`);
-    assert.ok(resources.some(r => r.id === it.resource), `${it.id} resource`);
+    assert.ok(resources.some(r => r.id === `ma-${it.resource}`), `${it.id} resource`);
   }
 });
 

@@ -710,5 +710,162 @@
     "Northwest CT": [
       "Litchfield"
     ]
+  },
+  "financing": {
+    "able_ct_annual_contribution_limit": {
+      "value": 20000,
+      "unit": "USD/year",
+      "source": "https://savewithable.com/ct/home/plan-benefits.html"
+    },
+    "able_ssi_excluded_balance": {
+      "value": 100000,
+      "unit": "USD",
+      "source": "https://savewithable.com/ct/home/plan-benefits.html",
+      "note": "Only the amount over $100,000 counts toward the SSI resource limit"
+    },
+    "able_ct_onset_age_limit": {
+      "value": 46,
+      "unit": "years",
+      "source": "https://savewithable.com/ct/home/plan-benefits.html",
+      "note": "Disability must have begun before age 46"
+    },
+    "able_ct_annual_fee": {
+      "value": 56,
+      "unit": "USD/year",
+      "source": "https://savewithable.com/ct/home/plan-benefits.html",
+      "note": "$31/year with electronic delivery"
+    },
+    "able_ct_state_tax_deduction_single": {
+      "value": 5000,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/ott/newsroom/news/news-releases/senator-blumenthal-and-treasurer-russell-announce-expanded-able-ct-eligibility",
+      "note": "$10,000 for joint filers"
+    },
+    "ceap_benefit_min_2026_27": {
+      "value": 355,
+      "unit": "USD/season",
+      "source": "https://portal.ct.gov/dss/Economic-Security/Winter-Heating-Assistance/Energy-Assistance---Winter-Heating"
+    },
+    "ceap_benefit_max_2026_27": {
+      "value": 705,
+      "unit": "USD/season",
+      "source": "https://portal.ct.gov/dss/Economic-Security/Winter-Heating-Assistance/Energy-Assistance---Winter-Heating"
+    },
+    "ceap_income_limit_1_person": {
+      "value": 48714,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/dss/economic-security/winter-heating-assistance/energy-assistance---winter-heating/who-is-eligible",
+      "note": "60% of State Median Income; page does not state which season"
+    },
+    "snap_max_benefit_1_person": {
+      "value": 306,
+      "unit": "USD/month",
+      "source": "https://portal.ct.gov/dss/snap/supplemental-nutrition-assistance-program---snap/eligibility",
+      "note": "As of October 1, 2026"
+    },
+    "snap_gross_income_limit_1_person": {
+      "value": 2660,
+      "unit": "USD/month",
+      "source": "https://portal.ct.gov/dss/snap/supplemental-nutrition-assistance-program---snap/eligibility"
+    },
+    "electric_discount_max": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://portal.ct.gov/heatinghelp/utility-assistance-information",
+      "note": "Top tier for Eversource and UI low-income discount rate"
+    },
+    "gpct_energy_grant_max": {
+      "value": 500,
+      "unit": "USD/year",
+      "source": "https://gpct.org/utility",
+      "note": "One fuel or utility grant per 12 months"
+    },
+    "renters_rebate_max_single": {
+      "value": 700,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/renters--rebate-for-elderly-disabled-renters-tax-relief-program",
+      "note": "$900 for married couples"
+    },
+    "ct_eitc_fraction_of_federal": {
+      "value": 0.4,
+      "unit": "fraction",
+      "source": "https://portal.ct.gov/drs/ct---eitc/ct-eitc-information/ct-earned-income-tax-credit"
+    },
+    "ct_eitc_child_bonus": {
+      "value": 250,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/drs/ct---eitc/ct-eitc-information/ct-earned-income-tax-credit"
+    },
+    "cttransit_disability_discount": {
+      "value": 0.5,
+      "unit": "fraction",
+      "source": "https://portal.ct.gov/dot/ctdot-press-releases/2026/new-cttransit-reduced-fare-structure-beginning-october-1"
+    },
+    "cttransit_reduced_31_day_pass": {
+      "value": 30.6,
+      "unit": "USD/month",
+      "source": "https://www.cttransit.com/fares/senior-disabled-reduced-fares",
+      "note": "Local service; regular price $63"
+    },
+    "at_loan_max": {
+      "value": 30000,
+      "unit": "USD one-time",
+      "source": "https://cttechact.com/loan/",
+      "note": "Generally $500 minimum"
+    },
+    "dds_individual_family_grant_extraordinary_max": {
+      "value": 5000,
+      "unit": "USD/year",
+      "source": "https://portal.ct.gov/dds/searchable-archive/family/supports-and-services/individual-and-family-grants",
+      "note": "Typical $600–$1,000/year; page is in DDS's archive section"
+    },
+    "dds_guardian_paid_hours_cap": {
+      "value": 2100,
+      "unit": "hours/year",
+      "source": "https://portal.ct.gov/dds/-/media/dds/waiver/waiver-manual-final-1826.pdf",
+      "note": "Exceptions can be requested"
+    },
+    "saga_asset_limit_single": {
+      "value": 500,
+      "unit": "USD",
+      "source": "https://portal.ct.gov/dss/knowledge-base/articles/cash-assistance/state-administered-general-assistance"
+    },
+    "state_supplement_asset_limit_single": {
+      "value": 1600,
+      "unit": "USD",
+      "source": "https://portal.ct.gov/dss/knowledge-base/articles/cash-assistance/state-supplement-cash-assistance"
+    },
+    "totally_disabled_property_exemption": {
+      "value": 1000,
+      "unit": "USD (assessed value)",
+      "source": "https://portal.ct.gov/opm/igpp/grants/tax-relief-grants/totally-disabled-tax-relief-program"
+    },
+    "federal_credit_other_dependents": {
+      "value": 500,
+      "unit": "USD/year",
+      "refundable": false,
+      "phaseout_start": 200000,
+      "source": "https://www.irs.gov/newsroom/an-overview-of-the-credit-for-other-dependents"
+    },
+    "lifeline_monthly_discount": {
+      "value": 9.25,
+      "unit": "USD/month",
+      "source": "https://fcc.gov/general/lifeline-program-low-income-consumers"
+    }
+  },
+  "nonprofit": {
+    "act_today_grant_max": {
+      "value": 5000,
+      "unit": "USD one-time",
+      "note": "Paid directly to approved providers or vendors. Quarterly cycles; household income considered.",
+      "source": "https://www.act-today.org/apply-for-grant/"
+    },
+    "kodi_lee_music_grant_max": {
+      "value": 1000,
+      "unit": "USD one-time",
+      "min_age": 15,
+      "note": "Music lessons, therapy, studio time or equipment. Autistic people 15+; past recipients can't reapply.",
+      "source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/"
+    }
   }
 }

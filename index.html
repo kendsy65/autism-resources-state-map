@@ -124,15 +124,20 @@ const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips
     [c, ((await loadJSON(`data/${c}/planner-parameters.json`).catch(() => null))?.timing || [])
       .filter(t => t.apply_closes || t.apply_opens)
       .map(t => ({ id: t.id, name: t.item, max_benefit: t.note || t.value, apply_closes: t.apply_closes || "", apply_opens: t.apply_opens || "", timing: true }))])));
-  const items = Object.entries(rowsByState).flatMap(([c, rows]) => upcomingDeadlines([...rows, ...(timingByState[c] || [])]).map(x => ({ ...x, state: c })))
-    .sort((a, b) => a.days - b.days);
+  // National programs appear in every state's data; show each deadline once, naming every state.
+  const merged = new Map();
+  for (const x of Object.entries(rowsByState).flatMap(([c, rows]) => upcomingDeadlines([...rows, ...(timingByState[c] || [])]).map(x => ({ ...x, state: c })))) {
+    const key = `${x.r.name}|${x.kind}|${x.days}`;
+    if (merged.has(key)) merged.get(key).states.push(x.state); else merged.set(key, { ...x, states: [x.state] });
+  }
+  const items = [...merged.values()].sort((a, b) => a.days - b.days);
   if (items.length) {
     const left = d => d === 0 ? "today" : d === 1 ? "1 day left" : `${d} days left`;
     document.getElementById("dl-list").innerHTML = items.map(x => `<li class="dl-item ${x.kind === "closes" && x.days <= 7 ? "urgent" : ""}">
       <span class="dl-date" aria-hidden="true"><b>${MON[x.date.getMonth()]}</b>${x.exact ? x.date.getDate() : x.date.getFullYear()}</span>
       <span class="dl-what"><span class="dl-kind">${x.kind === "closes" ? "Closes" : "Opens"} ${x.exact ? `${MON[x.date.getMonth()]} ${x.date.getDate()}, ${x.date.getFullYear()}` : `${MON[x.date.getMonth()]} ${x.date.getFullYear()}`}${x.kind === "closes" ? ` · ${left(x.days)}` : ` · in ${x.days} days`}</span>
         <strong>${esc(x.r.name)}</strong>
-        <span class="dl-note">${esc(STATES[x.state]?.name || x.state)} · ${esc(x.r.max_benefit.split(/(?<=\.)\s|,\s(?=paid)/)[0])}</span></span>
+        <span class="dl-note">${x.states.length === Object.keys(STATES).length ? "All states" : esc(x.states.map(c => STATES[c]?.name || c).join(", "))} · ${esc(x.r.max_benefit.split(/(?<=\.)\s|,\s(?=paid)/)[0])}</span></span>
       <a class="dl-go" href="state.html?s=${x.state}#${x.r.timing ? "timing-" : "res-"}${encodeURIComponent(x.r.id)}">${x.r.timing ? "Details" : "How to apply"}<span class="sr"> for ${esc(x.r.name)}</span> →</a></li>`).join("");
     document.getElementById("deadlines").hidden = false;
   }

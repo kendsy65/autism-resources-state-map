@@ -391,7 +391,9 @@ else {
   if (me?.support === "3" && P.ddsBen !== undefined) $("e-house").value = "dds";
 
   // ----- Support checklist (amounts from planner-parameters.json) -----
-  const items = SUPPORT_ITEMS.map(it => ({ ...it, amount: itemAmount(it, params) })).filter(it => it.amount != null);
+  // Each item needs a published amount and a matching program in this state's directory.
+  const items = SUPPORT_ITEMS.map(it => ({ ...it, amount: itemAmount(it, params), resource: `${code.toLowerCase()}-${it.resource}` }))
+    .filter(it => it.amount != null && stateRows.some(r => r.id === it.resource));
   const touched = new Set();
   const PER = { month: "/mo", year: "/yr", once: " one time" };
   $("sup-cols").innerHTML = SOURCES.map(src => `<fieldset class="sup-col"><legend>${src === "Government" ? "Government" : "Nonprofit"}</legend>
@@ -528,7 +530,7 @@ else {
   };
   const human = k => LABELS[k] || k.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
   const money = v => "$" + v.toLocaleString("en-US", { maximumFractionDigits: 2, minimumFractionDigits: v % 1 ? 2 : 0 });
-  const unitFmt = (v, unit = "") => /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${+(v * 100).toFixed(1)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : "");
+  const unitFmt = (v, unit = "") => /^hours/.test(unit) ? `${v.toLocaleString("en-US")} ${unit.replace("/year", " a year")}` : /^years$/.test(unit) ? `${v}` : /APR/.test(unit) ? `${+(v * 100).toFixed(2)}% APR` : /fraction/.test(unit) ? `${+(v * 100).toFixed(1)}%` : money(v) + (/month/.test(unit) ? "/mo" : /year/.test(unit) ? "/yr" : /day/.test(unit) ? "/day" : /hour/.test(unit) ? "/hr" : /one-time/.test(unit) ? " one time" : /quarter/.test(unit) ? "/quarter" : /ride/.test(unit) ? "/ride" : /season/.test(unit) ? "/season" : "");
   function valueOf(p) {
     if (p == null || typeof p !== "object") return String(p ?? "");
     if ("value" in p) return p.value === null ? (p.unit || "Not published") : typeof p.value === "string" ? p.value : unitFmt(p.value, p.unit);
