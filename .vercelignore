@@ -1,0 +1,8 @@
+# Files the public website doesn't need. Everything not listed here is served on Vercel.
+CLAUDE.md
+prototype/
+tests/
+scripts/
+package.json
+*.zip
+.env*

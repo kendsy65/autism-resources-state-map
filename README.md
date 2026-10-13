@@ -17,6 +17,15 @@ Then open http://localhost:8000. Run the planner tests with `npm test` (Node 18+
 
 To publish, turn on GitHub Pages for the repo (deploy from the main branch, root folder).
 
+## Deploying (Vercel)
+
+The live site is hosted on Vercel, which reads this GitHub repo. Every push to `master` rebuilds the site automatically, usually within a minute; nothing needs redeploying by hand.
+
+- **No secrets.** The site has no API keys or environment variables. Keep it that way: `.env` files are gitignored, and none should ever be committed.
+- **What's public:** everything except the files listed in `.vercelignore` (`CLAUDE.md`, `prototype/`, `tests/`, `scripts/`, `package.json`). A new file anywhere else is public by default, so check before pushing anything that shouldn't be.
+- **Settings:** `vercel.json` adds basic security headers and makes data files refresh on every visit.
+- **Before pushing:** run `npm test` and check the site on localhost.
+
 ## What's here
 
 ```

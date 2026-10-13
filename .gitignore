@@ -1,2 +1,8 @@
 .DS_Store
 node_modules/
+# Secrets never go to GitHub (none are needed today; this keeps it that way)
+.env
+.env*.local
+# Local-only files
+*.zip
+.vercel
