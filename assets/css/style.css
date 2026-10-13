@@ -370,3 +370,30 @@ details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size
   .tw-item{flex:0 0 210px;scroll-snap-align:start}
   .tw-map{padding:16px}
 }
+
+/* ---------- Upcoming deadlines: a departures board ---------- */
+.deadlines{margin-top:22px;background:var(--ink);color:var(--surface);border-radius:12px;padding:16px 18px}
+.dl-head{display:flex;flex-wrap:wrap;gap:4px 14px;align-items:baseline;margin-bottom:10px}
+.dl-head h2{margin:0;font-size:1.15rem;color:var(--surface)}
+.dl-sub{font-size:13px;opacity:.75}
+.dl-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px}
+.dl-item{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:14px;align-items:center;background:color-mix(in srgb,var(--surface) 8%,var(--ink));border-radius:8px;padding:10px 12px}
+.dl-date{display:grid;place-items:center;min-width:56px;padding:6px 4px;border-radius:6px;background:var(--surface);color:var(--ink);font-family:var(--mono);font-weight:600;font-size:18px;line-height:1.1;text-align:center}
+.dl-date b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.dl-item.urgent .dl-date{background:var(--warn-bg);color:var(--warn)}
+.dl-what{display:flex;flex-direction:column;min-width:0}
+.dl-kind{font-family:var(--mono);font-size:12px;font-weight:600;opacity:.85}
+.dl-item.urgent .dl-kind{opacity:1;color:#ffcfa8}
+.dl-what strong{font-size:15.5px}
+.dl-note{font-size:13px;opacity:.8}
+.dl-go{color:var(--surface);font-weight:700;font-size:14px;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+.dl-go:focus-visible{outline:2px solid var(--surface);outline-offset:2px}
+:root[data-theme="dark"] .deadlines{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+:root[data-theme="dark"] .dl-head h2,:root[data-theme="dark"] .dl-go{color:var(--ink)}
+:root[data-theme="dark"] .dl-item{background:var(--bg)}
+:root[data-theme="dark"] .dl-date{background:var(--ink);color:var(--surface)}
+:root[data-theme="dark"] .dl-item.urgent .dl-kind{color:var(--warn)}
+@media (max-width:560px){.dl-item{grid-template-columns:auto minmax(0,1fr)}.dl-go{grid-column:2}}
+
+/* Entries opened by a link land below the sticky filter bar */
+details.res{scroll-margin-top:190px}

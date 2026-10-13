@@ -2,7 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { fromParams } from "../assets/js/planner.js";
-import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios, applyStatus, inflationPath, priceFactors } from "../assets/js/support.js";
+import { SUPPORT_ITEMS, itemAmount, perMonth, eaedcAfterEarnings, compareScenarios, applyStatus, inflationPath, priceFactors, upcomingDeadlines } from "../assets/js/support.js";
 
 const econ = JSON.parse(readFileSync(new URL("../data/US/economic-parameters.json", import.meta.url)));
 const params = JSON.parse(readFileSync(new URL("../data/MA/planner-parameters.json", import.meta.url)));
@@ -121,4 +121,11 @@ test("with inflation: rent rises; SSI rises only if benefits keep up", () => {
   close(flatBen.government.yearly[2].benefit, 1122.82);
   assert.ok(flatBen.government.yearly[2].housingHelp > up.government.yearly[0].housingHelp); // voucher covers more as rent rises
   assert.equal(up.both.yearly[2].year, 2028);
+});
+
+test("upcoming deadlines: closing soon first, opening soon later, past ones dropped", () => {
+  const ids = d => upcomingDeadlines(resources, d).map(x => `${x.r.id}:${x.kind}:${x.days}`);
+  assert.deepEqual(ids(new Date(2026, 9, 13)), ["ma-fin-act-today-family-grants:closes:2"]);
+  assert.deepEqual(ids(new Date(2026, 9, 16)), []); // ACT closed, Kodi Lee still months away
+  assert.deepEqual(ids(new Date(2027, 2, 15)), ["ma-fin-flutie-kodi-lee-gives-back-grant:opens:17"]);
 });

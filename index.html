@@ -19,6 +19,11 @@
     <p class="lede">Find programs, agencies and employers that can help, who runs each one, what it costs and how to apply. Then estimate monthly housing costs and income over several years.</p>
   </header>
 
+  <section id="deadlines" class="deadlines" hidden aria-labelledby="dl-h">
+    <div class="dl-head"><h2 id="dl-h">Upcoming deadlines</h2><span class="dl-sub">Applications closing or opening soon</span></div>
+    <ol class="dl-list" id="dl-list"></ol>
+  </section>
+
   <div id="resume" class="resume" hidden></div>
 
   <!-- Step 0: who is this for? -->
@@ -100,14 +105,33 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/topojson/3.0.2/topojson.min.js"></script>
 <script type="module">
 import { STATES, loadResources, loadJSON, esc, initThemeToggle } from "./assets/js/common.js";
+import { upcomingDeadlines } from "./assets/js/support.js";
 initThemeToggle(document.getElementById("theme-btn"));
 import { SSI_STATUS, SUPPORT, FOCUS, MONTHS, loadProfile, saveProfile, clearProfile, validProfile, ageOn, parseDate, toISO, validBirthdate } from "./assets/js/profile.js";
 import { lookupZip } from "./assets/js/geo.js";
 import { mountChat, linkTerms } from "./assets/js/chat.js";
 
-const counts = Object.fromEntries(await Promise.all(Object.keys(STATES).map(async c => [c, (await loadResources(c)).length])));
+const rowsByState = Object.fromEntries(await Promise.all(Object.keys(STATES).map(async c => [c, await loadResources(c)])));
+const counts = Object.fromEntries(Object.entries(rowsByState).map(([c, rows]) => [c, rows.length]));
 const ready = c => counts[c] > 0;
 const byFips = Object.fromEntries(Object.entries(STATES).map(([c, s]) => [s.fips, c]));
+
+// ---------- Upcoming deadlines (from each program's application dates; recomputed every visit) ----------
+{
+  const MON = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const items = Object.entries(rowsByState).flatMap(([c, rows]) => upcomingDeadlines(rows).map(x => ({ ...x, state: c })))
+    .sort((a, b) => a.days - b.days);
+  if (items.length) {
+    const left = d => d === 0 ? "today" : d === 1 ? "1 day left" : `${d} days left`;
+    document.getElementById("dl-list").innerHTML = items.map(x => `<li class="dl-item ${x.kind === "closes" && x.days <= 7 ? "urgent" : ""}">
+      <span class="dl-date" aria-hidden="true"><b>${MON[x.date.getMonth()]}</b>${x.exact ? x.date.getDate() : x.date.getFullYear()}</span>
+      <span class="dl-what"><span class="dl-kind">${x.kind === "closes" ? "Closes" : "Opens"} ${x.exact ? `${MON[x.date.getMonth()]} ${x.date.getDate()}, ${x.date.getFullYear()}` : `${MON[x.date.getMonth()]} ${x.date.getFullYear()}`}${x.kind === "closes" ? ` · ${left(x.days)}` : ` · in ${x.days} days`}</span>
+        <strong>${esc(x.r.name)}</strong>
+        <span class="dl-note">${esc(STATES[x.state]?.name || x.state)} · ${esc(x.r.max_benefit.split(/(?<=\.)\s|,\s(?=paid)/)[0])}</span></span>
+      <a class="dl-go" href="state.html?s=${x.state}#res-${encodeURIComponent(x.r.id)}">How to apply<span class="sr"> for ${esc(x.r.name)}</span> →</a></li>`).join("");
+    document.getElementById("deadlines").hidden = false;
+  }
+}
 
 // The pilot states as stops on a line; ready states link to their page.
 document.getElementById("stops").innerHTML = Object.keys(STATES).map(c => ready(c)

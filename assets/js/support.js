@@ -172,3 +172,21 @@ export function applyStatus(r, today = new Date()) {
   if (/year-round/i.test(r.apply_window || "")) return { state: "rolling", text: "Apply any time" };
   return r.apply_window ? { state: "", text: r.apply_window } : { state: "", text: "" };
 }
+
+// Deadlines worth showing on the home page: windows closing soon, and windows opening soon.
+// Returns [{ r, kind: "closes"|"opens", date, exact, days }], soonest first.
+export function upcomingDeadlines(rows, today = new Date(), { closeWithin = 45, openWithin = 60 } = {}) {
+  const t = new Date(today.getFullYear(), today.getMonth(), today.getDate());
+  const daysTo = d => Math.round((d - t) / 864e5);
+  const out = [];
+  for (const r of rows) {
+    const opens = parseDay(r.apply_opens), closes = parseDay(r.apply_closes);
+    const st = applyStatus(r, today).state;
+    const reopening = opens && closes && closes.date < opens.date;
+    if (st === "open" && closes && !reopening && daysTo(closes.date) >= 0 && daysTo(closes.date) <= closeWithin)
+      out.push({ r, kind: "closes", date: closes.date, exact: closes.exact, days: daysTo(closes.date) });
+    else if (st === "upcoming" && opens && daysTo(opens.date) <= openWithin)
+      out.push({ r, kind: "opens", date: opens.date, exact: opens.exact, days: daysTo(opens.date) });
+  }
+  return out.sort((a, b) => a.days - b.days);
+}

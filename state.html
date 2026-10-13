@@ -286,16 +286,22 @@ if (me) { renderPlan(me, params); linkTerms($("plan"), glossary); }
 
 // ---------- ASK ABOUT A TERM ----------
 // Opens a resource in the directory with filters cleared so it's always visible.
-function openResource(id) {
+function openResource(id, { instant = false } = {}) {
   setView("dir");
   st.within = Infinity; $("within").value = "Infinity"; st.cats.clear(); st.q = ""; $("q").value = ""; st.region = "All"; $("region").value = "All";
   st.lv = new Set(Object.keys(LV));
   document.querySelectorAll("#levels button[data-lv]").forEach(b => b.setAttribute("aria-pressed", "true"));
   render();
   const el = document.getElementById(`res-${id}`);
-  if (el) { el.open = true; el.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  if (el) { el.open = true; el.scrollIntoView({ behavior: instant ? "auto" : "smooth", block: "start" }); }
 }
 mountChat({ terms: glossary, params, resources: D, openResource });
+// Deep link from the home page's deadlines: state.html?s=MA#res-<id> opens that entry.
+// Wait for fonts so the jump lands on the entry instead of shifting afterwards.
+if (location.hash.startsWith("#res-")) {
+  const id = decodeURIComponent(location.hash.slice(5));
+  (document.fonts?.ready || Promise.resolve()).then(() => requestAnimationFrame(() => openResource(id, { instant: true })));
+}
 // Underline terms inside an entry when it's opened (entries re-render, so do it lazily).
 document.addEventListener("toggle", e => {
   if (e.target.open && e.target.matches("details.res, details.apply")) linkTerms(e.target.querySelector(".body, .apply-body"), glossary);
