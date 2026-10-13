@@ -16,6 +16,14 @@
     <div class="eyebrow" id="eyebrow">Autism Resources State Map</div>
     <h1 id="title">Loading…</h1>
     <p class="lede">Programs, agencies and employers we have found, sorted by who runs them. Tap a row to see who qualifies, what it costs and how to apply.</p>
+    <div class="fitbar" id="fitbar">
+      <button type="button" class="fit-btn" id="fit-btn" aria-pressed="false">Show only programs that fit their needs</button>
+      <div class="fit-levels" id="fit-levels" role="group" aria-label="Their support level" hidden>
+        <span>Their support level:</span>
+        <button type="button" data-fit="1">Level 1</button><button type="button" data-fit="2">Level 2</button><button type="button" data-fit="3">Level 3</button>
+      </div>
+      <p class="fit-note" id="fit-note" aria-live="polite"></p>
+    </div>
   </header>
 
   <section id="plan" class="plan" hidden aria-labelledby="plan-h"></section>
@@ -164,7 +172,7 @@ const zips = await loadJSON(`data/${code}/zips.json`).catch(() => ({}));
 const coordsOf = placeIndex(zips, await loadJSON(`data/${code}/place-aliases.json`).catch(() => ({})));
 const home = me ? lookupZip(me.zip, { [code]: zips }) : null;
 const KEY = `filters-${code}`;
-const st = { cats: new Set(), lv: new Set(Object.keys(LV)), region: "All", q: "" };
+const st = { cats: new Set(), lv: new Set(Object.keys(LV)), region: "All", q: "", fitOnly: false, fitLevel: null };
 try { const s = JSON.parse(localStorage.getItem(KEY) || "null"); if (s) { st.cats = new Set((s.cats || []).filter(c => CATEGORIES.includes(c))); if (s.lv?.length) st.lv = new Set(s.lv); st.region = s.region || "All"; } } catch {}
 
 const latest = D.map(r => r.date_checked).filter(Boolean).sort().pop();
@@ -175,13 +183,13 @@ const fmt = v => /^(not published|varies|not applicable|n\/a)/i.test(v || "") ? 
 // Summary tiles follow the distance filter, so they're redrawn on every render.
 function renderSummary() {
 $("summary").innerHTML = CATEGORIES.map(c => {
-  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && r.category === c);
+  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && r.category === c && (!st.fitOnly || r.fit > 0));
   return `<div class="sum cat-${c}"><div class="sum-top"><span class="route" aria-hidden="true">${ROUTE[c]}</span><h3>${CATEGORY_LABEL[c]}</h3></div><div class="big">${rows.length}</div><div class="bars">${rows.length
     ? Object.keys(LV).map(l => `<span class="tag ${lvClass(l)}">${LV[l]} ${rows.filter(r => r.level === l).length}</span>`).join("")
     : `<span class="np" style="font-size:13px">Research in progress</span>`}</div></div>`;
 }).join("") + (() => {
   // Nonprofit section: one tap shows only nonprofit organizations across every category.
-  const rows = rankResources(D, { home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && r.level === "Private/Nonprofit" && !r.for_profit);
+  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && (!st.fitOnly || r.fit > 0) && r.level === "Private/Nonprofit" && !r.for_profit);
   return `<button class="sum sum-btn" id="np-card" aria-describedby="np-desc"><div class="sum-top"><span class="route" aria-hidden="true">N</span><h3>Nonprofits</h3></div><div class="big">${rows.length}</div>
     <div class="bars">${CATEGORIES.map(c => `<span class="tag cat cat-${c}">${CATEGORY_LABEL[c]} ${rows.filter(r => r.category === c).length}</span>`).join("")}</div>
     <span class="hint" id="np-desc" style="display:block;margin:8px 0 0">Show only nonprofit organizations →</span></button>`;
@@ -206,10 +214,10 @@ if (home) { $("near-row").hidden = false; $("within").value = "50"; }
 function render() {
   renderSummary();
   const q = st.q.toLowerCase();
-  const rows = rankResources(D, { support: me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && catOn(r.category) && !(npOnlyMode() && r.for_profit) && st.lv.has(r.level)
+  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && (!st.fitOnly || r.fit > 0) && catOn(r.category) && !(npOnlyMode() && r.for_profit) && st.lv.has(r.level)
     && (st.region === "All" || r.region === st.region || r.region === "Statewide")
     && (!q || Object.values(r).join(" ").toLowerCase().includes(q)));
-  $("count").textContent = `Showing ${rows.length} of ${D.length} resources` + (st.region !== "All" ? ` (${st.region} plus statewide)` : "")
+  $("count").textContent = `Showing ${rows.length} of ${D.length} resources` + (st.fitOnly ? ` that fit Level ${st.fitLevel} needs` : "") + (st.region !== "All" ? ` (${st.region} plus statewide)` : "")
     + (home && st.within < Infinity ? ` within ${st.within} miles of ${home.place}, plus statewide` : "");
   const emptyCats = [...st.cats].filter(c => !D.some(r => r.category === c));
   const emptyMsg = !stateRows.length && st.cats.size ? `We haven't finished researching ${S.name} yet. Check back soon.`
@@ -267,7 +275,31 @@ $("region").addEventListener("change", e => { st.region = e.target.value; render
 $("within").addEventListener("change", e => { st.within = +e.target.value; render(); });
 $("sort").addEventListener("change", e => { st.sort = e.target.value; render(); });
 $("q").addEventListener("input", e => { st.q = e.target.value; render(); });
+// ---------- "Fits their needs": filter to programs that match a support level ----------
+// Uses the saved support level when the family answered the questions; otherwise asks for one.
+if (me && SUPPORT[me.support] && me.support !== "unsure") st.fitLevel = me.support;
 render();
+function syncFit() {
+  $("fit-btn").setAttribute("aria-pressed", String(st.fitOnly));
+  $("fit-btn").textContent = st.fitOnly ? "Showing programs that fit their needs · show all" : "Show only programs that fit their needs";
+  document.querySelectorAll("#fit-levels [data-fit]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.fit === st.fitLevel)));
+  $("fit-note").textContent = st.fitOnly
+    ? `Level ${st.fitLevel}: ${SUPPORT[st.fitLevel].note.toLowerCase()}. Matched by program type and our team's notes, so check each one. Programs we couldn't match are hidden, not ruled out.`
+    : "";
+}
+$("fit-btn").addEventListener("click", () => {
+  if (!st.fitLevel) { $("fit-levels").hidden = false; $("fit-note").textContent = "Pick their support level to filter."; document.querySelector("#fit-levels [data-fit]").focus(); return; }
+  st.fitOnly = !st.fitOnly;
+  setView("dir"); render(); syncFit();
+});
+$("fit-levels").addEventListener("click", e => {
+  const b = e.target.closest("[data-fit]"); if (!b) return;
+  st.fitLevel = b.dataset.fit; st.fitOnly = true;
+  setView("dir"); render(); syncFit();
+});
+// Families with a saved level can switch levels from here too.
+if (st.fitLevel) $("fit-levels").hidden = false;
+syncFit();
 
 // ---------- TABS ----------
 function setView(v) {

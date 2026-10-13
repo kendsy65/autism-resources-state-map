@@ -244,10 +244,35 @@
     {
       "item": "DOH Section 8 HCV waitlist",
       "value": "Closed",
-      "note": "All DOH HCV lists closed (page dated Aug 20, 2026). Register at cthcvp.org/notifications.",
+      "note": "DOH's own Section 8 list is closed (page dated Aug 20, 2026). Register at cthcvp.org/notifications.",
       "source": "https://portal.ct.gov/doh/knowledge-base/articles/section-8/section-8-housing-choice-voucher-waiting-list",
       "focus": "Housing",
-      "id": "doh-section-8-hcv-waitlist"
+      "id": "doh-section-8-hcv-waitlist",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the state list is closed",
+            "detail": "The Department of Housing (DOH) Section 8 list is closed. DOH reopens it only after enough families on it have been served."
+          },
+          {
+            "title": "Sign up for opening alerts",
+            "detail": "Register at cthcvp.org/notifications to hear when any Section 8 program in Connecticut opens its list."
+          },
+          {
+            "title": "Watch for the opening notice",
+            "detail": "Before it opens, DOH and local newspapers publish a notice and pre-application form."
+          },
+          {
+            "title": "Ask local housing authorities",
+            "detail": "Many run their own Section 8 programs. Ask when their list opens, whether they prefer local residents, and how long the wait is."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/doh/knowledge-base/articles/section-8/section-8-housing-choice-voucher-waiting-list",
+          "https://portal.ct.gov/doh/doh-1/additional-program-pages/how-to-apply-for-rap-and-section-8"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "RAP waitlist",
@@ -255,7 +280,36 @@
       "note": "Register at cthcvp.org to be told when it reopens.",
       "source": "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program",
       "focus": "Housing",
-      "id": "rap-waitlist"
+      "id": "rap-waitlist",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the RAP list is closed",
+            "detail": "The state Rental Assistance Program (RAP) list is closed, with no reopening date."
+          },
+          {
+            "title": "Register at cthcvp.org",
+            "detail": "Sign up to be told when RAP opens its list."
+          },
+          {
+            "title": "Watch for the notice and form",
+            "detail": "A notice and pre-application form will appear in local newspapers and on the DOH website."
+          },
+          {
+            "title": "Apply through the local housing authority",
+            "detail": "Once open, the local housing authority checks your household, income and assets and puts eligible families on its waiting list."
+          },
+          {
+            "title": "Wait to be contacted",
+            "detail": "When your family is chosen, the housing authority contacts you and issues a certificate."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/doh/doh-1/programs/rental-assistance-program",
+          "https://portal.ct.gov/doh/doh-1/additional-program-pages/how-to-apply-for-rap-and-section-8"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "New Haven (Elm City Communities) Section 8 list",
@@ -264,41 +318,198 @@
       "source": "https://www.elmcitycommunities.org/",
       "focus": "Housing",
       "city": "New Haven",
-      "id": "new-haven-elm-city-communities-section-8-list"
+      "id": "new-haven-elm-city-communities-section-8-list",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the list is closed",
+            "detail": "Elm City Communities (New Haven's housing authority) closed its Section 8 list at 11:59pm on May 1, 2026.",
+            "time": "Closed May 1, 2026"
+          },
+          {
+            "title": "Already on it? Keep your info current",
+            "detail": "The closure doesn't affect people on the list. Report any change of address, email, phone or household; returned mail or a missed deadline cancels your application."
+          },
+          {
+            "title": "Check your status online",
+            "detail": "Use the Applicant Portal at elmcitycommunities.org/waiting-list to get a registration code, check status and update your record."
+          },
+          {
+            "title": "Watch for the reopening",
+            "detail": "It will be posted on the Elm City Communities website, in local newspapers and on 211.",
+            "time": "At least 10 business days' notice"
+          },
+          {
+            "title": "Ask for an accommodation if needed",
+            "detail": "Call 203-498-8800 ext. 3170."
+          }
+        ],
+        "sources": [
+          "https://www.elmcitycommunities.org/",
+          "https://elmcitycommunities.org/waiting-list/",
+          "https://elmcitycommunities.org/wp-content/uploads/2026/04/ECC-HCV-WL-Closing-FAQ_Eng-Span-FINAL-0526.pdf"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Hartford public housing list",
-      "value": "Closed Sep 4, 2026; reopening notice Sep 9, 2026",
-      "note": "Check hartfordhousing.org for current status.",
+      "value": "Opened Sept 10–17, 2026 (lottery for 3,000); current status not posted",
+      "note": "Check hartfordhousing.org for the next opening.",
       "source": "https://www.hartfordhousing.org/",
       "focus": "Housing",
       "city": "Hartford",
-      "id": "hartford-public-housing-list"
+      "id": "hartford-public-housing-list",
+      "process": {
+        "steps": [
+          {
+            "title": "Know which list is which",
+            "detail": "The Hartford Housing Authority's public housing list (apartments it owns) is separate from Section 8. Its Section 8 list is closed."
+          },
+          {
+            "title": "Check the public housing list status",
+            "detail": "Use \"Check Public Housing Waiting List\" on hartfordhousing.org (hartfordhousing.myhousing.com). Main phone: 860.723.8400."
+          },
+          {
+            "title": "Watch for the next opening",
+            "detail": "The last opening was Sept 10–17, 2026, with online pre-applications and a lottery that picked 3,000 for the list.",
+            "time": "Last open Sept 10–17, 2026"
+          },
+          {
+            "title": "Ask for a disability accommodation",
+            "detail": "Call 860-723-8493 (TRS 711 or 800-842-9710)."
+          },
+          {
+            "title": "For Section 8, check other agencies",
+            "detail": "The housing authority points to cthcvp.org for Connecticut agencies that open their lists."
+          }
+        ],
+        "sources": [
+          "https://www.hartfordhousing.org/",
+          "https://www.hartfordhousing.org/2026%20LIPH%20WL%20Flyer%20-%202026-%209-9%20%20EN-SP.pdf",
+          "https://www.hartfordhousing.org/residents/housing/housing_choice_voucher/waiting_list.php"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "DDS residential waiting list",
       "value": "1,552 people (Dec 2025)",
-      "note": "567 with no services (48 emergency, 519 urgent), 310 underserved, 675 future needs. 8,638 people get DDS residential supports.",
+      "note": "567 with no services (48 emergency, 519 urgent), 310 underserved, 675 future needs. The count is for DDS residential supports, mostly people with intellectual disability; autistic adults without intellectual disability are served through the DSS autism waiver.",
       "source": "https://prdext3.cga.ct.gov/ph/BHPOC/related/20260101_2026/20260211/DDS  Presentation.pdf",
       "focus": "Housing",
-      "id": "dds-residential-waiting-list"
+      "id": "dds-residential-waiting-list",
+      "process": {
+        "steps": [
+          {
+            "title": "Become DDS-eligible",
+            "detail": "First the person must be found eligible for the Department of Developmental Services (DDS). Help: 1-866-433-8192 or 1-860-418-6117."
+          },
+          {
+            "title": "Get a case manager or Help Line",
+            "detail": "If on Medicaid, you get a case manager; if not, the DDS Help Line assists you."
+          },
+          {
+            "title": "Raise the housing need at planning",
+            "detail": "At the yearly planning meeting, the case manager's assessments sort an unmet housing need as emergency, urgent or future."
+          },
+          {
+            "title": "Get your priority status",
+            "detail": "A regional team tells you your status: the Waiting List (emergency, or need within a year) or the Planning List (need in 2+ years)."
+          },
+          {
+            "title": "When funding comes, enroll in a waiver",
+            "detail": "You and the case manager build a plan and budget, and you apply for Medicaid and a DDS home and community waiver. DDS says services aren't guaranteed."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/dds/supports-and-services/access-to-supports",
+          "https://portal.ct.gov/dds/searchable-archive/family/access-to-servies/how-to-access-dds-services",
+          "https://prdext3.cga.ct.gov/ph/BHPOC/related/20260101_2026/20260211/DDS%20%20Presentation.pdf"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "DSS Autism waiver waitlist",
       "value": "2,652 people (Apr 2026); some wait 10+ years",
-      "note": "From CT Public reporting; DSS confirms there is a waiting list.",
+      "note": "From CT Public reporting; DSS confirms a waiting list applies. DSS says impairments must be diagnosed before 22; the DDS application asks for an autism test before 21.",
       "source": "https://www.ctpublic.org/news/investigative/2026-04-07/ct-autism-waiver-program-waitlist-new-hires",
       "focus": "Both",
-      "id": "dss-autism-waiver-waitlist"
+      "id": "dss-autism-waiver-waitlist",
+      "process": {
+        "steps": [
+          {
+            "title": "Check the basic eligibility",
+            "detail": "The Department of Social Services (DSS) autism waiver needs a main diagnosis of autism, an IQ of 70 or higher, and major limits in at least two areas such as self-care, language, learning or living on your own."
+          },
+          {
+            "title": "Fill out the application",
+            "detail": "Print the application (English or Spanish). On page 2, mark that you're applying for the Autism Spectrum Disorder Program."
+          },
+          {
+            "title": "Gather the checklist documents",
+            "detail": "Testing, medical history, a health-privacy (HIPAA) form, proof of Connecticut residence and ID copies. If something's missing, fill out the Release of Information form."
+          },
+          {
+            "title": "Send it to the DDS Eligibility Unit",
+            "detail": "Mail: 460 Capitol Avenue, Hartford, CT 06106. Fax: 860-622-2797. Email: DDS.Eligibility@ct.gov."
+          },
+          {
+            "title": "Expect a waiting list",
+            "detail": "The waiver isn't an entitlement and a waiting list applies. It doesn't provide housing placement or rent help."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/dss/health-and-home-care/autism-spectrum-disorder---asd/autism-spectrum-disorder---asd",
+          "https://portal.ct.gov/dss/health-and-home-care/autism-spectrum-disorder---asd/autism-spectrum-disorder---asd/eligibility",
+          "https://portal.ct.gov/dds/knowledge-base/articles/eligibility-for-an-individual-with-autism-and-no-intellectual-disability"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "DDS eligibility testing",
       "value": "Before age 18 (ID); autism test before 21",
-      "note": "Psych and educational testing through age 17. Apply in the teen years.",
+      "note": "Psych and educational testing through age 17. Make sure testing is done by these ages.",
       "source": "https://portal.ct.gov/dds/knowledge-base/articles/eligibility-for-an-individual-with-autism-and-no-intellectual-disability",
       "focus": "Both",
       "age_max": 20,
-      "id": "dds-eligibility-testing"
+      "id": "dds-eligibility-testing",
+      "process": {
+        "steps": [
+          {
+            "title": "Get the application",
+            "detail": "Print the DDS application in English or Spanish, or email DDS.Eligibility@ct.gov to get one by mail."
+          },
+          {
+            "title": "Mark the autism program",
+            "detail": "On page 2, show you're applying for the Autism Spectrum Disorder Program."
+          },
+          {
+            "title": "Gather testing and records",
+            "detail": "Psychological and educational testing through age 17, and a standard autism test before age 21. Also medical history, a recent physical, a HIPAA form, guardianship papers if any, proof of residence, and copies of IDs and school records.",
+            "time": "Testing through 17; autism test before 21"
+          },
+          {
+            "title": "Fill gaps with a release form",
+            "detail": "If anything's missing, complete the Release of Information form (page 7 of the application)."
+          },
+          {
+            "title": "Submit to the Eligibility Unit",
+            "detail": "460 Capitol Avenue, Hartford, CT 06106; fax 860-622-2797; DDS.Eligibility@ct.gov. Help: 1-866-433-8192 or 1-860-418-6117."
+          },
+          {
+            "title": "If denied, ask about a hearing",
+            "detail": "The DDS page links to how to request a hearing."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/dds/knowledge-base/articles/eligibility-for-an-individual-with-autism-and-no-intellectual-disability",
+          "https://portal.ct.gov/dds/knowledge-base/articles/how-to-apply-for-services"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Special education ends",
@@ -307,7 +518,28 @@
       "source": "https://portal.ct.gov/-/media/sde/special-education/csde-memo---updated-guidance-re-pa-23-137-_11-15-2023.pdf",
       "focus": "Both",
       "age_max": 21,
-      "id": "special-education-ends"
+      "id": "special-education-ends",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the end date",
+            "detail": "Special education lasts through the school year in which the student turns 22 (school years end June 30), or until graduation with a regular diploma, whichever comes first.",
+            "time": "Through June 30 of the year they turn 22"
+          },
+          {
+            "title": "Check the exit plan in the IEP",
+            "detail": "The IEP lists the planned exit: a regular diploma or reaching the maximum age. The school's planning team decides whether it's been met."
+          },
+          {
+            "title": "If you disagree, use dispute options",
+            "detail": "Parents and adult students can challenge the decision using the options in the Procedural Safeguards Notice."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/-/media/sde/special-education/csde-memo---updated-guidance-re-pa-23-137-_11-15-2023.pdf"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "CHESS Medicaid supportive housing benefit",
@@ -323,7 +555,36 @@
       "note": "",
       "source": "https://portal.ct.gov/CHRO/Complaint-Process/Fair-Housing/If-you-feel-you-have-been-treated-unfairly",
       "focus": "Housing",
-      "id": "chro-housing-complaint-deadline"
+      "id": "chro-housing-complaint-deadline",
+      "process": {
+        "steps": [
+          {
+            "title": "Call CHRO's Housing Discrimination Unit",
+            "detail": "The Commission on Human Rights and Opportunities: (800) 477-5737 ext. 3403 (toll free in CT) or (860) 541-3403; TDD (860) 541-3459."
+          },
+          {
+            "title": "Act early",
+            "detail": "A formal complaint must be filed within 300 days, and writing and filing it takes time.",
+            "time": "Within 300 days"
+          },
+          {
+            "title": "Keep a record of contacts",
+            "detail": "Note every meeting and call with the landlord, manager, agent or loan officer: name, title, place, date and time."
+          },
+          {
+            "title": "Write it down and save papers",
+            "detail": "Write down what happened and keep receipts, applications and other documents."
+          },
+          {
+            "title": "Know your other options",
+            "detail": "Report crimes such as threats to local police. You can also contact HUD at 1-800-669-9777 or a local fair housing agency."
+          }
+        ],
+        "sources": [
+          "https://portal.ct.gov/CHRO/Complaint-Process/Fair-Housing/If-you-feel-you-have-been-treated-unfairly"
+        ],
+        "checked": "2026-10-13"
+      }
     }
   ],
   "employment_detail": {

@@ -398,3 +398,16 @@ details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size
 /* Entries opened by a link land below the sticky filter bar */
 details.res{scroll-margin-top:190px}
 
+
+/* ---------- "Fits their needs" button ---------- */
+.fitbar{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:16px}
+.fit-btn{font:inherit;font-weight:700;font-size:14.5px;display:inline-flex;align-items:center;gap:8px;border:2px solid var(--state);background:var(--state-bg);color:var(--state);border-radius:999px;padding:8px 16px;cursor:pointer}
+.fit-btn::before{content:"✓";display:inline-grid;place-items:center;width:20px;height:20px;border-radius:50%;background:var(--state);color:var(--surface);font-size:12px}
+.fit-btn[aria-pressed="true"]{background:var(--state);color:var(--surface)}
+.fit-btn[aria-pressed="true"]::before{background:var(--surface);color:var(--state)}
+.fit-btn:focus-visible,.fit-levels button:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.fit-levels{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.fit-levels button{font:inherit;font-size:13px;font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:4px 11px;cursor:pointer}
+.fit-levels button[aria-pressed="true"]{border-color:var(--state);background:var(--state-bg);color:var(--state)}
+.fit-note{flex-basis:100%;margin:0;font-size:13px;color:var(--muted);max-width:75ch}
+.fit-note:empty{display:none}

@@ -321,10 +321,44 @@
     {
       "item": "OPWDD eligibility",
       "value": "Disability must begin before age 22",
-      "note": "Apply through the Front Door (866-946-9733). Three-step review; no processing times published.",
+      "note": "Apply through the Front Door (866-946-9733). Each review step should take about 30 days once the packet is complete.",
       "source": "https://opwdd.ny.gov/eligibility-guidelines",
       "focus": "Both",
-      "id": "opwdd-eligibility"
+      "id": "opwdd-eligibility",
+      "process": {
+        "steps": [
+          {
+            "title": "Contact the OPWDD Front Door",
+            "detail": "Contact the Front Door at your regional OPWDD office (the NY Office for People With Developmental Disabilities) to say you want services."
+          },
+          {
+            "title": "Get connected to a care coordinator",
+            "detail": "The Front Door connects you with a Care Coordination Organization (CCO), which helps you through the application."
+          },
+          {
+            "title": "Gather the documents",
+            "detail": "With the CCO, collect cognitive testing, adaptive assessments and medical records, plus a medical report and a social evaluation from the last 12 months, and a history showing the disability began before age 22."
+          },
+          {
+            "title": "The CCO submits the application",
+            "detail": "The CCO uploads the documents to OPWDD's system. Only this complete package counts as an application."
+          },
+          {
+            "title": "OPWDD reviews it",
+            "detail": "Staff review it first. If they can't confirm eligibility, a committee reviews it again and sends a written decision.",
+            "time": "About 30 days per review step"
+          },
+          {
+            "title": "If denied, ask for another review",
+            "detail": "The denial letter offers a meeting with staff and a third review. If you asked for Medicaid-funded services, it also offers a Medicaid Fair Hearing.",
+            "time": "Third review: 30 days, then 10 days to tell you"
+          }
+        ],
+        "sources": [
+          "https://opwdd.ny.gov/eligibility-guidelines"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "OPWDD certified residential (IRA/Family Care)",
@@ -332,7 +366,44 @@
       "note": "Placement goes by priority (care needs, natural supports, risk of harm) under ADM 2024-03, not first-come.",
       "source": "https://opwdd.ny.gov/news/certified-residential-opportunities-cro",
       "focus": "Housing",
-      "id": "opwdd-certified-residential-ira-family-care"
+      "id": "opwdd-certified-residential-ira-family-care",
+      "process": {
+        "steps": [
+          {
+            "title": "Look at less restrictive options first",
+            "detail": "The Care Manager must first explore with you whether the person can stay home or live somewhere not certified by OPWDD, with extra supports."
+          },
+          {
+            "title": "Care Manager sends a complete referral",
+            "detail": "One complete packet goes to the regional Certified Housing Team: the referral form, the Life Plan, a recent medical exam and a psychological report. Incomplete packets aren't accepted."
+          },
+          {
+            "title": "Get the decision and priority level",
+            "detail": "A Notice of Decision approves or denies certified housing. If approved, the need is set as Emergency, Substantial or Current.",
+            "time": "Care Manager tells you within 5 days"
+          },
+          {
+            "title": "Keep the referral up to date",
+            "detail": "Update the packet at least once a year and whenever the person's situation changes, or the referral is deactivated.",
+            "time": "Yearly"
+          },
+          {
+            "title": "Provider screening and approval to move",
+            "detail": "A provider with an opening screens the person. The regional office must approve before an offer, and you meet face to face before the move.",
+            "time": "Screening within 14 days of the packet"
+          },
+          {
+            "title": "Appeal a denial if needed",
+            "detail": "The Notice of Decision explains how to ask for a conference with the regional office and/or a Fair Hearing.",
+            "time": "60 days to request a Fair Hearing"
+          }
+        ],
+        "sources": [
+          "https://opwdd.ny.gov/news/certified-residential-opportunities-cro",
+          "https://opwdd.ny.gov/regulations-guidance/adm-2024-03-certified-residential-opportunities-cro"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "OPWDD Housing Subsidy transition stipend window",
@@ -349,7 +420,37 @@
       "source": "https://www.nyc.gov/site/nycha/section-8/applicants.page",
       "focus": "Housing",
       "city": "New York",
-      "id": "nycha-section-8-waitlist"
+      "id": "nycha-section-8-waitlist",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the general list is closed",
+            "detail": "NYCHA (New York City Housing Authority) isn't taking new Section 8 applications."
+          },
+          {
+            "title": "Already on the list? No action needed",
+            "detail": "Since Aug 1, 2025, NYCHA has paused issuing vouchers from the general waitlist. No one was removed.",
+            "time": "Paused since Aug 1, 2025"
+          },
+          {
+            "title": "Keep your contact info current",
+            "detail": "Check and update your application on the Self-Service Portal (selfserve.nycha.info), or call 718-707-7771, Mon–Fri, 8am–5pm."
+          },
+          {
+            "title": "Wait for NYCHA to contact you",
+            "detail": "NYCHA will contact applicants when it starts issuing vouchers again. You must meet the income limits at that time."
+          },
+          {
+            "title": "Ask about the special programs",
+            "detail": "NYCHA still processes referrals for VASH (veterans) and Stability Vouchers. These come through referrals, not the general list."
+          }
+        ],
+        "sources": [
+          "https://www.nyc.gov/site/nycha/section-8/applicants.page",
+          "https://www.nyc.gov/site/nycha/eligibility/apply.page"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "NYCHA public housing application",
@@ -358,25 +459,110 @@
       "source": "https://www.nyc.gov/site/nycha/eligibility/apply.page",
       "focus": "Housing",
       "city": "New York",
-      "id": "nycha-public-housing-application"
+      "id": "nycha-public-housing-application",
+      "process": {
+        "steps": [
+          {
+            "title": "Apply online through ApplyNYCHA",
+            "detail": "Choose a first and second borough and give your household, income and current living situation. No internet? Book a NYCHA Walk-in Center appointment and use a kiosk."
+          },
+          {
+            "title": "Don't send documents yet",
+            "detail": "NYCHA checks your information later, at your Eligibility Interview."
+          },
+          {
+            "title": "Watch for NYCHA's letter",
+            "detail": "You'll get a letter after you apply. Check your status on the Self-Service Portal (selfserve.nycha.info).",
+            "time": "Within 30 days"
+          },
+          {
+            "title": "Renew every 24 months",
+            "detail": "Until you're called for an interview, click \"Update/Renew My Case\" on the portal every 24 months to stay on the waitlist. You keep your original filing date.",
+            "time": "Every 24 months"
+          },
+          {
+            "title": "Get help if you need it",
+            "detail": "Call (718) 707-7771, Mon–Fri, 8am–5pm. Never pay money to apply; report scams to NYCHA's Inspector General at 212-306-3355."
+          }
+        ],
+        "sources": [
+          "https://www.nyc.gov/site/nycha/eligibility/apply.page"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Syracuse Housing Authority waits",
       "value": "Public housing 6 months-2 years; Section 8 2-5 years",
-      "note": "From SHA FAQ.",
+      "note": "From SHA's FAQ. SHA's Section 8 list is currently closed.",
       "source": "https://www.syracusehousing.org/",
       "focus": "Housing",
       "city": "Syracuse",
-      "id": "syracuse-housing-authority-waits"
+      "id": "syracuse-housing-authority-waits",
+      "process": {
+        "steps": [
+          {
+            "title": "Apply online",
+            "detail": "The Syracuse Housing Authority (SHA) takes applications through its online portal (\"Apply Now\"). Household income must be within HUD limits."
+          },
+          {
+            "title": "Expect to wait",
+            "detail": "Public housing usually takes 6 months to 2 years, depending on bedroom size. Section 8 may take 2–5 years. Some emergencies may get priority.",
+            "time": "6 months–2 years; Section 8 2–5 years"
+          },
+          {
+            "title": "Know the Section 8 list is closed now",
+            "detail": "SHA's Section 8 page says its waiting list is closed. Section 8: (315) 470-4400."
+          },
+          {
+            "title": "If picked for Section 8, finish the full application",
+            "detail": "SHA checks income and criminal background for all adults. If approved, you get a voucher and time to find a unit.",
+            "time": "60–120 days to find a unit"
+          }
+        ],
+        "sources": [
+          "https://www.syracusehousing.org/",
+          "https://www.syracusehousing.org/section8/"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Albany Housing Authority",
       "value": "Section 8 closed; public housing open since Aug 31, 2026",
-      "note": "Albany residents/workers get preference.",
+      "note": "Preference goes to people who work (or can't because of age or disability) and also live or work in Albany.",
       "source": "https://www.albanyhousing.org/apply-for-housing",
       "focus": "Housing",
       "city": "Albany",
-      "id": "albany-housing-authority"
+      "id": "albany-housing-authority",
+      "process": {
+        "steps": [
+          {
+            "title": "Know what's open",
+            "detail": "Section 8 is closed. Since Aug 31, 2026, AHA takes applications for 1- to 5-bedroom public housing, plus Capital Woods, Ida Yarbrough Phase II and Steamboat 20 (rent not based on income)."
+          },
+          {
+            "title": "Fill out the online application completely",
+            "detail": "List everyone in the household, contact details, Social Security numbers and income, and complete the questionnaire about needed features such as accessibility."
+          },
+          {
+            "title": "Understand the preference",
+            "detail": "Preference goes to working families, or people who can't work due to age or disability, who also live or work in Albany. Others can apply, but AHA says it's unlikely to reach them."
+          },
+          {
+            "title": "Keep your mailing address current",
+            "detail": "AHA contacts you only by mail. Update your address in writing or with its online update form, not by phone; your file closes if mail can't be delivered."
+          },
+          {
+            "title": "Watch for Section 8 reopening",
+            "detail": "AHA will publish a Public Notice before reopening the Section 8 list."
+          }
+        ],
+        "sources": [
+          "https://www.albanyhousing.org/apply-for-housing"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Rochester Housing Authority public housing",
@@ -386,7 +572,38 @@
       "focus": "Housing",
       "city": "Rochester",
       "apply_closes": "2026-10-26",
-      "id": "rochester-housing-authority-public-housing"
+      "id": "rochester-housing-authority-public-housing",
+      "process": {
+        "steps": [
+          {
+            "title": "Check which list is open",
+            "detail": "The 1-bedroom public housing list closes Oct 26, 2026 at noon, and the studio list opens then. Other bedroom sizes are closed. This isn't Section 8.",
+            "time": "Oct 26, 2026, noon"
+          },
+          {
+            "title": "Apply online",
+            "detail": "Click \"Apply Now\" at rochesterhousing.org/apply. For a paper application, call (585) 697-7180 ext. 105."
+          },
+          {
+            "title": "Don't rely on the confirmation number",
+            "detail": "It's only a reference number. It doesn't mean you're on the waitlist."
+          },
+          {
+            "title": "Watch for the Letter of Acknowledgment",
+            "detail": "Only applicants added to a list get one.",
+            "time": "Within 10 days"
+          },
+          {
+            "title": "Check your status by phone",
+            "detail": "Waiting List Status Inquiry Line: (585) 697-7574."
+          }
+        ],
+        "sources": [
+          "https://www.rochesterhousing.org/",
+          "https://www.rochesterhousing.org/apply"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Yonkers (MHACY) Section 8",
@@ -403,16 +620,78 @@
       "note": "Check section8.hcr.ny.gov for open county lists.",
       "source": "https://hcr.ny.gov/hcv",
       "focus": "Housing",
-      "id": "hcr-section-8-project-based-voucher-lottery"
+      "id": "hcr-section-8-project-based-voucher-lottery",
+      "process": {
+        "steps": [
+          {
+            "title": "Know the lottery list is closed",
+            "detail": "The state's Project-Based Voucher (PBV) lottery list closed July 24 at 5pm. A PBV is rent help tied to a specific apartment."
+          },
+          {
+            "title": "Check the portal for updates",
+            "detail": "NYS Homes and Community Renewal (HCR) says to keep checking section8.hcr.ny.gov."
+          },
+          {
+            "title": "Apply to individual building lists",
+            "detail": "Each building usually has its own waiting list, and you can apply to as many as you like, through the local program administrator listed by county."
+          },
+          {
+            "title": "Apply to open Section 8 lists online",
+            "detail": "Use the MyHousing Portal, or apply on paper through the local program administrator."
+          },
+          {
+            "title": "Call for help",
+            "detail": "(833) 791-2748, Mon–Fri, 8:30am–4:30pm; TTY (833) 990-4002. HCR will never ask you to pay it directly for deposits or rent."
+          }
+        ],
+        "sources": [
+          "https://hcr.ny.gov/hcv"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Mainstream voucher screening (NYC)",
       "value": "CIDNY contacts within 15 business days",
-      "note": "Supply limited.",
+      "note": "Supply limited. The HPD FAQ is dated Aug 2022; contacts may have changed.",
       "source": "https://www.nyc.gov/assets/hpd/downloads/pdfs/services/mainstream-vouchers-faq-english.pdf",
       "focus": "Housing",
       "city": "New York",
-      "id": "mainstream-voucher-screening-nyc"
+      "id": "mainstream-voucher-screening-nyc",
+      "process": {
+        "steps": [
+          {
+            "title": "Check who qualifies",
+            "detail": "The household must include someone 18 to 61 with a disability who is homeless or at risk of it, or living in or at risk of entering an institution such as a nursing home."
+          },
+          {
+            "title": "Contact CIDNY or HPD for the form",
+            "detail": "CIDNY: 1-844-862-7930 or housinghelp@cidny.org. Or ask HPD for an Interest Form: 917-286-4300 or MainstreamVouchers@hpd.nyc.gov. HPD sends it only while taking applications."
+          },
+          {
+            "title": "Get screened by CIDNY",
+            "detail": "After HPD gets your form, CIDNY calls to check eligibility if vouchers are available, and helps with the application.",
+            "time": "Within 15 business days, if vouchers are available"
+          },
+          {
+            "title": "Gather documents",
+            "detail": "Proof of disability (a verification form or Social Security disability letter), a letter about the housing situation, and income and assets for everyone in the household."
+          },
+          {
+            "title": "HPD reviews and holds a briefing",
+            "detail": "If you qualify, HPD schedules a briefing where you get the voucher and a Landlord Package. If denied, HPD mails a notice."
+          },
+          {
+            "title": "Find an apartment before the voucher expires",
+            "detail": "The voucher lasts 120 days; ask for an extension within 30 days of expiring if needed. The whole process generally takes about 6–18 months.",
+            "time": "120 days"
+          }
+        ],
+        "sources": [
+          "https://www.nyc.gov/assets/hpd/downloads/pdfs/services/mainstream-vouchers-faq-english.pdf"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "CityFHEPS shopping letter",
@@ -421,12 +700,41 @@
       "source": "https://www.nyc.gov/assets/hra/downloads/pdf/cityfheps-documents/dss-7r-e.pdf",
       "focus": "Housing",
       "city": "New York",
-      "id": "cityfheps-shopping-letter"
+      "id": "cityfheps-shopping-letter",
+      "process": {
+        "steps": [
+          {
+            "title": "Go to a Homebase office",
+            "detail": "CityFHEPS is a city rent-help program. Apply through Homebase, a nonprofit working for the city: find an office at nyc.gov/site/hra/help/homebase.page or call 311."
+          },
+          {
+            "title": "Accept other benefits you're offered",
+            "detail": "The caseworker may send you to apply for other benefits. If you qualify and they're offered, CityFHEPS requires you to accept them."
+          },
+          {
+            "title": "Get your letters",
+            "detail": "If you're moving, you get a Household Share Letter (just for you) and a Shopping Letter, which you can show landlords and brokers."
+          },
+          {
+            "title": "Find a place before the letter expires",
+            "detail": "Look for an apartment, room or SRO (single room occupancy) unit within the rent limit on the letter.",
+            "time": "Shopping Letter valid 120 days"
+          },
+          {
+            "title": "Contact your caseworker to finish",
+            "detail": "They send your application to the Department of Social Services, which decides. If approved, you get a letter with your share of the rent."
+          }
+        ],
+        "sources": [
+          "https://www.nyc.gov/assets/hra/downloads/pdf/cityfheps-documents/dss-7r-e.pdf"
+        ],
+        "checked": "2026-10-13"
+      }
     },
     {
       "item": "Access to Home funding cycle",
-      "value": "Annual RFA in July-Aug; awards about December; 24-month grant term",
-      "note": "Families apply to the local administrator once funded, so expect months to over a year.",
+      "value": "2024 round: applications July 15–Aug 29; awards Dec 2024; 24-month grants",
+      "note": "Grants go to local administrators, up to $25,000 per home. The report doesn't say how families apply.",
       "source": "https://hcr.ny.gov/system/files/documents/2025/12/2024-25-access-to-home-annual-report-12.29.25.pdf",
       "focus": "Housing",
       "id": "access-to-home-funding-cycle"
@@ -439,7 +747,41 @@
       "focus": "Housing",
       "age_min": 23,
       "id": "camphill-village-copake-admission",
-      "city": "Copake"
+      "city": "Copake",
+      "process": {
+        "steps": [
+          {
+            "title": "Confirm adult OPWDD eligibility",
+            "detail": "The applicant must be eligible for OPWDD services as an adult and be 23 or older.",
+            "time": "Age 23+"
+          },
+          {
+            "title": "Take a tour (encouraged)",
+            "detail": "Camphill encourages families to take a guided tour before applying."
+          },
+          {
+            "title": "Fill out the Resident Application",
+            "detail": "It covers basic information, medical and other needs, hobbies, interests and concerns."
+          },
+          {
+            "title": "Attend an interview if invited",
+            "detail": "Family, guardians or social workers come with the applicant to meet one or two Admission Committee members, usually with a tour."
+          },
+          {
+            "title": "Do a four-week trial visit if invited",
+            "detail": "The applicant lives in the Village for four weeks. Camphill charges a $7,500 fee at the start, since it can't bill OPWDD before someone is a resident.",
+            "time": "Four weeks"
+          },
+          {
+            "title": "Receive an invitation to join",
+            "detail": "If it's a good fit, the applicant is invited to join. As of 2023 there was a substantial waiting list."
+          }
+        ],
+        "sources": [
+          "https://camphillvillage.org/admissions/"
+        ],
+        "checked": "2026-10-13"
+      }
     }
   ],
   "employment_detail": {
