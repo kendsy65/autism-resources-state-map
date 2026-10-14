@@ -10,7 +10,7 @@
   --priv:#74378a; --priv-bg:#f2e6f5;
   --warn:#a3440b; --warn-bg:#fbe7d8;
   /* Route colors, one per category (white text on each passes WCAG AA) */
-  --c-housing:#2560b8; --c-financing:#0d7a52; --c-support:#a85a0c; --c-employers:#8a3aa6; --on-route:#ffffff;
+  --c-housing:#2560b8; --c-financing:#0d7a52; --c-support:#a85a0c; --c-employers:#8a3aa6; --c-caregiver:#b3366b; --on-route:#ffffff;
   --display:"Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
   --body:"Overpass", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono:"Overpass Mono", ui-monospace, Menlo, monospace;
@@ -22,7 +22,7 @@
   --fed:#b3bdf3; --fed-bg:#252f57; --state:#6fd6a8; --state-bg:#123527;
   --city:#efc56e; --city-bg:#3a2b10; --priv:#dcaaf0; --priv-bg:#3a2346;
   --warn:#f5a46a; --warn-bg:#3b2414;
-  --c-housing:#3f78cf; --c-financing:#13875d; --c-support:#b5650f; --c-employers:#9a4bb6;
+  --c-housing:#3f78cf; --c-financing:#13875d; --c-support:#b5650f; --c-employers:#9a4bb6; --c-caregiver:#c0457a;
   color-scheme:dark}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
@@ -296,7 +296,7 @@ details.yby>summary{cursor:pointer;color:var(--accent);font-weight:600;font-size
 .tblwrap:has(.yby-t){max-height:320px;overflow-y:auto}
 
 /* ---------- Wayfinding ---------- */
-.cat-Housing{--cat:var(--c-housing)} .cat-Financing{--cat:var(--c-financing)} .cat-Employment{--cat:var(--c-support)} .cat-Employers{--cat:var(--c-employers)}
+.cat-Housing{--cat:var(--c-housing)} .cat-Financing{--cat:var(--c-financing)} .cat-Employment{--cat:var(--c-support)} .cat-Employers{--cat:var(--c-employers)} .cat-CaregiverSupport{--cat:var(--c-caregiver)}
 .route{display:inline-grid;place-items:center;flex:none;width:34px;height:34px;border-radius:50%;background:var(--cat,var(--ink));color:var(--on-route);font-weight:800;font-size:14px;line-height:1}
 .sum-btn .route{background:var(--ink);color:var(--surface)}
 .sum-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
@@ -484,3 +484,8 @@ input[type=search],.filters select,#region,#within,#sort{border-radius:999px !im
 .fit-chip-levels{display:inline-flex;gap:4px}
 .fit-chip-levels button{font:inherit;font-size:12.5px;font-weight:600;border:1px solid var(--tint-line);background:var(--surface);color:var(--ink);border-radius:999px;padding:3px 10px;cursor:pointer}
 .fit-chip-levels button[aria-pressed="true"]{border-color:var(--state);background:var(--state-bg);color:var(--state)}
+
+/* Six summary tiles: one row on wide screens, three across on mid-size, two on phones */
+.summary{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media (max-width:1000px){.summary{grid-template-columns:repeat(3,minmax(0,1fr))}.summary .sum-btn{grid-column:auto}}
+@media (max-width:560px){.summary{grid-template-columns:repeat(2,minmax(0,1fr))}.summary .sum-btn{grid-column:1/-1}}

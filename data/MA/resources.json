@@ -28,7 +28,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-mainstream-non-elderly-disabled-ned-vouchers",
@@ -59,7 +60,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-hud-section-811-project-rental-assistance",
@@ -90,7 +92,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-federal-public-housing",
@@ -121,7 +124,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-fair-housing-reasonable-accommodations",
@@ -152,7 +156,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-ssi-living-arrangement-rules",
@@ -183,7 +188,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-massachusetts-rental-voucher-program-mrvp",
@@ -214,7 +220,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-alternative-housing-voucher-program-ahvp",
@@ -245,7 +252,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-state-public-housing-via-champ",
@@ -276,7 +284,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-chapter-689-special-needs-housing",
@@ -307,7 +316,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-community-based-housing-cbh",
@@ -338,7 +348,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-facilities-consolidation-fund-fcf",
@@ -369,7 +380,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-home-modification-loan-program-hmlp",
@@ -400,7 +412,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-raft-emergency-housing-assistance",
@@ -431,7 +444,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-dds-adult-eligibility-for-autism",
@@ -462,7 +476,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-dds-residential-supports",
@@ -493,7 +508,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-masshealth-adult-foster-care",
@@ -524,7 +540,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-masshealth-group-adult-foster-care",
@@ -555,7 +572,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-masshousing-3-priority-set-aside",
@@ -586,7 +604,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-independent-living-centers",
@@ -617,7 +636,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-mcad-housing-discrimination-complaints",
@@ -648,7 +668,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-boston-housing-authority",
@@ -679,7 +700,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-boston-disabilities-commission-housing",
@@ -710,7 +732,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-boston-metrolist-housing-lotteries",
@@ -741,7 +764,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-cambridge-housing-authority",
@@ -772,7 +796,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-worcester-housing-authority",
@@ -803,7 +828,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-springfield-housing-authority",
@@ -834,7 +860,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-autism-housing-pathways",
@@ -865,7 +892,10 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": [
+      "Caregiver Support"
+    ]
   },
   {
     "id": "ma-hou-specialized-housing-inc",
@@ -896,7 +926,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-adult-autism-support-centers",
@@ -927,7 +958,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-the-arc-of-massachusetts-housing-guidance",
@@ -958,7 +990,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-housing-navigator-massachusetts",
@@ -989,7 +1022,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-lowell-housing-authority",
@@ -1020,7 +1054,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-somerville-office-of-housing-stability",
@@ -1051,7 +1086,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-somerville-consolidated-rental-waitlist",
@@ -1082,7 +1118,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-quincy-housing-authority",
@@ -1113,7 +1150,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-lynn-housing-authority-lhand",
@@ -1144,7 +1182,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-brockton-housing-authority",
@@ -1175,7 +1214,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-berkshire-hills-music-academy",
@@ -1206,7 +1246,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-amego-adult-residential",
@@ -1237,7 +1278,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-melmark-new-england-adult-services",
@@ -1268,7 +1310,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-may-institute-adult-residential",
@@ -1299,7 +1342,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-cardinal-cushing-centers-adult-residential",
@@ -1330,7 +1374,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-evergreen-center-adult-supports",
@@ -1361,7 +1406,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-riverbrook-residence",
@@ -1392,7 +1438,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-ticket-to-work",
@@ -1423,7 +1470,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-plan-to-achieve-self-support-pass",
@@ -1454,7 +1502,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-ssi-ssdi-work-incentives",
@@ -1485,7 +1534,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-section-1619-b-masshealth-continuation",
@@ -1516,7 +1566,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-work-opportunity-tax-credit",
@@ -1547,7 +1598,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-abilityone",
@@ -1578,7 +1630,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-job-accommodation-network",
@@ -1609,7 +1662,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-schedule-a-federal-hiring",
@@ -1640,7 +1694,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-masshire-career-centers",
@@ -1671,7 +1726,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-massability-vocational-rehabilitation",
@@ -1702,7 +1758,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-pre-employment-transition-services",
@@ -1733,7 +1790,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-nextgen-careers",
@@ -1764,7 +1822,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-dds-employment-day-supports",
@@ -1795,7 +1854,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-masshealth-commonhealth",
@@ -1826,7 +1886,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-work-without-limits",
@@ -1857,7 +1918,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-ma-disability-employment-tax-credit",
@@ -1888,7 +1950,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-young-adults-with-disabilities-grant",
@@ -1919,7 +1982,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-massachusetts-autism-commission",
@@ -1950,7 +2014,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-boston-disabilities-commission-employment",
@@ -1981,7 +2046,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-cambridge-commission-for-persons-with-disabilities",
@@ -2012,7 +2078,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-work-inc",
@@ -2043,7 +2110,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-the-caning-company",
@@ -2074,7 +2142,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-heritage-shredding",
@@ -2105,7 +2174,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-northeast-arc-employment-services",
@@ -2136,7 +2206,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-prospect-meadow-farm",
@@ -2167,7 +2238,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-gateway-arts",
@@ -2198,7 +2270,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-the-price-center-kindness-caf",
@@ -2229,7 +2302,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-post-22-ben-s-beans",
@@ -2260,7 +2334,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-aspire-works-internships",
@@ -2291,7 +2366,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-triangle-inc-prism",
@@ -2322,7 +2398,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-easterseals-ma-job-placement",
@@ -2353,7 +2430,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-jvs-transitions-to-work",
@@ -2384,7 +2462,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-best-buddies-jobs",
@@ -2415,7 +2494,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-charles-river-center",
@@ -2446,7 +2526,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-aane-workmap-lifemap-coaching",
@@ -2477,7 +2558,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Low support needs"
+    "support_needs": "Low support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-minute-man-arc-employment-services",
@@ -2508,7 +2590,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-seven-hills-aspire",
@@ -2539,7 +2622,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-south-shore-industries",
@@ -2570,7 +2654,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-open-sky-i-dd-employment-services",
@@ -2601,7 +2686,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-riverside-industries",
@@ -2632,7 +2718,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-berkshire-county-arc-employment",
@@ -2663,7 +2750,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-cooperative-production-co-op",
@@ -2694,7 +2782,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-project-search-neba",
@@ -2725,7 +2814,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-futurebos-youth-jobs-formerly-successlink",
@@ -2756,7 +2846,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-worcester-accessibility-division",
@@ -2787,7 +2878,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-springfield-office-for-citizens-with-disabilities",
@@ -2818,7 +2910,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-somerville-commission-for-persons-with-disabilities",
@@ -2849,7 +2942,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-newton-youthworks-internships",
@@ -2880,7 +2974,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-venture-autism-employment-services",
@@ -2911,7 +3006,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-mainstay-supportive-housing",
@@ -2942,7 +3038,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-pathways-to-possible",
@@ -2973,7 +3070,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-arc-of-the-south-shore-residential",
@@ -3004,7 +3102,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-northeast-arc-residential",
@@ -3035,7 +3134,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-hou-minute-man-arc-residential",
@@ -3066,7 +3166,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-asperger-works",
@@ -3097,7 +3198,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Low support needs"
+    "support_needs": "Low support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-curry-college-neurodiversity-center",
@@ -3128,7 +3230,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Low support needs"
+    "support_needs": "Low support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-amego-community-employment",
@@ -3159,7 +3262,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-valley-educational-associates",
@@ -3190,7 +3294,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-nashoba-learning-group-adult-services",
@@ -3221,7 +3326,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-fin-snap-food-benefits",
@@ -3252,7 +3358,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-home-energy-assistance-heap",
@@ -3283,7 +3390,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-lifeline-phone-internet-discount",
@@ -3314,7 +3422,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-federal-credit-for-other-dependents",
@@ -3345,7 +3454,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-attainable-savings-plan-able",
@@ -3376,7 +3486,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-eaedc-cash-assistance",
@@ -3407,7 +3518,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-masshealth-pca-program",
@@ -3438,7 +3550,10 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": [
+      "Caregiver Support"
+    ]
   },
   {
     "id": "ma-fin-dds-adult-hcbs-waivers",
@@ -3469,7 +3584,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-dds-family-support-flexible-funding",
@@ -3500,7 +3616,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-ma-child-and-family-tax-credit",
@@ -3531,7 +3648,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-catastrophic-illness-in-children-relief-fund",
@@ -3562,7 +3680,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-mbta-transportation-access-pass",
@@ -3593,7 +3712,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-utility-low-income-discount-rate",
@@ -3624,7 +3744,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-boston-taxi-discount-coupons",
@@ -3655,7 +3776,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-boston-tax-help-coalition",
@@ -3686,7 +3808,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-cambridge-taxi-discount-coupons",
@@ -3717,7 +3840,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-cambridge-somerville-heap-office",
@@ -3748,7 +3872,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-ma-alternative-finance-program",
@@ -3785,7 +3910,8 @@
     "apply_closes": "",
     "apply_source": "https://massachusetts.easterseals.com/get-support/areas-of-support/alternative-finance-program/mini-loan-program",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-plan-of-ma-ri-pooled-trust",
@@ -3821,7 +3947,10 @@
     "apply_closes": "",
     "apply_source": "https://www.planofma-ri.org/faq-2022/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": [
+      "Caregiver Support"
+    ]
   },
   {
     "id": "ma-fin-aane-flutie-foundation-grant",
@@ -3857,7 +3986,8 @@
     "apply_closes": "",
     "apply_source": "https://aane.org/services-programs/grants-free-programs/doug-flutie-jr-foundation-for-autism-grant/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-autism-alliance-flutie-family-grant",
@@ -3893,7 +4023,8 @@
     "apply_closes": "",
     "apply_source": "https://autismalliance.org/stories/doug-flutie-jr-foundation-grant-funding",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-flutie-kodi-lee-gives-back-grant",
@@ -3929,7 +4060,8 @@
     "apply_closes": "2026-05-21",
     "apply_source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-fin-act-today-family-grants",
@@ -3966,7 +4098,8 @@
     "apply_closes": "2026-10-15",
     "apply_source": "https://www.act-today.org/apply-for-grant/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-chitarra-pastaria",
@@ -3997,7 +4130,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": true,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ma-emp-bitty-and-beaus-cambridge",
@@ -4028,7 +4162,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": true,
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-kindness-cafe-price-center",
@@ -4059,7 +4194,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": "",
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-ey-neuro-diverse-center",
@@ -4090,7 +4226,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": true,
-    "support_needs": "Low support needs"
+    "support_needs": "Low support needs",
+    "also_categories": []
   },
   {
     "id": "ma-emp-larche-boston-north-culinary",
@@ -4121,6 +4258,519 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": "",
-    "support_needs": "Moderate to high support needs"
+    "support_needs": "Moderate to high support needs",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-dds-family-support-centers",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "DDS Family Support Centers",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Department of Developmental Services (DDS), through local nonprofit agencies",
+    "city": "",
+    "region": "Statewide",
+    "description": "Local centers that help families caring for a relative with an intellectual or developmental disability at home. They offer information, family trainings, parent networking and mentoring, help finding services, and small flexible funds.",
+    "eligibility": "Anyone can call for information and referral. Other services, including flexible funding, require the family member to be DDS-eligible and living at home with family.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published (flexible funding is based on family need and available budget)",
+    "how_to_apply": "Find your local center in the DDS Family Support Directory (January 2026) on mass.gov; or contact DDS at mass.gov/forms/contact-dds-online",
+    "source_url": "https://www.mass.gov/info-details/dds-family-support-centers",
+    "date_checked": "2026-10-13",
+    "notes": "At least one center in each DDS Area. Centers can also help you start the DDS eligibility application. Flexible funding can cover things like adaptive equipment, recreation, or short-term emergency costs.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-advocates-autism-resource-center",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Autism Resource Center (Advocates, formerly HMEA Autism Resource Central)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Advocates (DDS-funded Autism Support Center)",
+    "city": "Worcester",
+    "region": "Central",
+    "description": "A regional autism support center that helps autistic people and their families, including families of adults 18+. It offers information, referrals, and classes and trainings for parents and family members.",
+    "eligibility": "Families and autistic people in the DDS Central region. Some services may need DDS eligibility.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call (508) 835-4278; email AutismResourceCenter@Advocates.org; 712 Plantation Street, Worcester, MA 01605; autismresourcecentral.org",
+    "source_url": "https://www.autismresourcecentral.org/",
+    "date_checked": "2026-10-13",
+    "notes": "DDS lists this center as 'HMEA's Autism Resource Central'; its website now says it is a program of Advocates. Hours Mon-Thu 9-5, Fri 9-3.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-autism-connections-west",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Autism Connections",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "ServiceNet (DDS Autism Support Center for western Massachusetts)",
+    "city": "Northampton",
+    "region": "West",
+    "description": "The DDS autism support center for western Massachusetts. It gives information, resources, and practical help to autistic children, teens, and adults and to their families and caretakers, including during big life changes.",
+    "eligibility": "Families and autistic people in Hampden, Hampshire, Franklin, and Berkshire counties and the North Quabbin area. Family supports come through DDS referral.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call (413) 585-8010 (Springfield, Northampton, Greenfield) or (413) 443-4780 (Pittsfield); servicenet.org/autism-connections",
+    "source_url": "https://www.servicenet.org/autism-connections",
+    "date_checked": "2026-10-13",
+    "notes": "The DDS page calls it 'Pathlight Autism Connections'; the ServiceNet page says ServiceNet runs it. Funded by DDS, ServiceNet, grants, and gifts.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-lifeworks-adult-autism-support-center",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Lifeworks Adult Autism Support Center",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Lifeworks (DDS-funded Autism Support Center)",
+    "city": "Westwood",
+    "region": "Greater Boston",
+    "description": "Helps autistic adults and their families get services like DDS, MassHealth, and Social Security. It offers workshops on money planning, housing, and guardianship, plus peer support groups and social activities.",
+    "eligibility": "Autistic people and families in the DDS Metro region (e.g., Canton, Dedham, Norwood, Walpole, Westwood) and Newton/South Norfolk (Needham, Newton, Wellesley, Weston). Adult services are aimed at adults without an intellectual disability. Some services need DDS eligibility or a referral.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call (781) 762-4001 or (781) 320-9778; email Brian Clark, Director, bclark@lifeworksarc.org; 789 Clapboardtree Street, Westwood, MA 02090",
+    "source_url": "https://lifeworksarc.org/autism-support-center/",
+    "date_checked": "2026-10-13",
+    "notes": "DDS lists this as the Adult Autism Support Center for the whole Metro region.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-community-autism-resources",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Community Autism Resources",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Community Autism Resources (DDS-funded Autism Support Center)",
+    "city": "Taunton",
+    "region": "Southeast",
+    "description": "A regional autism support center that serves autistic people and their parents and other family members. It offers resources, courses, college navigation, and a social skills program for teens and adults.",
+    "eligibility": "People with autism and their families in its Southeast regional area.",
+    "upfront_cost": "Free (site says its programs are free to families)",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call 508-379-0371; email janrandall@community-autism-resources.com; 40 Dean St. Unit A, Taunton, MA 02780",
+    "source_url": "https://www.community-autism-resources.com/",
+    "date_checked": "2026-10-13",
+    "notes": "DDS's 2026 Family Support Directory lists this center as children only, but the DDS Autism Support Centers page and the center's site list adult services. Confirm adult help when you call.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-se-adult-autism-navigators",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Adult Autism Navigators at Southeast Family Support Centers",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "DDS Southeast Region, through local family support agencies",
+    "city": "",
+    "region": "Southeast",
+    "description": "In southeast Massachusetts, several DDS family support centers have staff who help families of autistic adults find and use services.",
+    "eligibility": "Families of autistic adults in the DDS Southeast Region. Some services need DDS eligibility.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Kennedy-Donovan Center (Sandwich) (508) 745-3590; People Inc. (Fall River) (774) 488-5325; Better Community Living (Dartmouth) (508) 999-4300; Plymouth County Family Support (508) 927-4520; Advocates (Randolph) (781) 767-3048; The Arc of Bristol County (Attleboro) (508) 226-1445; The Arc of Greater Brockton (walk-ins)",
+    "source_url": "https://www.mass.gov/service-details/dds-autism-support-centers",
+    "date_checked": "2026-10-13",
+    "notes": "Advocates Randolph is by appointment only. DDS page lists no phone for The Arc of Greater Brockton; the DDS directory lists (508) 583-8030 x224.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-eoea-family-caregiver-support",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "Family Caregiver Support Program",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "Executive Office of Elder Affairs, through local Aging Services Access Points (via MassOptions)",
+    "city": "",
+    "region": "Statewide",
+    "description": "A free program where a Caregiver Specialist makes a care plan with you and gives ongoing tips and support. Parents and other relatives age 55+ caring for an adult with a disability can use it.",
+    "eligibility": "Unpaid caregivers in one of these groups: relatives (including parents) age 55+ caring for an adult 18-59 with a disability; adults caring for someone 60+ or with dementia; relatives (not parents) 55+ raising a child under 18.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Free",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call MassOptions toll free (800) 243-4636 and ask for a Caregiver Specialist near you",
+    "source_url": "https://www.mass.gov/info-details/family-caregiver-support-program-eligibility",
+    "date_checked": "2026-10-13",
+    "notes": "Parents under 55 caring for an autistic adult do not qualify. Funded under the federal Older Americans Act (National Family Caregiver Support Program).",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-pfml-family-leave",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Leave & income",
+    "name": "Paid Family and Medical Leave - leave to care for a family member",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Department of Family and Medical Leave",
+    "city": "",
+    "region": "Statewide",
+    "description": "If you work in Massachusetts, you can take up to 12 weeks of paid leave a year to care for a family member, including an adult child, with a serious health condition. Your job is protected while you are out.",
+    "eligibility": "Massachusetts workers covered by PFML. Family member includes children (no age limit listed), spouse/partner, parents, grandparents, grandchildren, siblings, and in-laws (parents of spouse).",
+    "upfront_cost": "None",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Up to 12 weeks of family leave per benefit year; maximum weekly benefit $1,230.39 in 2026; 26 weeks total across all leave types",
+    "how_to_apply": "Tell your employer about 30 days ahead, then apply at paidleave.mass.gov or call (833) 344-7365 (Mon-Fri 8-4:30). The relative's provider must fill out the family member serious health condition form (mass.gov/family-caring-form).",
+    "source_url": "https://www.mass.gov/info-details/paid-family-and-medical-leave-pfml-overview-and-benefits",
+    "date_checked": "2026-10-13",
+    "notes": "Family member definition from mass.gov 'PFML leave to care for a family member' guide. Weekly amount depends on your wages; $1,230.39 is the cap. Funded by payroll contributions, not federal funds.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-aane-parent-support-groups",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "AANE Support Groups for Parents and Families of Autistic Adults",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Association for Autism and Neurodiversity (AANE)",
+    "city": "",
+    "region": "Statewide",
+    "description": "Online and in-person support groups where parents, grandparents, fathers, and other family members of autistic adults can share and learn from each other. There is a free monthly intro session for parents of adults.",
+    "eligibility": "Parents and family members of autistic and neurodivergent people; groups for parents of adults, transition-age young adults (18-22), fathers, grandparents, and siblings in a parent role.",
+    "upfront_cost": "Free to $180 per registration",
+    "ongoing_cost": "Closed groups $100-$180 for 6-8 weekly 90-minute sessions; open sessions $10 for most (some free); 'Parents of Adults Community Connection' is free",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "Register on aane.org (Support Groups page); call AANE (617) 393-3824 or use the contact form",
+    "source_url": "https://aane.org/?p=150",
+    "date_checked": "2026-10-13",
+    "notes": "Registration required for all groups. Financial help available by email (address on site). Many groups are online, so not limited to one region.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-aane-parent-coaching",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "AANE Coaching for Parents",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Association for Autism and Neurodiversity (AANE)",
+    "city": "",
+    "region": "Statewide",
+    "description": "One-on-one online coaching sessions for parents and family members of autistic adults. A coach helps you with your own family's questions and challenges.",
+    "eligibility": "Parents and family members of autistic adults 23+ (separate option for families of people up to 22).",
+    "upfront_cost": "$125 per 1-hour session",
+    "ongoing_cost": "$125 per session",
+    "max_benefit": "Not published",
+    "how_to_apply": "Book online through the AANE Coaching for Parents page; or schedule a call with AANE staff",
+    "source_url": "https://AANE.ORG/services-programs/one-to-one-services/parent-coaching/",
+    "date_checked": "2026-10-13",
+    "notes": "Page lists grant-funded discount codes (25% and 50% off) but the codes are labeled 2024; confirm they still work.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-arc-mass-after-im-gone",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "After I'm Gone (future planning for aging caregivers)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "The Arc of Massachusetts",
+    "city": "Waltham",
+    "region": "Statewide",
+    "description": "Helps aging parents plan for who will support their adult child with autism or a disability when they no longer can. It offers a fill-in Future Planning Guide, webinars, workshops, and lists of legal, financial, and public resources.",
+    "eligibility": "Aging caregivers and families of people with intellectual and developmental disabilities or autism.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call (781) 891-6270; email staff@arcmass.org; thearcofmass.org/future; 217 South Street, Waltham, MA 02453",
+    "source_url": "https://thearcofmass.org/future/",
+    "date_checked": "2026-10-13",
+    "notes": "Launched June 2026. Cost is not stated; the guide is a free download. The Arc of Mass also has 17 local chapters and monthly family webinars.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-massfamilies-family-leadership-series",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "Family Leadership Series (MassFamilies)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Massachusetts Families Organizing for Change (MassFamilies), with DDS support",
+    "city": "",
+    "region": "Statewide",
+    "description": "A free training series for parents and caregivers of people with disabilities. It teaches how to speak up for your family member, understand disability services and policy, and take care of yourself.",
+    "eligibility": "Parents and caregivers of children and adults who are DDS-eligible.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Free",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "Apply at massfamilies.org/training/family-leadership-series (Metro and West); Central, Northeast, and Southeast at familyleadershipma.org; email hello@massfamilies.org; call 1-774-855-6001",
+    "source_url": "https://www.massfamilies.org/training/family-leadership-series/",
+    "date_checked": "2026-10-13",
+    "notes": "'Free' comes from the DDS Family Leadership Series flyer (mass.gov/doc/fls-2/download). Applications usually open in July for the next year's series; 2026 sessions ran Jan-Apr.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-cpr-supported-decision-making",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "Supported Decision-Making Resources for Massachusetts Families",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Center for Public Representation (CPR)",
+    "city": "",
+    "region": "Statewide",
+    "description": "Free forms and guides that help families support an autistic adult in making their own choices about health, money, and school, instead of or alongside guardianship. Available in English and Spanish.",
+    "eligibility": "Massachusetts families and adults with disabilities.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "Email SDM@cpr-ma.org; supporteddecisions.org",
+    "source_url": "https://supporteddecisions.org/resources/guardianship-is-not-the-only-option-resources-forms-for-massachusetts-families/",
+    "date_checked": "2026-10-13",
+    "notes": "Made with Conexiones Latinx-MA; partly funded by the Mass. Developmental Disabilities Council. Massachusetts has no supported decision-making law yet (bills pending).",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-probate-court-guardianship-help",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "Probate and Family Court Guardianship Help (forms, clinics, Lawyer for the Day)",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Massachusetts Probate and Family Court (Trial Court)",
+    "city": "",
+    "region": "Statewide",
+    "description": "The court posts the forms you need to become guardian of an adult who cannot care for themselves. Low-income families can get free help filling them out through court clinics and Lawyer for the Day programs.",
+    "eligibility": "Free help is for low-income people seeking guardianship of an adult, or current guardians needing help with care plans and yearly reports.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "See mass.gov 'Learn how to get help with filing for guardianship'; Middlesex Volunteer Lawyers Project clinic (remote): (617) 603-1700 or online intake; Suffolk Probate and Family Court clinics in Boston; find your court at mass.gov/orgs/probate-and-family-court/locations",
+    "source_url": "https://www.mass.gov/info-details/learn-how-to-get-help-with-filing-for-guardianship",
+    "date_checked": "2026-10-13",
+    "notes": "Key forms: Petition for Appointment of Guardian (MPC 120), Medical Certificate (MPC 400) or Clinical Team Report (MPC 402, needed for intellectual disability). Filing fees not listed on the page. Don't go to the courthouse for the Middlesex clinic; it's remote.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-seven-hills-respite",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "Seven Hills Respite Supports",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Seven Hills Foundation (through its Family Support Centers)",
+    "city": "",
+    "region": "Central",
+    "description": "Trained staff care for your adult or child with a disability so you can take a break. Respite can be hourly or overnight, at home or in respite homes, including emergency respite.",
+    "eligibility": "Children and adults with disabilities and their families in the Athol, Lowell/Chelmsford, Fitchburg, and Southbridge areas.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published (state referral or private pay)",
+    "max_benefit": "Not published",
+    "how_to_apply": "North Quabbin (Athol) 978-602-8807; Lowell area (Chelmsford) 978-560-5751; North Central (Fitchburg) 978-632-4322; South Valley (Southbridge) 774-241-2504",
+    "source_url": "https://sevenhills.org/programs/respite-supports",
+    "date_checked": "2026-10-13",
+    "notes": "Covers parts of Central and Northeast MA (Chelmsford). State-funded respite usually needs a DDS referral; ask your DDS service coordinator. Waitlists not stated.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ma-cg-behavioral-health-help-line",
+    "state": "MA",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Massachusetts Behavioral Health Help Line",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "Executive Office of Health and Human Services (EOHHS)",
+    "city": "",
+    "region": "Statewide",
+    "description": "A free call, text, or chat line open 24/7 for mental health or substance use help, including crisis. Family members can call for help for someone they care for.",
+    "eligibility": "All Massachusetts residents, with or without insurance.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Free",
+    "max_benefit": "Not applicable",
+    "how_to_apply": "Call or text 833-773-2445; chat at masshelpline.com; TTY via MassRelay 711",
+    "source_url": "https://www.mass.gov/doc/behavioral-health-help-line-faq-public/download",
+    "date_checked": "2026-10-13",
+    "notes": "Available in 200+ languages. For life-threatening emergencies call 911.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
   }
 ]

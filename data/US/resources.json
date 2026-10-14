@@ -28,7 +28,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "us-ss-check-eligibility",
@@ -59,7 +60,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "us-ss-apply-for-ssi",
@@ -90,7 +92,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "us-ss-contact-social-security",
@@ -121,7 +124,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "us-ss-ticket-to-work-help-line",
@@ -152,6 +156,7 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   }
 ]

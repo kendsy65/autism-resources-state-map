@@ -143,10 +143,10 @@
 </div>
 
 <script type="module">
-import { STATES, CATEGORIES, CATEGORY_LABEL, FOCUS_CATEGORIES, esc, safeUrl, loadJSON, loadResources, initThemeToggle } from "./assets/js/common.js";
+import { STATES, CATEGORIES, CATEGORY_LABEL, FOCUS_CATEGORIES, catClass, inCategory, esc, safeUrl, loadJSON, loadResources, initThemeToggle } from "./assets/js/common.js";
 initThemeToggle(document.getElementById("theme-btn"));
 // Route letter for each category's badge.
-const ROUTE = { Housing: "H", Financing: "F", Employment: "S", Employers: "E" };
+const ROUTE = { Housing: "H", Financing: "F", Employment: "S", Employers: "E", "Caregiver Support": "C" };
 import * as pl from "./assets/js/planner.js";
 import { SSI_STATUS, SUPPORT, FOCUS, loadProfile, clearProfile, nextSteps, workScenarios, ageOn, parseDate, fmtDate, rankResources, financingFor, NEAR_MILES } from "./assets/js/profile.js";
 import { lookupZip, placeIndex, regionForHome, miles } from "./assets/js/geo.js";
@@ -189,27 +189,27 @@ const fmt = v => /^(not published|varies|not applicable|n\/a)/i.test(v || "") ? 
 // Summary tiles follow the distance filter, so they're redrawn on every render.
 function renderSummary() {
 $("summary").innerHTML = CATEGORIES.map(c => {
-  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && r.category === c && (!st.fitOnly || r.fit > 0));
-  return `<div class="sum cat-${c}"><div class="sum-top"><span class="route" aria-hidden="true">${ROUTE[c]}</span><h3>${CATEGORY_LABEL[c]}</h3></div><div class="big">${rows.length}</div><div class="bars">${rows.length
+  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && inCategory(r, c) && (!st.fitOnly || r.fit > 0));
+  return `<div class="sum ${catClass(c)}"><div class="sum-top"><span class="route" aria-hidden="true">${ROUTE[c]}</span><h3>${CATEGORY_LABEL[c]}</h3></div><div class="big">${rows.length}</div><div class="bars">${rows.length
     ? Object.keys(LV).map(l => `<span class="tag ${lvClass(l)}">${LV[l]} ${rows.filter(r => r.level === l).length}</span>`).join("")
     : `<span class="np" style="font-size:13px">Research in progress</span>`}</div></div>`;
 }).join("") + (() => {
   // Nonprofit section: one tap shows only nonprofit organizations across every category.
   const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, "default").filter(r => (r.dist == null || r.dist <= st.within) && (!st.fitOnly || r.fit > 0) && r.level === "Private/Nonprofit" && !r.for_profit);
   return `<button class="sum sum-btn" id="np-card" aria-describedby="np-desc"><div class="sum-top"><span class="route" aria-hidden="true">N</span><h3>Nonprofits</h3></div><div class="big">${rows.length}</div>
-    <div class="bars">${CATEGORIES.map(c => `<span class="tag cat cat-${c}">${CATEGORY_LABEL[c]} ${rows.filter(r => r.category === c).length}</span>`).join("")}</div>
+    <div class="bars">${CATEGORIES.map(c => `<span class="tag cat ${catClass(c)}">${CATEGORY_LABEL[c]} ${rows.filter(r => inCategory(r, c)).length}</span>`).join("")}</div>
     <span class="hint" id="np-desc" style="display:block;margin:8px 0 0">Show only nonprofit organizations →</span></button>`;
 })();
 }
 
-$("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" class="cat-${c}" aria-pressed="false">${c === "All" ? "All" : CATEGORY_LABEL[c]}</button>`).join("");
+$("cats").innerHTML = ["All", ...CATEGORIES].map(c => `<button data-cat="${c}" class="${c === "All" ? "" : catClass(c)}" aria-pressed="false">${c === "All" ? "All" : CATEGORY_LABEL[c]}</button>`).join("");
 $("levels").innerHTML = Object.keys(LV).map(l => `<button class="chip ${lvClass(l)}" data-lv="${l}" aria-pressed="${st.lv.has(l)}">${LV[l]}</button>`).join("")
   + `<span class="tag ff" title="Federal money, run by a state or city agency">Federally funded</span>`;
 const regions = [...new Set(D.map(r => r.region).filter(r => r && r !== "Statewide"))].sort();
 $("region").innerHTML = `<option value="All">All regions</option>` + regions.map(r => `<option>${esc(r)}</option>`).join("");
 if (!regions.includes(st.region)) st.region = "All";
 if (me) st.cats = me.focus === "Both" ? new Set() : new Set(FOCUS_CATEGORIES[me.focus]);
-const catOn = c => st.cats.size === 0 || st.cats.has(c);
+const catOn = r => st.cats.size === 0 || [...st.cats].some(c => inCategory(r, c));
 // The Nonprofits card shows only the Private/Nonprofit level, minus companies.
 const npOnlyMode = () => st.lv.size === 1 && st.lv.has("Private/Nonprofit");
 $("region").value = st.region;
@@ -220,12 +220,12 @@ if (home) { $("near-row").hidden = false; $("within").value = "50"; }
 function render() {
   renderSummary();
   const q = st.q.toLowerCase();
-  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && (!st.fitOnly || r.fit > 0) && catOn(r.category) && !(npOnlyMode() && r.for_profit) && st.lv.has(r.level)
+  const rows = rankResources(D, { support: st.fitLevel || me?.support, home }, coordsOf, st.sort).filter(r => (r.dist == null || r.dist <= st.within) && (!st.fitOnly || r.fit > 0) && catOn(r) && !(npOnlyMode() && r.for_profit) && st.lv.has(r.level)
     && (st.region === "All" || r.region === st.region || r.region === "Statewide")
     && (!q || Object.values(r).join(" ").toLowerCase().includes(q)));
   $("count").textContent = `Showing ${rows.length} of ${D.length} resources` + (st.fitOnly ? ` that fit Level ${st.fitLevel} needs` : "") + (st.region !== "All" ? ` (${st.region} plus statewide)` : "")
     + (home && st.within < Infinity ? ` within ${st.within} miles of ${home.place}, plus statewide` : "");
-  const emptyCats = [...st.cats].filter(c => !D.some(r => r.category === c));
+  const emptyCats = [...st.cats].filter(c => !D.some(r => inCategory(r, c)));
   const emptyMsg = !stateRows.length && st.cats.size ? `We haven't finished researching ${S.name} yet. Check back soon.`
     : st.cats.size && emptyCats.length === st.cats.size ? `No ${emptyCats.map(c => CATEGORY_LABEL[c].toLowerCase()).join(" or ")} resources added for ${S.name} yet.`
     : "No resources match. Clear the search or turn a filter back on.";
@@ -236,7 +236,7 @@ function render() {
     const distTag = r.dist != null ? `<span class="tag dist">${r.dist < 1 ? "<1" : Math.round(r.dist)} mi</span>` : "";
     return `<details class="res" id="res-${esc(r.id)}"><summary>
       <span class="r-name">${esc(r.name)}</span>
-      <span class="r-tags">${fitTag}${checkTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}${r.for_profit ? `<span class="tag lv-Private" title="A business, not a nonprofit">Company</span>` : ""}<span class="tag cat cat-${esc(r.category)}">${esc(CATEGORY_LABEL[r.category] || r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
+      <span class="r-tags">${fitTag}${checkTag}${distTag}<span class="tag ${lvClass(r.level)}">${esc(LV[r.level] || r.level)}</span>${r.city ? `<span class="tag lv-City">${esc(r.city)}</span>` : ""}${r.federally_funded ? `<span class="tag ff">Federally funded</span>` : ""}${r.for_profit ? `<span class="tag lv-Private" title="A business, not a nonprofit">Company</span>` : ""}<span class="tag cat ${catClass(r.category)}">${esc(CATEGORY_LABEL[r.category] || r.category)}${r.subtype ? " · " + esc(r.subtype) : ""}</span></span>
       <span class="r-desc">${esc(r.description)}</span>
     </summary><div class="body"><dl>
       <dt>Run by</dt><dd>${esc(r.administrator)}</dd>
@@ -593,7 +593,7 @@ else {
 
 // ---------- TIMING & WAITLISTS: each program's process as a line of stops ----------
 const timingItems = (params?.timing || []).filter(t => t.id);
-const ROUTE_FOR_FOCUS = { Housing: ["H", "cat-Housing"], Employment: ["S", "cat-Employment"], Both: ["•", ""] };
+const ROUTE_FOR_FOCUS = { Housing: ["H", "cat-Housing"], Employment: ["S", "cat-Employment"], Both: ["•", ""] }; // timing items
 let twSel = timingItems[0]?.id;
 function renderTimingList() {
   $("tw-list").innerHTML = timingItems.map(t => {

@@ -28,7 +28,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nycha-section-8-housing-choice-voucher",
@@ -59,7 +60,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-mainstream-vouchers-nyc-hpd",
@@ -90,7 +92,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-hud-section-811-project-rental-assistance-pra",
@@ -121,7 +124,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-hud-fair-housing-complaints-fheo-reasonable-accommodation",
@@ -152,7 +156,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-ssi-living-arrangement-rules-in-kind-support-and-maintenance",
@@ -183,7 +188,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-eligibility-including-autism",
@@ -214,7 +220,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-front-door",
@@ -245,7 +252,10 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": [
+      "Caregiver Support"
+    ]
   },
   {
     "id": "ny-hou-opwdd-individualized-residential-alternatives-iras-supervised-and-supportive",
@@ -276,7 +286,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-family-care",
@@ -307,7 +318,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-intermediate-care-facilities-icf-iid",
@@ -338,7 +350,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-housing-subsidy-formerly-individual-supports-and-services-iss",
@@ -369,7 +382,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-integrated-supportive-housing-ish",
@@ -400,7 +414,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-self-direction",
@@ -431,7 +446,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-home-and-community-based-services-hcbs-waiver",
@@ -462,7 +478,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-opwdd-care-coordination-organizations-ccos",
@@ -493,7 +510,10 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": [
+      "Caregiver Support"
+    ]
   },
   {
     "id": "ny-hou-opwdd-open-doors-transition-center-formerly-money-follows-the-person",
@@ -524,7 +544,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-new-york-state-supplement-program-ssp",
@@ -555,7 +576,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-access-to-home-incl-access-to-home-for-medicaid-members",
@@ -586,7 +608,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-restore-residential-emergency-services-to-offer-home-repairs-to-the-elderly",
@@ -617,7 +640,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-mitchell-lama-housing",
@@ -648,7 +672,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-ny-connects",
@@ -679,7 +704,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nys-emergency-rental-assistance-program-erap",
@@ -710,7 +736,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nys-division-of-human-rights-housing-discrimination",
@@ -741,7 +768,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nycha-public-housing",
@@ -772,7 +800,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nyc-housing-connect-disability-set-asides",
@@ -803,7 +832,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-cityfheps-rental-assistance",
@@ -834,7 +864,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-disability-rent-increase-exemption-drie",
@@ -865,7 +896,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-nyc-mayor-s-office-for-people-with-disabilities-mopd-housing-resources",
@@ -896,7 +928,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-rochester-housing-authority",
@@ -927,7 +960,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-buffalo-municipal-housing-authority-bmha",
@@ -958,7 +992,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-syracuse-housing-authority",
@@ -989,7 +1024,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-albany-housing-authority",
@@ -1020,7 +1056,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-municipal-housing-authority-for-the-city-of-yonkers-mhacy",
@@ -1051,7 +1088,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-the-center-for-discovery",
@@ -1082,7 +1120,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-ahrc-new-york-city-residential-services",
@@ -1113,7 +1152,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-yai-residential-services",
@@ -1144,7 +1184,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-the-arc-new-york-chapter-network",
@@ -1175,7 +1216,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-job-path-nyc-supported-living-and-self-direction",
@@ -1206,7 +1248,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-life-s-worc",
@@ -1237,7 +1280,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-qsac-residential-services",
@@ -1268,7 +1312,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-anderson-center-for-autism-adult-services",
@@ -1299,7 +1344,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-aspire-of-wny-residential-opportunities",
@@ -1330,7 +1376,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-camphill-village-copake",
@@ -1361,7 +1408,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-triform-camphill-community",
@@ -1392,7 +1440,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-hou-center-for-independence-of-the-disabled-ny-cidny-housing",
@@ -1423,7 +1472,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-ticket-to-work",
@@ -1454,7 +1504,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-ssi-ssdi-work-incentives-sga-trial-work-period-student-earned-income-exclusion",
@@ -1485,7 +1536,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-pass-plan-to-achieve-self-support",
@@ -1516,7 +1568,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-section-1619-b-medicaid-while-working-new-york-threshold",
@@ -1547,7 +1600,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-work-opportunity-tax-credit-wotc",
@@ -1578,7 +1632,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-abilityone-program",
@@ -1609,7 +1664,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-job-accommodation-network-jan",
@@ -1640,7 +1696,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-schedule-a-hiring-authority-federal-jobs",
@@ -1671,7 +1728,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-acces-vr-adult-career-and-continuing-education-services-vocational-rehabilitation",
@@ -1702,7 +1760,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-pre-employment-transition-services-pre-ets",
@@ -1733,7 +1792,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-opwdd-pathway-to-employment",
@@ -1764,7 +1824,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-opwdd-employment-training-program-etp",
@@ -1795,7 +1856,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-opwdd-supported-employment-semp",
@@ -1826,7 +1888,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-opwdd-community-based-prevocational-services",
@@ -1857,7 +1920,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nys-career-centers-and-disability-resource-coordinators-ny-scion",
@@ -1888,7 +1952,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-workers-with-disabilities-employment-tax-credit-wetc",
@@ -1919,7 +1984,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nys-preferred-source-program-nysid-new-york-state-industries-for-the-disabled",
@@ -1950,7 +2016,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nys-55-b-55-c-governor-s-program-to-hire-individuals-and-veterans-with-disabilities",
@@ -1981,7 +2048,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-medicaid-buy-in-for-working-people-with-disabilities-mbi-wpd",
@@ -2012,7 +2080,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nyess-new-york-employment-services-system-benefits-advisement",
@@ -2043,7 +2112,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nyc-atwork",
@@ -2074,7 +2144,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nyc-55-a-program",
@@ -2105,7 +2176,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-nyc-summer-youth-employment-program-syep-youth-with-disabilities",
@@ -2136,7 +2208,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-erie-county-office-for-people-with-disabilities",
@@ -2167,7 +2240,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-spectrum-designs-port-washington",
@@ -2198,7 +2272,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-spectrum-designs-westchester-pleasantville",
@@ -2229,7 +2304,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-caf-joyeux-new-york",
@@ -2260,7 +2336,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-south-fork-bakery-and-launch-training-program",
@@ -2291,7 +2368,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-special-touch-bakery",
@@ -2322,7 +2400,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-ultranauts",
@@ -2353,7 +2432,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-on-your-mark-employment-services-and-business-initiatives",
@@ -2384,7 +2464,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-yai-employment-services",
@@ -2415,7 +2496,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-ahrc-nyc-employment-services-etp-project-search",
@@ -2446,7 +2528,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-ahrc-nassau-employment-services-and-business-services",
@@ -2477,7 +2560,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-job-path",
@@ -2508,7 +2592,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-the-arc-westchester-career-employment-services",
@@ -2539,7 +2624,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-lifetime-assistance-vocational-services",
@@ -2570,7 +2656,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-project-search-greater-rochester-urmc",
@@ -2601,7 +2688,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-the-arc-new-york-32-local-chapters",
@@ -2632,7 +2720,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-western-ny-wipa-project-neighborhood-legal-services",
@@ -2663,7 +2752,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-emp-work-without-limits-wipa-new-york",
@@ -2694,7 +2784,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-snap",
@@ -2725,7 +2816,8 @@
     "apply_closes": "",
     "apply_source": "https://otda.ny.gov/programs/snap/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-heap",
@@ -2756,7 +2848,8 @@
     "apply_closes": "",
     "apply_source": "https://otda.ny.gov/programs/heap/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-energy-affordability-program",
@@ -2787,7 +2880,8 @@
     "apply_closes": "",
     "apply_source": "https://dps.ny.gov/energy-affordability-program",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-safety-net-assistance",
@@ -2818,7 +2912,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-cdpap",
@@ -2849,7 +2944,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-opwdd-family-support-services",
@@ -2880,7 +2976,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-opwdd-self-direction",
@@ -2911,7 +3008,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-ny-able",
@@ -2942,7 +3040,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-nysarc-pooled-trust",
@@ -2979,7 +3078,8 @@
     "apply_closes": "",
     "apply_source": "https://www.nysarctrustservices.org/nysarc-trusts/pooled-trusts/enroll-pooled-trust/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-ny-child-dependent-care-credit",
@@ -3010,7 +3110,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-real-property-tax-credit",
@@ -3041,7 +3142,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-mta-reduced-fare",
@@ -3072,7 +3174,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-fair-fares-nyc",
@@ -3103,7 +3206,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-medicaid-buy-in-working-disabilities",
@@ -3134,7 +3238,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-nyserda-empower-plus",
@@ -3165,7 +3270,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-state-parks-access-pass",
@@ -3196,7 +3302,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-traid-device-loans",
@@ -3227,7 +3334,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-aaneny-individual-grant",
@@ -3263,7 +3371,8 @@
     "apply_closes": "",
     "apply_source": "https://www.aaneny.org/scholarships-grant-applications",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-federal-credit-for-other-dependents",
@@ -3294,7 +3403,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-lifeline-phone-internet-discount",
@@ -3325,7 +3435,8 @@
     "apply_closes": "",
     "apply_source": "",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-act-today-family-grants",
@@ -3362,7 +3473,8 @@
     "apply_closes": "2026-10-15",
     "apply_source": "https://www.act-today.org/apply-for-grant/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
   },
   {
     "id": "ny-fin-flutie-kodi-lee-gives-back-grant",
@@ -3398,6 +3510,551 @@
     "apply_closes": "2026-05-21",
     "apply_source": "https://flutiefoundation.org/helping-families/direct-financial-support/kodi-lee-gives-back-grant/",
     "for_profit": false,
-    "support_needs": ""
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-opwdd-respite",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "OPWDD Respite Services",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "NYS Office for People With Developmental Disabilities (OPWDD)",
+    "city": "",
+    "region": "Statewide",
+    "description": "Short-term care for your adult family member so you, the unpaid caregiver, can get a break. It can happen at home, at a respite site, at camp, or during community outings, day or overnight.",
+    "eligibility": "OPWDD-eligible person enrolled in the HCBS Waiver (or a limited group of non-waiver enrollees) who lives with an unpaid primary caregiver. Not for people living in OPWDD-certified residences or Family Care Homes.",
+    "upfront_cost": "None. Co-pays and enrollment fees are not allowed.",
+    "ongoing_cost": "None. Co-pays and cost-sharing are not allowed.",
+    "max_benefit": "Site-based, recreational, camp and intensive respite: up to 10 hours per day (in-home has no daily cap). Up to 42 overnight stays per 6-month period; camp up to 14 overnights per year.",
+    "how_to_apply": "Ask your Care Manager (CCO) to add respite to the Life Plan; the DDRO authorizes hours. OPWDD Information Line 866-946-9733; opwdd.ny.gov",
+    "source_url": "https://opwdd.ny.gov/system/files/documents/2021/12/adm-2017-01r-respite-adm-update-3-1-21.pdf",
+    "date_checked": "2026-10-13",
+    "notes": "Source is OPWDD ADM 2017-01R (updated 3/1/21). Types: in-home, site-based, recreational, camp, intensive (for high behavioral/medical needs). Separate from respite funded through FSS contracts or self-directed budgets. Provider availability and staffing waits vary by region.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-nystart-csidd",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Crisis support",
+    "name": "NYSTART / CSIDD Crisis Services",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "OPWDD, with regional CSIDD providers (e.g., YAI, Arc of Chemung-Schuyler)",
+    "city": "",
+    "region": "Statewide",
+    "description": "24/7 crisis prevention and response for people with developmental disabilities and complex behavior needs, and for their families. Includes mobile crisis help, in-home therapeutic support, crisis planning and short planned or emergency stays at a Resource Center.",
+    "eligibility": "OPWDD-eligible people age 6+ who meet NYSTART/CSIDD criteria. Resource Center stays require HCBS Waiver enrollment, a plan to return home, and age 21+ (18-20 with DDRO approval).",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Family, providers or hospitals can refer. Referral lines: NYC (Bronx, Manhattan, Queens) YAI 212-273-6300; Brooklyn/Staten Island regional contact 718-264-5364; Long Island 516-310-5958; Capital/Hudson Valley 516-858-1540 x1087; Central NY/Southern Tier/North Country 315-362-0800; Western NY/Finger Lakes 844-567-8278.",
+    "source_url": "https://opwdd.ny.gov/node/1091",
+    "date_checked": "2026-10-13",
+    "notes": "Phone numbers from opwdd.ny.gov/contact-us (crisis services section). OPWDD notes it is assessing next steps for a provider in Kings and Richmond counties. Cost not stated; Resource Center stays are billed as waiver respite per OPWDD ADM 2017-01R, so marked federally_funded true. In an emergency call 911 or 988.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-paid-family-leave",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Leave & income",
+    "name": "New York Paid Family Leave (family care)",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "NYS Workers' Compensation Board; benefits paid by employer's insurance carrier",
+    "city": "",
+    "region": "Statewide",
+    "description": "Lets working caregivers take paid, job-protected time off to care for a family member with a serious health condition. In New York this covers a child of any age, including an adult autistic son or daughter with a qualifying condition.",
+    "eligibility": "Most private-sector employees in NY who meet work-time rules; the family member's serious health condition (inpatient care or continuing treatment by a provider) must be certified by a health care provider.",
+    "upfront_cost": "None to apply. Employees pay 0.432% of gross wages through payroll in 2026.",
+    "ongoing_cost": "Payroll deduction up to $411.91 per year in 2026.",
+    "max_benefit": "Up to 12 weeks per year at 67% of average weekly wage, capped at $1,228.53 per week in 2026.",
+    "how_to_apply": "Tell your employer (30 days ahead if foreseeable); file Forms PFL-1 and PFL-4 with your employer's carrier within 30 days of starting leave. PFL Helpline (844) 337-6303; paidfamilyleave.ny.gov",
+    "source_url": "https://paidfamilyleave.ny.gov/paid-family-leave-family-care",
+    "date_checked": "2026-10-13",
+    "notes": "2026 rates from paidfamilyleave.ny.gov/2026. 'Child of any age' confirmed in WCB PFL employee webinar (wcb.ny.gov). Leave can be intermittent in full-day increments. Autism alone may not qualify; the condition must meet the serious health condition definition. Public employers may not be covered unless they opt in.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-nfcsp-older-relative",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "National Family Caregiver Support Program (older relative caregivers)",
+    "level": "State",
+    "federally_funded": true,
+    "administrator": "NYS Office for the Aging (NYSOFA) through 59 local Offices for the Aging",
+    "city": "",
+    "region": "Statewide",
+    "description": "Parents and other relatives age 55 and older who live with and care for an adult (18-59) with a disability can get respite, counseling, support groups, training and help finding services. Some counties let caregivers choose and hire their own respite workers, including other family members.",
+    "eligibility": "Older relative caregivers age 55+ (including parents) who live with an adult age 18-59 with a disability.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Contact your county Office for the Aging or NY Connects at 1-800-342-9871. aging.ny.gov",
+    "source_url": "https://aging.ny.gov/node/4611",
+    "date_checked": "2026-10-13",
+    "notes": "Caregiver-directed respite option per NYSOFA 26-TAM-01 (Feb 10, 2026): voucher value set by each local agency; hired family members must be 18+ and not the primary caregiver. Services and waitlists vary by county.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-nysofa-state-respite",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "NYSOFA State Respite Program",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "NYS Office for the Aging (NYSOFA) and local Offices for the Aging",
+    "city": "",
+    "region": "Statewide",
+    "description": "State-funded short-term care or supervision for an adult who needs help, so the unpaid family caregiver can take a break. The caregiver does not have to live with the person.",
+    "eligibility": "Unpaid family caregivers of adults who need help or supervision because of a mental or physical impairment. Priority goes to care receivers age 60+.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Contact your local Office for the Aging or NY Connects 1-800-342-9871. aging.ny.gov/respite-program",
+    "source_url": "https://aging.ny.gov/respite-program",
+    "date_checked": "2026-10-13",
+    "notes": "Priority for older adults means younger autistic adults may wait or be referred elsewhere. Run in 23 counties by six NYSOFA-funded agencies (e.g., Catholic Charities Albany, EAC Nassau, Nascentia Onondaga, Madison County OFA, NY Foundation for Senior Citizens in NYC, RiseWell Suffolk). Funding source not stated; marked federally_funded false.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-ny-connects",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "NY Connects",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "NYS Office for the Aging with local NY Connects offices",
+    "city": "",
+    "region": "Statewide",
+    "description": "A free, neutral helpline that connects families and caregivers to long-term services and supports such as home care, transportation and respite. Staff also help with eligibility steps and applications.",
+    "eligibility": "Older adults and people with disabilities of all ages, plus their families and caregivers.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Free",
+    "max_benefit": "Not published",
+    "how_to_apply": "Call 1-800-342-9871 or visit nyconnects.ny.gov",
+    "source_url": "https://nyconnects.ny.gov/consumersite/about_us.php",
+    "date_checked": "2026-10-13",
+    "notes": "Information and referral, not a funding program. Funding source not stated on page; marked federally_funded false.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-nyscrc-respite-voucher",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "NYS Caregiving and Respite Coalition Respite Voucher",
+    "level": "Private/Nonprofit",
+    "federally_funded": true,
+    "administrator": "NYS Caregiving and Respite Coalition (NYSCRC), c/o Lifespan of Greater Rochester",
+    "city": "Rochester",
+    "region": "Statewide",
+    "description": "Reimburses family caregivers for respite they arrange and choose. NYSCRC also runs a statewide Respite Registry to find providers, plus caregiver education and coaching.",
+    "eligibility": "NY resident who is the primary caregiver of a child or adult with a disability or chronic condition (or a kinship caregiver), not already getting respite from another organization; needs a referral from an agency, support group or doctor.",
+    "upfront_cost": "None",
+    "ongoing_cost": "None",
+    "max_benefit": "Up to $600 in reimbursement per care recipient; voucher expires 90 days after issue.",
+    "how_to_apply": "Apply at nyscrc.org; (585) 287-6391; rhyde@lifespan-roch.org or nyscrc@lifespan-roch.org. Find providers at respite.nyscrc.org.",
+    "source_url": "https://www.nyscrc.org/",
+    "date_checked": "2026-10-13",
+    "notes": "Funded by federal and private funding (NY Lifespan Respite). Eligibility details from NYSCRC flyer posted by CCE Tompkins; the voucher page on nyscrc.org blocked automated checking, so confirm the program is open before referring. Cannot pay for rent/food or respite so the caregiver can work.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-article-17a-guardianship",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "Article 17-A Guardianship (Surrogate's Court) and free DIY forms",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "NYS Unified Court System, Surrogate's Courts",
+    "city": "",
+    "region": "Statewide",
+    "description": "Parents or other interested adults can ask the Surrogate's Court to be named guardian of an adult with an intellectual or developmental disability. The courts offer a free online DIY Forms program and help from court staff.",
+    "eligibility": "Petitioner: a parent or interested person 18+ (or authorized corporation). The adult must have an intellectual or developmental disability and be unable to manage their own affairs, certified by professionals.",
+    "upfront_cost": "Court filing fee (amount not listed on page; fee waiver may be available). DIY Forms program is free.",
+    "ongoing_cost": "None listed",
+    "max_benefit": "Not published",
+    "how_to_apply": "File in the Surrogate's Court of the county where the person lives; use the DIY Forms program at nycourts.gov/courthelp. nycourts.gov/help/guardianship/how-start-article-17-case",
+    "source_url": "https://www.nycourts.gov/help/guardianship/how-start-article-17-case",
+    "date_checked": "2026-10-13",
+    "notes": "Guardianship removes decision rights; consider less restrictive options like Supported Decision-Making first. AHRC NYC's page lists a $20 filing fee when filing without a lawyer. Mental Hygiene Legal Service may represent the adult in some 17-A cases.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-supported-decision-making",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "Supported Decision-Making (SDM) facilitation",
+    "level": "State",
+    "federally_funded": false,
+    "administrator": "OPWDD; statewide facilitation provider AIM Services, Inc. (Saratoga Springs)",
+    "city": "",
+    "region": "Statewide",
+    "description": "A legal alternative to guardianship: your adult family member picks trusted supporters (often family) to help with decisions, and signs a Supported Decision-Making Agreement. A trained facilitator guides the process.",
+    "eligibility": "Adults 18+ with intellectual or developmental disabilities are presumed able to make an agreement; supporters must be 18+ and chosen by the person.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Ask your Care Manager for a referral to SDM facilitation, or contact OPWDD (866-946-9733). Background and resources: sdmny.org",
+    "source_url": "https://opwdd.ny.gov/node/37951",
+    "date_checked": "2026-10-13",
+    "notes": "SDM agreements recognized under Mental Hygiene Law Article 82 (signed 2022). AIM Services named statewide SDM facilitation provider in March 2026. OPWDD rule says facilitators may charge fees; cost to families not published. Direct AIM contact info not found on checked pages.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-ahrc-nyc-guardianship",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Legal & planning",
+    "name": "AHRC NYC Guardianship Services",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "AHRC New York City",
+    "city": "New York",
+    "region": "New York City",
+    "description": "Helps NYC families understand and file for Article 17-A guardianship of an adult family member with a developmental disability. Also helps with future planning (standby guardians) and alternatives like Supported Decision-Making and health care proxies.",
+    "eligibility": "Person 18+ with an intellectual or developmental disability living in one of the five boroughs.",
+    "upfront_cost": "No AHRC fee listed; court filing fee $20 if filing without an attorney.",
+    "ongoing_cost": "None listed",
+    "max_benefit": "Not published",
+    "how_to_apply": "Guardianship line 212-780-4408; Request Services 212-780-4491; ahrcnyc.org",
+    "source_url": "https://www.ahrcnyc.org/services/families/guardianship-services/",
+    "date_checked": "2026-10-13",
+    "notes": "If no family member can serve, NYSARC, Inc. may act as guardian with approval from AHRC NYC and NYSARC. Fingerprinting and a court appearance may be required.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-ahrc-nyc-family-respite",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Respite",
+    "name": "AHRC NYC Family Respite and Family Education",
+    "level": "Private/Nonprofit",
+    "federally_funded": true,
+    "administrator": "AHRC New York City",
+    "city": "New York",
+    "region": "New York City",
+    "description": "Hourly in-home respite gives NYC families a break from caregiving, with overnight emergency respite in Queens and Manhattan for crises like illness or hospitalization. AHRC NYC also runs free family education workshops.",
+    "eligibility": "OPWDD-eligible person who completed Front Door, living with the caregiver; current Level of Care within the past year unless already in the Waiver.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Request Services 212-780-4491 (TTY 711); ahrcnyc.org/ric/contact",
+    "source_url": "https://www.ahrcnyc.org/services/families/respite/in-home/",
+    "date_checked": "2026-10-13",
+    "notes": "Hourly respite is waiver-funded (all five boroughs). Page does not state age range or hours. Workshop info from ahrcnyc.org/services/families.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-ahrc-nyc-siblings",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "AHRC NYC Sibling Services",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "AHRC New York City",
+    "city": "New York",
+    "region": "New York City",
+    "description": "Peer support and professional help for brothers and sisters, children and adults, of people with developmental disabilities. Adult siblings can join phone 'Sibchats' and online learning through SiblingResources.org.",
+    "eligibility": "Siblings of people with developmental disabilities in the five boroughs, whether or not the person gets AHRC NYC services. Sibshops are for ages 8-13.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "212-603-9743; sibshops@ahrcnyc.org; general 212-780-2500",
+    "source_url": "https://www.ahrcnyc.org/services/families/siblings/",
+    "date_checked": "2026-10-13",
+    "notes": "No specific adult sibling group listed beyond SiblingResources.org Sibchats.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-yai-family-support",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "YAI Family Support Services",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "YAI",
+    "city": "New York",
+    "region": "New York City",
+    "description": "In-home and site-based respite so caregivers get time for themselves, plus caregiver education and help managing challenging behaviors.",
+    "eligibility": "Families caring for a person with intellectual or developmental disabilities (details on YAI Getting Started page).",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Use YAI's Getting Started page or Service Finder at yai.org",
+    "source_url": "https://www.yai.org/family-support",
+    "date_checked": "2026-10-13",
+    "notes": "Page does not state ages, OPWDD requirement, cost, regions or phone. YAI is headquartered in NYC and publishes Long Island family support guides; confirm local availability. Funding source not stated.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-parent-to-parent-nys",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "Parent to Parent of New York State",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Parent to Parent of New York State",
+    "city": "",
+    "region": "Statewide",
+    "description": "Matches you with a trained parent who has been through similar experiences, and helps families find services and make decisions. Also offers online training and the free Text4Caregivers stress-support texts.",
+    "eligibility": "Parents and family members of a child or adult with a developmental disability, special health care need or chronic illness.",
+    "upfront_cost": "Free",
+    "ongoing_cost": "Free",
+    "max_benefit": "Not published",
+    "how_to_apply": "(518) 381-4350 or 800-305-8817; info@ptopnys.org; ptopnys.org (Request a Parent Match)",
+    "source_url": "https://www.ptopnys.org/",
+    "date_checked": "2026-10-13",
+    "notes": "Statewide office in Schenectady with regional offices (see Regional Office Contact Info). Free status and adult eligibility confirmed via 211 Lifeline listing; home page does not state age range.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-parent-network-wny",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Training & peer support",
+    "name": "Parent Network of Western New York",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Parent Network of WNY",
+    "city": "Buffalo",
+    "region": "Western NY & Finger Lakes",
+    "description": "One-on-one help, workshops and support groups for families of people with special needs from birth through adulthood. Includes help with OPWDD eligibility and family behavior support.",
+    "eligibility": "Families of individuals with special needs, any age.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "716-332-4170; Espanol 716-449-6394; toll-free 866-277-4762; info@parentnetworkwny.org; parentnetworkwny.org",
+    "source_url": "https://parentnetworkwny.org/about-us/",
+    "date_checked": "2026-10-13",
+    "notes": "Office at 1021 Broadway, Buffalo; M-F 9-4. Counties served not listed on page.",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-starbridge-family-supports",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "Starbridge Family Supports (Advocacy and GO MONROE)",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Starbridge",
+    "city": "Rochester",
+    "region": "Western NY & Finger Lakes",
+    "description": "Advocates help families of a child or adult with developmental disabilities living at home learn their rights and navigate services. GO MONROE helps with transportation costs like bus passes, mileage and ride vouchers.",
+    "eligibility": "Families in Monroe, Genesee, Livingston, Ontario, Orleans, Wayne and Wyoming counties whose child or adult lives at home. GO MONROE requires OPWDD eligibility and income eligibility; not for families with self-directed budgets.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "Intake 585-224-7359; main 585-546-1700; GO MONROE 585-224-7250, jmay@starbridgeinc.org",
+    "source_url": "https://www.starbridgeinc.org/how-we-can-help/family-supports",
+    "date_checked": "2026-10-13",
+    "notes": "Funded through OPWDD (state funding source not specified as federal).",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
+  },
+  {
+    "id": "ny-cg-wihd-community-support-network",
+    "state": "NY",
+    "category": "Caregiver Support",
+    "subtype": "Family support",
+    "name": "WIHD Community Support Network",
+    "level": "Private/Nonprofit",
+    "federally_funded": false,
+    "administrator": "Westchester Institute for Human Development",
+    "city": "Valhalla",
+    "region": "Hudson Valley",
+    "description": "Gives Hudson Valley families guidance, training and direct help with disability systems across the lifespan, including benefits, decision-making options and self-direction support brokerage.",
+    "eligibility": "Families and individuals with disabilities in the Hudson Valley.",
+    "upfront_cost": "Not published",
+    "ongoing_cost": "Not published",
+    "max_benefit": "Not published",
+    "how_to_apply": "914-493-8119; toll-free 1-877-810-2422; csn@wihd.org",
+    "source_url": "https://www.wihd.org/?p=10828",
+    "date_checked": "2026-10-13",
+    "notes": "Page does not state cost or age range explicitly ('across the lifespan').",
+    "funding_route": "",
+    "needs_checking": false,
+    "to_check": "",
+    "apply_steps": [],
+    "apply_window": "",
+    "apply_opens": "",
+    "apply_closes": "",
+    "apply_source": "",
+    "for_profit": false,
+    "support_needs": "",
+    "also_categories": []
   }
 ]

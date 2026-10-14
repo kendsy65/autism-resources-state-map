@@ -29,7 +29,7 @@ for (const c of ["CT", "NY"]) {
       assert.deepEqual(Object.keys(r), fields, r.id);
       assert.equal(r.state, c);
       assert.match(r.source_url, /^https?:\/\//, r.id);
-      assert.ok(["Housing", "Financing", "Employment", "Employers"].includes(r.category), r.id);
+      assert.ok(["Housing", "Financing", "Employment", "Employers", "Caregiver Support"].includes(r.category), r.id);
       assert.ok(["Federal", "State", "City", "Private/Nonprofit"].includes(r.level), r.id);
     }
     assert.ok(!res.some(r => r.category === "Employment" && r.subtype === "Employer"));
@@ -117,4 +117,19 @@ test("Rochester's list closing Oct 26 reaches the deadlines board", () => {
   const d = upcomingDeadlines(rows, TODAY);
   assert.equal(d.length, 1);
   assert.equal(d[0].days, 13);
+});
+
+test("caregiver support: every state has it, sources and towns check out, cross-listed programs count", () => {
+  for (const c of ["CT", "MA", "NY"]) {
+    const res = S[c].res;
+    const own = res.filter(r => r.category === "Caregiver Support");
+    const cross = res.filter(r => (r.also_categories || []).includes("Caregiver Support"));
+    assert.ok(own.length >= 10, `${c} caregiver entries`);
+    assert.ok(cross.length >= 2, `${c} cross-listed`);
+    for (const r of own) assert.match(r.source_url, /^https?:\/\//, r.id);
+    const coords = at(c);
+    const missing = [...new Set(own.filter(r => r.city).map(r => r.city))].filter(city => !coords(city));
+    assert.deepEqual(missing, [], `${c} towns`);
+    assert.ok(!cross.some(r => r.category === "Caregiver Support"));
+  }
 });

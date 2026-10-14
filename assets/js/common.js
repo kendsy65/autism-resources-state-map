@@ -6,11 +6,16 @@ export const STATES = {
   NY: { name: "New York", fips: "36" },
 };
 
-export const CATEGORIES = ["Housing", "Financing", "Employment", "Employers"];
+export const CATEGORIES = ["Housing", "Financing", "Employment", "Employers", "Caregiver Support"];
 // What each category is called on screen. "Employment" holds job support (coaching, training, placement).
-export const CATEGORY_LABEL = { Housing: "Housing", Financing: "Financing", Employment: "Employment support", Employers: "Employers" };
+export const CATEGORY_LABEL = { Housing: "Housing", Financing: "Financing", Employment: "Employment support", Employers: "Employers", "Caregiver Support": "Caregiver support" };
+// CSS class for a category's route color ("Caregiver Support" -> "cat-CaregiverSupport").
+export const catClass = c => `cat-${String(c).replace(/\s+/g, "")}`;
+// A program can also be listed under other categories (e.g. ABLE accounts under Caregiver Support).
+export const inCategory = (r, c) => r.category === c || (r.also_categories || []).includes(c);
 // Which categories each caregiver focus covers.
-export const FOCUS_CATEGORIES = { Housing: ["Housing"], Employment: ["Employment", "Employers"], Both: CATEGORIES };
+// Caregiver support helps every family, whatever their focus.
+export const FOCUS_CATEGORIES = { Housing: ["Housing", "Caregiver Support"], Employment: ["Employment", "Employers", "Caregiver Support"], Both: CATEGORIES };
 
 export const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
 
